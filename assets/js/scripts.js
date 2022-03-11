@@ -1,5 +1,4 @@
 function scrollFunction() {
-    console.log('Si')
     if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
         document.getElementById("navegador").style.backgroundColor = "rgba(0, 0, 0, 0.432)";
     } else {
