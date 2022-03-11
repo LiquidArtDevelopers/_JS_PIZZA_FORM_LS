@@ -12,7 +12,6 @@ addEventListener('DOMContentLoaded',()=>{
                 cambio()
             }
         });
-});
-
-//SCRIPT NAV---
-window.onscroll = function() {scrollFunction()};        
+    //SCRIPT NAV---
+    window.onscroll = function() {scrollFunction()};  
+});      
