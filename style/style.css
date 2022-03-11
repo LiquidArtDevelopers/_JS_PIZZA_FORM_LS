@@ -4,17 +4,14 @@
   outline: 0;
   box-sizing: border-box;
 }
-
 @font-face {
     font-family: "Piazzere";
-    src: url("../tipos/MeriendaOne-Regular.ttf");
+    src: url("../font/");
 }
-
 body {
  background-image: url("../img/Entramado_verde.svg");
  background-attachment: fixed;
 }
-
 /* NAVEGADOR */
 #navegador{
     max-width: 1400px;
@@ -101,7 +98,6 @@ a:visited{
 a:hover{
     color:#fecccd;
 }
-
 /* header */
 header{
     max-width: 1920px;
@@ -117,7 +113,7 @@ header img{
 }
 .logo-principal{
     position: absolute;
-    top: 10vh;
+    top: 8vh;
     width: 80%;
 }
 .rojo{
@@ -126,8 +122,6 @@ header img{
 .verde{
     color:#4B9C40
 }
-
-
 /* //contenedor */
 .contenedor_principal{
     width: 80%;
