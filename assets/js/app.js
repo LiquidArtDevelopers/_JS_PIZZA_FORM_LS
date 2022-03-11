@@ -1,6 +1,7 @@
-//Escucha el evento antes de cargar el contenido documento.
+//Escucha el evento antes de cargar el contenido del documento html.
 addEventListener('DOMContentLoaded',()=>{
         cambio();
+        llamarVentanaCookies();
         //Escuchamos la selección de idioma
         document.body.addEventListener("click", function(event){
             if(event.target.classList.contains("idioma")){
@@ -14,4 +15,4 @@ addEventListener('DOMContentLoaded',()=>{
         });
     //SCRIPT NAV---
     window.onscroll = function() {scrollFunction()};  
-});      
+});

@@ -4,9 +4,11 @@
   outline: 0;
   box-sizing: border-box;
 }
+
 /**Impotación de modulos**/
 @import "form";
-
+@import 'modalWindow';
+/************************/
 
 @font-face {
     font-family: "Piazzere";

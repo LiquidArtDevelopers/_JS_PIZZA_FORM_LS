@@ -1,0 +1,64 @@
+/**Variables de colores**/
+$orange-cp:#f28123;
+$yellow-cp:#f7f052;
+$red-cp:#d34e24;
+$brown-cp:#563f1b;
+$green-cp:#38726c;
+$piel-cp:#d9780B;
+$fuxia-cp:#f01840;
+$purple-cp:#540BD9;
+$skyblue:#0cb0f2;
+
+/**Ventana modal para cookies**/
+@mixin windowModal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    text-align: center;
+    padding: 5px;
+    z-index: 999;
+}
+.window{
+    @include windowModal();  
+    #cookies{
+        width: 600px;
+        height: 500px;
+        margin: auto;
+        margin-top: 15vh;
+        border: 5px solid $brown-cp;
+        background-color: $yellow-cp;
+        color: $brown-cp;
+        padding: 15px;
+        .btn-cookies{
+            background-color: $orange-cp;
+            border-color: #333;
+            color: $brown-cp;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px;
+        }
+        a{
+            display: block;
+            width: 80%;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-right: auto;
+            margin-left: auto;
+            color: $green-cp;
+        }
+    }
+}
+
+/**Media Screen - Responsive**/
+@media screen and(max-width:380px) {
+    #cookies{
+        width: 300px;
+        height: 400px;
+        overflow:scroll;
+        overflow-x: hidden;
+    }
+}
