@@ -10,8 +10,15 @@
     src: url("../font/MeriendaOne-Regular.ttf");
 }
 @font-face {
-    font-family: "Unica";
+    font-family: "Idioma";
     src: url("../font/UnicaOne-Regular.ttf");
+}
+@font-face {
+    font-family: "Libreta";
+    src: url("../font/ShortStack-Regular.ttf");
+}
+html{
+    scroll-behavior: smooth;
 }
 body {
  background-image: url("../img/Entramado_verde.svg");
@@ -40,7 +47,7 @@ body {
         color: white;
     }
     a:hover{
-        color:#4B9C40;
+        color:#A0425B;
     }
 }
 .nav-logo{
@@ -65,7 +72,7 @@ body {
     align-items: center;
     justify-content:flex-end;    
     color: rgb(255, 255, 255);
-    font-family: "Unica";
+    font-family: "Piazzere";
     font-size: 2rem;
     ul{
         display:flex;
@@ -80,8 +87,8 @@ body {
     align-items: center;
     justify-content:flex-end;
     padding-right: 20px;
-    font-family: sans-serif;
-    font-size: 1em;
+    font-family: "Idioma";
+    font-size: 1.2em;
     color: white;
     ul{
         display:flex;
@@ -91,7 +98,7 @@ body {
     }
 }
 .idioma-select{
-    color:#4B9C40!important;
+    color:#A0425B!important;
 }
 
 /* HEADER */
@@ -113,7 +120,7 @@ header{
     width: 60%;
 }
 .rojo{
-    color:#A0425B
+    color:#A0425B;
 }
 .verde{
     color:#4B9C40
@@ -126,3 +133,40 @@ header{
 }
 
 /* ZONA PEDIDO */
+#pedido{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+}
+.cuaderno{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    p{
+        font-family: "Libreta";
+        color: rgb(51, 51, 124);
+    }
+}
+.lib_tit{
+    position: absolute;
+    top: 120px;
+    font-size: 1.6rem;
+    -webkit-transform: rotate(-1.5deg); 
+    -moz-transform: rotate(-1.5deg); 
+    -ms-transform: rotate(-1.5deg); 
+    -o-transform: rotate(-1.5deg); 
+    transform: rotate(-1.5deg);
+}
+
+
+
+.resultado{
+    width: 50%;
+    height: 100%;
+    background-color: #A0425B;
+}

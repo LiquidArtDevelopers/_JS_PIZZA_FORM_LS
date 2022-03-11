@@ -12,8 +12,17 @@
 }
 
 @font-face {
-  font-family: "Unica";
+  font-family: "Idioma";
   src: url("../font/UnicaOne-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Libreta";
+  src: url("../font/ShortStack-Regular.ttf");
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -63,7 +72,7 @@ body {
 }
 
 #navegador a:hover {
-  color: #4B9C40;
+  color: #A0425B;
 }
 
 .nav-logo {
@@ -106,7 +115,7 @@ body {
       -ms-flex-pack: end;
           justify-content: flex-end;
   color: white;
-  font-family: "Unica";
+  font-family: "Piazzere";
   font-size: 2rem;
 }
 
@@ -135,8 +144,8 @@ body {
       -ms-flex-pack: end;
           justify-content: flex-end;
   padding-right: 20px;
-  font-family: sans-serif;
-  font-size: 1em;
+  font-family: "Idioma";
+  font-size: 1.2em;
   color: white;
 }
 
@@ -154,7 +163,7 @@ body {
 }
 
 .idioma-select {
-  color: #4B9C40 !important;
+  color: #A0425B !important;
 }
 
 /* HEADER */
@@ -200,4 +209,56 @@ header img {
 }
 
 /* ZONA PEDIDO */
+#pedido {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cuaderno {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.cuaderno p {
+  font-family: "Libreta";
+  color: #33337c;
+}
+
+.lib_tit {
+  position: absolute;
+  top: 120px;
+  font-size: 1.6rem;
+  -webkit-transform: rotate(-1.5deg);
+  transform: rotate(-1.5deg);
+}
+
+.resultado {
+  width: 50%;
+  height: 100%;
+  background-color: #A0425B;
+}
 /*# sourceMappingURL=style.css.map */
