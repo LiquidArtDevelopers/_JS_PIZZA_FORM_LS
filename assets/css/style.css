@@ -157,7 +157,7 @@ body {
   color: #4B9C40 !important;
 }
 
-/* header */
+/* HEADER */
 header {
   max-width: 1920px;
   width: 100%;
@@ -193,9 +193,11 @@ header img {
   color: #4B9C40;
 }
 
-/* //contenedor */
+/* CONTENEDOR PRINCIPAL */
 .contenedor_principal {
   width: 80%;
   margin: 0 auto;
 }
+
+/* ZONA PEDIDO */
 /*# sourceMappingURL=style.css.map */

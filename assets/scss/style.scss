@@ -4,6 +4,7 @@
   outline: 0;
   box-sizing: border-box;
 }
+@import "form";
 @font-face {
     font-family: "Piazzere";
     src: url("../font/MeriendaOne-Regular.ttf");
@@ -92,7 +93,8 @@ body {
 .idioma-select{
     color:#4B9C40!important;
 }
-/* header */
+
+/* HEADER */
 header{
     max-width: 1920px;
     width: 100%;
@@ -116,8 +118,11 @@ header{
 .verde{
     color:#4B9C40
 }
-/* //contenedor */
+
+/* CONTENEDOR PRINCIPAL */
 .contenedor_principal{
     width: 80%;
     margin: 0 auto;
 }
+
+/* ZONA PEDIDO */
