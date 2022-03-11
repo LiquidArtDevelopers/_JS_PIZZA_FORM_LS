@@ -58,11 +58,11 @@ body {
   text-decoration: none;
 }
 
-#navegador a a:visited {
+#navegador a:visited {
   color: white;
 }
 
-#navegador a a:hover {
+#navegador a:hover {
   color: #4B9C40;
 }
 
