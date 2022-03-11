@@ -34,12 +34,12 @@ body {
     a{
         color: white;
         text-decoration: none;
-        a:visited{
-            color: white;
-        }
-        a:hover{
-            color:#4B9C40;
-        }
+    }
+    a:visited{
+        color: white;
+    }
+    a:hover{
+        color:#4B9C40;
     }
 }
 .nav-logo{
@@ -57,7 +57,6 @@ body {
     color: white;
     font-size: 2rem;
 }
-
 .nav-enlaces{
     width: 65%;
     display: flex;
@@ -74,7 +73,6 @@ body {
         column-gap: 40px;    
     }
 }
-
 .nav-idiomas{
     width: 15%;
     display: flex;
@@ -91,7 +89,6 @@ body {
         column-gap: 10px;
     }
 }
-
 .idioma-select{
     color:#4B9C40!important;
 }
@@ -106,10 +103,11 @@ header{
     flex-direction: row;
     justify-content: center;
     position: relative;
+    img{
+        width: 100%;
+    }
 }
-header img{
-    width: 100%;
-}
+
 .logo-principal{
     position: absolute;
     top: 8vh;
