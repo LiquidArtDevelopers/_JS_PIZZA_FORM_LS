@@ -34,10 +34,10 @@ body {
     a{
         color: white;
         text-decoration: none;
-        :visited{
+        a:visited{
             color: white;
         }
-        :hover{
+        a:hover{
             color:#4B9C40;
         }
     }
