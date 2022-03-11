@@ -17,6 +17,12 @@
     font-family: "Libreta";
     src: url("../font/ShortStack-Regular.ttf");
 }
+
+/* VARIABLES */
+$color_boli:rgb(51, 51, 124);
+$color_rojo: #A0425B;
+$color_verde: #4B9C40;
+
 html{
     scroll-behavior: smooth;
 }
@@ -98,7 +104,7 @@ body {
     }
 }
 .idioma-select{
-    color:#A0425B!important;
+    color:$color_rojo!important;
 }
 
 /* HEADER */
@@ -120,10 +126,10 @@ header{
     width: 60%;
 }
 .rojo{
-    color:#A0425B;
+    color:$color_rojo;
 }
 .verde{
-    color:#4B9C40
+    color:$color_verde;
 }
 
 /* CONTENEDOR PRINCIPAL */
@@ -149,7 +155,7 @@ header{
     position: relative;
     p{
         font-family: "Libreta";
-        color: rgb(51, 51, 124);
+        color: $color_boli;
     }
 }
 .lib_tit{
@@ -163,10 +169,8 @@ header{
     transform: rotate(-1.5deg);
 }
 
-
-
 .resultado{
     width: 50%;
     height: 100%;
-    background-color: #A0425B;
+    background-color: $color_rojo;
 }

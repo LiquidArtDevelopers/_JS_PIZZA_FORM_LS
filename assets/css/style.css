@@ -21,6 +21,7 @@
   src: url("../font/ShortStack-Regular.ttf");
 }
 
+/* VARIABLES */
 html {
   scroll-behavior: smooth;
 }
