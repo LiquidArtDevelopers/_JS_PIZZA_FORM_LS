@@ -1,26 +1,76 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
   outline: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
+/**Impotación de modulos**/
+/**Variables de colores**/
+/**Ventana modal para cookies**/
+.window {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 5px;
+  z-index: 999;
+}
+.window #cookies {
+  width: 600px;
+  height: 500px;
+  margin: auto;
+  margin-top: 15vh;
+  border: 5px solid #563f1b;
+  background-color: #f7f052;
+  color: #563f1b;
+  padding: 15px;
+}
+.window #cookies .btn-cookies {
+  background-color: #f28123;
+  border-color: #333;
+  color: #563f1b;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px;
+}
+.window #cookies a {
+  display: block;
+  width: 80%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  color: #38726c;
+}
+
+/**Media Screen - Responsive**/
+@media screen and (max-width: 380px) {
+  #cookies {
+    width: 300px;
+    height: 400px;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+}
+/************************/
 @font-face {
   font-family: "Piazzere";
   src: url("../font/MeriendaOne-Regular.ttf");
 }
-
 @font-face {
   font-family: "Idioma";
   src: url("../font/UnicaOne-Regular.ttf");
 }
-
 @font-face {
   font-family: "Libreta";
   src: url("../font/ShortStack-Regular.ttf");
 }
-
 /* VARIABLES */
 html {
   scroll-behavior: smooth;
@@ -29,19 +79,10 @@ html {
 body {
   background-image: url("../img/Entramado_verde.svg");
   background-attachment: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 /* NAVEGADOR */
@@ -52,44 +93,28 @@ body {
   background-color: rgba(0, 0, 0, 0);
   position: fixed;
   z-index: 20;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-transition: 400ms ease-in-out;
+  flex-direction: row;
   transition: 400ms ease-in-out;
 }
-
 #navegador a {
   color: white;
   text-decoration: none;
 }
-
 #navegador a:visited {
   color: white;
 }
-
 #navegador a:hover {
   color: #A0425B;
 }
 
 .nav-logo {
   width: 20%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  align-items: center;
+  justify-content: flex-start;
   padding-left: 10px;
 }
-
 .nav-logo img {
   height: 100px;
 }
@@ -102,65 +127,38 @@ body {
 
 .nav-enlaces {
   width: 65%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
   color: white;
   font-family: "Piazzere";
   font-size: 2rem;
 }
-
 .nav-enlaces ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   list-style-type: none;
-  -webkit-column-gap: 40px;
-          column-gap: 40px;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
 }
 
 .nav-idiomas {
   width: 15%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  align-items: center;
+  justify-content: flex-end;
   padding-right: 20px;
   font-family: "Idioma";
   font-size: 1.2em;
   color: white;
 }
-
 .nav-idiomas ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   list-style-type: none;
-  -webkit-column-gap: 10px;
-          column-gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
 }
 
 .idioma-select {
@@ -172,19 +170,11 @@ header {
   max-width: 1920px;
   width: 100%;
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: row;
+  justify-content: center;
   position: relative;
 }
-
 header img {
   width: 100%;
 }
@@ -212,38 +202,20 @@ header img {
 /* ZONA PEDIDO */
 #pedido {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .cuaderno {
   width: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
-
 .cuaderno p {
   font-family: "Libreta";
   color: #33337c;
@@ -253,7 +225,6 @@ header img {
   position: absolute;
   top: 120px;
   font-size: 1.6rem;
-  -webkit-transform: rotate(-1.5deg);
   transform: rotate(-1.5deg);
 }
 
@@ -261,5 +232,4 @@ header img {
   width: 50%;
   height: 100%;
   background-color: #A0425B;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
