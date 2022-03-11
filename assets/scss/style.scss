@@ -26,84 +26,77 @@ body {
     width: 100%;
     height: 100px;
     background-color: rgba(0, 0, 0, 0);
-
     position: fixed;
     z-index: 20;
-
     display: flex;
     flex-direction: row;
-
     transition: 400ms ease-in-out;
+    a{
+        color: white;
+        text-decoration: none;
+        :visited{
+            color: white;
+        }
+        :hover{
+            color:#4B9C40;
+        }
+    }
 }
 .nav-logo{
     width: 20%;
-
     display: flex;
     align-items: center;
-    justify-content:flex-start;
-    
+    justify-content:flex-start;    
     padding-left: 10px;
+    img{
+        height: 100px;
+    }
 }
 .logo-peq{
     font-family: "Piazzere";   
     color: white;
     font-size: 2rem;
 }
-.nav-logo img{
-    height: 100px;
-}
+
 .nav-enlaces{
     width: 65%;
-
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content:flex-end;
-    
+    justify-content:flex-end;    
     color: rgb(255, 255, 255);
     font-family: "Unica";
     font-size: 2rem;
+    ul{
+        display:flex;
+        flex-direction: row;
+        list-style-type: none;
+        column-gap: 40px;    
+    }
 }
-.nav-enlaces ul{
-    display:flex;
-    flex-direction: row;
-    list-style-type: none;
-    column-gap: 40px;
-    
-}
+
 .nav-idiomas{
     width: 15%;
-
     display: flex;
     align-items: center;
     justify-content:flex-end;
-
     padding-right: 20px;
-
     font-family: sans-serif;
     font-size: 1em;
     color: white;
+    ul{
+        display:flex;
+        flex-direction: row;
+        list-style-type: none;
+        column-gap: 10px;
+    }
 }
-.nav-idiomas ul{
-    display:flex;
-    flex-direction: row;
-    list-style-type: none;
-    column-gap: 10px;
-}
+
 .idioma-select{
     color:#4B9C40!important;
 }
 
-a{
-    color: white;
-    text-decoration: none;
-}
-a:visited{
-    color: white;
-}
-a:hover{
-    color:#4B9C40;
-}
+
 /* header */
 header{
     max-width: 1920px;
