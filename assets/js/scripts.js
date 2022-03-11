@@ -37,7 +37,16 @@ function resetear(){
 
 //función en la que cambiamos el idioma
 function cambio(){
-
+      //VARIABLES
+  let idioma="";
+  //Comprobamos que exista la cookie
+  if (getCookie("idiomas")!="") {
+      idioma=getCookie("idiomas");
+      console.log("cookie de idioma establecida en: "+ idioma);
+  } else {
+      setCookie("idiomas", "es", 90);
+      idioma="es";
+  }
     //en función de la var, construimos los objetos en uno u otro idioma
     switch(idioma){
         case "eu":
