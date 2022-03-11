@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+@import "form";
+@font-face {
+    font-family: "Piazzere";
+    src: url("../font/MeriendaOne-Regular.ttf");
+}
+@font-face {
+    font-family: "Idioma";
+    src: url("../font/UnicaOne-Regular.ttf");
+}
+@font-face {
+    font-family: "Libreta";
+    src: url("../font/ShortStack-Regular.ttf");
+}
+
+/* VARIABLES */
+$color_boli:rgb(51, 51, 124);
+$color_rojo: #A0425B;
+$color_verde: #4B9C40;
+
+html{
+    scroll-behavior: smooth;
+}
+body {
+ background-image: url("../img/Entramado_verde.svg");
+ background-attachment: fixed;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: flex-start;
+}
+/* NAVEGADOR */
+#navegador{
+    max-width: 1920px;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0);
+    position: fixed;
+    z-index: 20;
+    display: flex;
+    flex-direction: row;
+    transition: 400ms ease-in-out;
+    a{
+        color: white;
+        text-decoration: none;
+    }
+    a:visited{
+        color: white;
+    }
+    a:hover{
+        color:#A0425B;
+    }
+}
+.nav-logo{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;    
+    padding-left: 10px;
+    img{
+        height: 100px;
+    }
+}
+.logo-peq{
+    font-family: "Piazzere";   
+    color: white;
+    font-size: 2rem;
+}
+.nav-enlaces{
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:flex-end;    
+    color: rgb(255, 255, 255);
+    font-family: "Piazzere";
+    font-size: 2rem;
+    ul{
+        display:flex;
+        flex-direction: row;
+        list-style-type: none;
+        column-gap: 40px;    
+    }
+}
+.nav-idiomas{
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+    padding-right: 20px;
+    font-family: "Idioma";
+    font-size: 1.2em;
+    color: white;
+    ul{
+        display:flex;
+        flex-direction: row;
+        list-style-type: none;
+        column-gap: 10px;
+    }
+}
+.idioma-select{
+    color:$color_rojo!important;
+}
+
+/* HEADER */
+header{
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    img{
+        width: 100%;
+    }
+}
+.logo-principal{
+    position: absolute;
+    top: 10vh;
+    width: 60%;
+}
+.rojo{
+    color:$color_rojo;
+}
+.verde{
+    color:$color_verde;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.contenedor_principal{
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* ZONA PEDIDO */
+#pedido{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+}
+.cuaderno{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    p{
+        font-family: "Libreta";
+        color: $color_boli;
+    }
+}
+.lib_tit{
+    position: absolute;
+    top: 120px;
+    font-size: 1.6rem;
+    -webkit-transform: rotate(-1.5deg); 
+    -moz-transform: rotate(-1.5deg); 
+    -ms-transform: rotate(-1.5deg); 
+    -o-transform: rotate(-1.5deg); 
+    transform: rotate(-1.5deg);
+}
+
+.resultado{
+    width: 50%;
+    height: 100%;
+    background-color: $color_rojo;
+}
