@@ -95,3 +95,26 @@
         top:1px;
     }
 }
+//Estilos para validación del formulario.
+
+.formulario__input-error{
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+}
+.formulario__input-activo{
+    display:block;
+}
+#formulario__mensaje-error{
+    background-color: rgba(255,0,0,.5);
+    padding: 15px;
+    margin-bottom: 7px;
+    display: none;
+}
+#formulario__mensaje-successful{
+    background-color: rgba(0,128,0,.5);
+    padding: 15px;
+    margin-top: 7px;
+    text-align: center;
+    display: none;
+}

@@ -58,29 +58,39 @@
                         <span class="text-name">Nombre</span>
                     </label>
                 </div>
+                <p class="formulario__input-error" id="name-error">El nombre tiene que ser de 4 a 16 dígitos y solo puede contener letras y espacios.</p>
                 <div class="form-group">
                     <input type="text" name="surname" id="surname" required>
                     <label for="surname" class="lb">
                         <span class="text-name">Apellidos</span>
                     </label>
                 </div>
+                <p class="formulario__input-error" id="surname-error">El apellido tiene que ser de 4 a 16 dígitos y solo puede contener letras y espacios.</p>
                 <div class="form-group">
                     <input type="tel" name="phone" id="phone" required>
                     <label for="phone" class="lb">
                         <span class="text-name">Teléfono</span>
                     </label>
                 </div>
+                <p class="formulario__input-error" id="phone-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
                 <div class="form-group">
                     <input type="email" name="email" id="email" required>
                     <label for="email" class="lb">
                         <span class="text-name">Correo electrónico</span>
                     </label>
                 </div>
+                <p class="formulario__input-error" id="email-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                 <div class="form-group-acept">
                     <input type="checkbox" name="acept" id="acept" required>
                     <span>Acepto la <a href="#">política y privacidad</a> del sitio.</span>
                 </div>
-                <a class="btn-submit">Enviar</a>
+                <div id="formulario__mensaje-error">
+                    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+                </div>
+                <button type="submit" class="btn-submit">Enviar</button>
+                <div id="formulario__mensaje-successful">
+                    <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+                </div>
             </form>
         </section>
     </main>
