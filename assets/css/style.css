@@ -77,6 +77,8 @@
 .form-group-acept {
   margin: 15px;
   margin-left: 0px;
+  position: relative;
+  display: block;
 }
 
 .btn-submit {
