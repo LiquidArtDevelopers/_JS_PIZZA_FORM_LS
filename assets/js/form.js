@@ -49,12 +49,12 @@ $formulario.addEventListener('submit',(e)=>{
     e.preventDefault();
     if(campo.name && campo.surname && campo.email && campo.phone){
          $formulario.reset();
-         document.getElementById('formulario__mensaje-error').classList.remove('formulario__input-activo');
-         ocument.getElementById('formulario__mensaje-successful').classList.add('formulario__input-activo');
+         document.getElementById('formulario__mensaje-error').style.display='none';
+         document.getElementById('formulario__mensaje-successful').style.display='block';
         setTimeout(() => {
-            document.getElementById('formulario__mensaje-successful').classList.remove('formulario__input-activo');;
+            document.getElementById('formulario__mensaje-successful').style.display='none';
         }, 5000);
     }else{
-        document.getElementById('formulario__mensaje-error').classList.add('formulario__input-activo');;
+        document.getElementById('formulario__mensaje-error').style.display='block';
     }
 });
