@@ -7,6 +7,31 @@
 }
 
 /**Impotación de modulos**/
+.preload {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #fff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-clip-path: circle(150% at 100% 0);
+          clip-path: circle(150% at 100% 0);
+  transition: -webkit-clip-path 0.8s ease-in-out;
+  transition: clip-path 0.8s ease-in-out;
+  transition: clip-path 0.8s ease-in-out, -webkit-clip-path 0.8s ease-in-out;
+  z-index: 100000;
+}
+
+/* #a79157 */
+.preload-hidden {
+  -webkit-clip-path: circle(0% at 100% 100%);
+          clip-path: circle(0% at 100% 100%);
+}
+
 .form {
   margin-top: 50px;
   margin-bottom: 50px;
