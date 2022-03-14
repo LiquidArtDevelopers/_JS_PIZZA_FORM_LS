@@ -1,6 +1,6 @@
 export default function componentes(){
     //Llamar a la ventana de cookies.
-    //llamarVentanaCookies();
+    llamarVentanaCookies();
 
     window.onscroll = function() {scrollFunction()};
 }
@@ -14,24 +14,6 @@ function scrollFunction() {
     }
 }
 
-//SCRIPT COOKIES------------------
-//Escucha el evento antes de cargar el contenido del documento html.
-addEventListener('DOMContentLoaded',()=>{
-    cambioIdioma();
-    llamarVentanaCookies();
-    //Escuchamos la selección de idioma
-    document.body.addEventListener("click", function(event){
-        if(event.target.classList.contains("idioma")){
-            /* //creamos la cookie del idioma
-            console.log("cookie creada: "+ event.target.id); */
-            setCookie("idiomas", event.target.id, 90);
-            var idioma = event.target.id
-            resetearIdioma()
-            cambioIdioma()
-        }
-    });
-window.onscroll = function() {scrollFunction()};
-});
 
 //Llama a la ventana modal de cookies.
 /**
