@@ -1,6 +1,6 @@
 export default function componentes(){
     //Llamar a la ventana de cookies.
-    llamarVentanaCookies();
+    //llamarVentanaCookies();
 
     window.onscroll = function() {scrollFunction()};
 }
