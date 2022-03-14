@@ -28,9 +28,11 @@ const llamarVentanaCookies=()=>{
                 <div class='cookies-text'>
                     <p>Utilizamos cookies propias y de terceros para mejorar nuestros servicios, elaborar información estadística, analizar sus hábitos de navegación e inferir grupos de interés. Esto nos permite personalizar el contenido que ofrecemos y mostrarle publicidad relacionada con sus preferencias. Adicionalmente,compartimos los análisis de navegación y los grupos de interés inferidos con terceros.</p>
                 </div>
-                <div  class='cookies-botton'>
-                    <span><a href="" class="btn">Configuración de las cookies</a>
-                </div>    
+                <div  class='cookies-elements'>
+                <a href="" class="btn"><span>></span>Configuración de las cookies</a>
+                    <a class='btn-cookies'>Aceptar</a>
+                    <span class='close'>X</span>
+                </div>
             </div>
          </div>
     `;
@@ -39,7 +41,7 @@ const llamarVentanaCookies=()=>{
     //Escuchamos el clck en el documento html.
     document.addEventListener('click',(e)=>{
         //Objetivos del evento click que coincidan con la clase '.btn'.
-        if(e.target.matches('.btn')){
+        if(e.target.matches('.btn-cookies') || e.target.matches('.close')){
             let $window_cookies=document.querySelector('.window');
         //Eliminamos el elemento div ('.window').
             $window_cookies.remove();
