@@ -1,6 +1,6 @@
 export default function componentes(){
     //Llamar a la ventana de cookies.
-    //llamarVentanaCookies();
+    llamarVentanaCookies();
 
     window.onscroll = function() {scrollFunction()};
 }
@@ -23,18 +23,16 @@ function scrollFunction() {
 */
 const llamarVentanaCookies=()=>{
     let contentWindowCookies=`
-            <div class="window">
-                    <div id="cookies">
-                    <h2>Política de cookies</h2>
-                    <h3>¿Para qué sirven las cookies?</h3>
-                    <p>Utilizamos cookies para permitirle visitar nuestro sitio web y utilizar sus funciones. 
-                    Algunas cookies son estrictamente necesarias para el funcionamiento de nuestro sitio web y no se pueden desactivar. Otras cookies (incluidas las cookies de terceros) nos ayudan a mejorar nuestro sitio web al proporcionarnos estadísticas o permitirnos mostrar anuncios que se correspondan con sus intereses. Estas cookies solo se almacenarán si hace clic en «Aceptar todas las cookies» o si permite su uso en la configuración de cookies. Puede cambiar sus preferencias en cualquier momento en el menú de configuración de las cookies.
-                        Asimismo, puede encontrar más información sobre nuestro uso de las cookies, así como el uso de las cookies de terceros por parte de nuestros socios, haciendo clic aquí: Política de privacidad</p>
-                        <a href="" class="btn btn-cookies">Aceptar todas las cookies</a>
-                        <a href="" class="btn btn-cookies">Rechazar las cookies no esenciales</a>
-                        <a href="" class="btn">Configuración de las cookies</a>
-                    </div>
+        <div class="window">
+            <div id="cookies">
+                <div class='cookies-text'>
+                    <p>Utilizamos cookies propias y de terceros para mejorar nuestros servicios, elaborar información estadística, analizar sus hábitos de navegación e inferir grupos de interés. Esto nos permite personalizar el contenido que ofrecemos y mostrarle publicidad relacionada con sus preferencias. Adicionalmente,compartimos los análisis de navegación y los grupos de interés inferidos con terceros.</p>
+                </div>
+                <div  class='cookies-botton'>
+                    <span><a href="" class="btn">Configuración de las cookies</a>
+                </div>    
             </div>
+         </div>
     `;
     //Pintamos en pantalla la ventana modal de cookies.
     document.body.insertAdjacentHTML('afterbegin',contentWindowCookies);
