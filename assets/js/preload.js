@@ -1,5 +1,5 @@
 export default function loadAnimation(){
-    addEventListener('load',()=>{
+    document.addEventListener('load',()=>{
         let preloadTemplate=`
         <div class="preload">
             <canvas id="pizza"></canvas>
