@@ -1,14 +1,3 @@
-/**Variables de colores**/
-$orange-cp:#f28123;
-$yellow-cp:#f7f052;
-$red-cp:#d34e24;
-$brown-cp:#563f1b;
-$green-cp:#38726c;
-$piel-cp:#d9780B;
-$fuxia-cp:#f01840;
-$purple-cp:#540BD9;
-$skyblue:#0cb0f2;
-
 /**Ventana modal para cookies**/
 @mixin windowModal{
     position: fixed;
@@ -20,36 +9,62 @@ $skyblue:#0cb0f2;
     z-index: 999;
 }
 .window{
-    @include windowModal();  
+    z-index:999;
     #cookies{
         display: flex;
         position: fixed;
         bottom: 0;
-        width: 100vw;
-        height: 10vh;
-        margin-top: 15vh;
-        background-color: $yellow-cp;
-        color: $brown-cp;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 20vh;
+        background-color: rgba(0,0,0,.8);
         padding: 15px;
         .cookies-text{
             width: 60%;
+            color:#fff;
+            font-family: 'Libreta';
         }
-        .btn-cookies{
-            background-color: $orange-cp;
-            border-color: #333;
-            color: $brown-cp;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 5px;
-        }
-        a{
-            width: 80%;
-            text-align: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            margin-right: auto;
-            margin-left: auto;
-            color: $green-cp;
+        .cookies-elements{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .btn-cookies{
+                cursor:pointer;
+                background-color:#77b55a;
+                background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+                border-radius: 6px;
+                text-shadow:0px 1px 0px #5b8a3c;
+                color:#f0f0f0;
+                text-decoration: none;
+                font-size: 18px;
+                font-weight: bold;
+                padding:6px 12px;
+                font-size: 'Time New Roman';
+            }
+            .close{
+                position: absolute;
+                cursor: pointer;
+                background-color: #f0f0f0d8;
+                border-radius: 50%;
+                top:0;
+                right:0;
+                color:#000;
+                padding: 7px;
+                margin: 10px;
+            }
+            a{
+                text-decoration: none;
+                font-size: 18px;
+                color:#fff;
+                margin: 7px;
+                &:hover{
+                    color: #f0f0f0;
+                }
+                span{
+                    margin: 5px;
+                }
+            }
         }
     }
 }
