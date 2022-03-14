@@ -7,7 +7,7 @@
           box-sizing: border-box;
 }
 
-/**Impotación de modulos**/
+/**Impotación de módulos**/
 .preload {
   position: fixed;
   top: 0;
@@ -695,6 +695,10 @@ header img {
 
 #sel01, #sel02, #ing01, #ing02, #ing03, #ing04, #ing05, #ing06 {
   position: absolute;
+}
+
+.nota {
+  cursor: pointer;
 }
 
 .resultado {

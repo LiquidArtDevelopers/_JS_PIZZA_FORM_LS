@@ -23,20 +23,10 @@ export default function idiomas(){
     document.querySelector("#es").classList.remove("idioma-select");
     document.querySelector("#en").classList.remove("idioma-select");
 }
-let idioma="";
+/* let idioma=""; */
 
 //función en la que cambiamos el idioma
 function cambioIdioma(){
-<<<<<<< HEAD
-  //Comprobamos que exista la cookie
-  if (getCookie("idiomas")!="") {
-      idioma=getCookie("idiomas");
-      console.log("cookie de idioma establecida en: "+ idioma);
-  } else {
-      setCookie("idiomas", "es", 90);
-      idioma="es";
-  }
-=======
 //Comprobamos que exista la cookie
 if (getCookie("idiomas")!="") {
     idioma=getCookie("idiomas");
@@ -45,7 +35,6 @@ if (getCookie("idiomas")!="") {
     setCookie("idiomas", "es", 90);
     idioma="es";
 }
->>>>>>> c4ee4a1e360c1f32d1c42f9532d4813fc5a43963
     //en función de la var, construimos los objetos en uno u otro idioma
     switch(idioma){
         case "eu":
