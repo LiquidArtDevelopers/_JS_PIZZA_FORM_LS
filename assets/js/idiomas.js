@@ -6,11 +6,10 @@ function resetearIdioma(){
     document.querySelector("#es").classList.remove("idioma-select");
     document.querySelector("#en").classList.remove("idioma-select");
 }
+let idioma="";
 
 //función en la que cambiamos el idioma
 function cambioIdioma(){
-      //VARIABLES
-  let idioma="";
   //Comprobamos que exista la cookie
   if (getCookie("idiomas")!="") {
       idioma=getCookie("idiomas");

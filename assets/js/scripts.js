@@ -19,7 +19,7 @@ addEventListener('DOMContentLoaded',()=>{
             /* //creamos la cookie del idioma
             console.log("cookie creada: "+ event.target.id); */
             setCookie("idiomas", event.target.id, 90);
-            idioma = event.target.id
+            var idioma = event.target.id
             resetearIdioma()
             cambioIdioma()
         }
@@ -58,7 +58,7 @@ function getCookie(cname) {
  * @element $window_cookies- Elemento 'div'.
  * @event eventListener-click.
 */
-const llamarVentanaCookies=()=>{
+/* const llamarVentanaCookies=()=>{
     let contentWindowCookies=`
             <div class="window">
                     <div id="cookies">
@@ -86,4 +86,4 @@ const llamarVentanaCookies=()=>{
             e.target.removeEventListener('click',e.preventDefault(),true);
         }
     });
-}
+} */
