@@ -41,8 +41,7 @@
 }
 
 .form {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin: 50px auto;
   width: 40vw;
   padding: 50px;
   background-color: rgba(0, 0, 0, 0.5);
@@ -208,13 +207,10 @@
   padding: 15px;
 }
 
-<<<<<<< HEAD
 .window #cookies .cookies-text {
   width: 60%;
 }
 
-=======
->>>>>>> dada11f85d91dde86ec34d35a630d9269f00392f
 .window #cookies .btn-cookies {
   background-color: #f28123;
   border-color: #333;
@@ -483,11 +479,6 @@ header img {
   position: relative;
 }
 
-<<<<<<< HEAD
-.cuaderno p {
-  font-family: "Libreta";
-  color: #33337c;
-=======
 .contenido-cuaderno {
   width: 100%;
   max-width: 480px;
@@ -508,7 +499,6 @@ header img {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
->>>>>>> dada11f85d91dde86ec34d35a630d9269f00392f
 }
 
 .contenido-cuaderno p {
@@ -534,11 +524,6 @@ header img {
 .part01 img {
   position: absolute;
   top: 120px;
-<<<<<<< HEAD
-  font-size: 1.6rem;
-  -webkit-transform: rotate(-1.5deg);
-  transform: rotate(-1.5deg);
-=======
   left: 60px;
 }
 
@@ -710,15 +695,11 @@ header img {
 
 #sel01, #sel02, #ing01, #ing02, #ing03, #ing04, #ing05, #ing06 {
   position: absolute;
->>>>>>> dada11f85d91dde86ec34d35a630d9269f00392f
 }
 
 .resultado {
   width: 50%;
   height: 100%;
-<<<<<<< HEAD
-  background-color: #A0425B;
-=======
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -728,6 +709,5 @@ header img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
->>>>>>> dada11f85d91dde86ec34d35a630d9269f00392f
 }
 /*# sourceMappingURL=style.css.map */
