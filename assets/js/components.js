@@ -1,3 +1,9 @@
+export default function componentes(){
+    //Llamar a la ventana de cookies.
+    //llamarVentanaCookies();
+
+    window.onscroll = function() {scrollFunction()};
+}
 
 //SCRIPT SCROLL NAV-----------------
 function scrollFunction() {
@@ -8,6 +14,7 @@ function scrollFunction() {
     }
 }
 
+<<<<<<< HEAD:assets/js/scripts.js
 //SCRIPT COOKIES------------------
 //Escucha el evento antes de cargar el contenido del documento html.
 addEventListener('DOMContentLoaded',()=>{
@@ -26,33 +33,10 @@ addEventListener('DOMContentLoaded',()=>{
     });
 window.onscroll = function() {scrollFunction()};
 });
+=======
+>>>>>>> c4ee4a1e360c1f32d1c42f9532d4813fc5a43963:assets/js/components.js
 
-
-//creamos cookie
-function setCookie(cname, cvalue, exdays) {
-    const d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    let expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-//recogemos cookie
-function getCookie(cname) {
-    let name = cname + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(';');
-    for(let i = 0; i <ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-
-//Arrow Function - Llama a la ventana modal de cookies.
+//Llama a la ventana modal de cookies.
 /**
  * @string contentWindowCookies- template para la ventana de coockies.
  * @element $window_cookies- Elemento 'div'.
