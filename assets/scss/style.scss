@@ -9,6 +9,7 @@
 @import 'preload';
 @import "form";
 @import 'modalWindow';
+
 /************************/
 
 @font-face {
@@ -158,25 +159,155 @@ header{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: relative;    
+}
+.contenido-cuaderno{
+    width: 100%;
+    max-width: 480px;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
     p{
         font-family: "Libreta";
         color: $color_boli;
+        font-size: 1.6rem;
+        -webkit-transform: rotate(-1.5deg); 
+        -moz-transform: rotate(-1.5deg); 
+        -ms-transform: rotate(-1.5deg); 
+        -o-transform: rotate(-1.5deg); 
+        transform: rotate(-1.5deg);
+    }    
+}
+.part01{
+    position: relative;
+    width: 100%;
+    height: 150px;
+    p{
+        position: absolute;
+        top: 100px;
+        left: 80px;        
+    }
+    img{
+        position: absolute;
+        top:120px;
+        left: 60px;
     }
 }
-.lib_tit{
-    position: absolute;
-    top: 120px;
-    font-size: 1.6rem;
-    -webkit-transform: rotate(-1.5deg); 
-    -moz-transform: rotate(-1.5deg); 
-    -ms-transform: rotate(-1.5deg); 
-    -o-transform: rotate(-1.5deg); 
-    transform: rotate(-1.5deg);
+.part02{
+    position: relative;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    img{
+        position: absolute;
+        top: 33px;
+    }    
 }
+.tamano{
+    position: absolute;
+    top: 15px;
+    left: 30px;
+}
+.part02-opc{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    top: 80px;
+    margin-left: 5px;
+}
+.part03{    
+    position: relative;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    img{
+        position: absolute;
+        top: 30px;
+    }      
+}
+.masa{
+    position: absolute;
+    top: 15px;
+    left: 30px;
+}
+.part03-opc{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    top: 80px;    
+    margin-left: 5px;
+}
+
+.part04{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    img{
+        position: absolute;
+        top: 35px;
+        left: 20px
+    }     
+}
+.ingredientes{
+    position: absolute;
+    top: 15px;
+    left: 30px;
+}
+.part04-opc01{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    top: 80px;    
+    padding-right: 20px;
+    padding-left: 30px;
+}
+.part04-opc02{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    top: 200px;
+    padding-left: 10px;
+}
+.selecciones{
+    position: absolute;    
+}
+#sel01,#sel02,#ing01,#ing02,#ing03,#ing04,#ing05,#ing06{
+    position: absolute;
+}
+
+
+
 
 .resultado{
     width: 50%;
     height: 100%;
-    background-color: $color_rojo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
