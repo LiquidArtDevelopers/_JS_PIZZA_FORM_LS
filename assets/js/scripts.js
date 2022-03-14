@@ -24,7 +24,7 @@ addEventListener('DOMContentLoaded',()=>{
             cambioIdioma()
         }
     });
-window.onscroll = function() {scrollFunction()};  
+window.onscroll = function() {scrollFunction()};
 });
 
 
@@ -77,13 +77,13 @@ const llamarVentanaCookies=()=>{
     document.body.insertAdjacentHTML('afterbegin',contentWindowCookies);
     //Escuchamos el clck en el documento html.
     document.addEventListener('click',(e)=>{
-        //Detenemos el evento burbuja.
-        e.preventDefault();
         //Objetivos del evento click que coincidan con la clase '.btn'.
         if(e.target.matches('.btn')){
             let $window_cookies=document.querySelector('.window');
         //Eliminamos el elemento div ('.window').
             $window_cookies.remove();
+        //Detenemos el evento burbuja.
+            e.target.removeEventListener('click',e.preventDefault(),true);
         }
     });
 }
