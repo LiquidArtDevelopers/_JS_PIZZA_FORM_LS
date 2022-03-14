@@ -14,7 +14,6 @@ function scrollFunction() {
     }
 }
 
-<<<<<<< HEAD:assets/js/scripts.js
 //SCRIPT COOKIES------------------
 //Escucha el evento antes de cargar el contenido del documento html.
 addEventListener('DOMContentLoaded',()=>{
@@ -33,8 +32,6 @@ addEventListener('DOMContentLoaded',()=>{
     });
 window.onscroll = function() {scrollFunction()};
 });
-=======
->>>>>>> c4ee4a1e360c1f32d1c42f9532d4813fc5a43963:assets/js/components.js
 
 //Llama a la ventana modal de cookies.
 /**
@@ -42,7 +39,7 @@ window.onscroll = function() {scrollFunction()};
  * @element $window_cookies- Elemento 'div'.
  * @event eventListener-click.
 */
-/* const llamarVentanaCookies=()=>{
+const llamarVentanaCookies=()=>{
     let contentWindowCookies=`
             <div class="window">
                     <div id="cookies">
@@ -70,4 +67,4 @@ window.onscroll = function() {scrollFunction()};
             e.target.removeEventListener('click',e.preventDefault(),true);
         }
     });
-} */
+}
