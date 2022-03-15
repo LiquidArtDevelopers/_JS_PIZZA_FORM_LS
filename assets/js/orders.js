@@ -31,7 +31,7 @@ function comanda(){
             //Quitamos ralla de ingrediente
             console.log("Quitamos ingrediente: "+ event.target.id);
             document.querySelector(`#${event.target.id}`).remove();
-            //Quitamos topping
+            //Quitamos topping            
             let idt = event.target.id.split("i").join("t");
             document.querySelector(`#${idt}`).remove();
             contador-=1;
@@ -163,9 +163,9 @@ function insertar_comanda(com){
                 contador+=1
                 console.log(contador)
                 if(contador==3){
-                    topping+=`<img id="t10" src="assets/img/queso-rallado.png" alt="">`;
+                    let topping2=`<img id="t10" src="assets/img/queso-rallado.png" alt="">`;
                     indexxx=11;
-                    resultado.insertAdjacentHTML('beforeend',topping);
+                    resultado.insertAdjacentHTML('beforeend',topping2);
                     document.querySelector("#t10").style.display="block";
                     document.querySelector("#t10").style.zIndex=indexxx;
                 }              
