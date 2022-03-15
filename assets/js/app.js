@@ -8,7 +8,7 @@ const d=document;
 
 d.addEventListener('DOMContentLoaded',()=>{
     //Llamar a la animación de carga.
-    loadAnimation();
+    //loadAnimation();
     //Cambio de idiomas y cookies.
     idiomas();
     //Llamar a componentes.

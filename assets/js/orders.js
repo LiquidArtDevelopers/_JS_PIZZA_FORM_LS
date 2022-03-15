@@ -95,11 +95,13 @@ function insertar_comanda(com){
             nota2Sel.style.display="block";
             nota2Sel.style.top="340px";
             nota2Sel.style.left="125px";
+            ordenPedido['tipo']  = com;
             break;
         case "cqu":
             nota2Sel.style.display="block";
             nota2Sel.style.top="340px";
             nota2Sel.style.left="299px";
+            ordenPedido['tipo']  = com;
             break;
         //marcamos (o desmarcamos)m ingredientes
         default:
@@ -113,7 +115,8 @@ function insertar_comanda(com){
                         topP ="445px";
                         leftP = "45px";                        
                         indexxx=2;
-                        topping+=`<img id="t1" src="assets/img/extra-queso.png" alt="">`;                        
+                        topping+=`<img id="t1" src="assets/img/extra-queso.png" alt="">`;
+                                           
                         break;
                     case "2":
                         topP ="445px";
@@ -187,6 +190,8 @@ function insertar_comanda(com){
                 }              
             }             
     }
+
+    console.log(ordenPedido);
 }
 
 

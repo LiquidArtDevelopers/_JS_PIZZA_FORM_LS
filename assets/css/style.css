@@ -511,7 +511,7 @@ header img {
 
 /* CONTENEDOR PRINCIPAL */
 .contenedor_principal {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -527,8 +527,8 @@ header img {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-column-gap: 80px;
-          column-gap: 80px;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -819,8 +819,8 @@ header img {
 #resultado {
   width: 500px;
   height: 500px;
-  min-width: 500px;
-  max-width: 500px;
+  /* min-width: 500px;
+    max-width: 500px; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
