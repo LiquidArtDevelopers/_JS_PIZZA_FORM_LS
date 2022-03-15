@@ -38,11 +38,13 @@ const llamarVentanaCookies=()=>{
     `;
     //Pintamos en pantalla la ventana modal de cookies.
     document.body.insertAdjacentHTML('afterbegin',contentWindowCookies);
+
+    let $window_cookies=document.querySelector('.window');
+    /* $window_cookies.classList.toggle('is-active'); */
     //Escuchamos el clck en el documento html.
     document.addEventListener('click',(e)=>{
         //Objetivos del evento click que coincidan con la clase '.btn'.
         if(e.target.matches('.btn-cookies') || e.target.matches('.close')){
-            let $window_cookies=document.querySelector('.window');
         //Eliminamos el elemento div ('.window').
             $window_cookies.remove();
         //Detenemos el evento burbuja.
