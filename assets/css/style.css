@@ -525,11 +525,17 @@ header img {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-column-gap: 80px;
+          column-gap: 80px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: relative;
 }
 
 .cuaderno {
@@ -811,20 +817,43 @@ header img {
 }
 
 #resultado {
-  width: 50%;
-  height: 100%;
+  width: 500px;
+  height: 500px;
+  min-width: 500px;
+  max-width: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 #resultado img {
   position: absolute;
+}
+
+#precio {
+  position: absolute;
+  top: 500px;
+  right: 100px;
+}
+
+#precio p {
+  font-family: "Piazzere";
+  color: #A0425B;
+  font-size: 12vw;
+}
+
+#precio span {
+  font-size: 6vw;
 }
 /*# sourceMappingURL=style.css.map */
