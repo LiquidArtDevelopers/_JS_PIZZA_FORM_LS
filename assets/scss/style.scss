@@ -33,7 +33,7 @@ $color_verde: #4B9C40;
 html{
     scroll-behavior: smooth;
 }
-@mixin body{
+@mixin fondo{
     background-image: url("../img/Entramado_verde.svg");
     background-attachment: fixed;
     display: flex;
@@ -41,8 +41,11 @@ html{
     align-items: center;
     justify-content: flex-start;
 }
+body{
+    @include fondo
+}
 .preload{ 
-    @include body;
+    @include fondo;
     justify-content: center;
 }
 /* NAVEGADOR */
