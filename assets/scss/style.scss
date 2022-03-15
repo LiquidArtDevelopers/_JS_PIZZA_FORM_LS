@@ -157,7 +157,9 @@ header{
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
+    flex-wrap: wrap;
+    column-gap: 80px;
+    justify-content: center;
     align-items: center;
 }
 .cuaderno{
@@ -337,11 +339,17 @@ header{
     position: absolute;
 }
 #resultado{
-    width: 50%;
-    height: 100%;
+    width: 500px;
+    height: 500px;
+    min-width: 500px;
+    max-width: 500px;
+    /* width: 50%;
+    height: 100%; */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
     img{
         position: absolute;
     }  
