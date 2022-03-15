@@ -201,6 +201,8 @@ select:-webkit-autofill:focus {
 /**Ventana modal para cookies**/
 .window {
   z-index: 999;
+  /* transform: translate(0,-100%); */
+  transition: transform 0.3s ease;
 }
 
 .window #cookies {
@@ -208,6 +210,7 @@ select:-webkit-autofill:focus {
   display: -ms-flexbox;
   display: flex;
   position: fixed;
+  flex-wrap: wrap;
   bottom: 0;
   left: 0;
   right: 0;
@@ -227,6 +230,11 @@ select:-webkit-autofill:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
+  flex-grow: 2;
+  justify-content: space-around;
+  align-items: center;
+=======
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-flex: 2;
@@ -235,6 +243,7 @@ select:-webkit-autofill:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+>>>>>>> 2a2ad4fcc70cc66bee58730fcbb2e13fd87c7762
 }
 
 .window #cookies .cookies-elements .btn-cookies {
@@ -289,6 +298,12 @@ select:-webkit-autofill:focus {
     overflow-x: hidden;
   }
 }
+<<<<<<< HEAD
+.window.is-active {
+  transform: translate(0, 0);
+}
+=======
+>>>>>>> 2a2ad4fcc70cc66bee58730fcbb2e13fd87c7762
 
 /************************/
 @font-face {
