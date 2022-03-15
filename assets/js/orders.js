@@ -38,6 +38,7 @@ function insertar_comanda(com){
     const nota1Sel= document.querySelector(".nota1Sel");
     const nota2Sel= document.querySelector(".nota2Sel");
     const selecciones = document.querySelector("#selecciones")
+    const resultado = document.querySelector("#resultado")
     switch(com){
         //marcamos tamaño
         case "peq":
@@ -80,7 +81,7 @@ function insertar_comanda(com){
                     case "1":
                         topP ="445px";
                         leftP = "45px";
-                        topping+=``;
+                        topping+=`<img id="t1" src="assets/img/extra-queso.png" alt="">`;
                         break;
                     case "2":
                         topP ="445px";
@@ -119,10 +120,11 @@ function insertar_comanda(com){
                 //Insertamos HTML y cambiamos Style
                 etiquetas+=`<img id="i${com}" src="assets/img/select-ing.png" class="nota3Sel${com} nota3Sel" alt="">`            
                 selecciones.insertAdjacentHTML('beforeend',etiquetas);
-                document.querySelector(`.nota3Sel${com}`).insertAdjacentHTML('beforeend',etiquetas);            
                 document.querySelector(`.nota3Sel${com}`).style.display="block";
                 document.querySelector(`.nota3Sel${com}`).style.top=topP;
                 document.querySelector(`.nota3Sel${com}`).style.left=leftP;
+
+                resultado.insertAdjacentElement('beforeend',topping);
 
             }
 

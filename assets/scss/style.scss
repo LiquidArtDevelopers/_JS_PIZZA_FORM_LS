@@ -329,7 +329,10 @@ header{
     display: none;
     position: absolute;
 }
-.resultado{
+#t1, #t2, #t3, #t4, #t5, #t6, #t7, #t8, #t9{
+    display: none;
+}
+#resultado{
     width: 50%;
     height: 100%;
     display: flex;
