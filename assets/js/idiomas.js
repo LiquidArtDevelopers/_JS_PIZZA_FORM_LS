@@ -71,7 +71,7 @@ if (getCookie("idiomas")!="") {
     }
     console.log("cookie de idioma establecida en: "+ idioma);
 }
-//SCRIPT COOKIES------------------
+/* //SCRIPT COOKIES------------------
 
 //creamos cookie
 function setCookie(cname, cvalue, exdays) {
@@ -95,4 +95,4 @@ function getCookie(cname) {
         }
     }
     return "";
-}
+} */
