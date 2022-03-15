@@ -237,8 +237,6 @@ function insertar_comanda(com){
 }
 
 function calcTicket(){
-
-    
        
     let sum = 0
     for (let i = 0; i < ticket.length; i++) {
@@ -258,10 +256,6 @@ function calcTicket(){
         eur = String(sum).substring(0,pos);
         cent = String(sum).substring(pos+1,pos+2)+"0";
     }
-
-
-   
-    
 
     console.log("Total: "+sum+" Euros: "+eur+" Cent: "+cent)
     
