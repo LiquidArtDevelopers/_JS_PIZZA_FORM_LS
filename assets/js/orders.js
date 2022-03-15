@@ -1,10 +1,23 @@
+var contador = 0;
 
-export default function pedido(){
+//creamos un objeto pedido
+var ordenPedido={
+    masa:"",
+    tipo:"",
+    topping:[],
+    socio:0,
+    precio:0,
+    direccion:"",
+    telefono:"",
+    email:""
+}
+
+export default function pedido(){    
     comanda();    
 }
 
-function comanda(){
-    
+
+function comanda(){    
     //escuchar la clase part02-opc
     document.body.addEventListener("click", function(event){
         if(event.target.classList.contains("nota1")){        
@@ -26,9 +39,19 @@ function comanda(){
     })
     //si hay click en la marca de ingrediente seleccionado, quitamos html de la marca
     document.body.addEventListener("click", function(event){
-        if(event.target.classList.contains("nota3Sel")){        
+        if(event.target.classList.contains("nota3Sel")){
+            //Quitamos ralla de ingrediente
             console.log("Quitamos ingrediente: "+ event.target.id);
-            document.querySelector(`#${event.target.id}`).remove()
+            document.querySelector(`#${event.target.id}`).remove();
+            //Quitamos topping            
+            let idt = event.target.id.split("i").join("t");
+            document.querySelector(`#${idt}`).remove();
+            contador-=1;
+            console.log(contador);
+            //si existe topping de queso rallado y el contador es =< que 2, quitamos el queso-rallado
+            if(contador<=2 && document.querySelector(`#t10`)!=null){
+                document.querySelector(`#t10`).remove();
+            }   
         }
     })  
 }
@@ -39,28 +62,34 @@ function insertar_comanda(com){
     const nota2Sel= document.querySelector(".nota2Sel");
     const selecciones = document.querySelector("#selecciones");
     const resultado = document.querySelector("#resultado");
+    
+    contador=Number(contador);
     switch(com){
         //marcamos tamaño
         case "peq":
             nota1Sel.style.display="block";
             nota1Sel.style.top="205px";
             nota1Sel.style.left="19px";
+            ordenPedido['masa']  = com;
             break;
         case "med":
             nota1Sel.style.display="block";
             nota1Sel.style.top="205px";
             nota1Sel.style.left="160px";
+            ordenPedido['masa']  = com;
             break;
         case "fam":
             nota1Sel.style.display="block";
             nota1Sel.style.top="202px";
             nota1Sel.style.left="312px";
+            ordenPedido['masa']  = com;
             break;
         //marcamos tipo de masa
         case "fin":
             nota2Sel.style.display="block";
             nota2Sel.style.top="340px";
             nota2Sel.style.left="10px";
+            ordenPedido['tipo']  = com;
             break;        
         case "gru":
             nota2Sel.style.display="block";
@@ -134,8 +163,7 @@ function insertar_comanda(com){
                         indexxx=9;
                         topping+=`<img id="t9" src="assets/img/bacon.png" alt="">`;
                         break;                    
-                }
-                
+                }                
                 //Insertamos HTML y cambiamos Style de las marcas
                 etiquetas+=`<img id="i${com}" src="assets/img/select-ing.png" class="nota3Sel${com} nota3Sel" alt="">`            
                 selecciones.insertAdjacentHTML('beforeend',etiquetas);
@@ -147,15 +175,20 @@ function insertar_comanda(com){
                 resultado.insertAdjacentHTML('beforeend',topping);
                 document.querySelector(`#t${com}`).style.display="block";
                 document.querySelector(`#t${com}`).style.zIndex=indexxx;
-                
-            }
-
-
-             
-                
-             
+                console.log();
+                contador+=1
+                console.log(contador)
+                if(contador==3){
+                    let topping2=`<img id="t10" src="assets/img/queso-rallado.png" alt="">`;
+                    indexxx=11;
+                    resultado.insertAdjacentHTML('beforeend',topping2);
+                    document.querySelector("#t10").style.display="block";
+                    document.querySelector("#t10").style.zIndex=indexxx;
+                }              
+            }             
     }
 }
+
 
 
 

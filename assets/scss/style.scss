@@ -157,8 +157,11 @@ header{
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
-    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 80px;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
 }
 .cuaderno{
     width: 500px;
@@ -332,17 +335,34 @@ header{
     display: none;
     position: absolute;
 }
-#t1, #t2, #t3, #t4, #t5, #t6, #t7, #t8, #t9{
+#t1, #t2, #t3, #t4, #t5, #t6, #t7, #t8, #t9, #10{
     display: none;
     position: absolute;
 }
 #resultado{
-    width: 50%;
-    height: 100%;
+    width: 500px;
+    height: 500px;
+    min-width: 500px;
+    max-width: 500px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
     img{
         position: absolute;
+    }  
+}
+#precio{    
+    position:absolute;
+    top: 500px;
+    right: 100px;
+    p{
+        font-family: "Piazzere";    
+        color: $color_rojo;
+        font-size: 12vw;
+    }
+    span{
+        font-size: 6vw;
     }  
 }

@@ -27,7 +27,8 @@
         }
         .cookies-elements{
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
+            flex-grow: 2;
             align-items: center;
             .btn-cookies{
                 cursor:pointer;
@@ -41,6 +42,7 @@
                 font-weight: bold;
                 padding:6px 12px;
                 font-size: 'Time New Roman';
+                margin: 20px;
             }
             .close{
                 position: absolute;
