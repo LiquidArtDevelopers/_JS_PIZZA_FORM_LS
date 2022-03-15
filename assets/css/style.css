@@ -786,6 +786,7 @@ header img {
 
 #t1, #t2, #t3, #t4, #t5, #t6, #t7, #t8, #t9 {
   display: none;
+  position: absolute;
 }
 
 #resultado {
@@ -800,6 +801,7 @@ header img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 #resultado img {

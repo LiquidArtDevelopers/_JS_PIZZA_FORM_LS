@@ -331,6 +331,7 @@ header{
 }
 #t1, #t2, #t3, #t4, #t5, #t6, #t7, #t8, #t9{
     display: none;
+    position: absolute;
 }
 #resultado{
     width: 50%;
@@ -338,6 +339,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     img{
         position: absolute;
     }  

@@ -76,44 +76,53 @@ function insertar_comanda(com){
         default:
             //si no existe, metemos            
             if(document.querySelector(`.nota3Sel${com}`)==null){
-                let topP = "",leftP ="", etiquetas="", topping="";
+                let topP = "",leftP ="", etiquetas="", topping="", indexZ="";
                 switch(com){
                     case "1":
                         topP ="445px";
                         leftP = "45px";
                         topping+=`<img id="t1" src="assets/img/extra-queso.png" alt="">`;
+                        indexZ="2";
                         break;
                     case "2":
                         topP ="445px";
                         leftP = "175px";
+                        indexZ="3";
                         break;
                     case "3":
                         topP ="445px";
                         leftP = "330px";
+                        indexZ="5";
                         break;
                     case "4":
                         topP ="530px";
                         leftP = "50px";
+                        indexZ="8";
                         break;
                     case "5":
                         topP ="530px";
                         leftP = "180px";
+                        indexZ="6";
                         break;
                     case "6":
                         topP ="530px";
                         leftP = "335px";
+                        indexZ="4";
                         break;
                     case "7":
                         topP ="605px";
                         leftP = "55px";
+                        indexZ="10";
                         break;
                     case "8":
                         topP ="605px";
                         leftP = "185px";
+                        indexZ="7";
                         break;
                     case "9":
                         topP ="605px";
                         leftP = "340px";
+                        indexZ="9";
                         break;                    
                 }
                 
@@ -123,9 +132,12 @@ function insertar_comanda(com){
                 document.querySelector(`.nota3Sel${com}`).style.display="block";
                 document.querySelector(`.nota3Sel${com}`).style.top=topP;
                 document.querySelector(`.nota3Sel${com}`).style.left=leftP;
-
-                resultado.insertAdjacentElement('beforeend',topping);
-
+                
+                console.log(`#t${com}`)
+                resultado.insertAdjacentHTML('afterbegin',topping);
+                /* document.querySelector("#resultado").innerHTML+=topping; */
+                document.querySelector(`#t${com}`).style.display="flex";
+                //document.querySelector(`#t${com}`).style.zindex=indexZ; 
             }
 
 
