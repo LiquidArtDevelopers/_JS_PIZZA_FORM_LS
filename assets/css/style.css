@@ -330,7 +330,7 @@ body {
 #navegador {
   max-width: 1920px;
   width: 100%;
-  height: 100px;
+  height: 70px;
   background-color: rgba(0, 0, 0, 0);
   position: fixed;
   z-index: 20;
@@ -373,7 +373,7 @@ body {
 }
 
 .nav-logo img {
-  height: 100px;
+  height: 100%;
 }
 
 .logo-peq {
@@ -428,7 +428,7 @@ body {
           justify-content: flex-end;
   padding-right: 20px;
   font-family: "Idioma";
-  font-size: 1.2em;
+  font-size: 1.4em;
   color: white;
 }
 
@@ -509,27 +509,31 @@ header img {
 }
 
 .cuaderno {
-  width: 50%;
+  width: 500px;
+  min-width: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   position: relative;
+}
+
+.imgLibreta {
+  width: 100%;
 }
 
 .contenido-cuaderno {
   width: 100%;
   max-width: 480px;
-  height: 100%;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -551,9 +555,9 @@ header img {
 .contenido-cuaderno p {
   font-family: "Libreta";
   color: #33337c;
-  font-size: 1.6rem;
-  -webkit-transform: rotate(-1.5deg);
-  transform: rotate(-1.5deg);
+  font-size: 1.4rem;
+  -webkit-transform: rotate(-1.3deg);
+  transform: rotate(-1.3deg);
 }
 
 .part01 {
@@ -565,7 +569,7 @@ header img {
 .part01 p {
   position: absolute;
   top: 100px;
-  left: 80px;
+  left: 90px;
 }
 
 .part01 img {
@@ -577,7 +581,7 @@ header img {
 .part02 {
   position: relative;
   width: 100%;
-  height: 150px;
+  height: 120px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -587,9 +591,9 @@ header img {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -598,12 +602,13 @@ header img {
 .part02 img {
   position: absolute;
   top: 33px;
+  left: 10px;
 }
 
 .tamano {
   position: absolute;
   top: 15px;
-  left: 30px;
+  left: 50px;
 }
 
 .part02-opc {
@@ -618,14 +623,15 @@ header img {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   position: absolute;
-  top: 80px;
-  margin-left: 5px;
+  top: 70px;
+  padding-left: 30px;
+  padding-right: 20px;
 }
 
 .part03 {
   position: relative;
   width: 100%;
-  height: 150px;
+  height: 120px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -646,12 +652,13 @@ header img {
 .part03 img {
   position: absolute;
   top: 30px;
+  left: 25px;
 }
 
 .masa {
   position: absolute;
   top: 15px;
-  left: 30px;
+  left: 50px;
 }
 
 .part03-opc {
@@ -667,13 +674,13 @@ header img {
       justify-content: space-around;
   position: absolute;
   top: 80px;
-  margin-left: 5px;
+  padding-left: 30px;
+  padding-right: 10px;
 }
 
 .part04 {
   position: relative;
   width: 100%;
-  height: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -694,13 +701,13 @@ header img {
 .part04 img {
   position: absolute;
   top: 35px;
-  left: 20px;
+  left: 40px;
 }
 
 .ingredientes {
   position: absolute;
   top: 15px;
-  left: 30px;
+  left: 50px;
 }
 
 .part04-opc01 {
@@ -716,7 +723,8 @@ header img {
       justify-content: space-around;
   position: absolute;
   top: 80px;
-  padding-right: 20px;
+  left: 30px;
+  padding-right: 50px;
   padding-left: 30px;
 }
 
@@ -732,7 +740,27 @@ header img {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   position: absolute;
-  top: 200px;
+  top: 170px;
+  left: 30px;
+  padding-right: 50px;
+  padding-left: 10px;
+}
+
+.part04-opc03 {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: absolute;
+  top: 250px;
+  left: 30px;
+  padding-right: 50px;
   padding-left: 10px;
 }
 
@@ -746,6 +774,11 @@ header img {
 
 .nota1, .nota2, .nota3 {
   cursor: pointer;
+}
+
+.nota1Sel, .nota2Sel, .nota3Sel1, .nota3Sel2, .nota3Sel3, .nota3Sel4, .nota3Sel5, .nota3Sel6, .nota3Sel7, .nota3Sel8, .nota3Sel9 {
+  display: none;
+  position: absolute;
 }
 
 .resultado {
