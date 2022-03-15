@@ -325,12 +325,15 @@ header{
 .nota1,.nota2,.nota3{
     cursor: pointer;
 }
-.nota1Sel, .nota2Sel, .nota3Sel1, .nota3Sel2, .nota3Sel3, .nota3Sel4, .nota3Sel5, .nota3Sel6, .nota3Sel7, .nota3Sel8, .nota3Sel9{
+.nota1Sel, .nota2Sel, .nota3Sel2, .nota3Sel3, .nota3Sel4, .nota3Sel5, .nota3Sel6, .nota3Sel7, .nota3Sel8, .nota3Sel9{
     display: none;
     position: absolute;
 }
 
-
+.nota3Sel1{
+    display: block;
+    position: absolute;
+}
 
 
 
