@@ -1,7 +1,6 @@
 //Estilos para el formulario
-.form{
-    margin-top: 50px;
-    margin-bottom: 50px;
+.form{    
+    margin: 50px auto;
     width:40vw;
     padding: 50px;
     background-color: rgba(0,0,0,.5);
@@ -117,4 +116,19 @@
     margin-top: 7px;
     text-align: center;
     display: none;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border:none;
+  caret-color: #fff;
+  -webkit-text-fill-color: #fff;
+ -webkit-box-shadow: 0 0 0px 1000px rgba(255,255,255,.0) inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
