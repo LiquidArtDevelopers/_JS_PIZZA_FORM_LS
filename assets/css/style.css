@@ -779,13 +779,8 @@ header img {
   cursor: pointer;
 }
 
-.nota1Sel, .nota2Sel, .nota3Sel2, .nota3Sel3, .nota3Sel4, .nota3Sel5, .nota3Sel6, .nota3Sel7, .nota3Sel8, .nota3Sel9 {
+.nota1Sel, .nota2Sel, .nota3Sel1, .nota3Sel2, .nota3Sel3, .nota3Sel4, .nota3Sel5, .nota3Sel6, .nota3Sel7, .nota3Sel8, .nota3Sel9 {
   display: none;
-  position: absolute;
-}
-
-.nota3Sel1 {
-  display: block;
   position: absolute;
 }
 
@@ -801,5 +796,9 @@ header img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.resultado img {
+  position: absolute;
 }
 /*# sourceMappingURL=style.css.map */

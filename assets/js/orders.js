@@ -24,6 +24,7 @@ function comanda(){
             insertar_comanda(event.target.id)          
         }
     })
+    //si hay click en la marca de ingrediente seleccionado, quitamos html de la marca
     document.body.addEventListener("click", function(event){
         if(event.target.classList.contains("nota3Sel")){        
             console.log("Quitamos ingrediente: "+ event.target.id);
@@ -32,15 +33,13 @@ function comanda(){
     })  
 }
 
-function limpiar_comanda(){
-
-}
 
 function insertar_comanda(com){
     const nota1Sel= document.querySelector(".nota1Sel");
     const nota2Sel= document.querySelector(".nota2Sel");
     const selecciones = document.querySelector("#selecciones")
     switch(com){
+        //marcamos tamaño
         case "peq":
             nota1Sel.style.display="block";
             nota1Sel.style.top="205px"
@@ -56,6 +55,7 @@ function insertar_comanda(com){
             nota1Sel.style.top="202px";
             nota1Sel.style.left="312px";
             break;
+        //marcamos tipo de masa
         case "fin":
             nota2Sel.style.display="block";
             nota2Sel.style.top="340px"
@@ -71,19 +71,16 @@ function insertar_comanda(com){
             nota2Sel.style.top="340px"
             nota2Sel.style.left="299px"
             break;
+        //marcamos (o desmarcamos)m ingredientes
         default:
-
-            //ver si existe para quitarlo
-            console.log(document.querySelector(`.nota3Sel${com}`))
+            //si no existe, metemos            
             if(document.querySelector(`.nota3Sel${com}`)==null){
-                //si no está, dibujamos
-                
-                let topP = "",leftP ="", etiquetas="";
-
+                let topP = "",leftP ="", etiquetas="", topping="";
                 switch(com){
                     case "1":
                         topP ="445px";
                         leftP = "45px";
+                        topping+=``;
                         break;
                     case "2":
                         topP ="445px";
