@@ -1,11 +1,20 @@
-export default class Cookies{
-    constructor(cname, cvalue, exdays){
+//SCRIPT COOKIES------------------
+export default class Cookie{
+    constructor(){
+        this.cname="";
+        this.cvalue="";
+        this.exdays=0;
+    }
+    static getInstance(){
+        return new Cookie();
+    }
+    setCookieName(cname){
+        this.cname=cname;
+    }
+    setCookie(cname,cvalue,exdays) {
         this.cname=cname;
         this.cvalue=cvalue;
         this.exdays=exdays;
-    }
-    
-    setCookie() {
         const d = new Date();
         d.setTime(d.getTime() + (this.exdays*24*60*60*1000));
         let expires = "expires="+ d.toUTCString();
