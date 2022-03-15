@@ -1,5 +1,17 @@
 var contador = 0;
 
+//creamos un objeto pedido
+var ordenPedido={
+    masa:"",
+    tipo:"",
+    topping:[],
+    socio:0,
+    precio:0,
+    direccion:"",
+    telefono:"",
+    email:""
+}
+
 export default function pedido(){    
     comanda();    
 }
@@ -58,22 +70,26 @@ function insertar_comanda(com){
             nota1Sel.style.display="block";
             nota1Sel.style.top="205px";
             nota1Sel.style.left="19px";
+            ordenPedido['masa']  = com;
             break;
         case "med":
             nota1Sel.style.display="block";
             nota1Sel.style.top="205px";
             nota1Sel.style.left="160px";
+            ordenPedido['masa']  = com;
             break;
         case "fam":
             nota1Sel.style.display="block";
             nota1Sel.style.top="202px";
             nota1Sel.style.left="312px";
+            ordenPedido['masa']  = com;
             break;
         //marcamos tipo de masa
         case "fin":
             nota2Sel.style.display="block";
             nota2Sel.style.top="340px";
             nota2Sel.style.left="10px";
+            ordenPedido['tipo']  = com;
             break;        
         case "gru":
             nota2Sel.style.display="block";
