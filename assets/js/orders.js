@@ -14,7 +14,7 @@ var ordenPedido={
     email:""
 }
 //Precios (esto ya lo traeremos de algún lado donde sea más fácil gestionar)
-var precioPeq = 6, precioMed = 10, precioFam = 12, precioFin = 1, precioGru = 2, precioCqu = 4, precioTpp = 1;
+var precioPeq = 6, precioMed = 8, precioFam = 10, precioFin = 1, precioGru = 2, precioCqu = 3, precioTpp = 1.5;
 
 
 export default function pedido(){    
@@ -56,20 +56,18 @@ function comanda(){
             document.querySelector(`#t${idt}`).remove();
             contador-=1;
             ticket[2]-=precioTpp;
-
+            
             //Quitamos topping del ticket
             let myIndex = ordenPedido['topping'].indexOf(idt);
             if (myIndex !== -1) {
                 ordenPedido['topping'].splice(myIndex, 1);
-                console.log(ordenPedido);
             }   
 
             //si existe topping de queso rallado y el contador es =< que 2, quitamos el queso-rallado
             if(contador<=2 && document.querySelector(`#t10`)!=null){
                 document.querySelector(`#t10`).remove();
             }
-
-            
+            calcTicket();            
         }
     })  
 }
@@ -234,17 +232,41 @@ function insertar_comanda(com){
     }
 
     //llamamos a la función ticket para los cálculos
+    /* document.querySelector("#preci").remove() */
     calcTicket()
 }
 
 function calcTicket(){
-   
+
+    
+       
     let sum = 0
     for (let i = 0; i < ticket.length; i++) {
         sum += ticket[i];
     }
     console.log(ordenPedido);
     console.log(sum);
+
+    let eur = "", cent = "";
+    let pos = 0
+    if(String(sum).indexOf(".")==-1){
+        eur = String(sum);
+        cent = "00";
+    }else{
+        pos = Number(String(sum).indexOf("."));
+        console.log("pos"+pos);
+        eur = String(sum).substring(0,pos);
+        cent = String(sum).substring(pos+1,pos+2)+"0";
+    }
+
+
+   
+    
+
+    console.log("Total: "+sum+" Euros: "+eur+" Cent: "+cent)
+    
+    let precioHtml = `<p id="preci">${eur}<span>,${cent}€</span></p>`;
+    document.querySelector("#precio").innerHTML = precioHtml; 
 
 }
 
