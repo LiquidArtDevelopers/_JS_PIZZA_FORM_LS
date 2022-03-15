@@ -40,18 +40,30 @@ function comanda(){
     //si hay click en la marca de ingrediente seleccionado, quitamos html de la marca
     document.body.addEventListener("click", function(event){
         if(event.target.classList.contains("nota3Sel")){
+
             //Quitamos ralla de ingrediente
             console.log("Quitamos ingrediente: "+ event.target.id);
             document.querySelector(`#${event.target.id}`).remove();
-            //Quitamos topping            
-            let idt = event.target.id.split("i").join("t");
-            document.querySelector(`#${idt}`).remove();
+
+            //Quitamos topping de la animación          
+            let idt = event.target.id.split("i").join("");
+            document.querySelector(`#t${idt}`).remove();
             contador-=1;
             console.log(contador);
+
+            //Quitamos topping del ticket
+            let myIndex = ordenPedido['topping'].indexOf(idt);
+            if (myIndex !== -1) {
+                ordenPedido['topping'].splice(myIndex, 1);
+                console.log(ordenPedido);
+            }   
+
             //si existe topping de queso rallado y el contador es =< que 2, quitamos el queso-rallado
             if(contador<=2 && document.querySelector(`#t10`)!=null){
                 document.querySelector(`#t10`).remove();
-            }   
+            }
+
+            
         }
     })  
 }
@@ -116,55 +128,63 @@ function insertar_comanda(com){
                         leftP = "45px";                        
                         indexxx=2;
                         topping+=`<img id="t1" src="assets/img/extra-queso.png" alt="">`;
-                                           
+                        ordenPedido['topping'].push(com);
                         break;
                     case "2":
                         topP ="445px";
                         leftP = "175px";
                         indexxx=3;
                         topping+=`<img id="t2" src="assets/img/queso-cabra.png" alt="">`;
+                        ordenPedido['topping'].push(com);
                         break;
                     case "3":
                         topP ="445px";
                         leftP = "330px";
                         indexxx=5;
                         topping+=`<img id="t3" src="assets/img/aceitunas.png" alt="">`;
+                        ordenPedido['topping'].push(com);
                         break;
                     case "4":
                         topP ="530px";
                         leftP = "50px";
                         indexxx=8;
                         topping+=`<img id="t4" src="assets/img/pimiento-rojo.png" alt="">`;
+                        ordenPedido['topping'].push(com);
                         break;
                     case "5":
                         topP ="530px";
                         leftP = "180px";
                         indexxx=6;
                         topping+=`<img id="t5" src="assets/img/pimiento-verde.png" alt="">`;
+                        ordenPedido['topping'].push(com);
                         break;
                     case "6":
                         topP ="530px";
                         leftP = "335px";
                         indexxx=4;
                         topping+=`<img id="t6" src="assets/img/salami.png" alt="">`;
+                        ordenPedido['topping'].push(com);
                         break;
                     case "7":
                         topP ="605px";
                         leftP = "55px";
                         indexxx=10;
                         topping+=`<img id="t7" src="assets/img/champis.png" alt="">`;
+                        ordenPedido['topping'].push(com);
                         break;
                     case "8":
                         topP ="605px";
                         leftP = "185px";
                         indexxx=7;
                         topping+=`<img id="t8" src="assets/img/cebolla.png" alt="">`;
+                        ordenPedido['topping'].push(com);
                         break;
                     case "9":
                         topP ="605px";
                         leftP = "340px";
                         indexxx=9;
                         topping+=`<img id="t9" src="assets/img/bacon.png" alt="">`;
+                        ordenPedido['topping'].push(com);
                         break;                    
                 }                
                 //Insertamos HTML y cambiamos Style de las marcas
