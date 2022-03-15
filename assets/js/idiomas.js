@@ -3,7 +3,7 @@
 import Cookie from "./Cookie.js";
 
 
-//Instanciamos la el objeto Cookie.
+//Instanciamos el objeto Cookie.
 const cookie=Cookie.getInstance();
     //VARIABLES
     let idioma="";
