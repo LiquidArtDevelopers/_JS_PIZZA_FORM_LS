@@ -160,7 +160,8 @@ header{
     flex-wrap: wrap;
     column-gap: 80px;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    position: relative;
 }
 .cuaderno{
     width: 500px;
@@ -343,8 +344,6 @@ header{
     height: 500px;
     min-width: 500px;
     max-width: 500px;
-    /* width: 50%;
-    height: 100%; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -353,4 +352,17 @@ header{
     img{
         position: absolute;
     }  
+}
+#precio{    
+    position:absolute;
+    top: 500px;
+    right: 100px;
+    p{
+        font-family: "Piazzere";    
+        color: $color_rojo;
+        font-size: 12vw;
+    }
+    span{
+        font-size: 6vw;
+    }
 }
