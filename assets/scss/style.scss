@@ -163,6 +163,16 @@ header{
     align-items: flex-start;
     position: relative;
 }
+.pestanas{    
+    position: absolute;
+    top: 100px;
+    left: -24px;
+    transform: rotate(-2deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
 .cuaderno{
     width: 500px;
     min-width: 500px;
