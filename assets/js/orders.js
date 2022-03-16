@@ -23,6 +23,14 @@ export default function pedido(){
 
 
 function comanda(){    
+
+    //escuchar la clase pesta (pestaña)
+    document.body.addEventListener("click", function(event){
+        if(event.target.classList.contains("pesta")){        
+            console.log("pestaña: "+ event.target.id);
+            cambiar_hoja(event.target.id);      
+        }
+    })
     //escuchar la clase part02-opc
     document.body.addEventListener("click", function(event){
         if(event.target.classList.contains("nota1")){        
@@ -71,6 +79,32 @@ function comanda(){
         }
     })  
 }
+
+function cambiar_hoja(hoja){
+
+    const oCuaderno01= document.querySelector("#cuaderno-01");
+    const oCuaderno02= document.querySelector("#cuaderno-02");
+    const oCuaderno03= document.querySelector("#cuaderno-03");
+    switch(hoja){
+        case "pest01":            
+            oCuaderno01.style.zIndex= "8";    
+            oCuaderno02.style.zIndex= "6";
+            oCuaderno03.style.zIndex= "4";
+            
+            break;
+        case "pest02":
+            oCuaderno01.style.zIndex= "6";    
+            oCuaderno02.style.zIndex= "8";
+            oCuaderno03.style.zIndex= "4";
+            break;
+        case "pest03":
+            oCuaderno01.style.indexZ= "4";    
+            oCuaderno02.style.zIndex= "6";
+            oCuaderno03.style.zIndex= "8";
+            break;
+    }
+}
+
 
 
 function insertar_comanda(com){
