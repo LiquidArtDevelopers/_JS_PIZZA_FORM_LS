@@ -151,6 +151,7 @@ header{
 }
 
 /* ZONA PEDIDO */
+
 #pedido{
     width: 100%;
     display: flex;
@@ -161,14 +162,51 @@ header{
     align-items: flex-start;
     position: relative;
 }
-.cuaderno{
+.pestanas{    
+    position: absolute;
+    top: 100px;
+    left: -27px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 10;
+}
+#pest02{
+    position: absolute;
+    top: 120px;
+    left: 1px;
+}
+#pest03{
+    position: absolute;
+    top: 245px;
+    left: 5px;
+}
+
+#cuaderno-01{
+    z-index: "8";
+}
+#cuaderno-02{
+    z-index: "6";
+}
+#cuaderno-03{
+    z-index: "4";
+}
+.caja-cuaderno{
+    width: 500px;
+    min-width: 500px;    
+    height: 700px;
+    position: relative;
+}
+.cuaderno{    
     width: 500px;
     min-width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
-    position: relative;
+    align-items: flex-start;   
+    position: absolute;
+    left: 1vw;
 }
 .imgLibreta{
     width: 100%;
