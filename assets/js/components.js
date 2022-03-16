@@ -13,5 +13,5 @@ function scrollFunction() {
         document.body.style.backgroundImage = "url('../img/logos/Entramado_verde.svg')";
     } else {
         document.body.style.backgroundImage = "url('../img/logos/Entramado_rojo.svg')";
-    } */
+    } */ 
 }
