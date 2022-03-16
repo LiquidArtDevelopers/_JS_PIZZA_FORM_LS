@@ -324,7 +324,7 @@ html {
 }
 
 body {
-  background-image: url("../img/Entramado_verde.svg");
+  background-image: url("../img/logos/Entramado_verde.svg");
   background-attachment: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -342,7 +342,7 @@ body {
 }
 
 .preload {
-  background-image: url("../img/Entramado_verde.svg");
+  background-image: url("../img/logos/Entramado_verde.svg");
   background-attachment: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -510,7 +510,7 @@ header img {
 .logo-principal {
   position: absolute;
   top: 10vh;
-  width: 60%;
+  width: 30%;
 }
 
 .rojo {
@@ -828,11 +828,9 @@ header img {
   position: absolute;
 }
 
-#resultado {
+.caja-resultado {
   width: 500px;
-  height: 500px;
-  /* min-width: 500px;
-    max-width: 500px; */
+  min-width: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -840,9 +838,29 @@ header img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#resultado {
+  width: 100%;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -853,19 +871,13 @@ header img {
   position: absolute;
 }
 
-#precio {
-  position: absolute;
-  top: 500px;
-  right: 100px;
-}
-
 #precio p {
   font-family: "Piazzere";
-  color: #A0425B;
-  font-size: 12vw;
+  color: black;
+  font-size: 10vw;
 }
 
 #precio span {
-  font-size: 6vw;
+  font-size: 5vw;
 }
 /*# sourceMappingURL=style.css.map */
