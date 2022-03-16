@@ -201,6 +201,11 @@ select:-webkit-autofill:focus {
 /**Ventana modal para cookies**/
 .window {
   z-index: 999;
+  /* transform: translate(0,-100%); */
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
 }
 
 .window #cookies {
@@ -208,6 +213,8 @@ select:-webkit-autofill:focus {
   display: -ms-flexbox;
   display: flex;
   position: fixed;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   bottom: 0;
   left: 0;
   right: 0;
@@ -290,6 +297,11 @@ select:-webkit-autofill:focus {
   }
 }
 
+.window.is-active {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
 /************************/
 @font-face {
   font-family: "Piazzere";
@@ -312,7 +324,7 @@ html {
 }
 
 body {
-  background-image: url("../img/Entramado_verde.svg");
+  background-image: url("../img/logos/Entramado_verde.svg");
   background-attachment: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -330,7 +342,7 @@ body {
 }
 
 .preload {
-  background-image: url("../img/Entramado_verde.svg");
+  background-image: url("../img/logos/Entramado_verde.svg");
   background-attachment: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -498,7 +510,7 @@ header img {
 .logo-principal {
   position: absolute;
   top: 10vh;
-  width: 60%;
+  width: 30%;
 }
 
 .rojo {
@@ -511,7 +523,7 @@ header img {
 
 /* CONTENEDOR PRINCIPAL */
 .contenedor_principal {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -527,8 +539,8 @@ header img {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-column-gap: 80px;
-          column-gap: 80px;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -816,11 +828,9 @@ header img {
   position: absolute;
 }
 
-#resultado {
+.caja-resultado {
   width: 500px;
-  height: 500px;
   min-width: 500px;
-  max-width: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -828,9 +838,29 @@ header img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#resultado {
+  width: 100%;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -841,19 +871,13 @@ header img {
   position: absolute;
 }
 
-#precio {
-  position: absolute;
-  top: 500px;
-  right: 100px;
-}
-
 #precio p {
   font-family: "Piazzere";
-  color: #A0425B;
-  font-size: 12vw;
+  color: black;
+  font-size: 10vw;
 }
 
 #precio span {
-  font-size: 6vw;
+  font-size: 5vw;
 }
 /*# sourceMappingURL=style.css.map */
