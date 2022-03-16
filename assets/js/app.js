@@ -4,9 +4,10 @@ import formulario from "./form.js";
 import componentes from "./components.js";
 import pedido from "./orders.js";
 import dataCookies from "./dataCookies.js";
+import carousel from "./carousel.js";
 
 const d=document;
-
+const punto=document.querySelectorAll('.puntos li');
 d.addEventListener('DOMContentLoaded',()=>{
     //Llamar a la animación de carga.
     //loadAnimation();
@@ -14,6 +15,8 @@ d.addEventListener('DOMContentLoaded',()=>{
     dataCookies();
     //Llamar a componentes.
     componentes();
+    //carrousel
+    //carousel();
     //Validación de formulario.
     formulario();
     //pedido

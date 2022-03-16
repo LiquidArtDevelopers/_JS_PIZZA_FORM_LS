@@ -9,6 +9,7 @@
 @import 'preload';
 @import "form";
 @import 'modalWindow';
+@import 'carousel';
 
 /************************/
 
@@ -130,9 +131,6 @@ header{
     flex-direction: row;
     justify-content: center;
     position: relative;
-    img{
-        width: 100%;
-    }
 }
 .logo-principal{
     position: absolute;
