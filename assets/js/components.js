@@ -9,4 +9,9 @@ function scrollFunction() {
     } else {
         document.getElementById("navegador").style.backgroundColor = "rgba(0, 0, 0, 0)";
     }
+    /* if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        document.body.style.backgroundImage = "url('../img/logos/Entramado_verde.svg')";
+    } else {
+        document.body.style.backgroundImage = "url('../img/logos/Entramado_rojo.svg')";
+    } */ 
 }

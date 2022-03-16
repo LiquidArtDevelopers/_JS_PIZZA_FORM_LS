@@ -9,6 +9,7 @@
 @import 'preload';
 @import "form";
 @import 'modalWindow';
+@import 'carousel';
 
 /************************/
 
@@ -34,7 +35,7 @@ html{
     scroll-behavior: smooth;
 }
 @mixin fondo{
-    background-image: url("../img/Entramado_verde.svg");
+    background-image: url("../img/logos/Entramado_verde.svg");
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
@@ -130,14 +131,11 @@ header{
     flex-direction: row;
     justify-content: center;
     position: relative;
-    img{
-        width: 100%;
-    }
 }
 .logo-principal{
     position: absolute;
     top: 10vh;
-    width: 60%;
+    width: 30%;
 }
 .rojo{
     color:$color_rojo;
@@ -153,6 +151,7 @@ header{
 }
 
 /* ZONA PEDIDO */
+
 #pedido{
     width: 100%;
     display: flex;
@@ -163,14 +162,51 @@ header{
     align-items: flex-start;
     position: relative;
 }
-.cuaderno{
+.pestanas{    
+    position: absolute;
+    top: 100px;
+    left: -27px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 10;
+}
+#pest02{
+    position: absolute;
+    top: 120px;
+    left: 1px;
+}
+#pest03{
+    position: absolute;
+    top: 245px;
+    left: 5px;
+}
+
+#cuaderno-01{
+    z-index: "8";
+}
+#cuaderno-02{
+    z-index: "6";
+}
+#cuaderno-03{
+    z-index: "4";
+}
+.caja-cuaderno{
+    width: 500px;
+    min-width: 500px;    
+    height: 700px;
+    position: relative;
+}
+.cuaderno{    
     width: 500px;
     min-width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
-    position: relative;
+    align-items: flex-start;   
+    position: absolute;
+    left: 1vw;
 }
 .imgLibreta{
     width: 100%;
@@ -339,14 +375,21 @@ header{
     display: none;
     position: absolute;
 }
-#resultado{
+.caja-resultado{
     width: 500px;
-    height: 500px;
-    /* min-width: 500px;
-    max-width: 500px; */
+    min-width: 500px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    align-items: center;
+}
+#resultado{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
     position: relative;
     img{
@@ -354,15 +397,12 @@ header{
     }  
 }
 #precio{    
-    position:absolute;
-    top: 500px;
-    right: 100px;
     p{
         font-family: "Piazzere";    
-        color: $color_rojo;
-        font-size: 12vw;
+        color: black;
+        font-size: 10vw;
     }
     span{
-        font-size: 6vw;
+        font-size: 5vw;
     }  
 }

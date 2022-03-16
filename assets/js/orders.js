@@ -14,7 +14,7 @@ var ordenPedido={
     email:""
 }
 //Precios (esto ya lo traeremos de algún lado donde sea más fácil gestionar)
-var precioPeq = 6, precioMed = 10, precioFam = 12, precioFin = 1, precioGru = 2, precioCqu = 4, precioTpp = 1;
+var precioPeq = 6, precioMed = 8, precioFam = 10, precioFin = 1, precioGru = 2, precioCqu = 3, precioTpp = 1.5;
 
 
 export default function pedido(){    
@@ -23,6 +23,14 @@ export default function pedido(){
 
 
 function comanda(){    
+
+    //escuchar la clase pesta (pestaña)
+    document.body.addEventListener("click", function(event){
+        if(event.target.classList.contains("pesta")){        
+            console.log("pestaña: "+ event.target.id);
+            cambiar_hoja(event.target.id);      
+        }
+    })
     //escuchar la clase part02-opc
     document.body.addEventListener("click", function(event){
         if(event.target.classList.contains("nota1")){        
@@ -56,23 +64,47 @@ function comanda(){
             document.querySelector(`#t${idt}`).remove();
             contador-=1;
             ticket[2]-=precioTpp;
-
+            
             //Quitamos topping del ticket
             let myIndex = ordenPedido['topping'].indexOf(idt);
             if (myIndex !== -1) {
                 ordenPedido['topping'].splice(myIndex, 1);
-                console.log(ordenPedido);
             }   
 
             //si existe topping de queso rallado y el contador es =< que 2, quitamos el queso-rallado
             if(contador<=2 && document.querySelector(`#t10`)!=null){
                 document.querySelector(`#t10`).remove();
             }
-
-            
+            calcTicket();            
         }
     })  
 }
+
+function cambiar_hoja(hoja){
+
+    const oCuaderno01= document.querySelector("#cuaderno-01");
+    const oCuaderno02= document.querySelector("#cuaderno-02");
+    const oCuaderno03= document.querySelector("#cuaderno-03");
+    switch(hoja){
+        case "pest01":            
+            oCuaderno01.style.zIndex= "8";    
+            oCuaderno02.style.zIndex= "6";
+            oCuaderno03.style.zIndex= "4";
+            
+            break;
+        case "pest02":
+            oCuaderno01.style.zIndex= "6";    
+            oCuaderno02.style.zIndex= "8";
+            oCuaderno03.style.zIndex= "4";
+            break;
+        case "pest03":
+            oCuaderno01.style.indexZ= "4";    
+            oCuaderno02.style.zIndex= "6";
+            oCuaderno03.style.zIndex= "8";
+            break;
+    }
+}
+
 
 
 function insertar_comanda(com){
@@ -140,7 +172,7 @@ function insertar_comanda(com){
                         topP ="445px";
                         leftP = "45px";                        
                         indexxx=2;
-                        topping+=`<img id="t1" src="assets/img/extra-queso.png" alt="">`;
+                        topping+=`<img id="t1" src="assets/img/pizza/extra-queso.png" alt="">`;
                         ordenPedido['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
@@ -148,7 +180,7 @@ function insertar_comanda(com){
                         topP ="445px";
                         leftP = "175px";
                         indexxx=3;
-                        topping+=`<img id="t2" src="assets/img/queso-cabra.png" alt="">`;
+                        topping+=`<img id="t2" src="assets/img/pizza/queso-cabra.png" alt="">`;
                         ordenPedido['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
@@ -156,7 +188,7 @@ function insertar_comanda(com){
                         topP ="445px";
                         leftP = "330px";
                         indexxx=5;
-                        topping+=`<img id="t3" src="assets/img/aceitunas.png" alt="">`;
+                        topping+=`<img id="t3" src="assets/img/pizza/aceitunas.png" alt="">`;
                         ordenPedido['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
@@ -164,7 +196,7 @@ function insertar_comanda(com){
                         topP ="530px";
                         leftP = "50px";
                         indexxx=8;
-                        topping+=`<img id="t4" src="assets/img/pimiento-rojo.png" alt="">`;
+                        topping+=`<img id="t4" src="assets/img/pizza/pimiento-rojo.png" alt="">`;
                         ordenPedido['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
@@ -172,7 +204,7 @@ function insertar_comanda(com){
                         topP ="530px";
                         leftP = "180px";
                         indexxx=6;
-                        topping+=`<img id="t5" src="assets/img/pimiento-verde.png" alt="">`;
+                        topping+=`<img id="t5" src="assets/img/pizza/pimiento-verde.png" alt="">`;
                         ordenPedido['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
@@ -180,7 +212,7 @@ function insertar_comanda(com){
                         topP ="530px";
                         leftP = "335px";
                         indexxx=4;
-                        topping+=`<img id="t6" src="assets/img/salami.png" alt="">`;
+                        topping+=`<img id="t6" src="assets/img/pizza/salami.png" alt="">`;
                         ordenPedido['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
@@ -188,7 +220,7 @@ function insertar_comanda(com){
                         topP ="605px";
                         leftP = "55px";
                         indexxx=10;
-                        topping+=`<img id="t7" src="assets/img/champis.png" alt="">`;
+                        topping+=`<img id="t7" src="assets/img/pizza/champis.png" alt="">`;
                         ordenPedido['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
@@ -196,7 +228,7 @@ function insertar_comanda(com){
                         topP ="605px";
                         leftP = "185px";
                         indexxx=7;
-                        topping+=`<img id="t8" src="assets/img/cebolla.png" alt="">`;
+                        topping+=`<img id="t8" src="assets/img/pizza/cebolla.png" alt="">`;
                         ordenPedido['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
@@ -204,13 +236,13 @@ function insertar_comanda(com){
                         topP ="605px";
                         leftP = "340px";
                         indexxx=9;
-                        topping+=`<img id="t9" src="assets/img/bacon.png" alt="">`;
+                        topping+=`<img id="t9" src="assets/img/pizza/bacon.png" alt="">`;
                         ordenPedido['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;                    
                 }                
                 //Insertamos HTML y cambiamos Style de las marcas
-                etiquetas+=`<img id="i${com}" src="assets/img/select-ing.png" class="nota3Sel${com} nota3Sel" alt="">`            
+                etiquetas+=`<img id="i${com}" src="assets/img/pizza/select-ing.png" class="nota3Sel${com} nota3Sel" alt="">`            
                 selecciones.insertAdjacentHTML('beforeend',etiquetas);
                 document.querySelector(`.nota3Sel${com}`).style.display="block";
                 document.querySelector(`.nota3Sel${com}`).style.top=topP;
@@ -224,7 +256,7 @@ function insertar_comanda(com){
                 contador+=1
                 console.log(contador)
                 if(contador==3){
-                    let topping2=`<img id="t10" src="assets/img/queso-rallado.png" alt="">`;
+                    let topping2=`<img id="t10" src="assets/img/pizza/queso-rallado.png" alt="">`;
                     indexxx=11;
                     resultado.insertAdjacentHTML('beforeend',topping2);
                     document.querySelector("#t10").style.display="block";
@@ -234,17 +266,35 @@ function insertar_comanda(com){
     }
 
     //llamamos a la función ticket para los cálculos
+    /* document.querySelector("#preci").remove() */
     calcTicket()
 }
 
 function calcTicket(){
-   
+       
     let sum = 0
     for (let i = 0; i < ticket.length; i++) {
         sum += ticket[i];
     }
     console.log(ordenPedido);
     console.log(sum);
+
+    let eur = "", cent = "";
+    let pos = 0
+    if(String(sum).indexOf(".")==-1){
+        eur = String(sum);
+        cent = "00";
+    }else{
+        pos = Number(String(sum).indexOf("."));
+        console.log("pos"+pos);
+        eur = String(sum).substring(0,pos);
+        cent = String(sum).substring(pos+1,pos+2)+"0";
+    }
+
+    console.log("Total: "+sum+" Euros: "+eur+" Cent: "+cent)
+    
+    let precioHtml = `<p id="preci">${eur}<span>,${cent}€</span></p>`;
+    document.querySelector("#precio").innerHTML = precioHtml; 
 
 }
 
