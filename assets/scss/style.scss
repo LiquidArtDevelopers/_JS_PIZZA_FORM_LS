@@ -48,10 +48,18 @@ body{
 }
 .cambio_fondo{
     background-image: url("../img/logos/Entramado_rojo.svg")!important;
+    background-attachment: fixed;
     transition: all 500ms ease-in-out;
 }
 .cambio_fondo2{
     background-image: url("../img/logos/Entramado_azul.svg")!important;
+    background-attachment: fixed;
+    transition: all 500ms ease-in-out;
+}
+.cambio_fondo3{
+    background-image: url("../img/logos/Entramado_blanco.svg")!important;
+    background-color: black;
+    background-attachment: fixed;
     transition: all 500ms ease-in-out;
 }
 .preload{ 

@@ -77,3 +77,4 @@ if (cookie.getCookie()!="") {
     }
     console.log("cookie de idioma establecida en: "+ idioma);
 }
+
