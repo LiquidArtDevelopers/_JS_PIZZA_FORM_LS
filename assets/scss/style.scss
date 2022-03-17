@@ -363,20 +363,20 @@ header{
     padding-right: 50px;
     padding-left: 10px;
 }
-.selecciones, .selecciones2{
+.selecciones,.selecciones2,.selecciones3{
     position: absolute;    
 }
 #sel01,#sel02,#ing01,#ing02,#ing03,#ing04,#ing05,#ing06{
     position: absolute;
 }
-.nota1,.nota2,.nota3, .nota4{
+.nota1,.nota2,.nota3,.nota4,.nota5{
     cursor: pointer;
 }
-.nota1Sel, .nota2Sel, .nota3Sel1, .nota3Sel2, .nota3Sel3, .nota3Sel4, .nota3Sel5, .nota3Sel6, .nota3Sel7, .nota3Sel8, .nota3Sel9, .nota4Sel, .nota4Selagu, .nota4SelaguG, .nota4SelcKel, .nota4SelcEga, .nota4SelcSN, .nota4Selb1, .nota4Selb2, .nota4Selb3, .nota4Selb4, .nota4Selb5, .nota4Selb6, .nota4Selb7, .nota4Selb8, .nota4Selb9{
+.nota1Sel,.nota2Sel,.nota3Sel1,.nota3Sel2,.nota3Sel3,.nota3Sel4,.nota3Sel5,.nota3Sel6,.nota3Sel7,.nota3Sel8,.nota3Sel9,.nota4Sel,.nota4Selagu,.nota4SelaguG,.nota4SelcKel,.nota4SelcEga,.nota4SelcSN,.nota4Selb1,.nota4Selb2,.nota4Selb3,.nota4Selb4,.nota4Selb5,.nota4Selb6,.nota4Selb7,.nota4Selb8,.nota4Selb9,.nota5Sel,.nota5SeloPfi,.nota5SeloPde,.nota5SeloPcq,.nota5SeloPol,.nota5SeloAce,.nota5SeloNug,.nota5SeloH1,.nota5SeloH2,.nota5SeloH3,.nota5SeloH4,.nota5SeloH5,.nota5SeloH6,.nota5SeloH7,.nota5SeloH8,.nota5SeloH9{
     display: none;
     position: absolute;
 }
-#t1, #t2, #t3, #t4, #t5, #t6, #t7, #t8, #t9,#t10{
+#t1,#t2,#t3,#t4,#t5,#t6,#t7,#t8,#t9,#t10{
     display: none;
     position: absolute;
 }
