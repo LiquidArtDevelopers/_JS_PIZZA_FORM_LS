@@ -512,7 +512,7 @@ function insertar_comanda3(com){
             break;     
     }
 
-    //si no existe, metemos            
+    //si no existe, metemos             
     if(document.querySelector(`.nota5Sel${com}`)==null){
         
         //Insertamos HTML y cambiamos Style de las marcas
