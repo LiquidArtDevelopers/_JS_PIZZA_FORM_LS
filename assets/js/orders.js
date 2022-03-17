@@ -46,9 +46,18 @@ fetch("assets/json/precios.json")
     precioOtr = rJs.precio_anadidos;
 })
 .catch(err =>{
+    //por si el json da error, le metemos precios
     console.error("ERROR", err.message)
+    precioPeq = 6;
+    precioMed = 8;
+    precioFam = 10;
+    precioFin = 1;
+    precioGru = 2;
+    precioCqu = 3;
+    precioTpp = 1.5;
+    precioRef = 2;
+    precioOtr = 1.5;
 });
-    
 
 
 console.log(precioFam)
