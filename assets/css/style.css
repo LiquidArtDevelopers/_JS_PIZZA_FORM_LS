@@ -933,7 +933,7 @@ header {
   padding-left: 10px;
 }
 
-.selecciones {
+.selecciones, .selecciones2 {
   position: absolute;
 }
 
@@ -941,11 +941,11 @@ header {
   position: absolute;
 }
 
-.nota1, .nota2, .nota3 {
+.nota1, .nota2, .nota3, .nota4 {
   cursor: pointer;
 }
 
-.nota1Sel, .nota2Sel, .nota3Sel1, .nota3Sel2, .nota3Sel3, .nota3Sel4, .nota3Sel5, .nota3Sel6, .nota3Sel7, .nota3Sel8, .nota3Sel9 {
+.nota1Sel, .nota2Sel, .nota3Sel1, .nota3Sel2, .nota3Sel3, .nota3Sel4, .nota3Sel5, .nota3Sel6, .nota3Sel7, .nota3Sel8, .nota3Sel9, .nota4Sel, .nota4Selagu, .nota4SelaguG, .nota4SelcKel, .nota4SelcEga, .nota4SelcSN, .nota4Selb1, .nota4Selb2, .nota4Selb3, .nota4Selb4, .nota4Selb5, .nota4Selb6, .nota4Selb7, .nota4Selb8, .nota4Selb9 {
   display: none;
   position: absolute;
 }
