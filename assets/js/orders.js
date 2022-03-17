@@ -1,3 +1,9 @@
+
+export default function pedido(){
+    comanda();    
+}
+
+
 var contador = 0;
 //Array para el precio donde el precio se suma de entre todos sus valores: masa[0],tipo[1], topping[2] y bebida[3].
 var ticket = [0,0,0,0,0];
@@ -15,14 +21,46 @@ var ordenPedido={
     telefono:"",
     email:""
 }
+
 //Precios (esto ya lo traeremos de algún lado donde sea más fácil gestionar)
-var precioPeq = 6, precioMed = 8, precioFam = 10, precioFin = 1, precioGru = 2, precioCqu = 3, precioTpp = 1.5, precioRef = 2, precioOtr = 1.5;
+var precioPeq = 0, precioMed = 0, precioFam = 0, precioFin = 0, precioGru = 0, precioCqu = 0, precioTpp = 0, precioRef = 0, precioOtr = 0;
+
+//cogemos los datos de los precios
+fetch("assets/json/precios.json")
+.then(response =>{
+    if(response.ok)
+        return response.text()
+    else
+        throw new Error(response.status);
+})
+.then(data =>{
+    const rJs=JSON.parse(data);
+    precioPeq = rJs.precio_pequena;
+    precioMed = rJs.precio_mediana;
+    precioFam = rJs.precio_familiar;
+    precioFin = rJs.precio_fina;
+    precioGru = rJs.precio_gruesa;
+    precioCqu = rJs.precio_con_queso;
+    precioTpp = rJs.precio_ingrediente;
+    precioRef = rJs.precio_refresco;
+    precioOtr = rJs.precio_anadidos;
+})
+.catch(err =>{
+    //por si el json da error, le metemos precios
+    console.error("ERROR", err.message)
+    precioPeq = 6;
+    precioMed = 8;
+    precioFam = 10;
+    precioFin = 1;
+    precioGru = 2;
+    precioCqu = 3;
+    precioTpp = 1.5;
+    precioRef = 2;
+    precioOtr = 1.5;
+});
 
 
-export default function pedido(){    
-    comanda();    
-}
-
+console.log(precioFam)
 
 function comanda(){    
 

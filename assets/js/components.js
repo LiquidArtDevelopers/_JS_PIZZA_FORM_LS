@@ -10,9 +10,15 @@ function scrollFunction() {
         document.getElementById("navegador").style.backgroundColor = "rgba(0, 0, 0, 0)";
     }
     
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
         document.body.classList.add("cambio_fondo")
     } else {
         document.body.classList.remove("cambio_fondo")
+    }
+
+    if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+        document.body.classList.add("cambio_fondo2")
+    } else {
+        document.body.classList.remove("cambio_fondo2")
     }
 }

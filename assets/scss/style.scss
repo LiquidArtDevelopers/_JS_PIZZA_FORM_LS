@@ -41,14 +41,18 @@ html{
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    transition: all 1000ms ease-in-out;
+    transition: all 500ms ease-in-out;
 }
 body{
     @include fondo
 }
 .cambio_fondo{
     background-image: url("../img/logos/Entramado_rojo.svg")!important;
-    transition: all 1000ms ease-in-out;
+    transition: all 500ms ease-in-out;
+}
+.cambio_fondo2{
+    background-image: url("../img/logos/Entramado_azul.svg")!important;
+    transition: all 500ms ease-in-out;
 }
 .preload{ 
     @include fondo;
