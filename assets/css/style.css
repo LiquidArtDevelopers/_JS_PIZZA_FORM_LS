@@ -302,6 +302,75 @@ select:-webkit-autofill:focus {
           transform: translate(0, 0);
 }
 
+.carousel {
+  width: 100%;
+  max-width: 120em;
+  overflow: hidden;
+  margin-bottom: 4em;
+}
+
+.carousel .frame {
+  position: relative;
+  width: 400%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all .8s ease;
+  transition: all .8s ease;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.carousel .frame img {
+  width: calc( 100% / 4);
+  height: 100%;
+  min-height: 10vh;
+}
+
+.carousel .puntos {
+  list-style-type: none;
+  position: absolute;
+  bottom: 65px;
+  width: 100%;
+  margin: 1em 0 0;
+  margin-bottom: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.carousel .puntos .punto {
+  cursor: pointer;
+  width: 1.5em;
+  height: 1.5em;
+  color: #fff;
+  padding-bottom: 1em;
+}
+
+.carousel .punto.activo {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 /************************/
 @font-face {
   font-family: "Piazzere";
@@ -339,6 +408,14 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  -webkit-transition: all 1000ms ease-in-out;
+  transition: all 1000ms ease-in-out;
+}
+
+.cambio_fondo {
+  background-image: url("../img/logos/Entramado_rojo.svg") !important;
+  -webkit-transition: all 1000ms ease-in-out;
+  transition: all 1000ms ease-in-out;
 }
 
 .preload {
@@ -357,6 +434,8 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  -webkit-transition: all 1000ms ease-in-out;
+  transition: all 1000ms ease-in-out;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -501,10 +580,6 @@ header {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
-}
-
-header img {
-  width: 100%;
 }
 
 .logo-principal {
@@ -858,7 +933,7 @@ header img {
   padding-left: 10px;
 }
 
-.selecciones {
+.selecciones, .selecciones2, .selecciones3 {
   position: absolute;
 }
 
@@ -866,16 +941,16 @@ header img {
   position: absolute;
 }
 
-.nota1, .nota2, .nota3 {
+.nota1, .nota2, .nota3, .nota4, .nota5 {
   cursor: pointer;
 }
 
-.nota1Sel, .nota2Sel, .nota3Sel1, .nota3Sel2, .nota3Sel3, .nota3Sel4, .nota3Sel5, .nota3Sel6, .nota3Sel7, .nota3Sel8, .nota3Sel9 {
+.nota1Sel, .nota2Sel, .nota3Sel1, .nota3Sel2, .nota3Sel3, .nota3Sel4, .nota3Sel5, .nota3Sel6, .nota3Sel7, .nota3Sel8, .nota3Sel9, .nota4Sel, .nota4Selagu, .nota4SelaguG, .nota4SelcKel, .nota4SelcEga, .nota4SelcSN, .nota4Selb1, .nota4Selb2, .nota4Selb3, .nota4Selb4, .nota4Selb5, .nota4Selb6, .nota4Selb7, .nota4Selb8, .nota4Selb9, .nota5Sel, .nota5SeloPfi, .nota5SeloPde, .nota5SeloPcq, .nota5SeloPol, .nota5SeloAce, .nota5SeloNug, .nota5SeloH1, .nota5SeloH2, .nota5SeloH3, .nota5SeloH4, .nota5SeloH5, .nota5SeloH6, .nota5SeloH7, .nota5SeloH8, .nota5SeloH9 {
   display: none;
   position: absolute;
 }
 
-#t1, #t2, #t3, #t4, #t5, #t6, #t7, #t8, #t9, #10 {
+#t1, #t2, #t3, #t4, #t5, #t6, #t7, #t8, #t9, #t10 {
   display: none;
   position: absolute;
 }

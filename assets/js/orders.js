@@ -1,12 +1,14 @@
 var contador = 0;
-//Array para el precio donde el precio se suma de entre todos sus valores: masa[0],tipo[1], topping[2] y dto[3].
-var ticket = [0,0,0,0];
+//Array para el precio donde el precio se suma de entre todos sus valores: masa[0],tipo[1], topping[2] y bebida[3].
+var ticket = [0,0,0,0,0];
 
 //creamos un objeto pedido
 var ordenPedido={
     masa:"",
     tipo:"",
     topping:[],
+    bebida:[],
+    otros:[],
     socio:0,
     precio:0,
     direccion:"",
@@ -14,7 +16,7 @@ var ordenPedido={
     email:""
 }
 //Precios (esto ya lo traeremos de algún lado donde sea más fácil gestionar)
-var precioPeq = 6, precioMed = 8, precioFam = 10, precioFin = 1, precioGru = 2, precioCqu = 3, precioTpp = 1.5;
+var precioPeq = 6, precioMed = 8, precioFam = 10, precioFin = 1, precioGru = 2, precioCqu = 3, precioTpp = 1.5, precioRef = 2, precioOtr = 1.5;
 
 
 export default function pedido(){    
@@ -24,35 +26,46 @@ export default function pedido(){
 
 function comanda(){    
 
-    //escuchar la clase pesta (pestaña)
+    
     document.body.addEventListener("click", function(event){
+
+        //escuchar la clase pesta (pestaña)
         if(event.target.classList.contains("pesta")){        
             console.log("pestaña: "+ event.target.id);
             cambiar_hoja(event.target.id);      
         }
-    })
-    //escuchar la clase part02-opc
-    document.body.addEventListener("click", function(event){
+
+        //escuchamos la hoja de pedido de pizza
+        //tamaño
         if(event.target.classList.contains("nota1")){        
             console.log("Tamaño: "+ event.target.id);
             insertar_comanda(event.target.id)            
         }
-    })
-    document.body.addEventListener("click", function(event){
+
+        //tipo masa
         if(event.target.classList.contains("nota2")){        
             console.log("tipo: "+ event.target.id);
             insertar_comanda(event.target.id)            
         }
-    })
-    document.body.addEventListener("click", function(event){
+
+        //ingredientes
         if(event.target.classList.contains("nota3")){        
             console.log("ingrediente: "+ event.target.id);
             insertar_comanda(event.target.id)          
         }
-    })
+        //bebidas
+        if(event.target.classList.contains("nota4")){        
+            console.log("bebida: "+ event.target.id);
+            insertar_comanda2(event.target.id)          
+        }
 
-    //si hay click en la marca de ingrediente seleccionado, quitamos html de la marca
-    document.body.addEventListener("click", function(event){
+        //otros
+        if(event.target.classList.contains("nota5")){        
+            console.log("bebida: "+ event.target.id);
+            insertar_comanda3(event.target.id)          
+        }
+
+        //si hay click en la marca de ingrediente seleccionado, quitamos html de la marca
         if(event.target.classList.contains("nota3Sel")){
 
             //Quitamos ralla de ingrediente
@@ -77,11 +90,33 @@ function comanda(){
             }
             calcTicket();            
         }
-    })  
+
+        //si hay click en la marca de bebidas, quitamos html de la marca (pendiente añadir más cantidad)
+        if(event.target.classList.contains("nota4Sel")){
+
+            //Quitamos ralla de ingrediente
+            console.log("Quitamos bebida: "+ event.target.id);
+            document.querySelector(`#${event.target.id}`).remove();
+            ticket[3]-=precioRef;          
+            
+            calcTicket();            
+        }
+
+        //si hay click en la marca de otros, quitamos html de la marca (pendiente añadir más cantidad)
+        if(event.target.classList.contains("nota5Sel")){
+
+            //Quitamos ralla de ingrediente
+            console.log("Quitamos complemento: "+ event.target.id);
+            document.querySelector(`#${event.target.id}`).remove();
+            ticket[4]-=precioOtr;          
+            
+            calcTicket();            
+        }
+    })
+       
 }
 
 function cambiar_hoja(hoja){
-
     const oCuaderno01= document.querySelector("#cuaderno-01");
     const oCuaderno02= document.querySelector("#cuaderno-02");
     const oCuaderno03= document.querySelector("#cuaderno-03");
@@ -104,8 +139,6 @@ function cambiar_hoja(hoja){
             break;
     }
 }
-
-
 
 function insertar_comanda(com){
 
@@ -185,7 +218,7 @@ function insertar_comanda(com){
                         ticket[2]+=precioTpp;
                         break;
                     case "3":
-                        topP ="445px";
+                        topP ="435px";
                         leftP = "330px";
                         indexxx=5;
                         topping+=`<img id="t3" src="assets/img/pizza/aceitunas.png" alt="">`;
@@ -202,7 +235,7 @@ function insertar_comanda(com){
                         break;
                     case "5":
                         topP ="530px";
-                        leftP = "180px";
+                        leftP = "190px";
                         indexxx=6;
                         topping+=`<img id="t5" src="assets/img/pizza/pimiento-verde.png" alt="">`;
                         ordenPedido['topping'].push(com);
@@ -210,7 +243,7 @@ function insertar_comanda(com){
                         break;
                     case "6":
                         topP ="530px";
-                        leftP = "335px";
+                        leftP = "345px";
                         indexxx=4;
                         topping+=`<img id="t6" src="assets/img/pizza/salami.png" alt="">`;
                         ordenPedido['topping'].push(com);
@@ -226,7 +259,7 @@ function insertar_comanda(com){
                         break;
                     case "8":
                         topP ="605px";
-                        leftP = "185px";
+                        leftP = "200px";
                         indexxx=7;
                         topping+=`<img id="t8" src="assets/img/pizza/cebolla.png" alt="">`;
                         ordenPedido['topping'].push(com);
@@ -265,6 +298,230 @@ function insertar_comanda(com){
             }             
     }
 
+    //llamamos a la función ticket para los cálculos
+    /* document.querySelector("#preci").remove() */
+    calcTicket()
+}
+
+function insertar_comanda2(com){
+
+    const selecciones2 = document.querySelector("#selecciones2");
+    let topP = "",leftP ="", etiquetas="";
+    
+    switch(com){
+        //marcamos aguas
+        case "agu":
+            topP ="190px";
+            leftP = "50px";            
+            ordenPedido['bebida'].push(com);
+            ticket[3]+=precioRef;
+            break;
+        case "aguG":
+            topP ="190px";
+            leftP = "240px";
+            ordenPedido['bebida'].push(com);
+            ticket[3]+=precioRef;
+            break;
+        //marcamos cervezas        
+        case "cKel":
+            topP ="315px";
+            leftP = "35px";
+            ordenPedido['bebida'].push(com);
+            ticket[3]+=precioRef;
+            break;        
+        case "cEga":
+            topP ="315px";
+            leftP = "150px";
+            ordenPedido['bebida'].push(com);
+            ticket[3]+=precioRef;
+            break;
+        case "cSN":
+            topP ="315px";
+            leftP = "299px";
+            ordenPedido['bebida'].push(com);
+            ticket[3]+=precioRef;
+            break;
+        case "b1":
+            topP ="445px";
+            leftP = "40px";
+            ordenPedido['bebida'].push(com);
+            ticket[3]+=precioRef;
+            break;
+        case "b2":
+            topP ="445px";
+            leftP = "170px";
+            ordenPedido['bebida'].push(com);
+            ticket[3]+=precioRef;
+            break;
+        case "b3":
+            topP ="445px";
+            leftP = "305px";
+            ordenPedido['bebida'].push(com);
+            ticket[3]+=precioRef;
+            break;
+        case "b4":
+            topP ="525px";
+            leftP = "50px";
+            ordenPedido['bebida'].push(com);
+            ticket[3]+=precioRef;
+            break;
+        case "b5":
+            topP ="525px";
+            leftP = "195px";
+            ordenPedido['bebida'].push(com);
+            ticket[3]+=precioRef;
+            break;
+        case "b6":
+            topP ="525px";
+            leftP = "345px";
+            ordenPedido['bebida'].push(com);
+            ticket[3]+=precioRef;
+            break;
+        case "b7":
+            topP ="605px";
+            leftP = "55px";
+            ordenPedido['bebida'].push(com);
+            ticket[3]+=precioRef;
+            break;
+        case "b8":
+            topP ="605px";
+            leftP = "195px";
+            ordenPedido['bebida'].push(com);
+            ticket[3]+=precioRef;
+            break;
+        case "b9":
+            topP ="605px";
+            leftP = "345px";
+            ordenPedido['bebida'].push(com);
+            ticket[3]+=precioRef;     
+            break;     
+    }
+
+    //si no existe, metemos            
+    if(document.querySelector(`.nota4Sel${com}`)==null){
+        
+        //Insertamos HTML y cambiamos Style de las marcas
+        etiquetas+=`<img id="b${com}" src="assets/img/pizza/select-ing.png" class="nota4Sel${com} nota4Sel" alt="">`            
+        selecciones2.insertAdjacentHTML('beforeend',etiquetas);
+        document.querySelector(`.nota4Sel${com}`).style.display="block";
+        document.querySelector(`.nota4Sel${com}`).style.top=topP;
+        document.querySelector(`.nota4Sel${com}`).style.left=leftP;
+    }
+    //llamamos a la función ticket para los cálculos
+    /* document.querySelector("#preci").remove() */
+    calcTicket()
+}
+
+function insertar_comanda3(com){
+
+    const selecciones3 = document.querySelector("#selecciones3");
+    let topP = "",leftP ="", etiquetas="";
+    
+    switch(com){
+        //marcamos patatas
+        case "oPfi":
+            topP ="180px";
+            leftP = "30px";            
+            ordenPedido['otros'].push(com);
+            ticket[4]+=precioOtr;
+            break;
+        case "oPde":
+            topP ="180px";
+            leftP = "150px";
+            ordenPedido['otros'].push(com);
+            ticket[4]+=precioOtr;
+            break;
+        case "oPcq":
+            topP ="180px";
+            leftP = "312px";
+            ordenPedido['otros'].push(com);
+            ticket[4]+=precioOtr;            
+            break;
+        //marcamos cervezas        
+        case "oPol":
+            topP ="315px";
+            leftP = "50px";
+            ordenPedido['otros'].push(com);
+            ticket[4]+=precioOtr;
+            break;        
+        case "oAce":
+            topP ="315px";
+            leftP = "190px";
+            ordenPedido['otros'].push(com);
+            ticket[4]+=precioOtr;
+            break;
+        case "oNug":
+            topP ="315px";
+            leftP = "350px";
+            ordenPedido['otros'].push(com);
+            ticket[4]+=precioOtr;
+            break;
+        case "oH1":
+            topP ="430px";
+            leftP = "60px";
+            ordenPedido['otros'].push(com);
+            ticket[4]+=precioOtr;
+            break;
+        case "oH2":
+            topP ="430px";
+            leftP = "190px";
+            ordenPedido['otros'].push(com);
+            ticket[4]+=precioOtr;
+            break;
+        case "oH3":
+            topP ="430px";
+            leftP = "340px";
+            ordenPedido['otros'].push(com);
+            ticket[4]+=precioOtr;
+            break;
+        case "oH4":
+            topP ="525px";
+            leftP = "55px";
+            ordenPedido['otros'].push(com);
+            ticket[4]+=precioOtr;
+            break;
+        case "oH5":
+            topP ="525px";
+            leftP = "200px";
+            ordenPedido['otros'].push(com);
+            ticket[4]+=precioOtr;
+            break;
+        case "oH6":
+            topP ="525px";
+            leftP = "345px";
+            ordenPedido['otros'].push(com);
+            ticket[4]+=precioOtr;
+            break;
+        case "oH7":
+            topP ="605px";
+            leftP = "40px";
+            ordenPedido['otros'].push(com);
+            ticket[4]+=precioOtr;
+            break;
+        case "oH8":
+            topP ="605px";
+            leftP = "160px";
+            ordenPedido['otros'].push(com);
+            ticket[4]+=precioOtr;
+            break;
+        case "oH9":
+            topP ="605px";
+            leftP = "310px";
+            ordenPedido['otros'].push(com);
+            ticket[4]+=precioOtr;
+            break;     
+    }
+
+    //si no existe, metemos            
+    if(document.querySelector(`.nota5Sel${com}`)==null){
+        
+        //Insertamos HTML y cambiamos Style de las marcas
+        etiquetas+=`<img id="b${com}" src="assets/img/pizza/select-ing.png" class="nota5Sel${com} nota5Sel" alt="">`            
+        selecciones3.insertAdjacentHTML('beforeend',etiquetas);
+        document.querySelector(`.nota5Sel${com}`).style.display="block";
+        document.querySelector(`.nota5Sel${com}`).style.top=topP;
+        document.querySelector(`.nota5Sel${com}`).style.left=leftP;
+    }
     //llamamos a la función ticket para los cálculos
     /* document.querySelector("#preci").remove() */
     calcTicket()
