@@ -21,4 +21,10 @@ function scrollFunction() {
     } else {
         document.body.classList.remove("cambio_fondo2")
     }
+
+    if (document.body.scrollTop > 1200 || document.documentElement.scrollTop > 1200) {
+        document.body.classList.add("cambio_fondo3")
+    } else {
+        document.body.classList.remove("cambio_fondo3")
+    }
 }

@@ -12,8 +12,8 @@ export default function idiomas(){
     //Escuchamos la selección de idioma
     document.body.addEventListener("click", function(event){
         if(event.target.classList.contains("idioma")){
-            /* //creamos la cookie del idioma
-            console.log("cookie creada: "+ event.target.id); */
+            //creamos la cookie del idioma
+            console.log("cookie creada: "+ event.target.id);
             cookie.setCookie("idiomas", event.target.id, 90);
             idioma = event.target.id
             resetearIdioma()
@@ -28,52 +28,51 @@ export default function idiomas(){
     document.querySelector("#es").classList.remove("idioma-select");
     document.querySelector("#en").classList.remove("idioma-select");
 }
-/* let idioma=""; */
 
 //función en la que cambiamos el idioma
 function cambioIdioma(){
+
     cookie.setCookieName('idiomas');
-//Comprobamos que exista la cookie
-if (cookie.getCookie()!="") {
-    idioma=cookie.getCookie();
-    console.log("cookie de idioma establecida en: "+ idioma);
-} else {
-    cookie.setCookie("idiomas", "es", 90);
-    idioma="es";
-}
-    //en función de la var, construimos los objetos en uno u otro idioma
-    switch(idioma){
-        case "eu":
-            var iCabecera = {
-                text0:"deskontuak",
-                text1:"zure ezkarea",
-                text2:"sukaldaritza",
-            };                    
-            document.querySelector("#eu").classList.add("idioma-select");
-            break;
-        case "es":
-            var iCabecera = {
-                text0:"ofertas",
-                text1:"tu pedido",
-                text2:"la cocina",
-            };        
-            document.querySelector("#es").classList.add("idioma-select");
-            break;
-        case "en":
-            var iCabecera = {
-                text0:"discounts",
-                text1:"your order",
-                text2:"kitchen",
-            };   
-            document.querySelector("#en").classList.add("idioma-select");
-            break;
+    //Comprobamos que exista la cookie
+    if (cookie.getCookie()!="") {
+        idioma=cookie.getCookie();
+    } else {
+        cookie.setCookie("idiomas", "es", 90);
+        idioma="es";
     }
 
-    //recorremos los valores del objeto creado
-    let c = Object.values(iCabecera)
-    for(let i=0; i< c.length; i++){
-        //escribimos el html
-        document.querySelector("#nav-enlaces-"+i).innerHTML=c[i];
-    }
-    console.log("cookie de idioma establecida en: "+ idioma);
+    //en función de la var, construimos los objetos en uno u otro idioma
+    let jsonIdioma = "";
+    jsonIdioma = `assets/json/${idioma}.json`;
+    document.querySelector(`#${idioma}`).classList.add("idioma-select");
+    
+    //recorremos todos los elementos del json y buscamos una id con su misma clave
+    fetch(jsonIdioma)
+    .then(response =>{
+        if(response.ok)
+            return response.text()
+        else
+            throw new Error(response.status);
+    })
+    .then(data =>{
+        //paseamos el json
+        const iJs=JSON.parse(data);
+        //recorremos las claves del json parseado
+        for (var clave in iJs){
+            //si es una clave, nos quedamos con el valor
+            if (iJs.hasOwnProperty(clave)) {
+              //mostramos los datos y los índices en la consola por si erramos en alguna texto
+              console.log("Clave: " + clave+ " - Valor: " + iJs[clave]);
+              document.querySelector(`.tx${clave}`).innerHTML=iJs[clave];
+              /* document.querySelector(`#tx${clave}`).innerHTML=iJs[clave]; */
+            }
+          }
+        console.log("cookie de idioma establecida en: "+ idioma);
+    })
+    .catch(err =>{
+        //por si el json da error, le metemos precios
+        console.error("ERROR", err.message)        
+    });
+
 }
+
