@@ -423,3 +423,58 @@ header{
         font-size: 5vw;
     }  
 }
+
+/* footer */
+footer{
+    background-color: rgb(65, 65, 65);
+    color: white;
+    font-family: sans-serif;
+    margin-top: -4px;
+    width: 100%;
+    max-width: 1920px;
+    h2{
+        font-size: 20px;
+    }
+    a{
+        color: white;
+        text-decoration: none;
+    }
+    a:visited{
+        color: white;
+    }
+    a:hover{
+        color: $color_rojo
+    }
+}
+.columnas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.columna{
+    width: 23%;
+    padding-top: 20px;
+    padding-left: 20px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.cajetin-contacto{
+    display: flex;
+    flex-direction: column;
+    img{
+        height: 18px;
+    }
+}
+.fila-cajetin{
+    display: flex;
+    column-gap: 20px;
+    padding-bottom: 20px;
+}
+.copyrights{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
