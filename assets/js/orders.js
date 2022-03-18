@@ -8,6 +8,8 @@ var contador = 0;
 //Array para el precio donde el precio se suma de entre todos sus valores: masa[0],tipo[1], topping[2] y bebida[3].
 var ticket = [0,0,0,0,0];
 
+
+//creamos
 //creamos un objeto pedido
 var ordenPedido={
     masa:"",
@@ -15,11 +17,7 @@ var ordenPedido={
     topping:[],
     bebida:[],
     otros:[],
-    socio:0,
     precio:0,
-    direccion:"",
-    telefono:"",
-    email:""
 }
 
 //Precios (esto ya lo traeremos de algún lado donde sea más fácil gestionar)
