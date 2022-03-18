@@ -387,7 +387,7 @@ select:-webkit-autofill:focus {
   src: url("../font/ShortStack-Regular.ttf");
 }
 
-/* VARIABLES */
+/* VARIABLES  */
 html {
   scroll-behavior: smooth;
 }
