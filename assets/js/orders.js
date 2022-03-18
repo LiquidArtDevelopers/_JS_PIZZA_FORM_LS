@@ -1,25 +1,37 @@
 
-export default function pedido(){
-    comanda();    
-}
-
-
-var contador = 0;
+let contador = 0;
 //Array para el precio donde el precio se suma de entre todos sus valores: masa[0],tipo[1], topping[2] y bebida[3].
-var ticket = [0,0,0,0,0];
+let ticket = [0,0,0,0,0];
 
+
+//creamos
 //creamos un objeto pedido
-var ordenPedido={
+const ordenPedido={
     masa:"",
     tipo:"",
     topping:[],
     bebida:[],
     otros:[],
-    socio:0,
     precio:0,
-    direccion:"",
-    telefono:"",
-    email:""
+}
+const pedidos=[];
+
+export default function pedido(){
+    comanda();
+    escribirPedido();
+}
+const escribirPedido=()=>{
+    const $notaPizza=document.querySelector('.comprar ul');
+    const $li=document.createElement('li');
+    document.addEventListener('click',(e)=>{
+        if(e.target.matches('#btn-comprar')){
+            Object.entries(ordenPedido).forEach(([key,value])=>{
+                $li.textContent+=`${key,value}`;
+        });
+        $notaPizza.appendChild($li);
+        }
+    });
+
 }
 
 //Precios (esto ya lo traeremos de algún lado donde sea más fácil gestionar)
@@ -70,37 +82,37 @@ function comanda(){
         //escuchar la clase pesta (pestaña)
         if(event.target.classList.contains("pesta")){        
             console.log("pestaña: "+ event.target.id);
-            cambiar_hoja(event.target.id);      
+            cambiar_hoja(event.target.id);  
         }
 
         //escuchamos la hoja de pedido de pizza
         //tamaño
         if(event.target.classList.contains("nota1")){        
             console.log("Tamaño: "+ event.target.id);
-            insertar_comanda(event.target.id)            
+            insertar_comanda(event.target.id);       
         }
 
         //tipo masa
         if(event.target.classList.contains("nota2")){        
             console.log("tipo: "+ event.target.id);
-            insertar_comanda(event.target.id)            
+            insertar_comanda(event.target.id);          
         }
 
         //ingredientes
         if(event.target.classList.contains("nota3")){        
             console.log("ingrediente: "+ event.target.id);
-            insertar_comanda(event.target.id)          
+            insertar_comanda(event.target.id);
         }
         //bebidas
         if(event.target.classList.contains("nota4")){        
             console.log("bebida: "+ event.target.id);
-            insertar_comanda2(event.target.id)          
+            insertar_comanda2(event.target.id);
         }
 
         //otros
         if(event.target.classList.contains("nota5")){        
             console.log("bebida: "+ event.target.id);
-            insertar_comanda3(event.target.id)          
+            insertar_comanda3(event.target.id);        
         }
 
         //si hay click en la marca de ingrediente seleccionado, quitamos html de la marca
@@ -126,7 +138,7 @@ function comanda(){
             if(contador<=2 && document.querySelector(`#t10`)!=null){
                 document.querySelector(`#t10`).remove();
             }
-            calcTicket();            
+            calcTicket();           
         }
 
         //si hay click en la marca de bebidas, quitamos html de la marca (pendiente añadir más cantidad)
@@ -146,12 +158,10 @@ function comanda(){
             //Quitamos ralla de ingrediente
             console.log("Quitamos complemento: "+ event.target.id);
             document.querySelector(`#${event.target.id}`).remove();
-            ticket[4]-=precioOtr;          
-            
+            ticket[4]-=precioOtr;
             calcTicket();            
         }
-    })
-       
+    });  
 }
 
 function cambiar_hoja(hoja){
@@ -193,7 +203,7 @@ function insertar_comanda(com){
             nota1Sel.style.top="205px";
             nota1Sel.style.left="19px";
             ordenPedido['masa']  = com;
-            ticket[0]=precioPeq;
+            ticket[0]=precioPeq;   
             break;
         case "med":
             nota1Sel.style.display="block";
@@ -585,7 +595,8 @@ function calcTicket(){
         eur = String(sum).substring(0,pos);
         cent = String(sum).substring(pos+1,pos+2)+"0";
     }
-
+    //Agregar ordenPedido al array pedido.
+    pedidos.push(ordenPedido);
     console.log("Total: "+sum+" Euros: "+eur+" Cent: "+cent)
     
     let precioHtml = `<p id="preci">${eur}<span>,${cent}€</span></p>`;
