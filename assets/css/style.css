@@ -304,9 +304,9 @@ select:-webkit-autofill:focus {
 
 .carousel {
   width: 100%;
-  max-width: 120em;
+  max-width: 1920px;
   overflow: hidden;
-  margin-bottom: 4em;
+  margin-bottom: 1em;
 }
 
 .carousel .frame {
@@ -616,6 +616,104 @@ header {
 .contenedor_principal {
   width: 90%;
   margin: 0 auto;
+}
+
+/* ZONA OFERTAS */
+#caja_ofertas {
+  background-color: #4b9c4046;
+  width: 100%;
+  height: 300px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#caja_ofertas #flechas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#caja_ofertas #flechas img {
+  position: absolute;
+  opacity: 70%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+#caja_ofertas #flechas .flecha:hover {
+  opacity: 100;
+}
+
+#caja_ofertas #flechas .fIzd {
+  left: 2px;
+}
+
+#caja_ofertas #flechas .fIzd:active {
+  left: -3px;
+}
+
+#caja_ofertas #flechas .fDch {
+  right: 2px;
+}
+
+#caja_ofertas #flechas .fDch:active {
+  right: -3px;
+}
+
+#caja_ofertas #ofertas {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  overflow: hidden;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#caja_ofertas #ofertas .oferta {
+  width: 300px;
+  height: 300px;
+  background-color: #A0425B;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 6em;
+  font-family: "Piazzere";
 }
 
 /* ZONA PEDIDO */

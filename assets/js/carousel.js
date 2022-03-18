@@ -13,10 +13,12 @@ export default function carrousel(){
         });
     });
 }
+
 const autoCarousel=()=>{
     (ps<3) ? ps++ : ps=0;
     moverCarrosel(ps);
 }
+
 const moverCarrosel =(position)=>{
     // Calculando el espacio que debe DESPLAZARSE el FRAME
     let operation = position * -25;

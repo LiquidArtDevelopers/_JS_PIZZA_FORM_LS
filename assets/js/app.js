@@ -5,11 +5,12 @@ import componentes from "./components.js";
 import pedido from "./orders.js";
 import dataCookies from "./dataCookies.js";
 import carousel from "./carousel.js";
+import ofertas from "./ofertas.js";
 
 const d=document;
 d.addEventListener('DOMContentLoaded',()=>{
     //Llamar a la animación de carga.
-    loadAnimation();
+    //loadAnimation();
     //Script que gestiona las cookies.
     dataCookies();
     //Llamar a componentes.
@@ -20,4 +21,6 @@ d.addEventListener('DOMContentLoaded',()=>{
     formulario();
     //pedido
     pedido();
+    //ofertas
+    ofertas();
 });
