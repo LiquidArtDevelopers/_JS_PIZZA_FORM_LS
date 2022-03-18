@@ -41,7 +41,7 @@ if (cookie.getCookie()!="") {
     cookie.setCookie("idiomas", "es", 90);
     idioma="es";
 }
-    //en función de la var, construimos los objetos en uno u otro idioma
+    //en función de la var, construimos los objetos en uno u otro idioma 
     switch(idioma){
         case "eu":
             var iCabecera = {
