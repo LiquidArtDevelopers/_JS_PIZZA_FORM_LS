@@ -680,6 +680,7 @@ header {
 
 #caja_ofertas #flechas .fIzd {
   left: -12px;
+  z-index: 70;
 }
 
 #caja_ofertas #flechas .fIzd:active {
@@ -688,6 +689,7 @@ header {
 
 #caja_ofertas #flechas .fDch {
   right: -12px;
+  z-index: 70;
 }
 
 #caja_ofertas #flechas .fDch:active {
