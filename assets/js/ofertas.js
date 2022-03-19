@@ -34,7 +34,6 @@ function moverDcha(){
 
 
 function rellenarOfertas(){
-
     
 
 }
