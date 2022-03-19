@@ -179,7 +179,7 @@ header{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 50px;    
     #flechas{
         position: absolute;
         width: 100%;
@@ -216,7 +216,7 @@ header{
         flex-wrap: wrap;
         column-gap: 10px;
         overflow: hidden;
-        justify-content: center;
+        justify-content: center;        
         .oferta{
             width: 300px;
             height: 300px;        
@@ -228,21 +228,40 @@ header{
             font-size: 6em;
             font-family: "Piazzere";
             position: relative;
+            overflow: hidden;
+            
             img{
                 width: 100%;
+                z-index: 50;
+                transition: all 600ms ease-in-out;
+                cursor: pointer;                
+            }
+            img:hover{
+                transform:scale(1.1)
             }
             p{
-                position: absolute;
-                right: 5px;
-                bottom: -20px;
+                position: absolute; 
+                font-family: "Piazzere";                
+                z-index: 60;                
+            }
+            .oTexto{
+                left: 5px;
+                top: -10px;
+                font-size: 3rem;
                 color: white;
-                font-family: "Piazzere";
-                font-size: 5rem;
+                text-shadow: red 2px 2px 10px;                
+            }                      
+            .oEuros{
+                right: 5px;
+                bottom: -18px;
+                font-size: 100%;
+                color: white;
                 text-shadow: red 2px 2px 10px;
                 span{
                     font-size: 2rem;
                 }
             }
+            
         }
    }     
 }

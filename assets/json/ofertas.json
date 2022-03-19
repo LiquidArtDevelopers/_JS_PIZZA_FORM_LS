@@ -21,7 +21,7 @@
         "id":"of4",
         "src":"assets/img/ofertas/pamplona.jpg",
         "precio":"14,99",
-        "texto":"menú Pamplona"
+        "texto":"menú Iruña"
     },
     "oferta05":{
         "id":"of5",
@@ -39,7 +39,7 @@
         "id":"of7",
         "src":"assets/img/ofertas/variopinta.jpg",
         "precio":"15,99",
-        "texto":"menú Variopinto"      
+        "texto":"menú Pintaza"      
     },
     "oferta08":{
         "id":"of8",

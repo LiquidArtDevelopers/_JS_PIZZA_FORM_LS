@@ -62,7 +62,7 @@ function cambioIdioma(){
             //si es una clave, nos quedamos con el valor
             if (iJs.hasOwnProperty(clave)) {
               //mostramos los datos y los índices en la consola por si erramos en alguna texto
-              console.log("Clave: " + clave+ " - Valor: " + iJs[clave]);
+              /* console.log("Clave: " + clave+ " - Valor: " + iJs[clave]); */
               document.querySelector(`.tx${clave}`).innerHTML=iJs[clave];
               /* document.querySelector(`#tx${clave}`).innerHTML=iJs[clave]; */
             }
