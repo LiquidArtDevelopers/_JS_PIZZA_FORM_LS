@@ -67,6 +67,7 @@ body{
     @include fondo;
     justify-content: center;
 }
+
 /* NAVEGADOR */
 #navegador{
     max-width: 1920px;
@@ -170,8 +171,7 @@ header{
 
 /* ZONA OFERTAS */
 
-#caja_ofertas{
-    background-color: #4b9c4046;
+#caja_ofertas{    
     width: 100%;
     height: 300px; 
     position: relative;
@@ -195,16 +195,16 @@ header{
             opacity: 100;
         }
         .fIzd{        
-            left: 2px;
+            left: -12px;
         }
         .fIzd:active{
-            left:-3px;
+            left:-20px;
         }
         .fDch{       
-            right: 2px;
+            right: -12px;
         }
         .fDch:active{
-            right:-3px;
+            right:-20px;
         }    
     }
    #ofertas{
@@ -226,9 +226,24 @@ header{
             align-items: center;
             font-size: 6em;
             font-family: "Piazzere";
+            position: relative;
+            img{
+                width: 100%;
+            }
+            p{
+                position: absolute;
+                right: 5px;
+                bottom: -20px;
+                color: white;
+                font-family: "Piazzere";
+                font-size: 5rem;
+                text-shadow: red 2px 2px 10px;
+                span{
+                    font-size: 2rem;
+                }
+            }
         }
-   } 
-    
+   }     
 }
 
 

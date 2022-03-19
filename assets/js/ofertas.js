@@ -1,5 +1,7 @@
 export default function ofertas(){
     
+    rellenarOfertas()
+
     document.body.addEventListener("click", function(event){        
         //escuchamos los botones del carousel de pizzas
         if(event.target.classList.contains("flecha")){        
@@ -19,11 +21,11 @@ export default function ofertas(){
                     break;
             }
         }
-
     })
-
-    rellenarOfertas()
+    
 }
+
+
 
 function rellenarOfertas(){
 
