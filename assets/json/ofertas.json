@@ -1,0 +1,58 @@
+{
+    "oferta00":{
+        "id":"of1",
+        "src":"assets/img/ofertas/cherry.jpg",
+        "precio":"14,99",
+        "texto":"menú Cherryz"
+    },
+    "oferta01":{
+        "id":"of2",
+        "src":"assets/img/ofertas/conCoca.jpg",
+        "precio":"18,99",
+        "texto":"menú Cocaza"
+    },
+    "oferta02":{
+        "id":"of3",
+        "src":"assets/img/ofertas/integral.jpg",
+        "precio":"18,99",
+        "texto":"menú integral"       
+    },
+    "oferta03":{
+        "id":"",
+        "imagen":"",
+        "precio":"",
+        "texto":""
+        
+    },
+    "oferta04":{
+        "id":"",
+        "imagen":"",
+        "precio":"",
+        "texto":""
+        
+    },
+    "oferta05":{
+        "id":"",
+        "imagen":"",
+        "precio":"",
+        "texto":""
+        
+    },
+    "oferta06":{
+        "id":"",
+        "imagen":"",
+        "precio":"",
+        "texto":""        
+    },
+    "oferta07":{
+        "id":"",
+        "imagen":"",
+        "precio":"",
+        "texto":""        
+    },
+    "oferta08":{
+        "imagen":"",
+        "precio":"",
+        "texto":""        
+    }
+}
