@@ -50,18 +50,18 @@ body{
 .cambio_fondo{
     background-image: url("../img/logos/Entramado_rojo.svg")!important;
     background-attachment: fixed;
-    transition: all 500ms ease-in-out;
+    transition: all 700ms;
 }
 .cambio_fondo2{
     background-image: url("../img/logos/Entramado_azul.svg")!important;
     background-attachment: fixed;
-    transition: all 500ms ease-in-out;
+    transition: all 700ms;
 }
 .cambio_fondo3{
     background-image: url("../img/logos/Entramado_blanco.svg")!important;
     background-color: black;
     background-attachment: fixed;
-    transition: all 500ms ease-in-out;
+    transition: all 700ms;
 }
 .preload{ 
     @include fondo;
@@ -103,12 +103,7 @@ body{
             color: white;
             font-size: 2rem;
         }
-        .rojo{
-            color:$color_rojo;
-        }
-        .verde{
-            color:$color_verde;
-        }
+        
     }
     .nav-enlaces{
         width: 65%;
@@ -146,6 +141,12 @@ body{
         }
     }
 }
+.rojo{
+    color:$color_rojo;
+}
+.verde{
+    color:$color_verde;
+}
 
 /* HEADER */
 header{
@@ -164,10 +165,11 @@ header{
     h1{
         position: absolute;        
         text-align: center;
-        top: 30%;
+        top: 55%;
         font-family: "Piazzere";
-        font-size: 5vw;
+        font-size: 3vw;
         color: white;
+        text-shadow: $color_rojo 0px 0px 20px;
     }
 }
 
@@ -238,8 +240,7 @@ header{
             font-size: 6em;
             font-family: "Piazzere";
             position: relative;
-            overflow: hidden;
-            
+            overflow: hidden;     
             img{
                 width: 100%;
                 z-index: 50;
@@ -259,7 +260,7 @@ header{
                 top: -10px;
                 font-size: 3rem;
                 color: white;
-                text-shadow: red 2px 2px 10px;                
+                text-shadow: $color_verde 2px 2px 10px;                
             }                      
             .oEuros{
                 right: 5px;
@@ -270,8 +271,11 @@ header{
                 span{
                     font-size: 2rem;
                 }
-            }
-            
+            }            
+        }
+        .movIzda{
+            transform: translateX(-320px); /* Equivalente a translateX(10px) */;
+            transition: all 1000ms step-end;
         }
    }     
 }

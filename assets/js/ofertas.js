@@ -24,12 +24,13 @@ function moverIzda(){
     console.log(hijoUltimo)
     document.querySelector("#ofertas").removeChild(hijoUltimo)
     document.querySelector("#ofertas").insertAdjacentElement("afterbegin", hijoUltimo)
+    
 }
 function moverDcha(){
     let hijoPrimero = document.querySelector("#ofertas").firstElementChild;
     console.log(hijoPrimero)
     document.querySelector("#ofertas").removeChild(hijoPrimero)
-    document.querySelector("#ofertas").insertAdjacentElement("beforeend", hijoPrimero)   
+    document.querySelector("#ofertas").insertAdjacentElement("beforeend", hijoPrimero)    
 }
 
 

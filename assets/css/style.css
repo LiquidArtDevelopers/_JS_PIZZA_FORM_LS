@@ -434,23 +434,23 @@ body {
 .cambio_fondo {
   background-image: url("../img/logos/Entramado_rojo.svg") !important;
   background-attachment: fixed;
-  -webkit-transition: all 500ms ease-in-out;
-  transition: all 500ms ease-in-out;
+  -webkit-transition: all 700ms;
+  transition: all 700ms;
 }
 
 .cambio_fondo2 {
   background-image: url("../img/logos/Entramado_azul.svg") !important;
   background-attachment: fixed;
-  -webkit-transition: all 500ms ease-in-out;
-  transition: all 500ms ease-in-out;
+  -webkit-transition: all 700ms;
+  transition: all 700ms;
 }
 
 .cambio_fondo3 {
   background-image: url("../img/logos/Entramado_blanco.svg") !important;
   background-color: black;
   background-attachment: fixed;
-  -webkit-transition: all 500ms ease-in-out;
-  transition: all 500ms ease-in-out;
+  -webkit-transition: all 700ms;
+  transition: all 700ms;
 }
 
 .preload {
@@ -532,14 +532,6 @@ body {
   font-size: 2rem;
 }
 
-#navegador .nav-logo .rojo {
-  color: #A0425B;
-}
-
-#navegador .nav-logo .verde {
-  color: #4B9C40;
-}
-
 #navegador .nav-enlaces {
   width: 65%;
   display: -webkit-box;
@@ -607,6 +599,14 @@ body {
   color: #A0425B !important;
 }
 
+.rojo {
+  color: #A0425B;
+}
+
+.verde {
+  color: #4B9C40;
+}
+
 /* HEADER */
 header {
   max-width: 1920px;
@@ -634,10 +634,11 @@ header .logo-principal {
 header h1 {
   position: absolute;
   text-align: center;
-  top: 30%;
+  top: 55%;
   font-family: "Piazzere";
-  font-size: 5vw;
+  font-size: 3vw;
   color: white;
+  text-shadow: #A0425B 0px 0px 20px;
 }
 
 /* CONTENEDOR PRINCIPAL */
@@ -772,7 +773,7 @@ header h1 {
   top: -10px;
   font-size: 3rem;
   color: white;
-  text-shadow: red 2px 2px 10px;
+  text-shadow: #4B9C40 2px 2px 10px;
 }
 
 #caja_ofertas #ofertas .oferta .oEuros {
@@ -785,6 +786,14 @@ header h1 {
 
 #caja_ofertas #ofertas .oferta .oEuros span {
   font-size: 2rem;
+}
+
+#caja_ofertas #ofertas .movIzda {
+  -webkit-transform: translateX(-320px);
+          transform: translateX(-320px);
+  /* Equivalente a translateX(10px) */
+  -webkit-transition: all 1000ms step-end;
+  transition: all 1000ms step-end;
 }
 
 /* ZONA PEDIDO */
