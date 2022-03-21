@@ -4,7 +4,7 @@ export default function ofertas(){
     rellenarOfertas()
 
     document.body.addEventListener("click", function(event){        
-        //escuchamos los botones del carousel de pizzas
+        //escuchamos los  botones del carousel de pizzas
         if(event.target.classList.contains("flecha")){        
             console.log("pestaña: "+ event.target.id);
             switch(event.target.id){
