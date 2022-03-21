@@ -9,6 +9,8 @@
 @import 'preload';
 @import "form";
 @import 'modalWindow';
+@import 'carousel';
+@import 'comprar';
 
 /************************/
 
@@ -25,29 +27,50 @@
     src: url("../font/ShortStack-Regular.ttf");
 }
 
-/* VARIABLES */
+/* VARIABLES  */
 $color_boli:rgb(51, 51, 124);
 $color_rojo: #A0425B;
 $color_verde: #4B9C40;
+$color_fundido: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
 
 html{
     scroll-behavior: smooth;
 }
 @mixin fondo{
-    background-image: url("../img/Entramado_verde.svg");
+    background-image: url("../img/logos/Entramado_verde.svg");
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    transition: all 500ms ease-in-out;    
 }
 body{
     @include fondo
+    
+}
+.cambio_fondo{
+    background-image: url("../img/logos/Entramado_rojo.svg")!important;
+    background-attachment: fixed;
+    transition: all 700ms;
+    
+}
+.cambio_fondo2{
+    background-image: url("../img/logos/Entramado_azul.svg")!important;
+    background-attachment: fixed;
+    transition: all 700ms;
+}
+.cambio_fondo3{
+    background-image: url("../img/logos/Entramado_blanco.svg")!important;
+    background-color: black;
+    background-attachment: fixed;
+    transition: all 700ms;
 }
 .preload{ 
     @include fondo;
     justify-content: center;
 }
+
 /* NAVEGADOR */
 #navegador{
     max-width: 1920px;
@@ -55,7 +78,7 @@ body{
     height: 70px;
     background-color: rgba(0, 0, 0, 0);
     position: fixed;
-    z-index: 20;
+    z-index: 999;
     display: flex;
     flex-direction: row;
     transition: 400ms ease-in-out;
@@ -69,56 +92,63 @@ body{
     a:hover{
         color:#A0425B;
     }
-}
-.nav-logo{
-    width: 20%;
-    display: flex;
-    align-items: center;
-    justify-content:flex-start;    
-    padding-left: 10px;
-    img{
-        height: 100%;
+    .nav-logo{
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content:flex-start;    
+        padding-left: 10px;        
+        img{
+            height: 100%;
+        }
+        .logo-peq{
+            font-family: "Piazzere";   
+            color: white;
+            font-size: 2rem;
+        }
+        
     }
-}
-.logo-peq{
-    font-family: "Piazzere";   
-    color: white;
-    font-size: 2rem;
-}
-.nav-enlaces{
-    width: 65%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content:flex-end;    
-    color: rgb(255, 255, 255);
-    font-family: "Piazzere";
-    font-size: 2rem;
-    ul{
-        display:flex;
+    .nav-enlaces{
+        width: 65%;
+        display: flex;
         flex-direction: row;
-        list-style-type: none;
-        column-gap: 40px;    
+        align-items: center;
+        justify-content:flex-end;    
+        color: rgb(255, 255, 255);
+        font-family: "Idioma";
+        font-size: 2rem;
+        ul{
+            display:flex;
+            flex-direction: row;
+            list-style-type: none;
+            column-gap: 40px;    
+        }
+    }
+    .nav-idiomas{
+        width: 15%;
+        display: flex;
+        align-items: center;
+        justify-content:flex-end;
+        padding-right: 20px;
+        font-family: "Idioma";
+        font-size: 1.4em;
+        color: white;
+        ul{
+            display:flex;
+            flex-direction: row;
+            list-style-type: none;
+            column-gap: 10px;
+        }
+        .idioma-select{
+            color:$color_rojo!important;
+        }
     }
 }
-.nav-idiomas{
-    width: 15%;
-    display: flex;
-    align-items: center;
-    justify-content:flex-end;
-    padding-right: 20px;
-    font-family: "Idioma";
-    font-size: 1.4em;
-    color: white;
-    ul{
-        display:flex;
-        flex-direction: row;
-        list-style-type: none;
-        column-gap: 10px;
-    }
+.rojo{
+    color:$color_rojo;
 }
-.idioma-select{
-    color:$color_rojo!important;
+.verde{
+    color:$color_verde;
 }
 
 /* HEADER */
@@ -130,29 +160,200 @@ header{
     flex-direction: row;
     justify-content: center;
     position: relative;
-    img{
-        width: 100%;
+    .logo-principal{
+        position: absolute;
+        top: 10vh;
+        width: 30%;
     }
-}
-.logo-principal{
-    position: absolute;
-    top: 10vh;
-    width: 60%;
-}
-.rojo{
-    color:$color_rojo;
-}
-.verde{
-    color:$color_verde;
+    h1{
+        position: absolute;        
+        text-align: center;
+        top: 55%;
+        font-family: "Piazzere";
+        font-size: 3vw;
+        color: white;
+        text-shadow: $color_verde 0px 0px 20px;
+    }
 }
 
 /* CONTENEDOR PRINCIPAL */
 .contenedor_principal{
     width: 90%;
     margin: 0 auto;
+    padding-top: 30px;
+}
+
+.contenedor_principal:before {
+    background:
+      linear-gradient(
+        45deg, transparent 33.333%,
+        rgb(255, 255, 255) 33.333%, rgb(255, 255, 255) 66.667%,
+        transparent 66.667%
+      ),
+      linear-gradient(
+        -45deg, transparent 33.333%,
+        rgb(255, 255, 255) 33.333%, rgb(255, 255, 255) 66.667%,
+        transparent 66.667%
+      );
+    background-size: 20px 40px;
+}
+
+/* ZONA OFERTAS */
+#seccion_ofertas{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .oferta_titular{
+        width: 90%;
+        border-radius: 60px 0px;
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: row;        
+        flex-wrap: wrap;
+        align-items: center;
+        overflow: hidden;
+        background-color: #FBAB7E;
+        background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+        column-gap: 200px;
+        img{
+            height: 100%;
+        }
+        .texto_oferta{
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            row-gap: 20px; 
+            h2{         
+                font-size: 10vh;
+                font-family: "idioma";
+                color: white;
+            }
+            .subtitular{
+                border-left: 2px solid white;
+                padding-left: 20px;            
+                font-size: 1.8rem;
+                font-family: "idioma";
+                color: white;
+            }
+        }
+        
+    }
+    #caja_ofertas{    
+        width: 90%;
+        height: 300px; 
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+        #flechas{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            img{
+                position: absolute;
+                opacity: 70%;
+                top:50%;
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+                transition: all 200ms ease-in-out;
+            }        
+            .flecha:hover{
+                opacity: 100;
+            }
+            .fIzd{        
+                left: -12px;          
+                z-index: 70;
+            }
+            .fIzd:active{
+                left:-20px;
+            }
+            .fDch{       
+                right: -12px;            
+                z-index: 70;
+            }
+            .fDch:active{
+                right:-20px;
+            }    
+        }
+        #ofertas{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                column-gap: 10px;
+                overflow: hidden;
+                justify-content: center;        
+                .oferta{
+                    width: 300px;
+                    height: 300px;        
+                    background-color: #A0425B;
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 6em;
+                    font-family: "Piazzere";
+                    position: relative;
+                    overflow: hidden;     
+                    img{
+                        width: 100%;
+                        z-index: 50;
+                        transition: all 600ms ease-in-out;
+                        cursor: pointer;                
+                    }
+                    img:hover{
+                        transform:scale(1.1)
+                    }
+                    p{
+                        position: absolute; 
+                        font-family: "Piazzere";                
+                        z-index: 60;                
+                    }
+                    .oTexto{
+                        left: 5px;
+                        top: -10px;
+                        font-size: 3rem;
+                        color: white;
+                        text-shadow: $color_verde 2px 2px 10px;                
+                    }                      
+                    .oEuros{
+                        right: 5px;
+                        bottom: -18px;
+                        font-size: 100%;
+                        color: white;
+                        text-shadow: red 2px 2px 10px;
+                        span{
+                            font-size: 2rem;
+                        }
+                    }            
+                }
+                .movIzda{
+                    transform: translateX(-320px); /* Equivalente a translateX(10px) */;
+                    transition: all 1000ms step-end;
+                }
+        }    
+    }
+    #caja_ofertas::after{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        content: ' ';
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        height: 100%;
+        filter:blur(100px);
+        border-radius: 50px;
+    }
 }
 
 /* ZONA PEDIDO */
+
 #pedido{
     width: 100%;
     display: flex;
@@ -163,14 +364,51 @@ header{
     align-items: flex-start;
     position: relative;
 }
-.cuaderno{
+.pestanas{    
+    position: absolute;
+    top: 100px;
+    left: -27px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 10;
+}
+#pest02{
+    position: absolute;
+    top: 120px;
+    left: 1px;
+}
+#pest03{
+    position: absolute;
+    top: 245px;
+    left: 5px;
+}
+
+#cuaderno-01{
+    z-index: "8";
+}
+#cuaderno-02{
+    z-index: "6";
+}
+#cuaderno-03{
+    z-index: "4";
+}
+.caja-cuaderno{
+    width: 500px;
+    min-width: 500px;    
+    height: 700px;
+    position: relative;
+}
+.cuaderno{    
     width: 500px;
     min-width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
-    position: relative;
+    align-items: flex-start;   
+    position: absolute;
+    left: 1vw;
 }
 .imgLibreta{
     width: 100%;
@@ -322,31 +560,38 @@ header{
     padding-right: 50px;
     padding-left: 10px;
 }
-.selecciones{
+.selecciones,.selecciones2,.selecciones3{
     position: absolute;    
 }
 #sel01,#sel02,#ing01,#ing02,#ing03,#ing04,#ing05,#ing06{
     position: absolute;
 }
-.nota1,.nota2,.nota3{
+.nota1,.nota2,.nota3,.nota4,.nota5{
     cursor: pointer;
 }
-.nota1Sel, .nota2Sel, .nota3Sel1, .nota3Sel2, .nota3Sel3, .nota3Sel4, .nota3Sel5, .nota3Sel6, .nota3Sel7, .nota3Sel8, .nota3Sel9{
+.nota1Sel,.nota2Sel,.nota3Sel1,.nota3Sel2,.nota3Sel3,.nota3Sel4,.nota3Sel5,.nota3Sel6,.nota3Sel7,.nota3Sel8,.nota3Sel9,.nota4Sel,.nota4Selagu,.nota4SelaguG,.nota4SelcKel,.nota4SelcEga,.nota4SelcSN,.nota4Selb1,.nota4Selb2,.nota4Selb3,.nota4Selb4,.nota4Selb5,.nota4Selb6,.nota4Selb7,.nota4Selb8,.nota4Selb9,.nota5Sel,.nota5SeloPfi,.nota5SeloPde,.nota5SeloPcq,.nota5SeloPol,.nota5SeloAce,.nota5SeloNug,.nota5SeloH1,.nota5SeloH2,.nota5SeloH3,.nota5SeloH4,.nota5SeloH5,.nota5SeloH6,.nota5SeloH7,.nota5SeloH8,.nota5SeloH9{
     display: none;
     position: absolute;
 }
-#t1, #t2, #t3, #t4, #t5, #t6, #t7, #t8, #t9, #10{
+#t1,#t2,#t3,#t4,#t5,#t6,#t7,#t8,#t9,#t10{
     display: none;
     position: absolute;
 }
-#resultado{
+.caja-resultado{
     width: 500px;
-    height: 500px;
-    /* min-width: 500px;
-    max-width: 500px; */
+    min-width: 500px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    align-items: center;
+}
+#resultado{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
     position: relative;
     img{
@@ -354,15 +599,94 @@ header{
     }  
 }
 #precio{    
-    position:absolute;
-    top: 500px;
-    right: 100px;
     p{
         font-family: "Piazzere";    
-        color: $color_rojo;
-        font-size: 12vw;
+        color: black;
+        font-size: 10vw;
     }
     span{
-        font-size: 6vw;
+        font-size: 5vw;
     }  
+}
+
+/* footer  */
+footer{
+    background-color: rgb(65, 65, 65);
+    color: white;
+    font-family: sans-serif;
+    margin-top: -4px;
+    width: 100%;
+    max-width: 1920px;
+    h2{
+        font-size: 20px;
+    }
+    a{
+        color: white;
+        text-decoration: none;
+    }
+    a:visited{
+        color: white;
+    }
+    a:hover{
+        color: $color_rojo
+    }
+}
+footer:before {
+    background:
+      linear-gradient(
+        45deg, transparent 33.333%,
+        rgb(65, 65, 65) 33.333%, rgb(65, 65, 65) 66.667%,
+        transparent 66.667%
+      ),
+      linear-gradient(
+        -45deg, transparent 33.333%,
+        rgb(65, 65, 65) 33.333%, rgb(65, 65, 65) 66.667%,
+        transparent 66.667%
+      );
+    background-size: 20px 40px;
+}
+.zigzag {
+position: relative;
+width: 100%;
+}
+.zigzag:before {
+content: "";
+display: block;
+position: absolute;
+top: -10px;
+width: 100%;
+height: 10px;
+}
+
+.columnas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.columna{
+    width: 23%;
+    padding-top: 20px;
+    padding-left: 20px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.cajetin-contacto{
+    display: flex;
+    flex-direction: column;
+    img{
+        height: 18px;
+    }
+}
+.fila-cajetin{
+    display: flex;
+    column-gap: 20px;
+    padding-bottom: 20px;
+}
+.copyrights{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

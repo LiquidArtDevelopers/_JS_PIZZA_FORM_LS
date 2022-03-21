@@ -1,0 +1,11 @@
+{
+    "precio_pequena":6,
+    "precio_mediana":8,
+    "precio_familiar":10,
+    "precio_fina":1,
+    "precio_gruesa":2,
+    "precio_con_queso":3,    
+    "precio_ingrediente":1.5,
+    "precio_refresco":2,
+    "precio_anadidos":1.5
+}
