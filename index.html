@@ -14,10 +14,11 @@
         <div class="nav-logo">
             <img src="assets/img/logos/logo_pizzeria_3.svg" alt="">
             <p class="logo-peq">PI<span class="verde">A</span>Z<span class="rojo">Z</span>ERE</p>
+            
         </div>
         <div class="nav-enlaces">
             <ul> 
-                <li><a class="txt1" href="#01"></a></li>
+                <li><a class="txt1" href="#seccion_ofertas"></a></li>
                 <li><a class="txt2" href="#pedido"></a></li>
                 <li><a class="txt3" href="#03"></a></li>
             </ul>                
@@ -31,7 +32,7 @@
         </div>
     </nav>
 
-    <header>
+    <header id="headr" class="zigzag">
         <div class="carousel">
             <div class="frame">
                 <img src="assets/img/carousel/header_01.jpg" alt="">
@@ -46,32 +47,33 @@
                 <li class="punto"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z" fill="currentColor"/></svg></li>
             </ul>
         </div>
-        <img class="logo-principal" src="assets/img/logos/logo_pizzeria.svg" alt="">
+        <img class="logo-principal" src="assets/img/logos/logo_pizzeria.svg" alt=""> 
+        <h1 class="txt60">Pasión por las pizzas artesanales</h1>
     </header>
         
-    <main class="contenedor_principal">
+    <main class="contenedor_principal zigzag">
 
-        <section id="caja_ofertas">
-            <div id="flechas">
-                <img id="fiz" class="flecha fIzd" src="assets/img/carousel/izd.svg" alt="">
-                <img id="fde" class="flecha fDch" src="assets/img/carousel/dch.svg" alt="">
-            </div>
-            <div id="ofertas">
-                <div id="of1" orden="1" class="oferta">1</div>
-                <div id="of2" orden="2" class="oferta">2</div>
-                <div id="of3" orden="3" class="oferta">3</div>
-                <div id="of4" orden="4" class="oferta">4</div>
-                <div id="of5" orden="5" class="oferta">5</div>
-                <div id="of6" orden="6" class="oferta">6</div>
-                <div id="of7" orden="7" class="oferta">7</div>
-                <div id="of8" orden="8" class="oferta">8</div>
+        <section id="seccion_ofertas">
+            <div class="oferta_titular">
+                <img src="assets/img/ofertas/ofertas.jpg" alt="">
+                <div class="texto_oferta">
+                    <h2 class="txt61">NUESTRAS OFERTAS</h2>
+                    <p class="subtitular txt62">Cada semana te proponemos una gran variedad de ofertas en menú.<br>¡Aprovecha los mejores precios!</p>
+                </div>
+            </div>   
+            <div id="caja_ofertas">
+                <div id="ofertas">                
+                    <!--  -->
+                </div>
+                <div id="flechas">
+                    <img id="fiz" class="flecha fIzd" src="assets/img/carousel/izd.svg" alt="">
+                    <img id="fde" class="flecha fDch" src="assets/img/carousel/dch.svg" alt="">
+                </div>
             </div>
         </section>
 
-
         <section id="pedido">            
-            <div class="caja-cuaderno">
-                    
+            <div class="caja-cuaderno">                    
                     
                 <div id="cuaderno-03" class="cuaderno">
                     <div class="pestanas">
@@ -249,9 +251,18 @@
                     <!--  -->
                 </div>
             </div>
-
+            <div class="obtener-compra">
+                <a id="btn-comprar">Hacer mi compra</a>
+            </div>
         </section>
 
+        <section>
+            <div class="comprar">
+                <ul>
+                   
+                </ul>
+            </div>
+        </section>
 
         <section>
             <form action="" class="form">
@@ -300,7 +311,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer class="zigzag">
         <div class="columnas">
             <div class="columna">
                 <p class="logo-peq">PI<span class="verde">A</span>Z<span class="rojo">Z</span>ERE</p>
