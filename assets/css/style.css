@@ -380,12 +380,12 @@ select:-webkit-autofill:focus {
   display: none;
 }
 
-#btn-comprar {
+.btn-comprar {
   cursor: pointer;
   font-size: 30px;
   font-style: italic;
   font-weight: bold;
-  color: rgba(255, 255, 255, 0.8);
+  color: white;
   border-radius: 25px;
   background-color: #41ce41;
   position: absolute;
@@ -394,8 +394,12 @@ select:-webkit-autofill:focus {
   padding: 15px;
 }
 
-#btn-comprar.active {
+.active {
   display: block;
+}
+
+.btn-active {
+  background-color: red;
 }
 
 /************************/
@@ -442,14 +446,20 @@ body {
 .cambio_fondo {
   background-image: url("../img/logos/Entramado_rojo.svg") !important;
   background-attachment: fixed;
+<<<<<<< HEAD
   -webkit-transition: all 700ms;
+=======
+>>>>>>> 7acefdf637e26acbd473c462c0baddf5eedb33c6
   transition: all 700ms;
 }
 
 .cambio_fondo2 {
   background-image: url("../img/logos/Entramado_azul.svg") !important;
   background-attachment: fixed;
+<<<<<<< HEAD
   -webkit-transition: all 700ms;
+=======
+>>>>>>> 7acefdf637e26acbd473c462c0baddf5eedb33c6
   transition: all 700ms;
 }
 
@@ -457,7 +467,10 @@ body {
   background-image: url("../img/logos/Entramado_blanco.svg") !important;
   background-color: black;
   background-attachment: fixed;
+<<<<<<< HEAD
   -webkit-transition: all 700ms;
+=======
+>>>>>>> 7acefdf637e26acbd473c462c0baddf5eedb33c6
   transition: all 700ms;
 }
 
@@ -492,8 +505,11 @@ body {
   background-color: rgba(0, 0, 0, 0);
   position: fixed;
   z-index: 999;
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
+=======
+>>>>>>> 7acefdf637e26acbd473c462c0baddf5eedb33c6
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -515,7 +531,6 @@ body {
 #navegador a:hover {
   color: #A0425B;
 }
-
 #navegador .nav-logo {
   width: 20%;
   display: -webkit-box;
@@ -529,17 +544,18 @@ body {
           justify-content: flex-start;
   padding-left: 10px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7acefdf637e26acbd473c462c0baddf5eedb33c6
 #navegador .nav-logo img {
   height: 100%;
 }
-
 #navegador .nav-logo .logo-peq {
   font-family: "Piazzere";
   color: white;
   font-size: 2rem;
 }
-
 #navegador .nav-enlaces {
   width: 65%;
   display: -webkit-box;
@@ -559,10 +575,14 @@ body {
   font-family: "Idioma";
   font-size: 2rem;
 }
+<<<<<<< HEAD
 
 #navegador .nav-enlaces ul {
   display: -webkit-box;
   display: -ms-flexbox;
+=======
+#navegador .nav-enlaces ul {
+>>>>>>> 7acefdf637e26acbd473c462c0baddf5eedb33c6
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -572,7 +592,6 @@ body {
   -webkit-column-gap: 40px;
           column-gap: 40px;
 }
-
 #navegador .nav-idiomas {
   width: 15%;
   display: -webkit-box;
@@ -589,10 +608,14 @@ body {
   font-size: 1.4em;
   color: white;
 }
+<<<<<<< HEAD
 
 #navegador .nav-idiomas ul {
   display: -webkit-box;
   display: -ms-flexbox;
+=======
+#navegador .nav-idiomas ul {
+>>>>>>> 7acefdf637e26acbd473c462c0baddf5eedb33c6
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -602,7 +625,6 @@ body {
   -webkit-column-gap: 10px;
           column-gap: 10px;
 }
-
 #navegador .nav-idiomas .idioma-select {
   color: #A0425B !important;
 }
@@ -632,13 +654,11 @@ header {
           justify-content: center;
   position: relative;
 }
-
 header .logo-principal {
   position: absolute;
   top: 10vh;
   width: 30%;
 }
-
 header h1 {
   position: absolute;
   text-align: center;
@@ -664,6 +684,7 @@ header h1 {
 /* ZONA OFERTAS */
 #seccion_ofertas {
   width: 100%;
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -679,54 +700,42 @@ header h1 {
           align-items: center;
 }
 
+=======
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+>>>>>>> 7acefdf637e26acbd473c462c0baddf5eedb33c6
 #seccion_ofertas .oferta_titular {
   width: 90%;
   border-radius: 60px 0px;
   margin-bottom: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
   overflow: hidden;
   background-color: #FBAB7E;
   background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-  -webkit-column-gap: 200px;
-          column-gap: 200px;
+  -moz-column-gap: 200px;
+       column-gap: 200px;
 }
-
 #seccion_ofertas .oferta_titular img {
   height: 100%;
 }
-
 #seccion_ofertas .oferta_titular .texto_oferta {
   width: 300px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
   row-gap: 20px;
 }
-
 #seccion_ofertas .oferta_titular .texto_oferta h2 {
   font-size: 10vh;
   font-family: "idioma";
   color: white;
 }
-
 #seccion_ofertas .oferta_titular .texto_oferta .subtitular {
   border-left: 2px solid white;
   padding-left: 20px;
@@ -734,33 +743,25 @@ header h1 {
   font-family: "idioma";
   color: white;
 }
-
 #seccion_ofertas #caja_ofertas {
   width: 90%;
   height: 300px;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 50px;
 }
-
 #seccion_ofertas #caja_ofertas #flechas {
   position: absolute;
   width: 100%;
   height: 100%;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7acefdf637e26acbd473c462c0baddf5eedb33c6
 #seccion_ofertas #caja_ofertas #flechas img {
   position: absolute;
   opacity: 70%;
@@ -770,29 +771,35 @@ header h1 {
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7acefdf637e26acbd473c462c0baddf5eedb33c6
 #seccion_ofertas #caja_ofertas #flechas .flecha:hover {
   opacity: 100;
 }
-
 #seccion_ofertas #caja_ofertas #flechas .fIzd {
   left: -12px;
   z-index: 70;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7acefdf637e26acbd473c462c0baddf5eedb33c6
 #seccion_ofertas #caja_ofertas #flechas .fIzd:active {
   left: -20px;
 }
-
 #seccion_ofertas #caja_ofertas #flechas .fDch {
   right: -12px;
   z-index: 70;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7acefdf637e26acbd473c462c0baddf5eedb33c6
 #seccion_ofertas #caja_ofertas #flechas .fDch:active {
   right: -20px;
 }
-
 #seccion_ofertas #caja_ofertas #ofertas {
   width: 100%;
   height: 100%;
@@ -812,7 +819,10 @@ header h1 {
       -ms-flex-pack: center;
           justify-content: center;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7acefdf637e26acbd473c462c0baddf5eedb33c6
 #seccion_ofertas #caja_ofertas #ofertas .oferta {
   width: 300px;
   height: 300px;
@@ -835,26 +845,28 @@ header h1 {
   position: relative;
   overflow: hidden;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7acefdf637e26acbd473c462c0baddf5eedb33c6
 #seccion_ofertas #caja_ofertas #ofertas .oferta img {
   width: 100%;
   z-index: 50;
-  -webkit-transition: all 600ms ease-in-out;
   transition: all 600ms ease-in-out;
   cursor: pointer;
 }
-
 #seccion_ofertas #caja_ofertas #ofertas .oferta img:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7acefdf637e26acbd473c462c0baddf5eedb33c6
 #seccion_ofertas #caja_ofertas #ofertas .oferta p {
   position: absolute;
   font-family: "Piazzere";
   z-index: 60;
 }
-
 #seccion_ofertas #caja_ofertas #ofertas .oferta .oTexto {
   left: 5px;
   top: -10px;
@@ -862,7 +874,6 @@ header h1 {
   color: white;
   text-shadow: #4B9C40 2px 2px 10px;
 }
-
 #seccion_ofertas #caja_ofertas #ofertas .oferta .oEuros {
   right: 5px;
   bottom: -18px;
@@ -870,29 +881,27 @@ header h1 {
   color: white;
   text-shadow: red 2px 2px 10px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7acefdf637e26acbd473c462c0baddf5eedb33c6
 #seccion_ofertas #caja_ofertas #ofertas .oferta .oEuros span {
   font-size: 2rem;
 }
-
 #seccion_ofertas #caja_ofertas #ofertas .movIzda {
-  -webkit-transform: translateX(-320px);
-          transform: translateX(-320px);
+  transform: translateX(-320px);
   /* Equivalente a translateX(10px) */
-  -webkit-transition: all 1000ms step-end;
   transition: all 1000ms step-end;
 }
-
 #seccion_ofertas #caja_ofertas::after {
   position: absolute;
   top: 0px;
   left: 0px;
-  content: ' ';
+  content: " ";
   background-color: white;
   width: 100%;
   height: 100%;
-  -webkit-filter: blur(100px);
-          filter: blur(100px);
+  filter: blur(100px);
   border-radius: 50px;
 }
 
