@@ -1,58 +1,50 @@
 {
-    "oferta00":{
+    "oferta01":{
         "id":"of1",
         "src":"assets/img/ofertas/cherry.jpg",
         "precio":"14,99",
         "texto":"menú Cherryz"
     },
-    "oferta01":{
+    "oferta02":{
         "id":"of2",
         "src":"assets/img/ofertas/conCoca.jpg",
         "precio":"18,99",
         "texto":"menú Cocaza"
     },
-    "oferta02":{
+    "oferta03":{
         "id":"of3",
         "src":"assets/img/ofertas/integral.jpg",
         "precio":"18,99",
-        "texto":"menú integral"       
-    },
-    "oferta03":{
-        "id":"",
-        "imagen":"",
-        "precio":"",
-        "texto":""
-        
+        "texto":"menú Integral"
     },
     "oferta04":{
-        "id":"",
-        "imagen":"",
-        "precio":"",
-        "texto":""
-        
+        "id":"of4",
+        "src":"assets/img/ofertas/pamplona.jpg",
+        "precio":"14,99",
+        "texto":"menú Iruña"
     },
     "oferta05":{
-        "id":"",
-        "imagen":"",
-        "precio":"",
-        "texto":""
-        
+        "id":"of5",
+        "src":"assets/img/ofertas/peruana.jpg",
+        "precio":"19,99",
+        "texto":"menú Peruana"
     },
     "oferta06":{
-        "id":"",
-        "imagen":"",
-        "precio":"",
-        "texto":""        
+        "id":"of6",
+        "src":"assets/img/ofertas/rucula.jpg",
+        "precio":"12,99",
+        "texto":"menú Rúcula"
     },
     "oferta07":{
-        "id":"",
-        "imagen":"",
-        "precio":"",
-        "texto":""        
+        "id":"of7",
+        "src":"assets/img/ofertas/variopinta.jpg",
+        "precio":"15,99",
+        "texto":"menú Pintaza"      
     },
     "oferta08":{
-        "imagen":"",
-        "precio":"",
-        "texto":""        
+        "id":"of8",
+        "src":"assets/img/ofertas/vegetal.jpg",
+        "precio":"17,99",
+        "texto":"menú Vegetal"
     }
 }

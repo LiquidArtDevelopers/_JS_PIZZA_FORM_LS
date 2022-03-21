@@ -31,6 +31,7 @@
 $color_boli:rgb(51, 51, 124);
 $color_rojo: #A0425B;
 $color_verde: #4B9C40;
+$color_fundido: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
 
 html{
     scroll-behavior: smooth;
@@ -42,26 +43,28 @@ html{
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;    
 }
 body{
     @include fondo
+    
 }
 .cambio_fondo{
     background-image: url("../img/logos/Entramado_rojo.svg")!important;
     background-attachment: fixed;
-    transition: all 500ms ease-in-out;
+    transition: all 700ms;
+    
 }
 .cambio_fondo2{
     background-image: url("../img/logos/Entramado_azul.svg")!important;
     background-attachment: fixed;
-    transition: all 500ms ease-in-out;
+    transition: all 700ms;
 }
 .cambio_fondo3{
     background-image: url("../img/logos/Entramado_blanco.svg")!important;
     background-color: black;
     background-attachment: fixed;
-    transition: all 500ms ease-in-out;
+    transition: all 700ms;
 }
 .preload{ 
     @include fondo;
@@ -75,7 +78,7 @@ body{
     height: 70px;
     background-color: rgba(0, 0, 0, 0);
     position: fixed;
-    z-index: 20;
+    z-index: 999;
     display: flex;
     flex-direction: row;
     transition: 400ms ease-in-out;
@@ -89,56 +92,63 @@ body{
     a:hover{
         color:#A0425B;
     }
-}
-.nav-logo{
-    width: 20%;
-    display: flex;
-    align-items: center;
-    justify-content:flex-start;    
-    padding-left: 10px;
-    img{
-        height: 100%;
+    .nav-logo{
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content:flex-start;    
+        padding-left: 10px;        
+        img{
+            height: 100%;
+        }
+        .logo-peq{
+            font-family: "Piazzere";   
+            color: white;
+            font-size: 2rem;
+        }
+        
     }
-}
-.logo-peq{
-    font-family: "Piazzere";   
-    color: white;
-    font-size: 2rem;
-}
-.nav-enlaces{
-    width: 65%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content:flex-end;    
-    color: rgb(255, 255, 255);
-    font-family: "Piazzere";
-    font-size: 2rem;
-    ul{
-        display:flex;
+    .nav-enlaces{
+        width: 65%;
+        display: flex;
         flex-direction: row;
-        list-style-type: none;
-        column-gap: 40px;    
+        align-items: center;
+        justify-content:flex-end;    
+        color: rgb(255, 255, 255);
+        font-family: "Idioma";
+        font-size: 2rem;
+        ul{
+            display:flex;
+            flex-direction: row;
+            list-style-type: none;
+            column-gap: 40px;    
+        }
+    }
+    .nav-idiomas{
+        width: 15%;
+        display: flex;
+        align-items: center;
+        justify-content:flex-end;
+        padding-right: 20px;
+        font-family: "Idioma";
+        font-size: 1.4em;
+        color: white;
+        ul{
+            display:flex;
+            flex-direction: row;
+            list-style-type: none;
+            column-gap: 10px;
+        }
+        .idioma-select{
+            color:$color_rojo!important;
+        }
     }
 }
-.nav-idiomas{
-    width: 15%;
-    display: flex;
-    align-items: center;
-    justify-content:flex-end;
-    padding-right: 20px;
-    font-family: "Idioma";
-    font-size: 1.4em;
-    color: white;
-    ul{
-        display:flex;
-        flex-direction: row;
-        list-style-type: none;
-        column-gap: 10px;
-    }
+.rojo{
+    color:$color_rojo;
 }
-.idioma-select{
-    color:$color_rojo!important;
+.verde{
+    color:$color_verde;
 }
 
 /* HEADER */
@@ -150,101 +160,196 @@ header{
     flex-direction: row;
     justify-content: center;
     position: relative;
-}
-.logo-principal{
-    position: absolute;
-    top: 10vh;
-    width: 30%;
-}
-.rojo{
-    color:$color_rojo;
-}
-.verde{
-    color:$color_verde;
+    .logo-principal{
+        position: absolute;
+        top: 10vh;
+        width: 30%;
+    }
+    h1{
+        position: absolute;        
+        text-align: center;
+        top: 55%;
+        font-family: "Piazzere";
+        font-size: 3vw;
+        color: white;
+        text-shadow: $color_verde 0px 0px 20px;
+    }
 }
 
 /* CONTENEDOR PRINCIPAL */
 .contenedor_principal{
     width: 90%;
     margin: 0 auto;
+    padding-top: 30px;
+}
+
+.contenedor_principal:before {
+    background:
+      linear-gradient(
+        45deg, transparent 33.333%,
+        rgb(255, 255, 255) 33.333%, rgb(255, 255, 255) 66.667%,
+        transparent 66.667%
+      ),
+      linear-gradient(
+        -45deg, transparent 33.333%,
+        rgb(255, 255, 255) 33.333%, rgb(255, 255, 255) 66.667%,
+        transparent 66.667%
+      );
+    background-size: 20px 40px;
 }
 
 /* ZONA OFERTAS */
-
-#caja_ofertas{    
+#seccion_ofertas{
     width: 100%;
-    height: 300px; 
-    position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 50px;
-    #flechas{
-        position: absolute;
-        width: 100%;
-        height: 100%;
+    .oferta_titular{
+        width: 90%;
+        border-radius: 60px 0px;
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: row;        
+        flex-wrap: wrap;
+        align-items: center;
+        overflow: hidden;
+        background-color: #FBAB7E;
+        background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+        column-gap: 200px;
         img{
+            height: 100%;
+        }
+        .texto_oferta{
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            row-gap: 20px; 
+            h2{         
+                font-size: 10vh;
+                font-family: "idioma";
+                color: white;
+            }
+            .subtitular{
+                border-left: 2px solid white;
+                padding-left: 20px;            
+                font-size: 1.8rem;
+                font-family: "idioma";
+                color: white;
+            }
+        }
+        
+    }
+    #caja_ofertas{    
+        width: 90%;
+        height: 300px; 
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+        #flechas{
             position: absolute;
-            opacity: 70%;
-            top:50%;
-            -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-            transition: all 200ms ease-in-out;
-        }        
-        .flecha:hover{
-            opacity: 100;
+            width: 100%;
+            height: 100%;
+            img{
+                position: absolute;
+                opacity: 70%;
+                top:50%;
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+                transition: all 200ms ease-in-out;
+            }        
+            .flecha:hover{
+                opacity: 100;
+            }
+            .fIzd{        
+                left: -12px;          
+                z-index: 70;
+            }
+            .fIzd:active{
+                left:-20px;
+            }
+            .fDch{       
+                right: -12px;            
+                z-index: 70;
+            }
+            .fDch:active{
+                right:-20px;
+            }    
         }
-        .fIzd{        
-            left: -12px;
-        }
-        .fIzd:active{
-            left:-20px;
-        }
-        .fDch{       
-            right: -12px;
-        }
-        .fDch:active{
-            right:-20px;
+        #ofertas{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                column-gap: 10px;
+                overflow: hidden;
+                justify-content: center;        
+                .oferta{
+                    width: 300px;
+                    height: 300px;        
+                    background-color: #A0425B;
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 6em;
+                    font-family: "Piazzere";
+                    position: relative;
+                    overflow: hidden;     
+                    img{
+                        width: 100%;
+                        z-index: 50;
+                        transition: all 600ms ease-in-out;
+                        cursor: pointer;                
+                    }
+                    img:hover{
+                        transform:scale(1.1)
+                    }
+                    p{
+                        position: absolute; 
+                        font-family: "Piazzere";                
+                        z-index: 60;                
+                    }
+                    .oTexto{
+                        left: 5px;
+                        top: -10px;
+                        font-size: 3rem;
+                        color: white;
+                        text-shadow: $color_verde 2px 2px 10px;                
+                    }                      
+                    .oEuros{
+                        right: 5px;
+                        bottom: -18px;
+                        font-size: 100%;
+                        color: white;
+                        text-shadow: red 2px 2px 10px;
+                        span{
+                            font-size: 2rem;
+                        }
+                    }            
+                }
+                .movIzda{
+                    transform: translateX(-320px); /* Equivalente a translateX(10px) */;
+                    transition: all 1000ms step-end;
+                }
         }    
     }
-   #ofertas{
+    #caja_ofertas::after{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        content: ' ';
+        background-color: rgb(255, 255, 255);
         width: 100%;
         height: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        column-gap: 10px;
-        overflow: hidden;
-        justify-content: center;
-        .oferta{
-            width: 300px;
-            height: 300px;        
-            background-color: #A0425B;
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: center;
-            align-items: center;
-            font-size: 6em;
-            font-family: "Piazzere";
-            position: relative;
-            img{
-                width: 100%;
-            }
-            p{
-                position: absolute;
-                right: 5px;
-                bottom: -20px;
-                color: white;
-                font-family: "Piazzere";
-                font-size: 5rem;
-                text-shadow: red 2px 2px 10px;
-                span{
-                    font-size: 2rem;
-                }
-            }
-        }
-   }     
+        filter:blur(100px);
+        border-radius: 50px;
+    }
 }
 
 /* ZONA PEDIDO */
@@ -526,6 +631,33 @@ footer{
         color: $color_rojo
     }
 }
+footer:before {
+    background:
+      linear-gradient(
+        45deg, transparent 33.333%,
+        rgb(65, 65, 65) 33.333%, rgb(65, 65, 65) 66.667%,
+        transparent 66.667%
+      ),
+      linear-gradient(
+        -45deg, transparent 33.333%,
+        rgb(65, 65, 65) 33.333%, rgb(65, 65, 65) 66.667%,
+        transparent 66.667%
+      );
+    background-size: 20px 40px;
+}
+.zigzag {
+position: relative;
+width: 100%;
+}
+.zigzag:before {
+content: "";
+display: block;
+position: absolute;
+top: -10px;
+width: 100%;
+height: 10px;
+}
+
 .columnas{
     display: flex;
     flex-direction: row;

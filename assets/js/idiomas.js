@@ -57,12 +57,12 @@ function cambioIdioma(){
     .then(data =>{
         //paseamos el json
         const iJs=JSON.parse(data);
-        //recorremos las claves del json parseado
+        //recorremos las claves del json parseado 
         for (var clave in iJs){
             //si es una clave, nos quedamos con el valor
             if (iJs.hasOwnProperty(clave)) {
               //mostramos los datos y los índices en la consola por si erramos en alguna texto
-              console.log("Clave: " + clave+ " - Valor: " + iJs[clave]);
+              /* console.log("Clave: " + clave+ " - Valor: " + iJs[clave]); */
               document.querySelector(`.tx${clave}`).innerHTML=iJs[clave];
               /* document.querySelector(`#tx${clave}`).innerHTML=iJs[clave]; */
             }

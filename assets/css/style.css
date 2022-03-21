@@ -257,7 +257,6 @@ select:-webkit-autofill:focus {
   width: 100%;
   max-width: 1920px;
   overflow: hidden;
-  margin-bottom: 1em;
 }
 .carousel .frame {
   position: relative;
@@ -304,16 +303,33 @@ select:-webkit-autofill:focus {
   height: 50vh;
   background-color: rgba(255, 255, 255, 0.8);
   margin-top: 15vh;
+<<<<<<< HEAD
   font-family: "Libreta";
+=======
+  display: none;
+>>>>>>> 40b22cde4ddea254ce930dd9f8e154f4fcdb3fc1
 }
 
 #btn-comprar {
   cursor: pointer;
+<<<<<<< HEAD
   font-size: "Libreta";
+=======
+>>>>>>> 40b22cde4ddea254ce930dd9f8e154f4fcdb3fc1
   font-size: 30px;
   font-style: italic;
   font-weight: bold;
-  color: rgba(255, 0, 0, 0.8);
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 25px;
+  background-color: #41ce41;
+  position: absolute;
+  right: 255px;
+  bottom: -20px;
+  padding: 15px;
+}
+
+#btn-comprar.active {
+  display: block;
 }
 
 /************************/
@@ -347,20 +363,35 @@ body {
 .cambio_fondo {
   background-image: url("../img/logos/Entramado_rojo.svg") !important;
   background-attachment: fixed;
+<<<<<<< HEAD
   transition: all 500ms ease-in-out;
+=======
+  -webkit-transition: all 700ms;
+  transition: all 700ms;
+>>>>>>> 40b22cde4ddea254ce930dd9f8e154f4fcdb3fc1
 }
 
 .cambio_fondo2 {
   background-image: url("../img/logos/Entramado_azul.svg") !important;
   background-attachment: fixed;
+<<<<<<< HEAD
   transition: all 500ms ease-in-out;
+=======
+  -webkit-transition: all 700ms;
+  transition: all 700ms;
+>>>>>>> 40b22cde4ddea254ce930dd9f8e154f4fcdb3fc1
 }
 
 .cambio_fondo3 {
   background-image: url("../img/logos/Entramado_blanco.svg") !important;
   background-color: black;
   background-attachment: fixed;
+<<<<<<< HEAD
   transition: all 500ms ease-in-out;
+=======
+  -webkit-transition: all 700ms;
+  transition: all 700ms;
+>>>>>>> 40b22cde4ddea254ce930dd9f8e154f4fcdb3fc1
 }
 
 .preload {
@@ -381,7 +412,13 @@ body {
   height: 70px;
   background-color: rgba(0, 0, 0, 0);
   position: fixed;
+<<<<<<< HEAD
   z-index: 20;
+=======
+  z-index: 999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+>>>>>>> 40b22cde4ddea254ce930dd9f8e154f4fcdb3fc1
   display: flex;
   flex-direction: row;
   transition: 400ms ease-in-out;
@@ -397,34 +434,46 @@ body {
   color: #A0425B;
 }
 
-.nav-logo {
+#navegador .nav-logo {
   width: 20%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding-left: 10px;
 }
+<<<<<<< HEAD
 .nav-logo img {
+=======
+
+#navegador .nav-logo img {
+>>>>>>> 40b22cde4ddea254ce930dd9f8e154f4fcdb3fc1
   height: 100%;
 }
 
-.logo-peq {
+#navegador .nav-logo .logo-peq {
   font-family: "Piazzere";
   color: white;
   font-size: 2rem;
 }
 
-.nav-enlaces {
+#navegador .nav-enlaces {
   width: 65%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
   color: white;
-  font-family: "Piazzere";
+  font-family: "Idioma";
   font-size: 2rem;
 }
+<<<<<<< HEAD
 .nav-enlaces ul {
+=======
+
+#navegador .nav-enlaces ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+>>>>>>> 40b22cde4ddea254ce930dd9f8e154f4fcdb3fc1
   display: flex;
   flex-direction: row;
   list-style-type: none;
@@ -432,7 +481,7 @@ body {
        column-gap: 40px;
 }
 
-.nav-idiomas {
+#navegador .nav-idiomas {
   width: 15%;
   display: flex;
   align-items: center;
@@ -442,7 +491,14 @@ body {
   font-size: 1.4em;
   color: white;
 }
+<<<<<<< HEAD
 .nav-idiomas ul {
+=======
+
+#navegador .nav-idiomas ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+>>>>>>> 40b22cde4ddea254ce930dd9f8e154f4fcdb3fc1
   display: flex;
   flex-direction: row;
   list-style-type: none;
@@ -450,8 +506,16 @@ body {
        column-gap: 10px;
 }
 
-.idioma-select {
+#navegador .nav-idiomas .idioma-select {
   color: #A0425B !important;
+}
+
+.rojo {
+  color: #A0425B;
+}
+
+.verde {
+  color: #4B9C40;
 }
 
 /* HEADER */
@@ -465,29 +529,38 @@ header {
   position: relative;
 }
 
-.logo-principal {
+header .logo-principal {
   position: absolute;
   top: 10vh;
   width: 30%;
 }
 
-.rojo {
-  color: #A0425B;
-}
-
-.verde {
-  color: #4B9C40;
+header h1 {
+  position: absolute;
+  text-align: center;
+  top: 55%;
+  font-family: "Piazzere";
+  font-size: 3vw;
+  color: white;
+  text-shadow: #4B9C40 0px 0px 20px;
 }
 
 /* CONTENEDOR PRINCIPAL */
 .contenedor_principal {
   width: 90%;
   margin: 0 auto;
+  padding-top: 30px;
+}
+
+.contenedor_principal:before {
+  background: linear-gradient(45deg, transparent 33.333%, white 33.333%, white 66.667%, transparent 66.667%), linear-gradient(-45deg, transparent 33.333%, white 33.333%, white 66.667%, transparent 66.667%);
+  background-size: 20px 40px;
 }
 
 /* ZONA OFERTAS */
-#caja_ofertas {
+#seccion_ofertas {
   width: 100%;
+<<<<<<< HEAD
   height: 300px;
   position: relative;
   display: flex;
@@ -497,33 +570,161 @@ header {
   margin-bottom: 50px;
 }
 #caja_ofertas #flechas {
+=======
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#seccion_ofertas .oferta_titular {
+  width: 90%;
+  border-radius: 60px 0px;
+  margin-bottom: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  background-color: #FBAB7E;
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+  -webkit-column-gap: 200px;
+          column-gap: 200px;
+}
+
+#seccion_ofertas .oferta_titular img {
+  height: 100%;
+}
+
+#seccion_ofertas .oferta_titular .texto_oferta {
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  row-gap: 20px;
+}
+
+#seccion_ofertas .oferta_titular .texto_oferta h2 {
+  font-size: 10vh;
+  font-family: "idioma";
+  color: white;
+}
+
+#seccion_ofertas .oferta_titular .texto_oferta .subtitular {
+  border-left: 2px solid white;
+  padding-left: 20px;
+  font-size: 1.8rem;
+  font-family: "idioma";
+  color: white;
+}
+
+#seccion_ofertas #caja_ofertas {
+  width: 90%;
+  height: 300px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 50px;
+}
+
+#seccion_ofertas #caja_ofertas #flechas {
+>>>>>>> 40b22cde4ddea254ce930dd9f8e154f4fcdb3fc1
   position: absolute;
   width: 100%;
   height: 100%;
 }
+<<<<<<< HEAD
 #caja_ofertas #flechas img {
+=======
+
+#seccion_ofertas #caja_ofertas #flechas img {
+>>>>>>> 40b22cde4ddea254ce930dd9f8e154f4fcdb3fc1
   position: absolute;
   opacity: 70%;
   top: 50%;
   transform: translateY(-50%);
   transition: all 200ms ease-in-out;
 }
+<<<<<<< HEAD
 #caja_ofertas #flechas .flecha:hover {
   opacity: 100;
 }
 #caja_ofertas #flechas .fIzd {
-  left: -12px;
+=======
+
+#seccion_ofertas #caja_ofertas #flechas .flecha:hover {
+  opacity: 100;
 }
+
+#seccion_ofertas #caja_ofertas #flechas .fIzd {
+>>>>>>> 40b22cde4ddea254ce930dd9f8e154f4fcdb3fc1
+  left: -12px;
+  z-index: 70;
+}
+<<<<<<< HEAD
 #caja_ofertas #flechas .fIzd:active {
   left: -20px;
 }
 #caja_ofertas #flechas .fDch {
-  right: -12px;
+=======
+
+#seccion_ofertas #caja_ofertas #flechas .fIzd:active {
+  left: -20px;
 }
+
+#seccion_ofertas #caja_ofertas #flechas .fDch {
+>>>>>>> 40b22cde4ddea254ce930dd9f8e154f4fcdb3fc1
+  right: -12px;
+  z-index: 70;
+}
+<<<<<<< HEAD
 #caja_ofertas #flechas .fDch:active {
   right: -20px;
 }
 #caja_ofertas #ofertas {
+=======
+
+#seccion_ofertas #caja_ofertas #flechas .fDch:active {
+  right: -20px;
+}
+
+#seccion_ofertas #caja_ofertas #ofertas {
+>>>>>>> 40b22cde4ddea254ce930dd9f8e154f4fcdb3fc1
   width: 100%;
   height: 100%;
   display: flex;
@@ -534,7 +735,12 @@ header {
   overflow: hidden;
   justify-content: center;
 }
+<<<<<<< HEAD
 #caja_ofertas #ofertas .oferta {
+=======
+
+#seccion_ofertas #caja_ofertas #ofertas .oferta {
+>>>>>>> 40b22cde4ddea254ce930dd9f8e154f4fcdb3fc1
   width: 300px;
   height: 300px;
   background-color: #A0425B;
@@ -545,21 +751,79 @@ header {
   font-size: 6em;
   font-family: "Piazzere";
   position: relative;
+  overflow: hidden;
 }
+<<<<<<< HEAD
 #caja_ofertas #ofertas .oferta img {
+=======
+
+#seccion_ofertas #caja_ofertas #ofertas .oferta img {
+>>>>>>> 40b22cde4ddea254ce930dd9f8e154f4fcdb3fc1
   width: 100%;
+  z-index: 50;
+  -webkit-transition: all 600ms ease-in-out;
+  transition: all 600ms ease-in-out;
+  cursor: pointer;
 }
+
+#seccion_ofertas #caja_ofertas #ofertas .oferta img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+<<<<<<< HEAD
 #caja_ofertas #ofertas .oferta p {
+=======
+
+#seccion_ofertas #caja_ofertas #ofertas .oferta p {
+>>>>>>> 40b22cde4ddea254ce930dd9f8e154f4fcdb3fc1
   position: absolute;
-  right: 5px;
-  bottom: -20px;
-  color: white;
   font-family: "Piazzere";
-  font-size: 5rem;
+  z-index: 60;
+}
+
+#seccion_ofertas #caja_ofertas #ofertas .oferta .oTexto {
+  left: 5px;
+  top: -10px;
+  font-size: 3rem;
+  color: white;
+  text-shadow: #4B9C40 2px 2px 10px;
+}
+
+#seccion_ofertas #caja_ofertas #ofertas .oferta .oEuros {
+  right: 5px;
+  bottom: -18px;
+  font-size: 100%;
+  color: white;
   text-shadow: red 2px 2px 10px;
 }
+<<<<<<< HEAD
 #caja_ofertas #ofertas .oferta p span {
+=======
+
+#seccion_ofertas #caja_ofertas #ofertas .oferta .oEuros span {
+>>>>>>> 40b22cde4ddea254ce930dd9f8e154f4fcdb3fc1
   font-size: 2rem;
+}
+
+#seccion_ofertas #caja_ofertas #ofertas .movIzda {
+  -webkit-transform: translateX(-320px);
+          transform: translateX(-320px);
+  /* Equivalente a translateX(10px) */
+  -webkit-transition: all 1000ms step-end;
+  transition: all 1000ms step-end;
+}
+
+#seccion_ofertas #caja_ofertas::after {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  content: ' ';
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(100px);
+          filter: blur(100px);
+  border-radius: 50px;
 }
 
 /* ZONA PEDIDO */
@@ -863,6 +1127,25 @@ footer a:visited {
 }
 footer a:hover {
   color: #A0425B;
+}
+
+footer:before {
+  background: linear-gradient(45deg, transparent 33.333%, #414141 33.333%, #414141 66.667%, transparent 66.667%), linear-gradient(-45deg, transparent 33.333%, #414141 33.333%, #414141 66.667%, transparent 66.667%);
+  background-size: 20px 40px;
+}
+
+.zigzag {
+  position: relative;
+  width: 100%;
+}
+
+.zigzag:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  height: 10px;
 }
 
 .columnas {
