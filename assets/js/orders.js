@@ -21,10 +21,12 @@ export default function pedido(){
     escribirPedido();
 }
 const escribirPedido=()=>{
+    const $box_comprar=document.querySelector('.comprar');
     const $notaPizza=document.querySelector('.comprar ul');
     const $li=document.createElement('li');
     document.addEventListener('click',(e)=>{
         if(e.target.matches('#btn-comprar')){
+            $box_comprar.style.display='block';
             Object.entries(ordenPedido).forEach(([key,value])=>{
                 $li.textContent+=`${key,value}`;
         });
