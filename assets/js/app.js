@@ -8,8 +8,8 @@ import dataCookies from "./dataCookies.js";
 const d=document;
 
 d.addEventListener('DOMContentLoaded',()=>{
-    //Llamar a la animación de carga.
-    //loadAnimation();
+    //Llamar a la animación de carga  .
+    loadAnimation();
     //Script que gestiona las cookies.
     dataCookies();
     //Llamar a componentes.
