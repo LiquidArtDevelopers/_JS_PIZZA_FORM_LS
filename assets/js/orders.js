@@ -14,7 +14,7 @@ const ordenPedido={
     otros:[],
     precio:0,
 }
-const pedidos=[];
+const npedido={}, pedidos=[];
 
 export default function pedido(){
     comanda();
@@ -23,17 +23,24 @@ export default function pedido(){
 const escribirPedido=()=>{
     const $box_comprar=document.querySelector('.comprar');
     const $notaPizza=document.querySelector('.comprar ul');
+    const $btn_comprar=document.querySelector('.btn-comprar');
     const $li=document.createElement('li');
+    const modPedido='Modificar pedido', hacerCompra='Hacer mi compra';
     document.addEventListener('click',(e)=>{
-        if(e.target.matches('#btn-comprar')){
-            $box_comprar.style.display='block';
+        if(e.target.matches('.btn-comprar')){
+            $box_comprar.classList.toggle('active');
+            $btn_comprar.classList.toggle('btn-active');
+            if($btn_comprar.textContent == hacerCompra){
+                $btn_comprar.textContent = modPedido;
+            }else{
+                $btn_comprar.textContent=hacerCompra;
+            }
             Object.entries(ordenPedido).forEach(([key,value])=>{
                 $li.textContent+=`${key,value}`;
         });
         $notaPizza.appendChild($li);
         }
     });
-
 }
 
 //Precios (esto ya lo traeremos de algún lado donde sea más fácil gestionar)
