@@ -352,7 +352,51 @@ header{
 }
 
 /* ZONA PEDIDO */
+#seccion_pedido{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .oferta_titular{
+        width: 90%;
+        border-radius: 60px 0px;
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: row;        
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        overflow: hidden;
+        background-color: #FF9A8B;
+        background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 36%, #FF99AC 66%);
+        column-gap: 200px;
+        img{
+            order: 2;
+            height: 100%;
+        }
+        .texto_oferta{
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            row-gap: 20px; 
+            h2{         
+                font-size: 10vh;
+                font-family: "idioma";
+                color: white;
+            }
+            .subtitular{
+                border-left: 2px solid white;
+                padding-left: 20px;            
+                font-size: 1.8rem;
+                font-family: "idioma";
+                color: white;
+            }
+        }        
+    }
 
+}
 #pedido{
     width: 100%;
     display: flex;

@@ -5,6 +5,7 @@ import pedido from "./orders.js";
 import dataCookies from "./dataCookies.js";
 import carousel from "./carousel.js";
 import ofertas from "./ofertas.js";
+import grafica from "./grafica.js";
 
 const d=document;
 d.addEventListener('DOMContentLoaded',()=>{
@@ -22,4 +23,6 @@ d.addEventListener('DOMContentLoaded',()=>{
     pedido();
     //ofertas
     ofertas();
+    //grafica
+    grafica();
 });
