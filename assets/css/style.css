@@ -437,7 +437,7 @@ select:-webkit-autofill:focus {
   background-color: red;
 }
 
-/************************/
+/*************************/
 @font-face {
   font-family: "Piazzere";
   src: url("../font/MeriendaOne-Regular.ttf");
@@ -935,7 +935,87 @@ header h1 {
   border-radius: 50px;
 }
 
-/* ZONA PEDIDO */
+/* ZONA PEDIDO  */
+#seccion_pedido {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#seccion_pedido .oferta_titular {
+  width: 90%;
+  border-radius: 60px 0px;
+  margin-bottom: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  overflow: hidden;
+  background-color: #FF9A8B;
+  background-image: -webkit-gradient(linear, left top, right top, from(#FF9A8B), color-stop(36%, #FF6A88), color-stop(66%, #FF99AC));
+  background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 36%, #FF99AC 66%);
+  -webkit-column-gap: 200px;
+          column-gap: 200px;
+}
+
+#seccion_pedido .oferta_titular img {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  height: 100%;
+}
+
+#seccion_pedido .oferta_titular .texto_oferta {
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  row-gap: 20px;
+}
+
+#seccion_pedido .oferta_titular .texto_oferta h2 {
+  font-size: 10vh;
+  font-family: "idioma";
+  color: white;
+}
+
+#seccion_pedido .oferta_titular .texto_oferta .subtitular {
+  border-left: 2px solid white;
+  padding-left: 20px;
+  font-size: 1.8rem;
+  font-family: "idioma";
+  color: white;
+}
+
 #pedido {
   width: 100%;
   display: -webkit-box;
