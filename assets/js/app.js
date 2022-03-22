@@ -9,7 +9,7 @@ import ofertas from "./ofertas.js";
 const d=document;
 d.addEventListener('DOMContentLoaded',()=>{
     //Llamar a la animación de carga  .
-    loadAnimation();
+    //loadAnimation();
     //Script que gestiona las cookies.
     dataCookies();
     //Llamar a componentes.

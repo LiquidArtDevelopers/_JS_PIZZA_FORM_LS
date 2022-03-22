@@ -303,6 +303,30 @@ select:-webkit-autofill:focus {
           transform: translate(0, 0);
 }
 
+@-webkit-keyframes humillo {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes humillo {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .carousel {
   width: 100%;
   max-width: 1920px;
@@ -342,7 +366,7 @@ select:-webkit-autofill:focus {
   position: absolute;
   bottom: 65px;
   width: 100%;
-  margin: 1em 0 0;
+  /* margin:1em 0 0; */
   margin-bottom: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -351,6 +375,8 @@ select:-webkit-autofill:focus {
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
+  -webkit-column-gap: 60px;
+          column-gap: 60px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -363,12 +389,21 @@ select:-webkit-autofill:focus {
   cursor: pointer;
   width: 1.5em;
   height: 1.5em;
-  color: #fff;
+  /* color: #fff; */
   padding-bottom: 1em;
 }
 
-.carousel .punto.activo {
-  background-color: rgba(0, 0, 0, 0.8);
+.carousel .puntos .punto img {
+  position: absolute;
+}
+
+.carousel .puntos .punto .humo {
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  -webkit-animation-name: humillo;
+          animation-name: humillo;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
 .comprar {
