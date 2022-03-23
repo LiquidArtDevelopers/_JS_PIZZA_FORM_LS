@@ -7,25 +7,26 @@ let ticket = [0,0,0,0,0];
 //creamos
 //creamos un objeto pedido
 const ordenPedido={
-    masa:"",
-    tipo:"",
+    masa:null,
+    tipo:null,
     topping:[],
     bebida:[],
     otros:[],
     precio:0,
 }
 const npedido={}, pedidos=[];
-
 export default function pedido(){
     comanda();
     escribirPedido();
 }
 const escribirPedido=()=>{
     const $box_comprar=document.querySelector('.comprar');
-    const $notaPizza=document.querySelector('.comprar ul');
+    const $notaPizza=document.querySelector('.list-fact');
     const $btn_comprar=document.querySelector('.btn-comprar');
-    const $li=document.createElement('li');
+    let template_fact='';
+    const getText=(type="")=> document.getElementById(type).textContent;
     const modPedido='Modificar pedido', hacerCompra='Hacer mi compra';
+    let click=false;
     document.addEventListener('click',(e)=>{
         if(e.target.matches('.btn-comprar')){
             $box_comprar.classList.toggle('active');
@@ -36,9 +37,17 @@ const escribirPedido=()=>{
                 $btn_comprar.textContent=hacerCompra;
             }
             Object.entries(ordenPedido).forEach(([key,value])=>{
-                $li.textContent+=`${key,value}`;
-        });
-        $notaPizza.appendChild($li);
+                if(value!==undefined && value!==0 && value!==null){
+                    let valor=String(value) ;
+                    template_fact= `
+                      <li> ${document.querySelector('.txt5').textContent.toUpperCase()} :   ${getText(ordenPedido['masa'])}</li>
+                      <li> ${document.querySelector('.txt6').textContent.toUpperCase()} :   ${getText(ordenPedido['tipo'])}</li>
+                      <li> ${document.querySelector('.txt7').textContent.toUpperCase()} :   ${getText(ordenPedido['topping'])}</li>
+                    `
+                }
+            });
+            click ? click=false : click=true;
+            click ? $notaPizza.insertAdjacentHTML('afterbegin',template_fact) : $notaPizza.textContent='';
         }
     });
 }
@@ -212,7 +221,8 @@ function insertar_comanda(com){
             nota1Sel.style.top="205px";
             nota1Sel.style.left="19px";
             ordenPedido['masa']  = com;
-            ticket[0]=precioPeq;   
+            ticket[0]=precioPeq;
+            npedido['masa']='pequeña';   
             break;
         case "med":
             nota1Sel.style.display="block";

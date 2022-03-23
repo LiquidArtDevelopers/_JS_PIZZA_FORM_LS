@@ -24,5 +24,5 @@ d.addEventListener('DOMContentLoaded',()=>{
     //ofertas
     ofertas();
     //grafica
-    grafica();
+  //  grafica();
 });
