@@ -1425,7 +1425,7 @@ header h1 {
 /* ZONA CONCURSO */
 #seccion-concurso {
   width: 100%;
-  max-width: 1920px;
+  max-width: 1440px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1439,11 +1439,12 @@ header h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 0 auto;
 }
 
 #seccion-concurso .oferta_titular {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1920px;
   margin-top: 80px;
   margin-bottom: 40px;
   display: -webkit-box;
@@ -1453,24 +1454,46 @@ header h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   overflow: hidden;
-  background-color: #FBAB7E;
-  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-  -webkit-column-gap: 39px;
-          column-gap: 39px;
+  /* background-color: #FBAB7E;
+        background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%); */
+  background-color: white;
 }
 
-#seccion-concurso .oferta_titular img {
-  height: 100%;
+#seccion-concurso .oferta_titular .oferta_caja_izda {
+  width: 40%;
 }
 
-#seccion-concurso .oferta_titular .texto_oferta {
-  width: 300px;
+#seccion-concurso .oferta_titular .oferta_caja_izda img {
+  /* height: 100%; */
+  width: 100%;
+}
+
+#seccion-concurso .oferta_titular .oferta_caja_dcha {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 20px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#seccion-concurso .oferta_titular .oferta_caja_dcha .texto_oferta {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1482,15 +1505,16 @@ header h1 {
       -ms-flex-pack: start;
           justify-content: flex-start;
   row-gap: 20px;
+  width: 70%;
 }
 
-#seccion-concurso .oferta_titular .texto_oferta h2 {
-  font-size: 10vh;
+#seccion-concurso .oferta_titular .oferta_caja_dcha .texto_oferta h2 {
+  font-size: 3rem;
   font-family: "idioma";
   color: white;
 }
 
-#seccion-concurso .oferta_titular .texto_oferta .subtitular {
+#seccion-concurso .oferta_titular .oferta_caja_dcha .texto_oferta .subtitular {
   border-left: 2px solid white;
   padding-left: 20px;
   font-size: 1.8rem;
@@ -1498,8 +1522,12 @@ header h1 {
   color: white;
 }
 
-#seccion-concurso .oferta_titular .grafico {
-  width: 200px;
+#seccion-concurso .oferta_titular .oferta_caja_dcha .grafico {
+  width: 100%;
+}
+
+#seccion-concurso .oferta_titular .caja_concurso_izda {
+  width: 50%;
 }
 
 /* footer  */
