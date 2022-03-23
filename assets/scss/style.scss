@@ -655,50 +655,73 @@ header{
 /* ZONA CONCURSO */
 #seccion-concurso{
     width: 100%;
-    max-width: 1920px;
+    max-width: 1440px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
     .oferta_titular{
         width: 100%;
-        max-width: 1440px;
-        margin-top: 80px;
-        
+        max-width: 1920px;
+        margin-top: 80px;        
         margin-bottom: 40px;
         display: flex;
         flex-direction: row;        
-        flex-wrap: wrap;
+        /* flex-wrap: wrap; */
         align-items: center;
+        justify-content: space-around;
         overflow: hidden;        
-        background-color: #FBAB7E;
-        background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-        column-gap: 39px;
-        img{
-            height: 100%;
+        /* background-color: #FBAB7E;
+        background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%); */
+        background-color: white;
+
+        .oferta_caja_izda{
+            width: 40%;            
+            img{
+                /* height: 100%; */
+                width: 100%;
+            }
         }
-        .texto_oferta{
-            width: 300px;
+        .oferta_caja_dcha{
+            width: 60%;
             display: flex;
             flex-direction: column;
+            row-gap: 20px;
             justify-content: flex-start;
-            row-gap: 20px; 
-            h2{         
-                font-size: 10vh;
-                font-family: "idioma";
-                color: white;
+            align-items: center;
+           
+            .texto_oferta{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                row-gap: 20px;
+                width: 70%;
+                h2{         
+                    font-size: 3rem;
+                    font-family: "idioma";
+                    color: white;
+                }
+                .subtitular{
+                    border-left: 2px solid white;
+                    padding-left: 20px;            
+                    font-size: 1.8rem;
+                    font-family: "idioma";
+                    color: white;
+                }
             }
-            .subtitular{
-                border-left: 2px solid white;
-                padding-left: 20px;            
-                font-size: 1.8rem;
-                font-family: "idioma";
-                color: white;
+            .grafico{
+                width: 100%;
             }
         }
-        .grafico{
-            width: 200px;
-        }       
+
+
+        .caja_concurso_izda{
+            width: 50%;
+            
+                
+        }
+  
     }
 
 }
