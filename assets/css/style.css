@@ -643,7 +643,7 @@ body {
 }
 
 #navegador .nav-idiomas .idioma-select {
-  color: #A0425B !important;
+  color: red !important;
 }
 
 .rojo {
@@ -996,9 +996,10 @@ header h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  text-align: end;
   row-gap: 20px;
 }
 
@@ -1009,14 +1010,14 @@ header h1 {
 }
 
 #seccion_pedido .oferta_titular .texto_oferta .subtitular {
-  border-left: 2px solid white;
-  padding-left: 20px;
+  border-right: 2px solid white;
+  padding-right: 20px;
   font-size: 1.8rem;
   font-family: "idioma";
   color: white;
 }
 
-#pedido {
+#seccion_pedido #pedido {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1038,7 +1039,26 @@ header h1 {
   position: relative;
 }
 
-.pestanas {
+#seccion_pedido #pedido .caja-cuaderno {
+  width: 500px;
+  min-width: 500px;
+  height: 700px;
+  position: relative;
+}
+
+#seccion_pedido #pedido .caja-cuaderno #cuaderno-01 {
+  z-index: "8";
+}
+
+#seccion_pedido #pedido .caja-cuaderno #cuaderno-02 {
+  z-index: "6";
+}
+
+#seccion_pedido #pedido .caja-cuaderno #cuaderno-03 {
+  z-index: "4";
+}
+
+#seccion_pedido #pedido .caja-cuaderno .pestanas {
   position: absolute;
   top: 100px;
   left: -27px;
@@ -1058,62 +1078,23 @@ header h1 {
   z-index: 10;
 }
 
-#pest02 {
+#seccion_pedido #pedido .caja-cuaderno .pestanas #pest02 {
   position: absolute;
   top: 120px;
   left: 1px;
 }
 
-#pest03 {
+#seccion_pedido #pedido .caja-cuaderno .pestanas #pest03 {
   position: absolute;
   top: 245px;
   left: 5px;
 }
 
-#cuaderno-01 {
-  z-index: "8";
-}
-
-#cuaderno-02 {
-  z-index: "6";
-}
-
-#cuaderno-03 {
-  z-index: "4";
-}
-
-.caja-cuaderno {
-  width: 500px;
-  min-width: 500px;
-  height: 700px;
-  position: relative;
-}
-
-.cuaderno {
-  width: 500px;
-  min-width: 500px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  position: absolute;
-  left: 1vw;
-}
-
-.imgLibreta {
+#seccion_pedido #pedido .caja-cuaderno .imgLibreta {
   width: 100%;
 }
 
-.contenido-cuaderno {
+#seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno {
   width: 100%;
   max-width: 480px;
   position: absolute;
@@ -1134,7 +1115,7 @@ header h1 {
           justify-content: flex-start;
 }
 
-.contenido-cuaderno p {
+#seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno p {
   font-family: "Libreta";
   color: #33337c;
   font-size: 1.4rem;
@@ -1142,25 +1123,25 @@ header h1 {
   transform: rotate(-1.3deg);
 }
 
-.part01 {
+#seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part01 {
   position: relative;
   width: 100%;
   height: 150px;
 }
 
-.part01 p {
+#seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part01 p {
   position: absolute;
   top: 100px;
   left: 90px;
 }
 
-.part01 img {
+#seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part01 img {
   position: absolute;
   top: 120px;
   left: 60px;
 }
 
-.part02 {
+#seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part02 {
   position: relative;
   width: 100%;
   height: 120px;
@@ -1181,19 +1162,13 @@ header h1 {
           align-items: flex-start;
 }
 
-.part02 img {
+#seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part02 img {
   position: absolute;
   top: 33px;
   left: 10px;
 }
 
-.tamano {
-  position: absolute;
-  top: 15px;
-  left: 50px;
-}
-
-.part02-opc {
+#seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part02 .part02-opc {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1210,7 +1185,13 @@ header h1 {
   padding-right: 20px;
 }
 
-.part03 {
+#seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part02 .tamano {
+  position: absolute;
+  top: 15px;
+  left: 50px;
+}
+
+#seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part03 {
   position: relative;
   width: 100%;
   height: 120px;
@@ -1231,19 +1212,13 @@ header h1 {
           align-items: flex-start;
 }
 
-.part03 img {
+#seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part03 img {
   position: absolute;
   top: 30px;
   left: 25px;
 }
 
-.masa {
-  position: absolute;
-  top: 15px;
-  left: 50px;
-}
-
-.part03-opc {
+#seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part03 .part03-opc {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1260,7 +1235,13 @@ header h1 {
   padding-right: 10px;
 }
 
-.part04 {
+#seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part03 .masa {
+  position: absolute;
+  top: 15px;
+  left: 50px;
+}
+
+#seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part04 {
   position: relative;
   width: 100%;
   display: -webkit-box;
@@ -1280,19 +1261,13 @@ header h1 {
           align-items: flex-start;
 }
 
-.part04 img {
+#seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part04 img {
   position: absolute;
   top: 35px;
   left: 40px;
 }
 
-.ingredientes {
-  position: absolute;
-  top: 15px;
-  left: 50px;
-}
-
-.part04-opc01 {
+#seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part04 .part04-opc01 {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1310,7 +1285,7 @@ header h1 {
   padding-left: 30px;
 }
 
-.part04-opc02 {
+#seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part04 .part04-opc02 {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1328,7 +1303,7 @@ header h1 {
   padding-left: 10px;
 }
 
-.part04-opc03 {
+#seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part04 .part04-opc03 {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1346,29 +1321,55 @@ header h1 {
   padding-left: 10px;
 }
 
-.selecciones, .selecciones2, .selecciones3 {
+#seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part04 .ingredientes {
+  position: absolute;
+  top: 15px;
+  left: 50px;
+}
+
+#seccion_pedido #pedido .caja-cuaderno .selecciones, #seccion_pedido #pedido .caja-cuaderno .selecciones2, #seccion_pedido #pedido .caja-cuaderno .selecciones3 {
   position: absolute;
 }
 
-#sel01, #sel02, #ing01, #ing02, #ing03, #ing04, #ing05, #ing06 {
+#seccion_pedido #pedido .caja-cuaderno .cuaderno {
+  width: 500px;
+  min-width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: absolute;
+  left: 1vw;
+}
+
+#seccion_pedido #pedido .caja-cuaderno #sel01, #seccion_pedido #pedido .caja-cuaderno #sel02, #seccion_pedido #pedido .caja-cuaderno #ing01, #seccion_pedido #pedido .caja-cuaderno #ing02, #seccion_pedido #pedido .caja-cuaderno #ing03, #seccion_pedido #pedido .caja-cuaderno #ing04, #seccion_pedido #pedido .caja-cuaderno #ing05, #seccion_pedido #pedido .caja-cuaderno #ing06 {
   position: absolute;
 }
 
-.nota1, .nota2, .nota3, .nota4, .nota5 {
+#seccion_pedido #pedido .caja-cuaderno .nota1, #seccion_pedido #pedido .caja-cuaderno .nota2, #seccion_pedido #pedido .caja-cuaderno .nota3, #seccion_pedido #pedido .caja-cuaderno .nota4, #seccion_pedido #pedido .caja-cuaderno .nota5 {
   cursor: pointer;
 }
 
-.nota1Sel, .nota2Sel, .nota3Sel1, .nota3Sel2, .nota3Sel3, .nota3Sel4, .nota3Sel5, .nota3Sel6, .nota3Sel7, .nota3Sel8, .nota3Sel9, .nota4Sel, .nota4Selagu, .nota4SelaguG, .nota4SelcKel, .nota4SelcEga, .nota4SelcSN, .nota4Selb1, .nota4Selb2, .nota4Selb3, .nota4Selb4, .nota4Selb5, .nota4Selb6, .nota4Selb7, .nota4Selb8, .nota4Selb9, .nota5Sel, .nota5SeloPfi, .nota5SeloPde, .nota5SeloPcq, .nota5SeloPol, .nota5SeloAce, .nota5SeloNug, .nota5SeloH1, .nota5SeloH2, .nota5SeloH3, .nota5SeloH4, .nota5SeloH5, .nota5SeloH6, .nota5SeloH7, .nota5SeloH8, .nota5SeloH9 {
+#seccion_pedido #pedido .caja-cuaderno .nota1Sel, #seccion_pedido #pedido .caja-cuaderno .nota2Sel, #seccion_pedido #pedido .caja-cuaderno .nota3Sel1, #seccion_pedido #pedido .caja-cuaderno .nota3Sel2, #seccion_pedido #pedido .caja-cuaderno .nota3Sel3, #seccion_pedido #pedido .caja-cuaderno .nota3Sel4, #seccion_pedido #pedido .caja-cuaderno .nota3Sel5, #seccion_pedido #pedido .caja-cuaderno .nota3Sel6, #seccion_pedido #pedido .caja-cuaderno .nota3Sel7, #seccion_pedido #pedido .caja-cuaderno .nota3Sel8, #seccion_pedido #pedido .caja-cuaderno .nota3Sel9, #seccion_pedido #pedido .caja-cuaderno .nota4Sel, #seccion_pedido #pedido .caja-cuaderno .nota4Selagu, #seccion_pedido #pedido .caja-cuaderno .nota4SelaguG, #seccion_pedido #pedido .caja-cuaderno .nota4SelcKel, #seccion_pedido #pedido .caja-cuaderno .nota4SelcEga, #seccion_pedido #pedido .caja-cuaderno .nota4SelcSN, #seccion_pedido #pedido .caja-cuaderno .nota4Selb1, #seccion_pedido #pedido .caja-cuaderno .nota4Selb2, #seccion_pedido #pedido .caja-cuaderno .nota4Selb3, #seccion_pedido #pedido .caja-cuaderno .nota4Selb4, #seccion_pedido #pedido .caja-cuaderno .nota4Selb5, #seccion_pedido #pedido .caja-cuaderno .nota4Selb6, #seccion_pedido #pedido .caja-cuaderno .nota4Selb7, #seccion_pedido #pedido .caja-cuaderno .nota4Selb8, #seccion_pedido #pedido .caja-cuaderno .nota4Selb9, #seccion_pedido #pedido .caja-cuaderno .nota5Sel, #seccion_pedido #pedido .caja-cuaderno .nota5SeloPfi, #seccion_pedido #pedido .caja-cuaderno .nota5SeloPde, #seccion_pedido #pedido .caja-cuaderno .nota5SeloPcq, #seccion_pedido #pedido .caja-cuaderno .nota5SeloPol, #seccion_pedido #pedido .caja-cuaderno .nota5SeloAce, #seccion_pedido #pedido .caja-cuaderno .nota5SeloNug, #seccion_pedido #pedido .caja-cuaderno .nota5SeloH1, #seccion_pedido #pedido .caja-cuaderno .nota5SeloH2, #seccion_pedido #pedido .caja-cuaderno .nota5SeloH3, #seccion_pedido #pedido .caja-cuaderno .nota5SeloH4, #seccion_pedido #pedido .caja-cuaderno .nota5SeloH5, #seccion_pedido #pedido .caja-cuaderno .nota5SeloH6, #seccion_pedido #pedido .caja-cuaderno .nota5SeloH7, #seccion_pedido #pedido .caja-cuaderno .nota5SeloH8, #seccion_pedido #pedido .caja-cuaderno .nota5SeloH9 {
   display: none;
   position: absolute;
 }
 
-#t1, #t2, #t3, #t4, #t5, #t6, #t7, #t8, #t9, #t10 {
+#seccion_pedido #pedido .caja-cuaderno #t1, #seccion_pedido #pedido .caja-cuaderno #t2, #seccion_pedido #pedido .caja-cuaderno #t3, #seccion_pedido #pedido .caja-cuaderno #t4, #seccion_pedido #pedido .caja-cuaderno #t5, #seccion_pedido #pedido .caja-cuaderno #t6, #seccion_pedido #pedido .caja-cuaderno #t7, #seccion_pedido #pedido .caja-cuaderno #t8, #seccion_pedido #pedido .caja-cuaderno #t9, #seccion_pedido #pedido .caja-cuaderno #t10 {
   display: none;
   position: absolute;
 }
 
-.caja-resultado {
+#seccion_pedido #pedido .caja-resultado {
   width: 500px;
   min-width: 500px;
   display: -webkit-box;
@@ -1388,7 +1389,7 @@ header h1 {
           align-items: center;
 }
 
-#resultado {
+#seccion_pedido #pedido .caja-resultado #resultado {
   width: 100%;
   height: 500px;
   display: -webkit-box;
@@ -1407,18 +1408,98 @@ header h1 {
   position: relative;
 }
 
-#resultado img {
+#seccion_pedido #pedido .caja-resultado #resultado img {
   position: absolute;
 }
 
-#precio p {
+#seccion_pedido #pedido .caja-resultado #precio p {
   font-family: "Piazzere";
   color: black;
   font-size: 10vw;
 }
 
-#precio span {
+#seccion_pedido #pedido .caja-resultado #precio span {
   font-size: 5vw;
+}
+
+/* ZONA CONCURSO */
+#seccion-concurso {
+  width: 100%;
+  max-width: 1920px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#seccion-concurso .oferta_titular {
+  width: 100%;
+  max-width: 1440px;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  background-color: #FBAB7E;
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+  -webkit-column-gap: 39px;
+          column-gap: 39px;
+}
+
+#seccion-concurso .oferta_titular img {
+  height: 100%;
+}
+
+#seccion-concurso .oferta_titular .texto_oferta {
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  row-gap: 20px;
+}
+
+#seccion-concurso .oferta_titular .texto_oferta h2 {
+  font-size: 10vh;
+  font-family: "idioma";
+  color: white;
+}
+
+#seccion-concurso .oferta_titular .texto_oferta .subtitular {
+  border-left: 2px solid white;
+  padding-left: 20px;
+  font-size: 1.8rem;
+  font-family: "idioma";
+  color: white;
+}
+
+#seccion-concurso .oferta_titular .grafico {
+  width: 200px;
 }
 
 /* footer  */

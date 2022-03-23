@@ -140,7 +140,7 @@ body{
             column-gap: 10px;
         }
         .idioma-select{
-            color:$color_rojo!important;
+            color:red!important;
         }
     }
 }
@@ -213,7 +213,7 @@ header{
         flex-direction: row;        
         flex-wrap: wrap;
         align-items: center;
-        overflow: hidden;
+        overflow: hidden;        
         background-color: #FBAB7E;
         background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
         column-gap: 200px;
@@ -379,6 +379,308 @@ header{
             width: 300px;
             display: flex;
             flex-direction: column;
+            justify-content:flex-end;
+            text-align: end;
+            row-gap: 20px;
+            h2{         
+                font-size: 10vh;
+                font-family: "idioma";
+                color: white;
+            }
+            .subtitular{
+                border-right: 2px solid white;
+                padding-right: 20px;            
+                font-size: 1.8rem;
+                font-family: "idioma";
+                color: white;
+            }
+        }        
+    }
+    #pedido{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 20px;
+        justify-content: center;
+        align-items: flex-start;
+        position: relative;
+        .caja-cuaderno{
+            width: 500px;
+            min-width: 500px;    
+            height: 700px;
+            position: relative;
+            #cuaderno-01{
+                z-index: "8";
+            }
+            #cuaderno-02{
+                z-index: "6";
+            }
+            #cuaderno-03{
+                z-index: "4";
+            }
+            .pestanas{    
+                position: absolute;
+                top: 100px;
+                left: -27px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                z-index: 10;
+                #pest02{
+                    position: absolute;
+                    top: 120px;
+                    left: 1px;
+                }
+                #pest03{
+                    position: absolute;
+                    top: 245px;
+                    left: 5px;
+                }
+            }
+            .imgLibreta{
+                width: 100%;
+            }
+            .contenido-cuaderno{
+                width: 100%;
+                max-width: 480px;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: flex-start;
+                p{
+                    font-family: "Libreta";
+                    color: $color_boli;
+                    font-size: 1.4rem;
+                    -webkit-transform: rotate(-1.3deg); 
+                    -moz-transform: rotate(-1.3deg); 
+                    -ms-transform: rotate(-1.3deg); 
+                    -o-transform: rotate(-1.3deg); 
+                    transform: rotate(-1.3deg);
+                }
+                .part01{
+                    position: relative;
+                    width: 100%;
+                    height: 150px;
+                    p{
+                        position: absolute;
+                        top: 100px;
+                        left: 90px;        
+                    }
+                    img{
+                        position: absolute;
+                        top:120px;
+                        left: 60px;
+                    }
+                }
+                .part02{
+                    position: relative;
+                    width: 100%;
+                    height: 120px;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    img{
+                        position: absolute;
+                        top: 33px;
+                        left: 10px;
+                    }
+                    .part02-opc{
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                        position: absolute;
+                        top: 70px;
+                        padding-left: 30px;
+                        padding-right: 20px;
+                    }
+                    .tamano{
+                        position: absolute;
+                        top: 15px;
+                        left: 50px;
+                    }
+                }            
+                .part03{    
+                    position: relative;
+                    width: 100%;
+                    height: 120px;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    img{
+                        position: absolute;
+                        top: 30px;
+                        left: 25px;
+                    }
+                    .part03-opc{
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                        position: absolute;
+                        top: 80px;    
+                        padding-left: 30px;
+                        padding-right: 10px;
+                    }
+                    .masa{
+                        position: absolute;
+                        top: 15px;
+                        left: 50px;
+                    }     
+                }
+                .part04{
+                    position: relative;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    img{
+                        position: absolute;
+                        top: 35px;
+                        left: 40px
+                    }
+                    .part04-opc01{
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                        position: absolute;
+                        top: 80px;
+                        left: 30px;
+                        padding-right: 50px;
+                        padding-left: 30px;
+                    }
+                    .part04-opc02{
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                        position: absolute;
+                        top: 170px;
+                        left: 30px;
+                        padding-right: 50px;
+                        padding-left: 10px;
+                    }
+                    .part04-opc03{
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                        position: absolute;
+                        top: 250px;
+                        left: 30px;
+                        padding-right: 50px;
+                        padding-left: 10px;
+                    }
+                    .ingredientes{
+                        position: absolute;
+                        top: 15px;
+                        left: 50px;
+                    }  
+                }                
+                
+            }
+            .selecciones,.selecciones2,.selecciones3{
+                position: absolute;    
+            }
+            .cuaderno{    
+                width: 500px;
+                min-width: 500px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;   
+                position: absolute;
+                left: 1vw;
+            }
+            #sel01,#sel02,#ing01,#ing02,#ing03,#ing04,#ing05,#ing06{
+                position: absolute;
+            }
+            .nota1,.nota2,.nota3,.nota4,.nota5{
+                cursor: pointer;
+            }
+            .nota1Sel,.nota2Sel,.nota3Sel1,.nota3Sel2,.nota3Sel3,.nota3Sel4,.nota3Sel5,.nota3Sel6,.nota3Sel7,.nota3Sel8,.nota3Sel9,.nota4Sel,.nota4Selagu,.nota4SelaguG,.nota4SelcKel,.nota4SelcEga,.nota4SelcSN,.nota4Selb1,.nota4Selb2,.nota4Selb3,.nota4Selb4,.nota4Selb5,.nota4Selb6,.nota4Selb7,.nota4Selb8,.nota4Selb9,.nota5Sel,.nota5SeloPfi,.nota5SeloPde,.nota5SeloPcq,.nota5SeloPol,.nota5SeloAce,.nota5SeloNug,.nota5SeloH1,.nota5SeloH2,.nota5SeloH3,.nota5SeloH4,.nota5SeloH5,.nota5SeloH6,.nota5SeloH7,.nota5SeloH8,.nota5SeloH9{
+                display: none;
+                position: absolute;
+            }
+            #t1,#t2,#t3,#t4,#t5,#t6,#t7,#t8,#t9,#t10{
+                display: none;
+                position: absolute;
+            }
+        }
+        .caja-resultado{
+            width: 500px;
+            min-width: 500px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content:flex-start;
+            align-items: center;
+            #resultado{
+                width: 100%;
+                height: 500px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: center;
+                position: relative;
+                img{
+                    position: absolute;
+                }  
+            }
+            #precio{    
+                p{
+                    font-family: "Piazzere";    
+                    color: black;
+                    font-size: 10vw;
+                }
+                span{
+                    font-size: 5vw;
+                }  
+            }
+        }
+    } 
+}
+
+/* ZONA CONCURSO */
+#seccion-concurso{
+    width: 100%;
+    max-width: 1920px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .oferta_titular{
+        width: 100%;
+        max-width: 1440px;
+        margin-top: 80px;
+        
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: row;        
+        flex-wrap: wrap;
+        align-items: center;
+        overflow: hidden;        
+        background-color: #FBAB7E;
+        background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+        column-gap: 39px;
+        img{
+            height: 100%;
+        }
+        .texto_oferta{
+            width: 300px;
+            display: flex;
+            flex-direction: column;
             justify-content: flex-start;
             row-gap: 20px; 
             h2{         
@@ -393,263 +695,12 @@ header{
                 font-family: "idioma";
                 color: white;
             }
-        }        
+        }
+        .grafico{
+            width: 200px;
+        }       
     }
 
-}
-#pedido{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    column-gap: 20px;
-    justify-content: center;
-    align-items: flex-start;
-    position: relative;
-}
-.pestanas{    
-    position: absolute;
-    top: 100px;
-    left: -27px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    z-index: 10;
-}
-#pest02{
-    position: absolute;
-    top: 120px;
-    left: 1px;
-}
-#pest03{
-    position: absolute;
-    top: 245px;
-    left: 5px;
-}
-
-#cuaderno-01{
-    z-index: "8";
-}
-#cuaderno-02{
-    z-index: "6";
-}
-#cuaderno-03{
-    z-index: "4";
-}
-.caja-cuaderno{
-    width: 500px;
-    min-width: 500px;    
-    height: 700px;
-    position: relative;
-}
-.cuaderno{    
-    width: 500px;
-    min-width: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;   
-    position: absolute;
-    left: 1vw;
-}
-.imgLibreta{
-    width: 100%;
-}
-.contenido-cuaderno{
-    width: 100%;
-    max-width: 480px;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: flex-start;
-    p{
-        font-family: "Libreta";
-        color: $color_boli;
-        font-size: 1.4rem;
-        -webkit-transform: rotate(-1.3deg); 
-        -moz-transform: rotate(-1.3deg); 
-        -ms-transform: rotate(-1.3deg); 
-        -o-transform: rotate(-1.3deg); 
-        transform: rotate(-1.3deg);
-    }    
-}
-.part01{
-    position: relative;
-    width: 100%;
-    height: 150px;
-    p{
-        position: absolute;
-        top: 100px;
-        left: 90px;        
-    }
-    img{
-        position: absolute;
-        top:120px;
-        left: 60px;
-    }
-}
-.part02{
-    position: relative;
-    width: 100%;
-    height: 120px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    img{
-        position: absolute;
-        top: 33px;
-        left: 10px;
-    }    
-}
-.tamano{
-    position: absolute;
-    top: 15px;
-    left: 50px;
-}
-.part02-opc{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    position: absolute;
-    top: 70px;
-    padding-left: 30px;
-    padding-right: 20px;
-}
-.part03{    
-    position: relative;
-    width: 100%;
-    height: 120px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    img{
-        position: absolute;
-        top: 30px;
-        left: 25px;
-    }      
-}
-.masa{
-    position: absolute;
-    top: 15px;
-    left: 50px;
-}
-.part03-opc{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    position: absolute;
-    top: 80px;    
-    padding-left: 30px;
-    padding-right: 10px;
-}
-.part04{
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    img{
-        position: absolute;
-        top: 35px;
-        left: 40px
-    }     
-}
-.ingredientes{
-    position: absolute;
-    top: 15px;
-    left: 50px;
-}
-.part04-opc01{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    position: absolute;
-    top: 80px;
-    left: 30px;
-    padding-right: 50px;
-    padding-left: 30px;
-}
-.part04-opc02{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    position: absolute;
-    top: 170px;
-    left: 30px;
-    padding-right: 50px;
-    padding-left: 10px;
-}
-.part04-opc03{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    position: absolute;
-    top: 250px;
-    left: 30px;
-    padding-right: 50px;
-    padding-left: 10px;
-}
-.selecciones,.selecciones2,.selecciones3{
-    position: absolute;    
-}
-#sel01,#sel02,#ing01,#ing02,#ing03,#ing04,#ing05,#ing06{
-    position: absolute;
-}
-.nota1,.nota2,.nota3,.nota4,.nota5{
-    cursor: pointer;
-}
-.nota1Sel,.nota2Sel,.nota3Sel1,.nota3Sel2,.nota3Sel3,.nota3Sel4,.nota3Sel5,.nota3Sel6,.nota3Sel7,.nota3Sel8,.nota3Sel9,.nota4Sel,.nota4Selagu,.nota4SelaguG,.nota4SelcKel,.nota4SelcEga,.nota4SelcSN,.nota4Selb1,.nota4Selb2,.nota4Selb3,.nota4Selb4,.nota4Selb5,.nota4Selb6,.nota4Selb7,.nota4Selb8,.nota4Selb9,.nota5Sel,.nota5SeloPfi,.nota5SeloPde,.nota5SeloPcq,.nota5SeloPol,.nota5SeloAce,.nota5SeloNug,.nota5SeloH1,.nota5SeloH2,.nota5SeloH3,.nota5SeloH4,.nota5SeloH5,.nota5SeloH6,.nota5SeloH7,.nota5SeloH8,.nota5SeloH9{
-    display: none;
-    position: absolute;
-}
-#t1,#t2,#t3,#t4,#t5,#t6,#t7,#t8,#t9,#t10{
-    display: none;
-    position: absolute;
-}
-.caja-resultado{
-    width: 500px;
-    min-width: 500px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content:flex-start;
-    align-items: center;
-}
-#resultado{
-    width: 100%;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    position: relative;
-    img{
-        position: absolute;
-    }  
-}
-#precio{    
-    p{
-        font-family: "Piazzere";    
-        color: black;
-        font-size: 10vw;
-    }
-    span{
-        font-size: 5vw;
-    }  
 }
 
 /* footer  */
