@@ -68,7 +68,7 @@ function rellenarOfertas(){
                     cent = String(precio).substring(pos+1,pos+3);
                 }
                 //desarrollamos el div
-                ofertaHTML = `<div id="of${contador+=1}" class="oferta"><img src="${oOferta.src}" alt=""><p class="oTexto">${oOferta.texto}</p><p class="oEuros">${eur}<span>,${cent}€</span></p></div>`
+                ofertaHTML = `<div id="of${contador+=1}" class="oferta"><img hq="${oOferta.srcHQ}" class="imgOferta" src="${oOferta.src}" alt=""><p class="oTexto">${oOferta.texto}</p><p class="oEuros">${eur}<span>,${cent}€</span></p></div>`
                 //escribimos el html dinámico
                 document.querySelector("#ofertas").insertAdjacentHTML("afterbegin",ofertaHTML);
             }

@@ -44,11 +44,10 @@ const construirGrafico=(concursoJs)=>{
         label: 'Pedidos realizados',
         data: arrayVentas,
         backgroundColor: [
-        'rgb(51, 51, 124)',
-        '#A0425B',
-        '#4B9C40'
-        ],
-        
+        'white',
+        'white',
+        'white'
+        ],        
         hoverOffset: 4
     }]
     };
@@ -56,77 +55,22 @@ const construirGrafico=(concursoJs)=>{
     const config = {
       type: 'bar',
       data: data,
-      options: {}
+      options: {
+        plugins: {
+          title: {
+              display: false,
+              text: 'Custom Chart Title',
+              color:'white',
+          },
+          tooltip:{
+            color:'white',
+          }
+      }
+      }
     };
          
     const myChart = new Chart(
       document.getElementById('myChart'),
       config
-    );
-
-
-    /* const data = {
-      labels: arrayPro,
-      datasets: [{
-        axis: 'y',
-        label: 'Pedidos realizados',
-        data: arrayVentas,
-        fill: false,
-        backgroundColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(255, 159, 64, 1)',
-          'rgba(255, 205, 86, 1)',
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
-          'rgba(255, 205, 86, 0.2)'          
-        ],
-        borderColor: [
-          'rgb(255, 99, 132)',
-          'rgb(255, 159, 64)',
-          'rgb(255, 205, 86)',
-          'rgb(255, 99, 132)',
-          'rgb(255, 159, 64)',
-          'rgb(255, 205, 86)'
-        ],
-        borderWidth: 1
-      }]      
-      
-    };
-
-    const config = {
-      type: 'bar',
-      data,
-      options: {
-        indexAxis: 'y',
-      }
-    };
-
-    const myChart = new Chart(document.getElementById('myChart'),config); */
-    
-
-    /* const data = {
-
-    labels: arrayPro,
-
-    datasets: [{
-        label: 'Pedidos realizados',
-        data: arrayVentas,
-        backgroundColor: [
-        'rgb(51, 51, 124)',
-        '#A0425B',
-        '#4B9C40'
-        ],
-        
-        hoverOffset: 4
-    }]
-    };
-
-    const config = {
-        type: 'doughnut',
-        data: data,
-        options: {}
-    };
-
-    const myChart = new Chart(document.getElementById('myChart'),config); */
-
+    );    
 }

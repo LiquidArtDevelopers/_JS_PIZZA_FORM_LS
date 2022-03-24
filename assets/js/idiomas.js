@@ -1,6 +1,6 @@
 //SCRIPT EXCLUSIVO PARA IDIOMAS---
 
-import Cookie from "./Cookie.js";
+import Cookie from "./cookie.js";
 
 
 //Instanciamos el objeto Cookie.
