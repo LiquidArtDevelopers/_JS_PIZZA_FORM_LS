@@ -9,7 +9,7 @@ export default function modales(){
             modalesOfertas(event.target.getAttribute('hq'));
         }
         //escuchamos si cerramos el modal de ofertas
-        if(event.target.classList.contains("fondo_modal") || event.target.classList.contains("x_cierre")){       
+        if(event.target.classList.contains("fondo_modal_oferta") || event.target.classList.contains("x_cierre")){       
             //enviamos el valor de la etiqueta con el SRC del archivo en HQ
             cerrarModal();
         }
@@ -42,7 +42,7 @@ const cerrarModal=()=>{
 const modalesOfertas=(srcFoto)=>{
     console.log("oferta clickada: "+ srcFoto);
     //creamos el HTML con la ventana modal
-    var modalOfertaHTML = `<div id="modal_ofertas" class="fondo_modal"><div class="oferta_modal"><span class="x_cierre">X</span><img src="${srcFoto}" alt=""></div></div>`;
+    var modalOfertaHTML = `<div id="modal_ofertas" class="fondo_modal_oferta"><div class="oferta_modal"><span class="x_cierre">X</span><img src="${srcFoto}" alt=""></div></div>`;
     //dibujamos el HTML
     const cabecera = document.querySelector("#cabecera");
     cabecera.insertAdjacentHTML("afterend",modalOfertaHTML);
