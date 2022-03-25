@@ -512,7 +512,7 @@ html {
 }
 
 body {
-  background-image: url("../img/logos/Entramado_verde.svg");
+  background-image: url("../img/logos/Entramado_rojo.svg");
   background-attachment: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -533,7 +533,7 @@ body {
 
 .cambio_fondo {
   background-color: rgba(255, 255, 255, 0.212);
-  background-image: url("../img/logos/Entramado_rojo.svg") !important;
+  background-image: url("../img/logos/Entramado_verde.svg") !important;
   background-attachment: fixed;
   -webkit-transition: all 700ms;
   transition: all 700ms;
@@ -555,7 +555,7 @@ body {
 }
 
 .preload {
-  background-image: url("../img/logos/Entramado_verde.svg");
+  background-image: url("../img/logos/Entramado_rojo.svg");
   background-attachment: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -752,6 +752,7 @@ header h1 {
 /* ZONA OFERTAS */
 #seccion_ofertas {
   width: 100%;
+  max-width: 1920px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -828,7 +829,7 @@ header h1 {
 }
 
 #seccion_ofertas #caja_ofertas {
-  width: 80%;
+  width: 90%;
   height: 300px;
   position: relative;
   display: -webkit-box;
@@ -1025,6 +1026,7 @@ header h1 {
 /* ZONA PEDIDO  */
 #seccion_pedido {
   width: 100%;
+  max-width: 1920px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1100,10 +1102,6 @@ header h1 {
   width: 100%;
   height: 1000px;
   padding-top: 30px;
-  background-color: white;
-  background-image: url("../img/varias/fondo_pedido_02.jpg");
-  background-size: 100vw;
-  background-repeat: no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1622,6 +1620,11 @@ footer {
   margin-top: -4px;
   width: 100%;
   max-width: 1920px;
+}
+
+footer .logo-peq {
+  font-family: "Piazzere";
+  font-size: 1.6rem;
 }
 
 footer h2 {
