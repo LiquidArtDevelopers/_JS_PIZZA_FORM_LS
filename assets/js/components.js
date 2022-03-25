@@ -5,7 +5,7 @@ export default function componentes(){
 //SCRIPT SCROLL NAV-----------------
 function scrollFunction() {
     if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        document.getElementById("navegador").style.backgroundColor = "rgba(0, 0, 0, 0.432)";
+        document.getElementById("navegador").style.backgroundColor = "rgb(65, 65, 65)";
     } else {
         document.getElementById("navegador").style.backgroundColor = "rgba(0, 0, 0, 0)";
     }

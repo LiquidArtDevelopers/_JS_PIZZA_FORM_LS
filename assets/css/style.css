@@ -592,8 +592,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-transition: 400ms ease-in-out;
-  transition: 400ms ease-in-out;
+  -webkit-transition: 600ms ease-in-out;
+  transition: 600ms ease-in-out;
 }
 
 #navegador a {
@@ -650,7 +650,7 @@ body {
           justify-content: flex-end;
   color: white;
   font-family: "Idioma";
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 #navegador .nav-enlaces ul {
@@ -744,9 +744,9 @@ header h1 {
 
 /* CONTENEDOR PRINCIPAL */
 .contenedor_principal {
-  width: 90%;
+  max-width: 1440%;
   margin: 0 auto;
-  padding-top: 30px;
+  /* padding-top: 30px; */
 }
 
 .contenedor_principal:before {
@@ -773,8 +773,9 @@ header h1 {
 }
 
 #seccion_ofertas .oferta_titular {
-  width: 90%;
-  border-radius: 60px 0px;
+  width: 100%;
+  height: 45vh;
+  /* border-radius: 60px 0px; */
   margin-bottom: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -783,16 +784,14 @@ header h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow: hidden;
   background-color: #FBAB7E;
   background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-  -webkit-column-gap: 200px;
-          column-gap: 200px;
+  -webkit-column-gap: 100px;
+          column-gap: 100px;
 }
 
 #seccion_ofertas .oferta_titular img {
@@ -800,7 +799,10 @@ header h1 {
 }
 
 #seccion_ofertas .oferta_titular .texto_oferta {
-  width: 300px;
+  max-width: 500px;
+  min-width: 300px;
+  width: 40vw;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -808,14 +810,14 @@ header h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  row-gap: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  row-gap: 10px;
 }
 
 #seccion_ofertas .oferta_titular .texto_oferta h2 {
-  font-size: 10vh;
+  font-size: 9vh;
   font-family: "idioma";
   color: white;
 }
@@ -1019,8 +1021,8 @@ header h1 {
   position: absolute;
   -webkit-transform: translateX(40px);
   transform: translateX(40px);
-  font-family: "arial";
-  font-size: 2.5rem;
+  font-family: "verdana";
+  font-size: 1.5rem;
   color: white;
   cursor: pointer;
   -webkit-transition: all 300ms ease-in-out;
