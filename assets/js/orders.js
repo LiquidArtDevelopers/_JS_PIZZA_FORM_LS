@@ -7,8 +7,8 @@ let ticket = [0,0,0,0,0];
 //creamos
 //creamos un objeto pedido
 const ordenPedido={
-    masa:null,
-    tipo:null,
+    masa:'',
+    tipo:'',
     topping:[],
     bebida:[],
     otros:[],
@@ -29,6 +29,7 @@ const escribirPedido=()=>{
     let click=false;
     document.addEventListener('click',(e)=>{
         if(e.target.matches('.btn-comprar')){
+            const pr=document.querySelector('.precio');
             $box_comprar.classList.toggle('active');
             $btn_comprar.classList.toggle('btn-active');
             if($btn_comprar.textContent == hacerCompra){
@@ -37,17 +38,23 @@ const escribirPedido=()=>{
                 $btn_comprar.textContent=hacerCompra;
             }
             Object.entries(ordenPedido).forEach(([key,value])=>{
-                if(value!==undefined && value!==0 && value!==null){
-                    let valor=String(value) ;
+                if(value.length!==0 && value!==0){
+                    console.log(value.isArray);
                     template_fact= `
-                      <li> ${document.querySelector('.txt5').textContent.toUpperCase()} :   ${getText(ordenPedido['masa'])}</li>
-                      <li> ${document.querySelector('.txt6').textContent.toUpperCase()} :   ${getText(ordenPedido['tipo'])}</li>
-                      <li> ${document.querySelector('.txt7').textContent.toUpperCase()} :   ${getText(ordenPedido['topping'])}</li>
-                    `
+                      <li> ${document.querySelector('.txt5').textContent.toUpperCase()}  ${getText(ordenPedido['masa'])}</li>
+                      <li> ${document.querySelector('.txt6').textContent.toUpperCase()}:   ${getText(ordenPedido['tipo'])}</li>
+                    `;
+                    if(ordenPedido['topping']){
+                        template_fact+=`
+                        <li> ${getText(ordenPedido['topping'])}</li>
+                        `;
+                    }
                 }
+                pr.textContent=`${ordenPedido['precio']}€`;
             });
             click ? click=false : click=true;
             click ? $notaPizza.insertAdjacentHTML('afterbegin',template_fact) : $notaPizza.textContent='';
+            
         }
     });
 }

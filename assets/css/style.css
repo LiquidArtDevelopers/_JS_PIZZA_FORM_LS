@@ -406,13 +406,49 @@ select:-webkit-autofill:focus {
           animation-iteration-count: infinite;
 }
 
+@font-face {
+  font-family: "Libreta";
+  src: url("../font/ShortStack-Regular.ttf");
+}
+
 .comprar {
-  width: 100%;
-  min-width: 500px;
-  height: 50vh;
-  background-color: rgba(255, 255, 255, 0.8);
-  margin-top: 15vh;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Libreta';
+  width: 300px;
+  height: 450px;
+  margin: 150px auto 0;
+  padding: 20px;
+  border-radius: 10px;
+  background: #FBFBFB;
+  -webkit-box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.5);
   display: none;
+}
+
+.comprar:before, .comprar:after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  height: 6px;
+  width: 290px;
+}
+
+.comprar:before {
+  top: -5px;
+  background: radial-gradient(circle, transparent, transparent 50%, #FBFBFB 50%, #FBFBFB 100%) -7px -8px/16px 16px repeat-x;
+}
+
+.comprar:after {
+  bottom: -5px;
+  background: radial-gradient(circle, transparent, transparent 50%, #FBFBFB 50%, #FBFBFB 100%) -7px -2px/16px 16px repeat-x;
+}
+
+.comprar ul li {
+  font-weight: bold;
+  margin: 5px;
+  font-size: 22px;
 }
 
 .btn-comprar {
@@ -429,8 +465,25 @@ select:-webkit-autofill:focus {
   padding: 15px;
 }
 
+.precio {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 20px;
+  font-weight: bold;
+  border-bottom: 3px solid #000;
+  font-size: 22px;
+}
+
 .active {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .btn-active {
