@@ -181,9 +181,8 @@ header{
 .contenedor_principal{
     width: 90%;
     margin: 0 auto;
-    padding-top: 30px;
+    /* padding-top: 30px; */
 }
-
 .contenedor_principal:before {
     background:
       linear-gradient(
@@ -207,8 +206,9 @@ header{
     justify-content: center;
     align-items: center;
     .oferta_titular{
-        width: 90%;
-        border-radius: 60px 0px;
+        width: 100%;
+        height: 45vh;
+        /* border-radius: 60px 0px; */
         margin-bottom: 40px;
         display: flex;
         flex-direction: row;        
@@ -222,7 +222,7 @@ header{
             height: 100%;
         }
         .texto_oferta{
-            width: 300px;
+            /* width: 300px; */
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -351,6 +351,7 @@ header{
         border-radius: 50px;
     }    
 }
+
 .fondo_modal{
     position: fixed;
     z-index: 9000;
