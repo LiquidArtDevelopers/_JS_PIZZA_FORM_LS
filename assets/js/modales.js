@@ -1,3 +1,5 @@
+let existe = false;
+
 export default function modales(){
 
     document.body.addEventListener("click", function(event){        
@@ -12,19 +14,37 @@ export default function modales(){
             cerrarModal();
         }
     })
+
+    window.onload = function() { 
+        document.onkeydown = mostrarInformacionCaracter;
+    }
+    function mostrarInformacionCaracter(evObject) {
+
+        /* console.log(String.fromCharCode(evObject.which));
+        console.log(evObject.keyCode); */
+
+        //si pulsamos ESC y existe el modal abierto, lo cerramos.
+        if (evObject.keyCode == 27 && existe == true){
+            /* calculadora.elements[15].focus(); */
+            cerrarModal();              
+        }
+    }
+
 }
 
+//función para cerrar el modal.
 const cerrarModal=()=>{
     document.querySelector("#modal_ofertas").remove();
+    existe = false;
 }
 
-//función para mostrar un modal
+//función para mostrar el modal
 const modalesOfertas=(srcFoto)=>{
     console.log("oferta clickada: "+ srcFoto);
-    //dibujamos el HTML con la ventana modal
+    //creamos el HTML con la ventana modal
     var modalOfertaHTML = `<div id="modal_ofertas" class="fondo_modal"><div class="oferta_modal"><span class="x_cierre">X</span><img src="${srcFoto}" alt=""></div></div>`;
-
+    //dibujamos el HTML
     const cabecera = document.querySelector("#cabecera");
     cabecera.insertAdjacentHTML("afterend",modalOfertaHTML);
-
+    existe = true;
 }
