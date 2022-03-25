@@ -45,12 +45,14 @@ const escribirPedido=()=>{
                       <li> ${document.querySelector('.txt6').textContent.toUpperCase()}:   ${getText(ordenPedido['tipo'])}</li>
                     `;
                     if(ordenPedido['topping']){
+                     ordenPedido['topping'].forEach((i)=>{
                         template_fact+=`
-                        <li> ${getText(ordenPedido['topping'])}</li>
+                        <li> ${getText(ordenPedido['topping'][0])}</li>
                         `;
+                     })
                     }
+                    pr.textContent=`Total: ${ordenPedido['precio']}€`;
                 }
-                pr.textContent=`${ordenPedido['precio']}€`;
             });
             click ? click=false : click=true;
             click ? $notaPizza.insertAdjacentHTML('afterbegin',template_fact) : $notaPizza.textContent='';
@@ -621,12 +623,11 @@ function calcTicket(){
         eur = String(sum).substring(0,pos);
         cent = String(sum).substring(pos+1,pos+2)+"0";
     }
-    //Agregar ordenPedido al array pedido.
-    pedidos.push(ordenPedido);
     console.log("Total: "+sum+" Euros: "+eur+" Cent: "+cent)
     
     let precioHtml = `<p id="preci">${eur}<span>,${cent}€</span></p>`;
     document.querySelector("#precio").innerHTML = precioHtml; 
+    ordenPedido['precio']=sum;
 
 }
 
