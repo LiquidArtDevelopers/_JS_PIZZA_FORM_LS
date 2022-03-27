@@ -38,14 +38,6 @@ const escribirPedido=()=>{
                 $btn_comprar.textContent=hacerCompra;
             }
             Object.entries(ordenPedido).forEach(([key,value])=>{
-<<<<<<< HEAD
-                if(value!=='' && value!==0){
-                    $li.textContent+=`${document.querySelector(`#${value}`).textContent}`
-                    console.log(document.querySelector(`#${value}`).textContent);
-                }
-        });
-        $notaPizza.appendChild($li);
-=======
                 if(value.length!==0 && value!==0){
                     console.log(value.isArray);
                     template_fact= `
@@ -65,7 +57,6 @@ const escribirPedido=()=>{
             click ? click=false : click=true;
             click ? $notaPizza.insertAdjacentHTML('afterbegin',template_fact) : $notaPizza.textContent='';
             
->>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
         }
     });
 }
