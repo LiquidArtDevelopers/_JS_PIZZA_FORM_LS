@@ -333,36 +333,33 @@ select:-webkit-autofill:focus {
   font-family: "Libreta";
   src: url("../font/ShortStack-Regular.ttf");
 }
-
 .comprar {
   position: relative;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: 'Libreta';
-  width: 300px;
-  height: 450px;
+  box-sizing: border-box;
+  font-family: "Libreta";
+  width: 400px;
+  height: 455px;
   margin: 150px auto 0;
   padding: 20px;
   border-radius: 10px;
   background: #FBFBFB;
-  -webkit-box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.5);
-          box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.5);
   display: none;
 }
-
+.comprar h3 {
+  font-size: 25px;
+}
 .comprar:before, .comprar:after {
-  content: '';
+  content: "";
   position: absolute;
   left: 5px;
   height: 6px;
-  width: 290px;
+  width: 390px;
 }
-
 .comprar:before {
   top: -5px;
   background: radial-gradient(circle, transparent, transparent 50%, #FBFBFB 50%, #FBFBFB 100%) -7px -8px/16px 16px repeat-x;
 }
-
 .comprar:after {
   bottom: -5px;
   background: radial-gradient(circle, transparent, transparent 50%, #FBFBFB 50%, #FBFBFB 100%) -7px -2px/16px 16px repeat-x;
@@ -376,16 +373,17 @@ select:-webkit-autofill:focus {
 
 .btn-comprar {
   cursor: pointer;
+  min-width: 20px;
+  text-decoration: none;
   font-size: 30px;
   font-style: italic;
   font-weight: bold;
   color: white;
   border-radius: 25px;
   background-color: #41ce41;
-  position: absolute;
-  right: 295px;
-  bottom: -40px;
   padding: 15px;
+  opacity: 0;
+  transition: opacity 1s ease-in;
 }
 
 .precio {
@@ -397,20 +395,22 @@ select:-webkit-autofill:focus {
   font-size: 22px;
 }
 
-.active {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.comprar.active {
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.btn-comprar.active {
+  opacity: 1;
 }
 
 .btn-active {
   background-color: red;
+}
+
+.caja-cuaderno.disable {
+  display: none;
 }
 
 /*************************/
@@ -481,17 +481,8 @@ body {
   position: fixed;
   z-index: 999;
   display: flex;
-<<<<<<< HEAD
   flex-direction: row;
-  transition: 400ms ease-in-out;
-=======
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-transition: 600ms ease-in-out;
   transition: 600ms ease-in-out;
->>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
 }
 #navegador a {
   color: white;
@@ -599,82 +590,39 @@ header h1 {
 /* ZONA OFERTAS */
 #seccion_ofertas {
   width: 100%;
-<<<<<<< HEAD
-=======
   max-width: 1920px;
-  display: -webkit-box;
-  display: -ms-flexbox;
->>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 #seccion_ofertas .oferta_titular {
-<<<<<<< HEAD
-  width: 90%;
-  border-radius: 60px 0px;
-  margin-bottom: 40px;
+  width: 100%;
+  height: 45vh;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  overflow: hidden;
-  background-color: #FBAB7E;
-  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-  -moz-column-gap: 200px;
-       column-gap: 200px;
-=======
-  width: 100%;
-  height: 45vh;
-  margin-bottom: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   background-color: #FBAB7E;
   background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
   /* background-color: #FF9A8B;
-        background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 36%, #FF99AC 66%); */
-  -webkit-column-gap: 5vw;
-          column-gap: 5vw;
->>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
+  background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 36%, #FF99AC 66%); */
+  -moz-column-gap: 5vw;
+       column-gap: 5vw;
 }
 #seccion_ofertas .oferta_titular img {
   height: 100%;
 }
 #seccion_ofertas .oferta_titular .texto_oferta {
-<<<<<<< HEAD
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  row-gap: 20px;
-=======
   max-width: 500px;
   min-width: 300px;
   width: 40vw;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
   row-gap: 10px;
->>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
 }
 #seccion_ofertas .oferta_titular .texto_oferta h2 {
   font-size: 9vh;
@@ -693,24 +641,10 @@ header h1 {
   height: 300px;
   position: relative;
   display: flex;
-<<<<<<< HEAD
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
-=======
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin-bottom: 20px;
->>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
 }
 #seccion_ofertas #caja_ofertas #flechas {
   position: absolute;
@@ -801,18 +735,6 @@ header h1 {
   /* Equivalente a translateX(10px) */
   transition: all 1000ms step-end;
 }
-<<<<<<< HEAD
-#seccion_ofertas #caja_ofertas::after {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  content: " ";
-  background-color: white;
-  width: 100%;
-  height: 100%;
-  filter: blur(100px);
-  border-radius: 50px;
-=======
 
 .fondo_modal_oferta {
   position: fixed;
@@ -820,129 +742,62 @@ header h1 {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.9);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
 .fondo_modal_oferta .oferta_modal {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
 }
-
 .fondo_modal_oferta .oferta_modal .x_cierre {
   position: absolute;
-  -webkit-transform: translateX(40px);
   transform: translateX(40px);
   font-family: "verdana";
   font-size: 1.5rem;
   color: white;
   cursor: pointer;
-  -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
-
 .fondo_modal_oferta .oferta_modal .x_cierre:hover {
   color: #A0425B;
 }
-
 .fondo_modal_oferta .oferta_modal img {
   height: 90vh;
   border-radius: 20px;
->>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
 }
 
 /* ZONA PEDIDO  */
 #seccion_pedido {
   width: 100%;
-<<<<<<< HEAD
-=======
   max-width: 1920px;
-  display: -webkit-box;
-  display: -ms-flexbox;
->>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 #seccion_pedido .oferta_titular {
-<<<<<<< HEAD
-  width: 90%;
-  border-radius: 60px 0px;
-  margin-bottom: 40px;
+  width: 100%;
+  height: 30vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-end;
-  overflow: hidden;
-  background-color: #FF9A8B;
-  background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 36%, #FF99AC 66%);
-  -moz-column-gap: 200px;
-       column-gap: 200px;
-}
-#seccion_pedido .oferta_titular img {
-  order: 2;
-  height: 100%;
-=======
-  width: 100%;
-  height: 30vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   /* background-color: #FF9A8B;
-        background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 36%, #FF99AC 66%); */
+  background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 36%, #FF99AC 66%); */
   background-color: #FBAB7E;
   background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
->>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
 }
 #seccion_pedido .oferta_titular .texto_oferta {
-<<<<<<< HEAD
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  row-gap: 20px;
-=======
   min-width: 300px;
   width: 80%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
   row-gap: 10px;
   text-align: center;
->>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
 }
 #seccion_pedido .oferta_titular .texto_oferta h2 {
   font-size: 10vh;
@@ -956,16 +811,10 @@ header h1 {
   font-family: "idioma";
   color: white;
 }
-
 #seccion_pedido #pedido {
   width: 100%;
-<<<<<<< HEAD
-=======
   height: 1000px;
   padding-top: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
->>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -975,26 +824,21 @@ header h1 {
   align-items: flex-start;
   position: relative;
 }
-
 #seccion_pedido #pedido .caja-cuaderno {
   width: 500px;
   min-width: 500px;
   height: 700px;
   position: relative;
 }
-
 #seccion_pedido #pedido .caja-cuaderno #cuaderno-01 {
   z-index: "8";
 }
-
 #seccion_pedido #pedido .caja-cuaderno #cuaderno-02 {
   z-index: "6";
 }
-
 #seccion_pedido #pedido .caja-cuaderno #cuaderno-03 {
   z-index: "4";
 }
-
 #seccion_pedido #pedido .caja-cuaderno .pestanas {
   position: absolute;
   top: 100px;
@@ -1005,57 +849,19 @@ header h1 {
   align-items: center;
   z-index: 10;
 }
-
 #seccion_pedido #pedido .caja-cuaderno .pestanas #pest02 {
   position: absolute;
   top: 120px;
   left: 1px;
 }
-
 #seccion_pedido #pedido .caja-cuaderno .pestanas #pest03 {
   position: absolute;
   top: 245px;
   left: 5px;
 }
-
-<<<<<<< HEAD
-#cuaderno-01 {
-  z-index: "8";
-}
-
-#cuaderno-02 {
-  z-index: "6";
-}
-
-#cuaderno-03 {
-  z-index: "4";
-}
-
-.caja-cuaderno {
-  width: 500px;
-  min-width: 500px;
-  height: 700px;
-  position: relative;
-}
-
-.cuaderno {
-  width: 500px;
-  min-width: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  position: absolute;
-  left: 1vw;
-}
-
-.imgLibreta {
-=======
 #seccion_pedido #pedido .caja-cuaderno .imgLibreta {
->>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
   width: 100%;
 }
-
 #seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno {
   width: 100%;
   max-width: 480px;
@@ -1066,44 +872,27 @@ header h1 {
   align-items: flex-start;
   justify-content: flex-start;
 }
-<<<<<<< HEAD
-.contenido-cuaderno p {
-=======
-
 #seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno p {
->>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
   font-family: "Libreta";
   color: #33337c;
   font-size: 1.4rem;
   transform: rotate(-1.3deg);
 }
-
 #seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part01 {
   position: relative;
   width: 100%;
   height: 150px;
 }
-<<<<<<< HEAD
-.part01 p {
-=======
-
 #seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part01 p {
->>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
   position: absolute;
   top: 100px;
   left: 90px;
 }
-<<<<<<< HEAD
-.part01 img {
-=======
-
 #seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part01 img {
->>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
   position: absolute;
   top: 120px;
   left: 60px;
 }
-
 #seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part02 {
   position: relative;
   width: 100%;
@@ -1114,17 +903,11 @@ header h1 {
   justify-content: flex-start;
   align-items: flex-start;
 }
-<<<<<<< HEAD
-.part02 img {
-=======
-
 #seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part02 img {
->>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
   position: absolute;
   top: 33px;
   left: 10px;
 }
-
 #seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part02 .part02-opc {
   width: 100%;
   display: flex;
@@ -1135,13 +918,11 @@ header h1 {
   padding-left: 30px;
   padding-right: 20px;
 }
-
 #seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part02 .tamano {
   position: absolute;
   top: 15px;
   left: 50px;
 }
-
 #seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part03 {
   position: relative;
   width: 100%;
@@ -1152,17 +933,11 @@ header h1 {
   justify-content: space-between;
   align-items: flex-start;
 }
-<<<<<<< HEAD
-.part03 img {
-=======
-
 #seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part03 img {
->>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
   position: absolute;
   top: 30px;
   left: 25px;
 }
-
 #seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part03 .part03-opc {
   width: 100%;
   display: flex;
@@ -1173,13 +948,11 @@ header h1 {
   padding-left: 30px;
   padding-right: 10px;
 }
-
 #seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part03 .masa {
   position: absolute;
   top: 15px;
   left: 50px;
 }
-
 #seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part04 {
   position: relative;
   width: 100%;
@@ -1189,17 +962,11 @@ header h1 {
   justify-content: space-between;
   align-items: flex-start;
 }
-<<<<<<< HEAD
-.part04 img {
-=======
-
 #seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part04 img {
->>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
   position: absolute;
   top: 35px;
   left: 40px;
 }
-
 #seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part04 .part04-opc01 {
   width: 100%;
   display: flex;
@@ -1211,7 +978,6 @@ header h1 {
   padding-right: 50px;
   padding-left: 30px;
 }
-
 #seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part04 .part04-opc02 {
   width: 100%;
   display: flex;
@@ -1223,7 +989,6 @@ header h1 {
   padding-right: 50px;
   padding-left: 10px;
 }
-
 #seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part04 .part04-opc03 {
   width: 100%;
   display: flex;
@@ -1235,55 +1000,38 @@ header h1 {
   padding-right: 50px;
   padding-left: 10px;
 }
-
 #seccion_pedido #pedido .caja-cuaderno .contenido-cuaderno .part04 .ingredientes {
   position: absolute;
   top: 15px;
   left: 50px;
 }
-
 #seccion_pedido #pedido .caja-cuaderno .selecciones, #seccion_pedido #pedido .caja-cuaderno .selecciones2, #seccion_pedido #pedido .caja-cuaderno .selecciones3 {
   position: absolute;
 }
-
 #seccion_pedido #pedido .caja-cuaderno .cuaderno {
   width: 500px;
   min-width: 500px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   position: absolute;
   left: 1vw;
 }
-
 #seccion_pedido #pedido .caja-cuaderno #sel01, #seccion_pedido #pedido .caja-cuaderno #sel02, #seccion_pedido #pedido .caja-cuaderno #ing01, #seccion_pedido #pedido .caja-cuaderno #ing02, #seccion_pedido #pedido .caja-cuaderno #ing03, #seccion_pedido #pedido .caja-cuaderno #ing04, #seccion_pedido #pedido .caja-cuaderno #ing05, #seccion_pedido #pedido .caja-cuaderno #ing06 {
   position: absolute;
 }
-
 #seccion_pedido #pedido .caja-cuaderno .nota1, #seccion_pedido #pedido .caja-cuaderno .nota2, #seccion_pedido #pedido .caja-cuaderno .nota3, #seccion_pedido #pedido .caja-cuaderno .nota4, #seccion_pedido #pedido .caja-cuaderno .nota5 {
   cursor: pointer;
 }
-
 #seccion_pedido #pedido .caja-cuaderno .nota1Sel, #seccion_pedido #pedido .caja-cuaderno .nota2Sel, #seccion_pedido #pedido .caja-cuaderno .nota3Sel1, #seccion_pedido #pedido .caja-cuaderno .nota3Sel2, #seccion_pedido #pedido .caja-cuaderno .nota3Sel3, #seccion_pedido #pedido .caja-cuaderno .nota3Sel4, #seccion_pedido #pedido .caja-cuaderno .nota3Sel5, #seccion_pedido #pedido .caja-cuaderno .nota3Sel6, #seccion_pedido #pedido .caja-cuaderno .nota3Sel7, #seccion_pedido #pedido .caja-cuaderno .nota3Sel8, #seccion_pedido #pedido .caja-cuaderno .nota3Sel9, #seccion_pedido #pedido .caja-cuaderno .nota4Sel, #seccion_pedido #pedido .caja-cuaderno .nota4Selagu, #seccion_pedido #pedido .caja-cuaderno .nota4SelaguG, #seccion_pedido #pedido .caja-cuaderno .nota4SelcKel, #seccion_pedido #pedido .caja-cuaderno .nota4SelcEga, #seccion_pedido #pedido .caja-cuaderno .nota4SelcSN, #seccion_pedido #pedido .caja-cuaderno .nota4Selb1, #seccion_pedido #pedido .caja-cuaderno .nota4Selb2, #seccion_pedido #pedido .caja-cuaderno .nota4Selb3, #seccion_pedido #pedido .caja-cuaderno .nota4Selb4, #seccion_pedido #pedido .caja-cuaderno .nota4Selb5, #seccion_pedido #pedido .caja-cuaderno .nota4Selb6, #seccion_pedido #pedido .caja-cuaderno .nota4Selb7, #seccion_pedido #pedido .caja-cuaderno .nota4Selb8, #seccion_pedido #pedido .caja-cuaderno .nota4Selb9, #seccion_pedido #pedido .caja-cuaderno .nota5Sel, #seccion_pedido #pedido .caja-cuaderno .nota5SeloPfi, #seccion_pedido #pedido .caja-cuaderno .nota5SeloPde, #seccion_pedido #pedido .caja-cuaderno .nota5SeloPcq, #seccion_pedido #pedido .caja-cuaderno .nota5SeloPol, #seccion_pedido #pedido .caja-cuaderno .nota5SeloAce, #seccion_pedido #pedido .caja-cuaderno .nota5SeloNug, #seccion_pedido #pedido .caja-cuaderno .nota5SeloH1, #seccion_pedido #pedido .caja-cuaderno .nota5SeloH2, #seccion_pedido #pedido .caja-cuaderno .nota5SeloH3, #seccion_pedido #pedido .caja-cuaderno .nota5SeloH4, #seccion_pedido #pedido .caja-cuaderno .nota5SeloH5, #seccion_pedido #pedido .caja-cuaderno .nota5SeloH6, #seccion_pedido #pedido .caja-cuaderno .nota5SeloH7, #seccion_pedido #pedido .caja-cuaderno .nota5SeloH8, #seccion_pedido #pedido .caja-cuaderno .nota5SeloH9 {
   display: none;
   position: absolute;
 }
-
 #seccion_pedido #pedido .caja-cuaderno #t1, #seccion_pedido #pedido .caja-cuaderno #t2, #seccion_pedido #pedido .caja-cuaderno #t3, #seccion_pedido #pedido .caja-cuaderno #t4, #seccion_pedido #pedido .caja-cuaderno #t5, #seccion_pedido #pedido .caja-cuaderno #t6, #seccion_pedido #pedido .caja-cuaderno #t7, #seccion_pedido #pedido .caja-cuaderno #t8, #seccion_pedido #pedido .caja-cuaderno #t9, #seccion_pedido #pedido .caja-cuaderno #t10 {
   display: none;
   position: absolute;
 }
-
 #seccion_pedido #pedido .caja-resultado {
   width: 500px;
   min-width: 500px;
@@ -1293,7 +1041,6 @@ header h1 {
   justify-content: flex-start;
   align-items: center;
 }
-
 #seccion_pedido #pedido .caja-resultado #resultado {
   width: 100%;
   height: 500px;
@@ -1303,26 +1050,15 @@ header h1 {
   align-items: center;
   position: relative;
 }
-<<<<<<< HEAD
-#resultado img {
-=======
-
 #seccion_pedido #pedido .caja-resultado #resultado img {
->>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
   position: absolute;
 }
-
 #seccion_pedido #pedido .caja-resultado #precio p {
   font-family: "Piazzere";
   color: black;
   font-size: 10vw;
 }
-<<<<<<< HEAD
-#precio span {
-=======
-
 #seccion_pedido #pedido .caja-resultado #precio span {
->>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
   font-size: 5vw;
 }
 
@@ -1330,93 +1066,53 @@ header h1 {
 #seccion-concurso {
   width: 100%;
   max-width: 1440px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
 }
-
 #seccion-concurso .oferta_titular {
   width: 100%;
   max-width: 1920px;
   margin-top: 80px;
   margin-bottom: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   /* flex-wrap: wrap; */
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  align-items: center;
+  justify-content: space-around;
   overflow: hidden;
   background-color: #FBAB7E;
   background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
 }
-
 #seccion-concurso .oferta_titular .oferta_caja_izda {
   width: 40%;
 }
-
 #seccion-concurso .oferta_titular .oferta_caja_izda img {
   /* height: 100%; */
   height: 100%;
 }
-
 #seccion-concurso .oferta_titular .oferta_caja_dcha {
   width: 60%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   row-gap: 20px;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: flex-start;
+  align-items: center;
 }
-
 #seccion-concurso .oferta_titular .oferta_caja_dcha .texto_oferta {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
   row-gap: 20px;
   width: 70%;
 }
-
 #seccion-concurso .oferta_titular .oferta_caja_dcha .texto_oferta h2 {
   font-size: 3rem;
   font-family: "idioma";
   color: white;
 }
-
 #seccion-concurso .oferta_titular .oferta_caja_dcha .texto_oferta .subtitular {
   border-left: 2px solid white;
   padding-left: 20px;
@@ -1424,11 +1120,9 @@ header h1 {
   font-family: "idioma";
   color: white;
 }
-
 #seccion-concurso .oferta_titular .oferta_caja_dcha .grafico {
   width: 100%;
 }
-
 #seccion-concurso .oferta_titular .caja_concurso_izda {
   width: 50%;
 }
@@ -1442,15 +1136,10 @@ footer {
   width: 100%;
   max-width: 1920px;
 }
-<<<<<<< HEAD
-=======
-
 footer .logo-peq {
   font-family: "Piazzere";
   font-size: 1.6rem;
 }
-
->>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
 footer h2 {
   font-size: 20px;
 }
@@ -1464,7 +1153,6 @@ footer a:visited {
 footer a:hover {
   color: #A0425B;
 }
-
 footer:before {
   background: linear-gradient(45deg, transparent 33.333%, #414141 33.333%, #414141 66.667%, transparent 66.667%), linear-gradient(-45deg, transparent 33.333%, #414141 33.333%, #414141 66.667%, transparent 66.667%);
   background-size: 20px 40px;
@@ -1474,7 +1162,6 @@ footer:before {
   position: relative;
   width: 100%;
 }
-
 .zigzag:before {
   content: "";
   display: block;

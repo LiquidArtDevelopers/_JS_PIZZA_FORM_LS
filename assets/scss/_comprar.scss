@@ -3,11 +3,14 @@
     src: url("../font/ShortStack-Regular.ttf");
 }
 .comprar {
+  h3{
+    font-size: 25px;
+  }
     position: relative;
     box-sizing: border-box;
     font-family: 'Libreta';
-    width: 300px;
-    height: 450px;
+    width: 400px;
+    height: 455px;
     margin: 150px auto 0;
     padding: 20px;
     border-radius: 10px;
@@ -21,7 +24,7 @@
       position: absolute;
       left: 5px;
       height: 6px;
-      width: 290px;
+      width: 390px;
     }
     
     &:before {
@@ -43,16 +46,17 @@
 }
 .btn-comprar{
     cursor: pointer;
+    min-width: 20px;
+    text-decoration: none;
     font-size: 30px;
     font-style: italic;
     font-weight: bold;
     color: rgb(255,255,255);
     border-radius: 25px;
     background-color: rgb(65, 206, 65);
-    position: absolute;
-    right: 295px;
-    bottom: -40px;
     padding: 15px;
+    opacity: 0;
+    transition: opacity 1s ease-in;
 }
 .precio{
     position: absolute;
@@ -63,11 +67,17 @@
     font-size: 22px;
 
 }
-.active{
+.comprar.active{
     display: flex;
     align-items: flex-start;
     justify-content: center;
 }
+.btn-comprar.active{
+  opacity:1;
+}
 .btn-active{
     background-color: red;
+}
+.caja-cuaderno.disable{
+  display:none;
 }

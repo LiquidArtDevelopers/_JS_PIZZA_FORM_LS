@@ -2,8 +2,6 @@
 let contador = 0;
 //Array para el precio donde el precio se suma de entre todos sus valores: masa[0],tipo[1], topping[2] y bebida[3].
 let ticket = [0,0,0,0,0];
-
-
 //creamos
 //creamos un objeto pedido
 const ordenPedido={
@@ -14,7 +12,7 @@ const ordenPedido={
     otros:[],
     precio:0,
 }
-const npedido={}, pedidos=[];
+const pedidos=[];
 export default function pedido(){
     comanda();
     escribirPedido();
@@ -23,12 +21,15 @@ const escribirPedido=()=>{
     const $box_comprar=document.querySelector('.comprar');
     const $notaPizza=document.querySelector('.list-fact');
     const $btn_comprar=document.querySelector('.btn-comprar');
+    const $caja_cuaderno=document.querySelector('.caja-cuaderno');
     let template_fact='';
     const getText=(type="")=> document.getElementById(type).textContent;
     const modPedido='Modificar pedido', hacerCompra='Hacer mi compra';
     let click=false;
+    document.querySelector('.btn-comprar').classList.add('active');
     document.addEventListener('click',(e)=>{
         if(e.target.matches('.btn-comprar')){
+            $caja_cuaderno.classList.toggle('disable');
             const pr=document.querySelector('.precio');
             $box_comprar.classList.toggle('active');
             $btn_comprar.classList.toggle('btn-active');
@@ -38,18 +39,18 @@ const escribirPedido=()=>{
                 $btn_comprar.textContent=hacerCompra;
             }
             Object.entries(ordenPedido).forEach(([key,value])=>{
-                if(value.length!==0 && value!==0){
-                    console.log(value.isArray);
-                    template_fact= `
-                      <li> ${document.querySelector('.txt5').textContent.toUpperCase()}  ${getText(ordenPedido['masa'])}</li>
-                      <li> ${document.querySelector('.txt6').textContent.toUpperCase()}:   ${getText(ordenPedido['tipo'])}</li>
-                    `;
-                    if(ordenPedido['topping']){
-                     ordenPedido['topping'].forEach((i)=>{
-                        template_fact+=`
-                        <li> ${getText(ordenPedido['topping'][0])}</li>
-                        `;
-                     })
+                if(value && value!==0){
+                    if(key==='masa'){
+                    template_fact="<h3>Pizza<h3>";
+                    template_fact+= `<li> ${document.querySelector('.txt5').textContent.toUpperCase()} ${getText(ordenPedido[key])}</li>`;
+                    }
+                    if(key=='tipo') template_fact+=`<li> ${document.querySelector('.txt9').textContent.toUpperCase()}   ${getText(ordenPedido[key])}</li>`;
+                    if(key==='topping'){
+                     ordenPedido[key].forEach((value,index,arr)=>{
+                         if(arr[index]){
+                            template_fact+=`<li> ${getText(value)}</li>`;
+                         }
+                     });
                     }
                     pr.textContent=`Total: ${ordenPedido['precio']}€`;
                 }
@@ -120,7 +121,7 @@ function comanda(){
         }
 
         //tipo masa
-        if(event.target.classList.contains("nota2")){        
+        if(event.target.classList.contains("nota2")){     
             console.log("tipo: "+ event.target.id);
             insertar_comanda(event.target.id);          
         }
@@ -231,13 +232,8 @@ function insertar_comanda(com){
             nota1Sel.style.left="19px";
             ordenPedido['masa']  = com;
             ticket[0]=precioPeq;
-<<<<<<< HEAD
-=======
-            npedido['masa']='pequeña';   
->>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
             break;
         case "med":
-            nota1Sel.style.display="block";
             nota1Sel.style.top="205px";
             nota1Sel.style.left="160px";
             ordenPedido['masa']  = com;
@@ -633,10 +629,3 @@ function calcTicket(){
     ordenPedido['precio']=sum;
 
 }
-
-
-
-
-
-
-
