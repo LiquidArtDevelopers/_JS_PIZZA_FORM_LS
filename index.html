@@ -33,7 +33,7 @@
         </div>
     </nav>
 
-    <header id="cabecera" class="zigzag">
+    <header id="cabecera" class="">
         <div class="carousel">
             <div class="frame">
                 <img src="assets/img/carousel/header_01.jpg" alt="">
@@ -59,12 +59,12 @@
         <img class="logo-principal" src="assets/img/logos/logo_pizzeria.svg" alt=""> 
         <h1 class="txt60">Pasión por las pizzas artesanales</h1>
     </header>
-    
-    <main class="contenedor_principal zigzag">
+
+    <main class="contenedor_principal">
 
         <section id="seccion_ofertas">
             <div class="oferta_titular">
-                <img src="assets/img/ofertas/ofertas.jpg" alt="">
+                <img src="assets/img/ofertas/ofertas_horizontal.jpg" alt="">
                 <div class="texto_oferta">
                     <h2 class="txt61">NUESTRAS OFERTAS</h2>
                     <p class="subtitular txt62">Cada semana te proponemos una gran variedad de ofertas en menú.<br>¡Aprovecha los mejores precios!</p>
@@ -79,18 +79,17 @@
                     <img id="fde" class="flecha fDch" src="assets/img/carousel/dch.svg" alt="">
                 </div>
             </div>
-        </section>
-
-        <section id="seccion_pedido">
             
+        </section>        
+
+        <section id="seccion_pedido">            
             <div class="oferta_titular">                
-                <img src="assets/img/ofertas/pedido.jpg" alt="">
+                <!-- <img src="assets/img/ofertas/pedido_horizontal.jpg" alt=""> -->
                 <div class="texto_oferta">
                     <h2 class="txt61">A TU GUSTO</h2>
-                    <p class="subtitular txt62">Si lo prefieres podemos hacer un menú ajustado a tus necesidades<br>¡Disfrútalo!</p>
+                    <p class="subtitular txt62">Si lo prefieres puedes elegir el menú que más te apetezca<br>¡Adelante!</p>
                 </div>
-            </div>  
-            
+            </div>            
             <div id="pedido">
                 <div class="caja-cuaderno">                    
                     
@@ -173,8 +172,8 @@
                                 <p class="masa txt27">Cervezas:</p>
                                 <img src="assets/img/pizza/boli02.png" alt="">
                                 <div class="part03-opc">
-                                    <p id="cKel" class="nota4 txt28">Keller</p>
-                                    <p id="cEga" class="nota txt29">E.Galicia</p>
+                                    <p id="cKel" class="nota4 txt28">Keler</p>
+                                    <p id="cEga" class="nota4 txt29">E.Galicia</p>
                                     <p id="cSN" class="nota4 txt30">Sin Alcohól</p>
                                 </div>
                             </div>
@@ -274,17 +273,20 @@
                 <div class="obtener-compra">
                     <a class="btn-comprar">Hacer mi compra</a>
                 </div>
+            </div>   
+            
+            <div class="comprar">
+                <ul class="list-fact">
+                   
+                </ul>
+                <p class="precio"></p>
             </div>
             
         </section>
 
         <section>
-            <div class="comprar">
-                <ul>
-                   
-                </ul>
-            </div>
-        </section>
+            
+        </section>      
 
         <section>
             <form action="" class="form">
@@ -331,11 +333,24 @@
                 </div>
             </form>
         </section>
-    </main>
 
-    <div>
-        <canvas id="myChart"></canvas>
-    </div>
+        <section id="seccion-concurso">
+            <div class="oferta_titular">
+                <div class="oferta_caja_izda">
+                    <img src="assets/img/ofertas/bn.jpg" alt="">
+                </div>
+                <div class="oferta_caja_dcha">
+                    <div class="texto_oferta">
+                        <h2 class="txt61">PIAZZERE CHALLENGER</h2>
+                        <p class="subtitular txt62">Si tu provincia es la que más pedidos realiza tendrás un descuento especial en tu compra</p>
+                    </div>
+                    <div class="grafico">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>                
+            </div>  
+        </section>
+    </main>
 
     <footer class="zigzag">
         <div class="columnas">
@@ -385,7 +400,7 @@
         <div class="copyrights">
             <p>Copyrights 2022 All right reserved / developed by Michael Darren & LiquidArt developers</p>
         </div>
-    </footer>
+    </footer> 
 
     <script src="assets/js/app.js" type="module"></script>
     

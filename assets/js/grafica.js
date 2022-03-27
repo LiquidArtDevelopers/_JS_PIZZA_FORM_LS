@@ -36,29 +36,41 @@ const construirGrafico=(concursoJs)=>{
         }
     }
 
+    const labels = arrayPro;
+  
     const data = {
-
-    labels: arrayPro,
-
-    datasets: [{
+      labels: labels,
+      datasets: [{
         label: 'Pedidos realizados',
         data: arrayVentas,
         backgroundColor: [
-        'rgb(51, 51, 124)',
-        '#A0425B',
-        '#4B9C40'
-        ],
-        
+        'white',
+        'white',
+        'white'
+        ],        
         hoverOffset: 4
     }]
     };
-
+  
     const config = {
-        type: 'doughnut',
-        data: data,
-        options: {}
+      type: 'bar',
+      data: data,
+      options: {
+        plugins: {
+          title: {
+              display: false,
+              text: 'Custom Chart Title',
+              color:'white',
+          },
+          tooltip:{
+            color:'white',
+          }
+      }
+      }
     };
-
-    const myChart = new Chart(document.getElementById('myChart'),config);
-
+         
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );    
 }

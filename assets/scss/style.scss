@@ -32,12 +32,13 @@ $color_boli:rgb(51, 51, 124);
 $color_rojo: #A0425B;
 $color_verde: #4B9C40;
 $color_fundido: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
+$color_gris: rgb(65, 65, 65);
 
 html{
     scroll-behavior: smooth;
 }
 @mixin fondo{
-    background-image: url("../img/logos/Entramado_verde.svg");
+    background-image: url("../img/logos/Entramado_rojo.svg");
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
@@ -50,10 +51,10 @@ body{
     
 }
 .cambio_fondo{
-    background-image: url("../img/logos/Entramado_rojo.svg")!important;
+    background-color: rgba(255, 255, 255, 0.212);
+    background-image: url("../img/logos/Entramado_verde.svg")!important;
     background-attachment: fixed;
-    transition: all 700ms;
-    
+    transition: all 700ms;    
 }
 .cambio_fondo2{
     background-image: url("../img/logos/Entramado_azul.svg")!important;
@@ -81,17 +82,18 @@ body{
     z-index: 999;
     display: flex;
     flex-direction: row;
-    transition: 400ms ease-in-out;
+    transition: 600ms ease-in-out;
     a{
         color: white;
         text-decoration: none;
+        &:visited{
+            color: white;
+        }
+        &:hover{
+            color:$color_rojo;
+        }
     }
-    a:visited{
-        color: white;
-    }
-    a:hover{
-        color:#A0425B;
-    }
+    
     .nav-logo{
         width: 20%;
         display: flex;
@@ -116,7 +118,7 @@ body{
         justify-content:flex-end;    
         color: rgb(255, 255, 255);
         font-family: "Idioma";
-        font-size: 2rem;
+        font-size: 1.6rem;
         ul{
             display:flex;
             flex-direction: row;
@@ -178,56 +180,46 @@ header{
 
 /* CONTENEDOR PRINCIPAL */
 .contenedor_principal{
-    width: 90%;
+    max-width: 1920px;
+    max-width: 100%;
     margin: 0 auto;
-    padding-top: 30px;
-}
-
-.contenedor_principal:before {
-    background:
-      linear-gradient(
-        45deg, transparent 33.333%,
-        rgb(255, 255, 255) 33.333%, rgb(255, 255, 255) 66.667%,
-        transparent 66.667%
-      ),
-      linear-gradient(
-        -45deg, transparent 33.333%,
-        rgb(255, 255, 255) 33.333%, rgb(255, 255, 255) 66.667%,
-        transparent 66.667%
-      );
-    background-size: 20px 40px;
 }
 
 /* ZONA OFERTAS */
 #seccion_ofertas{
     width: 100%;
+    max-width: 1920px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     .oferta_titular{
-        width: 90%;
-        border-radius: 60px 0px;
-        margin-bottom: 40px;
+        width: 100%;
+        height: 45vh;
+        margin-bottom: 20px;
         display: flex;
         flex-direction: row;        
         flex-wrap: wrap;
         align-items: center;
-        overflow: hidden;
         background-color: #FBAB7E;
-        background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-        column-gap: 200px;
+        background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);     
+        /* background-color: #FF9A8B;
+        background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 36%, #FF99AC 66%); */
+        column-gap: 5vw;
         img{
             height: 100%;
         }
         .texto_oferta{
-            width: 300px;
+            max-width: 500px;
+            min-width: 300px;
+            width: 40vw;
+            height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-            row-gap: 20px; 
+            justify-content: center;
+            row-gap: 10px; 
             h2{         
-                font-size: 10vh;
+                font-size: 9vh;
                 font-family: "idioma";
                 color: white;
             }
@@ -248,14 +240,14 @@ header{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
         #flechas{
             position: absolute;
             width: 100%;
             height: 100%;
             img{
                 position: absolute;
-                opacity: 70%;
+                opacity: 90%;
                 top:50%;
                 -ms-transform: translateY(-50%);
                 transform: translateY(-50%);
@@ -265,19 +257,19 @@ header{
                 opacity: 100;
             }
             .fIzd{        
-                left: -12px;          
+                left: -65px;          
                 z-index: 70;
-            }
-            .fIzd:active{
-                left:-20px;
-            }
+                &:active{
+                    left:-75px;
+                }
+            }            
             .fDch{       
-                right: -12px;            
+                right: -65px;            
                 z-index: 70;
-            }
-            .fDch:active{
-                right:-20px;
-            }    
+                &:active{
+                    right:-75px;
+                }  
+            }              
         }
         #ofertas{
                 width: 100%;
@@ -304,11 +296,11 @@ header{
                         width: 100%;
                         z-index: 50;
                         transition: all 600ms ease-in-out;
-                        cursor: pointer;                
-                    }
-                    img:hover{
-                        transform:scale(1.1)
-                    }
+                        cursor: pointer;
+                        &:hover{
+                            transform:scale(1.1)
+                        }                
+                    }                    
                     p{
                         position: absolute; 
                         font-family: "Piazzere";                
@@ -337,369 +329,472 @@ header{
                     transition: all 1000ms step-end;
                 }
         }    
-    }
-    #caja_ofertas::after{
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        content: ' ';
-        background-color: rgb(255, 255, 255);
-        width: 100%;
-        height: 100%;
-        filter:blur(100px);
-        border-radius: 50px;
+    }  
+}
+.fondo_modal_oferta{
+    position: fixed;
+    z-index: 9000;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .oferta_modal{
+        display: flex;
+        justify-content: flex-end;
+        .x_cierre{
+            position: absolute;
+            -webkit-transform: translateX(40px);
+            transform: translateX(40px);
+            font-family:"verdana";
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+            transition: all 300ms ease-in-out;
+            &:hover{
+                color: $color_rojo;
+            }
+        }        
+        img{
+            height: 90vh;
+            border-radius: 20px;
+        }
     }
 }
 
+
 /* ZONA PEDIDO  */
 #seccion_pedido{
-    width: 100%;
+    width: 100%;    
+    max-width: 1920px; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     .oferta_titular{
-        width: 90%;
-        border-radius: 60px 0px;
-        margin-bottom: 40px;
+        width: 100%;
+        height: 30vh;
         display: flex;
         flex-direction: row;        
         flex-wrap: wrap;
         align-items: center;
-        justify-content: flex-end;
-        overflow: hidden;
-        background-color: #FF9A8B;
-        background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 36%, #FF99AC 66%);
-        column-gap: 200px;
-        img{
-            order: 2;
-            height: 100%;
-        }
+        justify-content: center;
+        /* background-color: #FF9A8B;
+        background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 36%, #FF99AC 66%); */
+        background-color: #FBAB7E;
+        background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+
         .texto_oferta{
-            width: 300px;
+            
+            min-width: 300px;
+            width: 80%;
+            height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-            row-gap: 20px; 
+            justify-content: center;
+            row-gap: 10px;
+            text-align: center;
             h2{         
                 font-size: 10vh;
                 font-family: "idioma";
                 color: white;
             }
             .subtitular{
-                border-left: 2px solid white;
-                padding-left: 20px;            
+                border-bottom: 2px solid white;
+                padding-bottom: 20px;            
                 font-size: 1.8rem;
                 font-family: "idioma";
                 color: white;
             }
         }        
     }
-
+    #pedido{
+        width: 100%;
+        height: 1000px;
+        padding-top: 30px;
+        
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 20px;
+        justify-content: center;
+        align-items: flex-start;
+        position: relative;
+        .caja-cuaderno{
+            width: 500px;
+            min-width: 500px;    
+            height: 700px;
+            position: relative;
+            #cuaderno-01{
+                z-index: "8";
+            }
+            #cuaderno-02{
+                z-index: "6";
+            }
+            #cuaderno-03{
+                z-index: "4";
+            }
+            .pestanas{    
+                position: absolute;
+                top: 100px;
+                left: -27px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                z-index: 10;
+                #pest02{
+                    position: absolute;
+                    top: 120px;
+                    left: 1px;
+                }
+                #pest03{
+                    position: absolute;
+                    top: 245px;
+                    left: 5px;
+                }
+            }
+            .imgLibreta{
+                width: 100%;
+            }
+            .contenido-cuaderno{
+                width: 100%;
+                max-width: 480px;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: flex-start;
+                p{
+                    font-family: "Libreta";
+                    color: $color_boli;
+                    font-size: 1.4rem;
+                    -webkit-transform: rotate(-1.3deg); 
+                    -moz-transform: rotate(-1.3deg); 
+                    -ms-transform: rotate(-1.3deg); 
+                    -o-transform: rotate(-1.3deg); 
+                    transform: rotate(-1.3deg);
+                }
+                .part01{
+                    position: relative;
+                    width: 100%;
+                    height: 150px;
+                    p{
+                        position: absolute;
+                        top: 100px;
+                        left: 90px;        
+                    }
+                    img{
+                        position: absolute;
+                        top:120px;
+                        left: 60px;
+                    }
+                }
+                .part02{
+                    position: relative;
+                    width: 100%;
+                    height: 120px;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    img{
+                        position: absolute;
+                        top: 33px;
+                        left: 10px;
+                    }
+                    .part02-opc{
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                        position: absolute;
+                        top: 70px;
+                        padding-left: 30px;
+                        padding-right: 20px;
+                    }
+                    .tamano{
+                        position: absolute;
+                        top: 15px;
+                        left: 50px;
+                    }
+                }            
+                .part03{    
+                    position: relative;
+                    width: 100%;
+                    height: 120px;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    img{
+                        position: absolute;
+                        top: 30px;
+                        left: 25px;
+                    }
+                    .part03-opc{
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                        position: absolute;
+                        top: 80px;    
+                        padding-left: 30px;
+                        padding-right: 10px;
+                    }
+                    .masa{
+                        position: absolute;
+                        top: 15px;
+                        left: 50px;
+                    }     
+                }
+                .part04{
+                    position: relative;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    img{
+                        position: absolute;
+                        top: 35px;
+                        left: 40px
+                    }
+                    .part04-opc01{
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                        position: absolute;
+                        top: 80px;
+                        left: 30px;
+                        padding-right: 50px;
+                        padding-left: 30px;
+                    }
+                    .part04-opc02{
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                        position: absolute;
+                        top: 170px;
+                        left: 30px;
+                        padding-right: 50px;
+                        padding-left: 10px;
+                    }
+                    .part04-opc03{
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                        position: absolute;
+                        top: 250px;
+                        left: 30px;
+                        padding-right: 50px;
+                        padding-left: 10px;
+                    }
+                    .ingredientes{
+                        position: absolute;
+                        top: 15px;
+                        left: 50px;
+                    }  
+                }                
+                
+            }
+            .selecciones,.selecciones2,.selecciones3{
+                position: absolute;    
+            }
+            .cuaderno{    
+                width: 500px;
+                min-width: 500px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;   
+                position: absolute;
+                left: 1vw;
+            }
+            #sel01,#sel02,#ing01,#ing02,#ing03,#ing04,#ing05,#ing06{
+                position: absolute;
+            }
+            .nota1,.nota2,.nota3,.nota4,.nota5{
+                cursor: pointer;
+            }
+            .nota1Sel,.nota2Sel,.nota3Sel1,.nota3Sel2,.nota3Sel3,.nota3Sel4,.nota3Sel5,.nota3Sel6,.nota3Sel7,.nota3Sel8,.nota3Sel9,.nota4Sel,.nota4Selagu,.nota4SelaguG,.nota4SelcKel,.nota4SelcEga,.nota4SelcSN,.nota4Selb1,.nota4Selb2,.nota4Selb3,.nota4Selb4,.nota4Selb5,.nota4Selb6,.nota4Selb7,.nota4Selb8,.nota4Selb9,.nota5Sel,.nota5SeloPfi,.nota5SeloPde,.nota5SeloPcq,.nota5SeloPol,.nota5SeloAce,.nota5SeloNug,.nota5SeloH1,.nota5SeloH2,.nota5SeloH3,.nota5SeloH4,.nota5SeloH5,.nota5SeloH6,.nota5SeloH7,.nota5SeloH8,.nota5SeloH9{
+                display: none;
+                position: absolute;
+            }
+            #t1,#t2,#t3,#t4,#t5,#t6,#t7,#t8,#t9,#t10{
+                display: none;
+                position: absolute;
+            }
+        }
+        .caja-resultado{
+            width: 500px;
+            min-width: 500px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content:flex-start;
+            align-items: center;
+            #resultado{
+                width: 100%;
+                height: 500px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: center;
+                position: relative;
+                img{
+                    position: absolute;
+                }  
+            }
+            #precio{    
+                p{
+                    font-family: "Piazzere";    
+                    color: black;
+                    font-size: 10vw;
+                }
+                span{
+                    font-size: 5vw;
+                }  
+            }
+        }
+    } 
 }
-#pedido{
+
+/* ZONA CONCURSO */
+#seccion-concurso{
     width: 100%;
+    max-width: 1440px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    column-gap: 20px;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    position: relative;
-}
-.pestanas{    
-    position: absolute;
-    top: 100px;
-    left: -27px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-    z-index: 10;
-}
-#pest02{
-    position: absolute;
-    top: 120px;
-    left: 1px;
-}
-#pest03{
-    position: absolute;
-    top: 245px;
-    left: 5px;
-}
+    margin: 0 auto;
+    .oferta_titular{
+        width: 100%;
+        max-width: 1920px;
+        margin-top: 80px;        
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: row;        
+        /* flex-wrap: wrap; */
+        align-items: center;
+        justify-content: space-around;
+        overflow: hidden;
+        background-color: #FBAB7E;
+        background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
 
-#cuaderno-01{
-    z-index: "8";
-}
-#cuaderno-02{
-    z-index: "6";
-}
-#cuaderno-03{
-    z-index: "4";
-}
-.caja-cuaderno{
-    width: 500px;
-    min-width: 500px;    
-    height: 700px;
-    position: relative;
-}
-.cuaderno{    
-    width: 500px;
-    min-width: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;   
-    position: absolute;
-    left: 1vw;
-}
-.imgLibreta{
-    width: 100%;
-}
-.contenido-cuaderno{
-    width: 100%;
-    max-width: 480px;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: flex-start;
-    p{
-        font-family: "Libreta";
-        color: $color_boli;
-        font-size: 1.4rem;
-        -webkit-transform: rotate(-1.3deg); 
-        -moz-transform: rotate(-1.3deg); 
-        -ms-transform: rotate(-1.3deg); 
-        -o-transform: rotate(-1.3deg); 
-        transform: rotate(-1.3deg);
-    }    
-}
-.part01{
-    position: relative;
-    width: 100%;
-    height: 150px;
-    p{
-        position: absolute;
-        top: 100px;
-        left: 90px;        
+        .oferta_caja_izda{
+            width: 40%;         
+            img{
+                /* height: 100%; */
+                height: 100%;
+            }
+        }
+        .oferta_caja_dcha{
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            justify-content: flex-start;
+            align-items: center;
+           
+            .texto_oferta{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                row-gap: 20px;
+                width: 70%;
+                h2{         
+                    font-size: 3rem;
+                    font-family: "idioma";
+                    color: white;
+                }
+                .subtitular{
+                    border-left: 2px solid white;
+                    padding-left: 20px;            
+                    font-size: 1.8rem;
+                    font-family: "idioma";
+                    color: white;
+                }
+            }
+            .grafico{
+                width: 100%;
+            }
+        }
+
+
+        .caja_concurso_izda{
+            width: 50%;
+            
+                
+        }
+  
     }
-    img{
-        position: absolute;
-        top:120px;
-        left: 60px;
-    }
-}
-.part02{
-    position: relative;
-    width: 100%;
-    height: 120px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    img{
-        position: absolute;
-        top: 33px;
-        left: 10px;
-    }    
-}
-.tamano{
-    position: absolute;
-    top: 15px;
-    left: 50px;
-}
-.part02-opc{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    position: absolute;
-    top: 70px;
-    padding-left: 30px;
-    padding-right: 20px;
-}
-.part03{    
-    position: relative;
-    width: 100%;
-    height: 120px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    img{
-        position: absolute;
-        top: 30px;
-        left: 25px;
-    }      
-}
-.masa{
-    position: absolute;
-    top: 15px;
-    left: 50px;
-}
-.part03-opc{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    position: absolute;
-    top: 80px;    
-    padding-left: 30px;
-    padding-right: 10px;
-}
-.part04{
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    img{
-        position: absolute;
-        top: 35px;
-        left: 40px
-    }     
-}
-.ingredientes{
-    position: absolute;
-    top: 15px;
-    left: 50px;
-}
-.part04-opc01{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    position: absolute;
-    top: 80px;
-    left: 30px;
-    padding-right: 50px;
-    padding-left: 30px;
-}
-.part04-opc02{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    position: absolute;
-    top: 170px;
-    left: 30px;
-    padding-right: 50px;
-    padding-left: 10px;
-}
-.part04-opc03{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    position: absolute;
-    top: 250px;
-    left: 30px;
-    padding-right: 50px;
-    padding-left: 10px;
-}
-.selecciones,.selecciones2,.selecciones3{
-    position: absolute;    
-}
-#sel01,#sel02,#ing01,#ing02,#ing03,#ing04,#ing05,#ing06{
-    position: absolute;
-}
-.nota1,.nota2,.nota3,.nota4,.nota5{
-    cursor: pointer;
-}
-.nota1Sel,.nota2Sel,.nota3Sel1,.nota3Sel2,.nota3Sel3,.nota3Sel4,.nota3Sel5,.nota3Sel6,.nota3Sel7,.nota3Sel8,.nota3Sel9,.nota4Sel,.nota4Selagu,.nota4SelaguG,.nota4SelcKel,.nota4SelcEga,.nota4SelcSN,.nota4Selb1,.nota4Selb2,.nota4Selb3,.nota4Selb4,.nota4Selb5,.nota4Selb6,.nota4Selb7,.nota4Selb8,.nota4Selb9,.nota5Sel,.nota5SeloPfi,.nota5SeloPde,.nota5SeloPcq,.nota5SeloPol,.nota5SeloAce,.nota5SeloNug,.nota5SeloH1,.nota5SeloH2,.nota5SeloH3,.nota5SeloH4,.nota5SeloH5,.nota5SeloH6,.nota5SeloH7,.nota5SeloH8,.nota5SeloH9{
-    display: none;
-    position: absolute;
-}
-#t1,#t2,#t3,#t4,#t5,#t6,#t7,#t8,#t9,#t10{
-    display: none;
-    position: absolute;
-}
-.caja-resultado{
-    width: 500px;
-    min-width: 500px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content:flex-start;
-    align-items: center;
-}
-#resultado{
-    width: 100%;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    position: relative;
-    img{
-        position: absolute;
-    }  
-}
-#precio{    
-    p{
-        font-family: "Piazzere";    
-        color: black;
-        font-size: 10vw;
-    }
-    span{
-        font-size: 5vw;
-    }  
+
 }
 
 /* footer  */
 footer{
-    background-color: rgb(65, 65, 65);
+    background-color: $color_gris;
     color: white;
     font-family: sans-serif;
     margin-top: -4px;
     width: 100%;
     max-width: 1920px;
+    .logo-peq{
+        font-family: "Piazzere";
+        font-size: 1.6rem;
+    }
     h2{
         font-size: 20px;
     }
     a{
         color: white;
         text-decoration: none;
-    }
-    a:visited{
-        color: white;
-    }
-    a:hover{
-        color: $color_rojo
-    }
+        &:visited{
+            color: white;
+        }
+        &:hover{
+            color: $color_rojo
+        }
+    } 
+    &:before {
+        background:
+          linear-gradient(
+            45deg, transparent 33.333%,
+            rgb(65, 65, 65) 33.333%, rgb(65, 65, 65) 66.667%,
+            transparent 66.667%
+          ),
+          linear-gradient(
+            -45deg, transparent 33.333%,
+            rgb(65, 65, 65) 33.333%, rgb(65, 65, 65) 66.667%,
+            transparent 66.667%
+          );
+        background-size: 20px 40px;
+    }   
 }
-footer:before {
-    background:
-      linear-gradient(
-        45deg, transparent 33.333%,
-        rgb(65, 65, 65) 33.333%, rgb(65, 65, 65) 66.667%,
-        transparent 66.667%
-      ),
-      linear-gradient(
-        -45deg, transparent 33.333%,
-        rgb(65, 65, 65) 33.333%, rgb(65, 65, 65) 66.667%,
-        transparent 66.667%
-      );
-    background-size: 20px 40px;
-}
+
 .zigzag {
-position: relative;
-width: 100%;
+    position: relative;
+    width: 100%;
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -10px;
+        width: 100%;
+        height: 10px;
+    }
 }
-.zigzag:before {
-content: "";
-display: block;
-position: absolute;
-top: -10px;
-width: 100%;
-height: 10px;
-}
+
 
 .columnas{
     display: flex;

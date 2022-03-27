@@ -7,27 +7,29 @@ let ticket = [0,0,0,0,0];
 //creamos
 //creamos un objeto pedido
 const ordenPedido={
-    masa:"",
-    tipo:"",
+    masa:'',
+    tipo:'',
     topping:[],
     bebida:[],
     otros:[],
     precio:0,
 }
 const npedido={}, pedidos=[];
-
 export default function pedido(){
     comanda();
     escribirPedido();
 }
 const escribirPedido=()=>{
     const $box_comprar=document.querySelector('.comprar');
-    const $notaPizza=document.querySelector('.comprar ul');
+    const $notaPizza=document.querySelector('.list-fact');
     const $btn_comprar=document.querySelector('.btn-comprar');
-    const $li=document.createElement('li');
+    let template_fact='';
+    const getText=(type="")=> document.getElementById(type).textContent;
     const modPedido='Modificar pedido', hacerCompra='Hacer mi compra';
+    let click=false;
     document.addEventListener('click',(e)=>{
         if(e.target.matches('.btn-comprar')){
+            const pr=document.querySelector('.precio');
             $box_comprar.classList.toggle('active');
             $btn_comprar.classList.toggle('btn-active');
             if($btn_comprar.textContent == hacerCompra){
@@ -36,12 +38,34 @@ const escribirPedido=()=>{
                 $btn_comprar.textContent=hacerCompra;
             }
             Object.entries(ordenPedido).forEach(([key,value])=>{
+<<<<<<< HEAD
                 if(value!=='' && value!==0){
                     $li.textContent+=`${document.querySelector(`#${value}`).textContent}`
                     console.log(document.querySelector(`#${value}`).textContent);
                 }
         });
         $notaPizza.appendChild($li);
+=======
+                if(value.length!==0 && value!==0){
+                    console.log(value.isArray);
+                    template_fact= `
+                      <li> ${document.querySelector('.txt5').textContent.toUpperCase()}  ${getText(ordenPedido['masa'])}</li>
+                      <li> ${document.querySelector('.txt6').textContent.toUpperCase()}:   ${getText(ordenPedido['tipo'])}</li>
+                    `;
+                    if(ordenPedido['topping']){
+                     ordenPedido['topping'].forEach((i)=>{
+                        template_fact+=`
+                        <li> ${getText(ordenPedido['topping'][0])}</li>
+                        `;
+                     })
+                    }
+                    pr.textContent=`Total: ${ordenPedido['precio']}€`;
+                }
+            });
+            click ? click=false : click=true;
+            click ? $notaPizza.insertAdjacentHTML('afterbegin',template_fact) : $notaPizza.textContent='';
+            
+>>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
         }
     });
 }
@@ -216,6 +240,10 @@ function insertar_comanda(com){
             nota1Sel.style.left="19px";
             ordenPedido['masa']  = com;
             ticket[0]=precioPeq;
+<<<<<<< HEAD
+=======
+            npedido['masa']='pequeña';   
+>>>>>>> bb823f2c95d166d8255ffc2ae23cf5e09d0e4725
             break;
         case "med":
             nota1Sel.style.display="block";
@@ -611,6 +639,7 @@ function calcTicket(){
     
     let precioHtml = `<p id="preci">${eur}<span>,${cent}€</span></p>`;
     document.querySelector("#precio").innerHTML = precioHtml; 
+    ordenPedido['precio']=sum;
 
 }
 
