@@ -36,7 +36,10 @@ const escribirPedido=()=>{
                 $btn_comprar.textContent=hacerCompra;
             }
             Object.entries(ordenPedido).forEach(([key,value])=>{
-                $li.textContent+=`${key,value}`;
+                if(value!=='' && value!==0){
+                    $li.textContent+=`${document.querySelector(`#${value}`).textContent}`
+                    console.log(document.querySelector(`#${value}`).textContent);
+                }
         });
         $notaPizza.appendChild($li);
         }
@@ -212,7 +215,7 @@ function insertar_comanda(com){
             nota1Sel.style.top="205px";
             nota1Sel.style.left="19px";
             ordenPedido['masa']  = com;
-            ticket[0]=precioPeq;   
+            ticket[0]=precioPeq;
             break;
         case "med":
             nota1Sel.style.display="block";
@@ -604,8 +607,6 @@ function calcTicket(){
         eur = String(sum).substring(0,pos);
         cent = String(sum).substring(pos+1,pos+2)+"0";
     }
-    //Agregar ordenPedido al array pedido.
-    pedidos.push(ordenPedido);
     console.log("Total: "+sum+" Euros: "+eur+" Cent: "+cent)
     
     let precioHtml = `<p id="preci">${eur}<span>,${cent}€</span></p>`;
