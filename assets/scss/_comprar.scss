@@ -7,19 +7,24 @@
     font-size: 25px;
   }
     position: relative;
-    box-sizing: border-box;
-    font-family: 'Libreta';
     width: 400px;
     height: 465px;
     margin: 150px auto 0;
-    padding: 20px;
     border-radius: 10px;
     background: #FBFBFB;
     box-shadow: 2px 2px 15px 0px rgba(0,0,0,.5);
-    overflow-y:auto;
     display: none;
-    &::-webkit-scrollbar {
+    .comprar-text{
+      display: flex;
+      justify-content: center;
+      font-family: 'Libreta';
+      padding: 20px;
+      width: 100%;
+      height: 100%;;
+      overflow-y:auto;
+      &::-webkit-scrollbar {
         display: none;
+      }
     }
     
     &:before,
@@ -41,7 +46,7 @@
       background: radial-gradient(circle, transparent, transparent 50%, #FBFBFB 50%, #FBFBFB 100% ) -7px -2px / 16px 16px repeat-x,
     }
   }
-.comprar ul{
+.comprar-text ul{
     li{
         font-weight: bold;
         margin: 5px;
@@ -63,18 +68,18 @@
     transition: opacity 1s ease-in;
 }
 .precio{
-    position: absolute;
-    bottom: 0;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
     margin-bottom: 20px;
     font-weight: bold;
     border-bottom: 3px solid #000;
-    font-size: 22px;
-
+    font-size: 25px;
 }
 .comprar.active{
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    flex-direction: column;
 }
 .btn-comprar.active{
   opacity:1;
