@@ -24,6 +24,13 @@ const escribirPedido=()=>{
     const $caja_cuaderno=document.querySelector('.caja-cuaderno');
     let template_fact='';
     const getText=(type="")=> document.getElementById(type).textContent;
+    const createLiText=(ckey)=>{
+        ordenPedido[ckey].forEach((value,index,arr)=>{
+            if(arr[index]){
+               template_fact+=`<li> ${getText(value)}</li>`;
+            }
+        });
+    }
     const modPedido='Modificar pedido', hacerCompra='Hacer mi compra';
     let click=false;
     document.querySelector('.btn-comprar').classList.add('active');
@@ -41,17 +48,13 @@ const escribirPedido=()=>{
             Object.entries(ordenPedido).forEach(([key,value])=>{
                 if(value && value!==0){
                     if(key==='masa'){
-                    template_fact="<h3>Pizza<h3>";
-                    template_fact+= `<li> ${document.querySelector('.txt5').textContent.toUpperCase()} ${getText(ordenPedido[key])}</li>`;
+                        template_fact="<h3>Pizza<h3>";
+                        template_fact+= `<li> ${document.querySelector('.txt5').textContent.toUpperCase()} ${getText(ordenPedido[key])}</li>`;
                     }
                     if(key=='tipo') template_fact+=`<li> ${document.querySelector('.txt9').textContent.toUpperCase()}   ${getText(ordenPedido[key])}</li>`;
-                    if(key==='topping'){
-                     ordenPedido[key].forEach((value,index,arr)=>{
-                         if(arr[index]){
-                            template_fact+=`<li> ${getText(value)}</li>`;
-                         }
-                     });
-                    }
+                    if(key==='topping') createLiText(key);
+                    if(key==='bebida') createLiText(key);
+                    if(key==='otros') createLiText(key);
                     pr.textContent=`Total: ${ordenPedido['precio']}€`;
                 }
             });
