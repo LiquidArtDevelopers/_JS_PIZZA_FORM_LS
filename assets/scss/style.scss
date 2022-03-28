@@ -93,6 +93,37 @@ body{
         height: 10px;
     }    
 }
+.fondo_modal_oferta{
+    position: fixed;
+    z-index: 9000;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .oferta_modal{
+        display: flex;
+        justify-content: flex-end;
+        .x_cierre{
+            position: absolute;
+            -webkit-transform: translateX(40px);
+            transform: translateX(40px);
+            font-family:"verdana";
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+            transition: all 300ms ease-in-out;
+            &:hover{
+                color: $color_rojo;
+            }
+        }        
+        img{
+            height: 90vh;
+            border-radius: 20px;
+        }
+    }
+}
 
 /* NAVEGADOR */
 #navegador{
@@ -342,37 +373,7 @@ header{
             }    
         }  
     }
-    .fondo_modal_oferta{
-        position: fixed;
-        z-index: 9000;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .oferta_modal{
-            display: flex;
-            justify-content: flex-end;
-            .x_cierre{
-                position: absolute;
-                -webkit-transform: translateX(40px);
-                transform: translateX(40px);
-                font-family:"verdana";
-                font-size: 1.5rem;
-                color: white;
-                cursor: pointer;
-                transition: all 300ms ease-in-out;
-                &:hover{
-                    color: $color_rojo;
-                }
-            }        
-            img{
-                height: 90vh;
-                border-radius: 20px;
-            }
-        }
-    }
+    
     /* ZONA PEDIDO  */
     #seccion_pedido{
         width: 100%;    
