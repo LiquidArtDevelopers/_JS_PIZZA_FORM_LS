@@ -674,41 +674,38 @@ header{
     /* ZONA CONCURSO */
     #seccion-concurso{
         width: 100%;
-        max-width: 1440px;
+        max-width: 1920px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 0 auto;
+        margin-top: 40px;        
+        margin-bottom: 40px;
         .oferta_titular{
             width: 100%;
-            max-width: 1920px;
-            margin-top: 80px;        
-            margin-bottom: 40px;
+            max-width: 1920px;           
             display: flex;
-            flex-direction: row;        
-            /* flex-wrap: wrap; */
+            flex-wrap: wrap;
+            flex-direction: row;
             align-items: center;
-            justify-content: space-around;
-            overflow: hidden;
-            background-color: #FBAB7E;
-            background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-
+            column-gap: 80px;
+            background-image: $color_fundido_rojo;           
             .oferta_caja_izda{
-                width: 40%;         
+                width: 40%;
+                height: 100%;
+                display:flex;
+                align-items: center;    
                 img{
-                    /* height: 100%; */
-                    height: 100%;
+                    width: 100%;
                 }
             }
             .oferta_caja_dcha{
-                width: 60%;
+                width: 40%;
                 display: flex;
                 flex-direction: column;
                 row-gap: 20px;
                 justify-content: flex-start;
-                align-items: center;
-            
+                align-items: center;                    
                 .texto_oferta{
                     display: flex;
                     flex-direction: column;
@@ -716,7 +713,7 @@ header{
                     row-gap: 20px;
                     width: 70%;
                     h2{         
-                        font-size: 3rem;
+                        font-size: 9vh;
                         font-family: "idioma";
                         color: white;
                     }
@@ -730,15 +727,12 @@ header{
                 }
                 .grafico{
                     width: 100%;
+                    #myChart{
+                        max-width: 500px;
+                    }
+
                 }
-            }
-
-
-            .caja_concurso_izda{
-                width: 50%;
-                
-                    
-            }
+            }            
     
         }
 

@@ -56,16 +56,24 @@ const construirGrafico=(concursoJs)=>{
       type: 'bar',
       data: data,
       options: {
+        responsive: true,
         plugins: {
-          title: {
-              display: false,
-              text: 'Custom Chart Title',
-              color:'white',
-          },
-          tooltip:{
-            color:'white',
-          }
-      }
+            legend: {
+                display: false,
+            }            
+        },
+        scales: {
+            y: {
+              ticks: {
+                color: 'white'
+              }
+            },
+            x: {
+              ticks: {
+                color: 'white'
+              }
+            }
+          }        
       }
     };
          

@@ -1531,7 +1531,7 @@ header h1 {
 
 .contenedor_principal #seccion-concurso {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1920px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1545,43 +1545,47 @@ header h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .contenedor_principal #seccion-concurso .oferta_titular {
   width: 100%;
   max-width: 1920px;
-  margin-top: 80px;
-  margin-bottom: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  /* flex-wrap: wrap; */
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  overflow: hidden;
-  background-color: #FBAB7E;
-  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+  -webkit-column-gap: 80px;
+          column-gap: 80px;
+  background-image: radial-gradient(circle farthest-corner at 10% 20%, #e84855 0%, #e84855 90%);
 }
 
 .contenedor_principal #seccion-concurso .oferta_titular .oferta_caja_izda {
   width: 40%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .contenedor_principal #seccion-concurso .oferta_titular .oferta_caja_izda img {
-  /* height: 100%; */
-  height: 100%;
+  width: 100%;
 }
 
 .contenedor_principal #seccion-concurso .oferta_titular .oferta_caja_dcha {
-  width: 60%;
+  width: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1614,7 +1618,7 @@ header h1 {
 }
 
 .contenedor_principal #seccion-concurso .oferta_titular .oferta_caja_dcha .texto_oferta h2 {
-  font-size: 3rem;
+  font-size: 9vh;
   font-family: "idioma";
   color: white;
 }
@@ -1631,8 +1635,8 @@ header h1 {
   width: 100%;
 }
 
-.contenedor_principal #seccion-concurso .oferta_titular .caja_concurso_izda {
-  width: 50%;
+.contenedor_principal #seccion-concurso .oferta_titular .oferta_caja_dcha .grafico #myChart {
+  max-width: 500px;
 }
 
 /* footer  */
