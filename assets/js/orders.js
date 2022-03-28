@@ -53,8 +53,8 @@ const escribirPedido=()=>{
                     }
                     if(key=='tipo') template_fact+=`<li> ${document.querySelector('.txt9').textContent.toUpperCase()}   ${getText(ordenPedido[key])}</li>`;
                     if(key==='topping') createLiText(key);
-                    if(key==='bebida') createLiText(key);
-                    if(key==='otros') createLiText(key);
+                    if(key==='bebida') template_fact+="<h3>Bebidas<h3>", createLiText(key);
+                    if(key==='otros') template_fact+="<h3>Otros<h3>",createLiText(key);
                     pr.textContent=`Total: ${ordenPedido['precio']}€`;
                 }
             });
