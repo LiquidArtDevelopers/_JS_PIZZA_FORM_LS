@@ -417,18 +417,23 @@ select:-webkit-autofill:focus {
           box-sizing: border-box;
   font-family: 'Libreta';
   width: 400px;
-  height: 455px;
+  height: 465px;
   margin: 150px auto 0;
   padding: 20px;
   border-radius: 10px;
   background: #FBFBFB;
   -webkit-box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.5);
           box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
   display: none;
 }
 
 .comprar h3 {
   font-size: 25px;
+}
+
+.comprar::-webkit-scrollbar {
+  display: none;
 }
 
 .comprar:before, .comprar:after {

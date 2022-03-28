@@ -10,13 +10,17 @@
     box-sizing: border-box;
     font-family: 'Libreta';
     width: 400px;
-    height: 455px;
+    height: 465px;
     margin: 150px auto 0;
     padding: 20px;
     border-radius: 10px;
     background: #FBFBFB;
     box-shadow: 2px 2px 15px 0px rgba(0,0,0,.5);
+    overflow-y:auto;
     display: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
     
     &:before,
     &:after {
