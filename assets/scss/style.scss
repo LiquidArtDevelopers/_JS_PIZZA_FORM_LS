@@ -29,9 +29,12 @@
 
 /* VARIABLES  */
 $color_boli:rgb(51, 51, 124);
-$color_rojo: #A0425B;
-$color_verde: #4B9C40;
-$color_fundido: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
+/* $color_rojo: #A0425B; */
+$color_rojo: rgba(232,72,85,1);
+$color_verde: rgba(123,216,96,1);
+
+$color_fundido_verde: linear-gradient( 117deg,  rgba(123,216,96,1) 39.2%, rgba(255,255,255,1) 156.2% );
+$color_fundido_rojo: radial-gradient( circle farthest-corner at 10% 20%,  rgba(232,72,85,1) 0%, rgba(232,72,85,1) 90% );
 $color_gris: rgb(65, 65, 65);
 
 //GLOBALES
@@ -194,16 +197,16 @@ header{
 /* CONTENEDOR PRINCIPAL */
 .contenedor_principal{
     max-width: 1920px;
-    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
     /* ZONA OFERTAS */
     #seccion_ofertas{
         width: 100%;
-        max-width: 1920px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background-color: white;
         .oferta_titular{
             width: 100%;
             height: 45vh;
@@ -212,10 +215,7 @@ header{
             flex-direction: row;        
             flex-wrap: wrap;
             align-items: center;
-            background-color: #FBAB7E;
-            background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);     
-            /* background-color: #FF9A8B;
-            background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 36%, #FF99AC 66%); */
+            background-image: $color_fundido_rojo;
             column-gap: 5vw;
             img{
                 height: 100%;
@@ -373,7 +373,6 @@ header{
             }
         }
     }
-
     /* ZONA PEDIDO  */
     #seccion_pedido{
         width: 100%;    
@@ -390,13 +389,8 @@ header{
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-            /* background-color: #FF9A8B;
-            background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 36%, #FF99AC 66%); */
-            background-color: #FBAB7E;
-            background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-
-            .texto_oferta{
-                
+            background-image: $color_fundido_rojo;
+            .texto_oferta{                
                 min-width: 300px;
                 width: 80%;
                 height: 100%;
@@ -677,7 +671,6 @@ header{
             }
         } 
     }
-
     /* ZONA CONCURSO */
     #seccion-concurso{
         width: 100%;
