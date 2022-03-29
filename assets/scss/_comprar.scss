@@ -11,6 +11,7 @@
     z-index: 8000;
     bottom: 20px;
     right: -400px;
+    transition: 400ms;
     //
     width: 400px;
     height: 465px;
@@ -18,7 +19,6 @@
     border-radius: 10px;
     background: #FBFBFB;
     box-shadow: 2px 2px 15px 0px rgba(0,0,0,.5);
-    display: none;
 
     .comprar-text{
       display: flex;
