@@ -31,16 +31,14 @@ export default function pedido(){
             }
         }        
     })
-
-
     comanda();
     escribirPedido();
 }
 const escribirPedido=()=>{
     //te muevo arriba el $box_comprar para poder usarlo yo tb
     const $notaPizza=document.querySelector('.list-fact');
-    const $btn_comprar=document.querySelector('.btn-comprar');
-    const $caja_cuaderno=document.querySelector('.caja-cuaderno');
+    /* const $btn_comprar=document.querySelector('.btn-comprar'); */
+    /* const $caja_cuaderno=document.querySelector('.caja-cuaderno'); */
     let template_fact='';
     const getText=(type="")=> document.getElementById(type).textContent;
     const createLiText=(ckey)=>{
@@ -50,20 +48,22 @@ const escribirPedido=()=>{
             }
         });
     }
-    const modPedido='Modificar pedido', hacerCompra='Hacer mi compra';
+    /* const modPedido='Modificar pedido', hacerCompra='Hacer mi compra'; */
     let click=false;
-    document.querySelector('.btn-comprar').classList.add('active');
+    /* document.querySelector('.btn-comprar').classList.add('active'); */
+
     document.addEventListener('click',(e)=>{
-        if(e.target.matches('.btn-comprar')){
+        /* if(e.target.matches('.btn-comprar')){ */
+        if(e.target.matches('.carrito')){
             /* $caja_cuaderno.classList.toggle('disable'); */
             const pr=document.querySelector('.precio');
             $box_comprar.classList.toggle('active');
-            $btn_comprar.classList.toggle('btn-active');
-            if($btn_comprar.textContent == hacerCompra){
+            /* $btn_comprar.classList.toggle('btn-active'); */
+            /* if($btn_comprar.textContent == hacerCompra){
                 $btn_comprar.textContent = modPedido;
             }else{
                 $btn_comprar.textContent=hacerCompra;
-            }
+            } */
             Object.entries(ordenPedido).forEach(([key,value])=>{
                 if(value && value!==0){
                     if(key==='masa'){
