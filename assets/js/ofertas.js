@@ -79,8 +79,4 @@ function rellenarOfertas(){
         //por si el json da error, le metemos precios
         console.error("ERROR", err.message)        
     });
-
 }
-
-
-

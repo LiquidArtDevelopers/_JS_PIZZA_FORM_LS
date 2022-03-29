@@ -414,13 +414,8 @@ select:-webkit-autofill:focus {
   z-index: 8000;
   bottom: 20px;
   right: -400px;
-<<<<<<< HEAD
   -webkit-transition: 400ms;
   transition: 400ms;
-=======
-  -webkit-transition: right 1s ease-in;
-  transition: right 1s ease-in;
->>>>>>> 0a4b37d6a722c246b06a68db470ec713e1243f4b
   width: 400px;
   height: 465px;
   margin: 150px auto 0;
@@ -1792,7 +1787,7 @@ header h1 {
   max-width: 500px;
 }
 
-/* footer  */
+/* footer   */
 footer {
   background-color: #414141;
   color: white;
