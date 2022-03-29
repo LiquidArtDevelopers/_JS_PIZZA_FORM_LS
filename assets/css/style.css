@@ -781,6 +781,27 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  position: relative;
+}
+
+#navegador .nav-carrito .caja-cantidad {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  color: white;
+  font-family: "Idioma";
+  font-size: 0.9rem;
+  border: 2px solid white;
+  border-radius: 50%;
+  text-align: center;
+  top: 14px;
+  right: 1px;
+}
+
+#navegador .nav-carrito:hover {
+  filter: invert(45%) sepia(66%) saturate(5852%) hue-rotate(334deg) brightness(102%) contrast(82%);
+  -webkit-filter: invert(45%) sepia(66%) saturate(5852%) hue-rotate(334deg) brightness(102%) contrast(82%);
+  -moz-filter: invert(45%) sepia(66%) saturate(5852%) hue-rotate(334deg) brightness(102%) contrast(82%);
 }
 
 #navegador .nav-idiomas {
