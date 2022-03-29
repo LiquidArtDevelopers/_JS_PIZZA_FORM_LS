@@ -50,6 +50,31 @@ html{
     justify-content: flex-start;
     transition: all 500ms ease-in-out;    
 }
+@mixin boton_anadir{    
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $color_verde;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;        
+        filter: drop-shadow(0px 0px 5px $color_verde);
+        img{
+            width: 80%;
+            transition: all 300ms ease-in-out;            
+        }
+        &:hover{
+            background-color: white;
+            img{
+                transform:scale(1.1);
+                filter: invert(71%) sepia(68%) saturate(365%) hue-rotate(58deg) brightness(95%) contrast(90%);
+            }
+        }
+        &:active{
+            transform:scale(0.9);
+        }
+}
 body{
     @include fondo    
 }
@@ -182,7 +207,8 @@ body{
         flex-direction: row;
         align-items: center;
         justify-content: flex-end;
-        position: relative;        
+        position: relative;
+        cursor: pointer;   
         .caja-cantidad{
             width: 20px;
             height: 20px;
@@ -222,7 +248,6 @@ body{
         }
     }
 }
-
 /* HEADER */
 header{
     max-width: 1920px;
@@ -247,7 +272,6 @@ header{
         text-shadow: $color_verde 0px 0px 20px;
     }
 }
-
 /* CONTENEDOR PRINCIPAL */
 .contenedor_principal{
     max-width: 1920px;
@@ -371,6 +395,12 @@ header{
                             font-family: "Piazzere";                
                             z-index: 60;                
                         }
+                        .anadir{
+                            @include boton_anadir();
+                            left: 5px;
+                            bottom: 5px;
+                            z-index: 65;
+                        }
                         .oTexto{
                             left: 5px;
                             top: -10px;
@@ -395,8 +425,7 @@ header{
                     }
             }    
         }  
-    }
-    
+    }    
     /* ZONA PEDIDO  */
     #seccion_pedido{
         width: 100%;    
@@ -446,8 +475,9 @@ header{
             flex-direction: row;
             flex-wrap: wrap;
             column-gap: 20px;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: flex-start;
+            padding-left: 20px;
             position: relative;
             .caja-cuaderno{
                 width: 500px;
@@ -680,8 +710,17 @@ header{
                     position: relative;
                     img{
                         position: absolute;
-                    }  
+                    }
+                    .anadir{
+                        @include boton_anadir();
+                        left: 10px;
+                        bottom: 10px;
+                        z-index: 65;
+                        width: 80px;
+                        height: 80px;
+                    }
                 }
+                
                 #precio{    
                     p{
                         font-family: "Piazzere";    
@@ -762,7 +801,6 @@ header{
 
     }
 }
-
 /* footer  */
 footer{
     background-color: $color_gris;

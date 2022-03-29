@@ -1,5 +1,7 @@
 
-let contador = 0;
+let contador = 0, existe = 0;
+const $box_comprar=document.querySelector('.comprar');
+
 //Array para el precio donde el precio se suma de entre todos sus valores: masa[0],tipo[1], topping[2] y bebida[3].
 let ticket = [0,0,0,0,0];
 //creamos
@@ -14,11 +16,28 @@ const ordenPedido={
 }
 const pedidos=[];
 export default function pedido(){
+
+    //escuchamos si hay click en carrito para mostrar la nota
+    document.body.addEventListener("click", function(event){        
+        //escuchamos los  botones del carousel de pizzas
+        if(event.target.classList.contains("carrito")){        
+            //cambiamos el estilo y mostramos la nota
+            if (existe == 0){
+                $box_comprar.style.right="10px";
+                existe = 1
+            }else{
+                $box_comprar.style.right="-400px";
+                existe = 0
+            }
+        }        
+    })
+
+
     comanda();
     escribirPedido();
 }
 const escribirPedido=()=>{
-    const $box_comprar=document.querySelector('.comprar');
+    //te muevo arriba el $box_comprar para poder usarlo yo tb
     const $notaPizza=document.querySelector('.list-fact');
     const $btn_comprar=document.querySelector('.btn-comprar');
     const $caja_cuaderno=document.querySelector('.caja-cuaderno');
@@ -36,7 +55,7 @@ const escribirPedido=()=>{
     document.querySelector('.btn-comprar').classList.add('active');
     document.addEventListener('click',(e)=>{
         if(e.target.matches('.btn-comprar')){
-            $caja_cuaderno.classList.toggle('disable');
+            /* $caja_cuaderno.classList.toggle('disable'); */
             const pr=document.querySelector('.precio');
             $box_comprar.classList.toggle('active');
             $btn_comprar.classList.toggle('btn-active');

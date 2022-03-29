@@ -412,7 +412,12 @@ select:-webkit-autofill:focus {
 }
 
 .comprar {
-  position: relative;
+  position: fixed;
+  z-index: 8000;
+  bottom: 20px;
+  right: -400px;
+  -webkit-transition: all 700ms ease-in-out;
+  transition: all 700ms ease-in-out;
   width: 400px;
   height: 465px;
   margin: 150px auto 0;
@@ -782,6 +787,7 @@ body {
       -ms-flex-pack: end;
           justify-content: flex-end;
   position: relative;
+  cursor: pointer;
 }
 
 #navegador .nav-carrito .caja-cantidad {
@@ -1077,6 +1083,50 @@ header h1 {
   z-index: 60;
 }
 
+.contenedor_principal #seccion_ofertas #caja_ofertas #ofertas .oferta .anadir {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #7bd860;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-filter: drop-shadow(0px 0px 5px #7bd860);
+          filter: drop-shadow(0px 0px 5px #7bd860);
+  left: 5px;
+  bottom: 5px;
+  z-index: 65;
+}
+
+.contenedor_principal #seccion_ofertas #caja_ofertas #ofertas .oferta .anadir img {
+  width: 80%;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.contenedor_principal #seccion_ofertas #caja_ofertas #ofertas .oferta .anadir:hover {
+  background-color: white;
+}
+
+.contenedor_principal #seccion_ofertas #caja_ofertas #ofertas .oferta .anadir:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-filter: invert(71%) sepia(68%) saturate(365%) hue-rotate(58deg) brightness(95%) contrast(90%);
+          filter: invert(71%) sepia(68%) saturate(365%) hue-rotate(58deg) brightness(95%) contrast(90%);
+}
+
+.contenedor_principal #seccion_ofertas #caja_ofertas #ofertas .oferta .anadir:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
 .contenedor_principal #seccion_ofertas #caja_ofertas #ofertas .oferta .oTexto {
   left: 5px;
   top: -10px;
@@ -1191,12 +1241,13 @@ header h1 {
       flex-wrap: wrap;
   -webkit-column-gap: 20px;
           column-gap: 20px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  padding-left: 20px;
   position: relative;
 }
 
@@ -1571,6 +1622,52 @@ header h1 {
 
 .contenedor_principal #seccion_pedido #pedido .caja-resultado #resultado img {
   position: absolute;
+}
+
+.contenedor_principal #seccion_pedido #pedido .caja-resultado #resultado .anadir {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #7bd860;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-filter: drop-shadow(0px 0px 5px #7bd860);
+          filter: drop-shadow(0px 0px 5px #7bd860);
+  left: 10px;
+  bottom: 10px;
+  z-index: 65;
+  width: 80px;
+  height: 80px;
+}
+
+.contenedor_principal #seccion_pedido #pedido .caja-resultado #resultado .anadir img {
+  width: 80%;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.contenedor_principal #seccion_pedido #pedido .caja-resultado #resultado .anadir:hover {
+  background-color: white;
+}
+
+.contenedor_principal #seccion_pedido #pedido .caja-resultado #resultado .anadir:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-filter: invert(71%) sepia(68%) saturate(365%) hue-rotate(58deg) brightness(95%) contrast(90%);
+          filter: invert(71%) sepia(68%) saturate(365%) hue-rotate(58deg) brightness(95%) contrast(90%);
+}
+
+.contenedor_principal #seccion_pedido #pedido .caja-resultado #resultado .anadir:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 
 .contenedor_principal #seccion_pedido #pedido .caja-resultado #precio p {
