@@ -38,6 +38,7 @@ export default function pedido(){
     })
     comanda();
     escribirPedido();
+    addToCart();
 }
 /**
  * Obtenemos el contenido del texto del elemento.
@@ -50,7 +51,7 @@ export default function pedido(){
  */
 const escribirPedido=()=>{
     const $notaPizza=document.querySelector('.list-fact');
-    let template_fact=null;
+    let template_fact='';
     const createLiText=(ckey)=>{
         objMenu[ckey].forEach((value,index,arr)=>{
             if(arr[index]){
@@ -63,17 +64,7 @@ const escribirPedido=()=>{
         if(e.target.matches('.carrito')){
             const pr=document.querySelector('.precio');
             $box_comprar.classList.toggle('active');
-<<<<<<< HEAD
-            Object.entries(ordenPedido).forEach(([key,value])=>{
-=======
-            /* $btn_comprar.classList.toggle('btn-active'); */
-            /* if($btn_comprar.textContent == hacerCompra){
-                $btn_comprar.textContent = modPedido;
-            }else{
-                $btn_comprar.textContent=hacerCompra;
-            } */
             Object.entries(objMenu).forEach(([key,value])=>{
->>>>>>> 9468c845a271500c1460fb861dc6452bae373f3a
                 if(value && value!==0){
                     if(key==='masa'){
                         template_fact="<h3>PIAZZERE<h3>";
@@ -92,8 +83,42 @@ const escribirPedido=()=>{
         }
     });
 }
-const addToCarrito=()=>{
-
+const addToCart=()=>{
+    document.addEventListener('click',(e)=>{
+        if(e.target.matches('#addTocart')){
+            objComanda.push(objMenu);
+            clearobjMenu(objMenu);
+            console.log(objComanda)
+        }
+    });
+}
+/**
+ * Limpiaños el objeto objMenu
+ * @param {Object} objMenu 
+ */
+const clearobjMenu=(objMenu)=>{
+    Object.entries(objMenu).forEach(([key,value])=>{
+        switch(key){
+            case 'masa':
+                objMenu.masa='';
+                break;
+            case 'tipo':
+                objMenu.tipo='';
+                break;
+            case 'topping':
+                objMenu.topping=[];
+                break;
+            case 'bebida':
+                objMenu.bebida=[];
+                break;
+            case 'otros':
+                objMenu.otros=[];
+                break;
+            case 'precio':
+                objMenu.precio=0;
+            break;
+        }
+    })
 }
 //Precios (esto ya lo traeremos de algún lado donde sea más fácil gestionar)
 var precioPeq = 0, precioMed = 0, precioFam = 0, precioFin = 0, precioGru = 0, precioCqu = 0, precioTpp = 0, precioRef = 0, precioOtr = 0;
