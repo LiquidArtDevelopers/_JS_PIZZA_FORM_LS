@@ -220,15 +220,15 @@ select:-webkit-autofill:focus {
   left: 0;
   right: 0;
   width: 100%;
-  height: 20vh;
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 15px;
+  height: 30vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
 }
 
 .window #cookies .cookies-text {
   width: 60%;
   color: #fff;
-  font-family: 'Libreta';
+  font-family: 'Roboto light';
 }
 
 .window #cookies .cookies-elements {
