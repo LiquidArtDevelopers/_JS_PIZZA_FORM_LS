@@ -2,28 +2,6 @@
  * @author MDMGN & LiquidArt
  */
 
-<<<<<<< HEAD
-let contador = 0, existe = 0;
-const $box_comprar=document.querySelector('.comprar');
-const $notaPizza=document.querySelector('.list-fact');
-//Array para el precio donde el precio se suma de entre todos sus valores: masa[0],tipo[1], topping[2] y bebida[3].
-let ticket = [0,0,0,0,0];
-
-//Creamos el objeto Menú. Habrá varios objetos menú en una misma comanda.
-const objMenu={
-    masa:'',
-    tipo:'',
-    topping:[],
-    bebida:[],
-    otros:[],
-    precio:0,
-}
- // Todos los objetos menú que haya.
-let objComanda=[],getObjComanda=JSON.parse(localStorage.getItem("objComanda"));
-if(getObjComanda !== null) objComanda=getObjComanda;
-console.log(objComanda,getObjComanda)
-=======
->>>>>>> 8fd518f8eed63b01142d60fb13c52a5366bf5cf0
 export default function pedido(){
     //escuchamos si hay click en carrito para mostrar la nota
     document.body.addEventListener("click", function(event){        
@@ -46,6 +24,7 @@ export default function pedido(){
 
 let contador = 0, existe = 0;
 const $box_comprar=document.querySelector('.comprar');
+const $notaPizza=document.querySelector('.list-fact');
 const nota1Sel= document.querySelector(".nota1Sel");
 const nota2Sel= document.querySelector(".nota2Sel");
 const precio = document.querySelector("#precio");
@@ -63,8 +42,10 @@ const objMenu={
     precio:0,
 }
 //array comanda, que se compondrá de todos los objetos menú que haya.
-const objComanda=[];
-
+let objComanda=[], getObjComanda=JSON.parse(localStorage.getItem('objComanda'));
+if(getObjComanda!==null) objComanda=getObjComanda;
+const updateCantidadCart=(objComanda)=>document.querySelector('.caja-cantidad p').textContent=String(objComanda.length);
+updateCantidadCart(objComanda);
 /**
  * Obtenemos el contenido del texto del elemento.
  * @param {String} type
@@ -75,7 +56,7 @@ const getText=(type)=> document.getElementById(type).textContent;
  * @param {String} ckey
  */
 const escribirPedido=()=>{
-    const $notaPizza=document.querySelector('.list-fact');
+    const pr=document.querySelector('.precio');
     let template_fact='';
     const createLiText=(ckey)=>{
         objMenu[ckey].forEach((value,index,arr)=>{
@@ -84,56 +65,39 @@ const escribirPedido=()=>{
             }
         });
     }
-    let template_fact='';
     let click=false;
-    Object.entries(objMenu).forEach(([key,value])=>{
-        if(value && value!==0){
-            if(key==='masa'){
-                template_fact="<h3>PIAZZERE<h3>";
-                template_fact+= `<li> ${document.querySelector('.txt5').textContent.toUpperCase()} ${getText(objMenu[key])}</li>`;
-            }
-            if(key=='tipo') template_fact+=`<li> ${document.querySelector('.txt9').textContent.toUpperCase()}   ${getText(objMenu[key])}</li>`;
-            if(key==='topping') createLiText(key);
-            if(key==='bebida') createLiText(key);
-            if(key==='otros') createLiText(key);
-            pr.textContent=`Total: ${objMenu['precio']}€`;
-        }
-    });
-    click ? click=false : click=true;
-    click ? $notaPizza.insertAdjacentHTML('afterbegin',template_fact) : $notaPizza.textContent='';
- }
-/**
- * Insertamos los datos para factura
- * @event EventListener 'click'
- */
-const escribirPedido=()=>{
     document.addEventListener('click',(e)=>{
         if(e.target.matches('.carrito')){
-            $box_comprar.classList.toggle('active');
-            setTextTicket(objMenu);
+            Object.entries(objMenu).forEach(([key,value])=>{
+                if(value && value!==0){
+                    if(key==='masa'){
+                        template_fact="<h3>PIAZZERE<h3>";
+                        template_fact+= `<li> ${document.querySelector('.txt5').textContent.toUpperCase()} ${getText(objMenu[key])}</li>`;
+                    }
+                    if(key=='tipo') template_fact+=`<li> ${document.querySelector('.txt9').textContent.toUpperCase()}   ${getText(objMenu[key])}</li>`;
+                    if(key==='topping') createLiText(key);
+                    if(key==='bebida') createLiText(key);
+                    if(key==='otros') createLiText(key);
+                    pr.textContent=`Total: ${objMenu['precio']}€`;
+                }
+            });
+            click ? click=false : click=true;
+            click ? $notaPizza.insertAdjacentHTML('afterbegin',template_fact) : $notaPizza.textContent='';
         }
-    });
-}
+    })
+ }
 const addToCart=()=>{
     document.addEventListener('click',(e)=>{
         if(e.target.matches('#addTocart')){
             objComanda.push(objMenu);
             localStorage.setItem('objComanda',JSON.stringify(objComanda));
             clearobjMenu(objMenu);
-<<<<<<< HEAD
-            clearSelectCuaderno(1),clearSelectCuaderno(2),clearSelectCuaderno(3);
-            objComanda=JSON.parse(localStorage.getItem("objComanda"));
-            //Me falta limpiar total precio
-            document.querySelector("#preci").remove();
-            //Limpiar la pizza
             console.log(objComanda);
-            console.log(objMenu);
             $notaPizza.textContent='';
-            e.stopPropagation();
-=======
-            console.log(objComanda);
+            //limpiar ticket
+            $notaPizza.innerHTML='';
+            updateCantidadCart(objComanda);
             limpiarLibreta();
->>>>>>> 8fd518f8eed63b01142d60fb13c52a5366bf5cf0
         }
     });
 }
@@ -153,7 +117,7 @@ const clearSelectCuaderno=(id)=>{
  */
 const clearobjMenu=(objMenu)=>{
     Object.entries(objMenu).forEach(([key,value])=>{
-        /* switch(key){
+        switch(key){
             case 'masa':
                 objMenu.masa='';
                 break;
@@ -172,8 +136,8 @@ const clearobjMenu=(objMenu)=>{
             case 'precio':
                 objMenu.precio=0;
             break;
-        } */
-        key==='precio' ? objMenu[key]=0 : delete objMenu[key];
+        }
+       /*  key==='precio' ? objMenu[key]=0 : delete objMenu[key]; */
     })
 }
 
@@ -373,14 +337,6 @@ function cambiar_hoja(hoja){
 }
 
 function insertar_comanda(com){
-<<<<<<< HEAD
-
-    const nota1Sel= document.querySelector(".nota1Sel");
-    const nota2Sel= document.querySelector(".nota2Sel");
-    const selecciones = document.querySelector("#selecciones1");
-    const resultado = document.querySelector("#resultado");
-=======
->>>>>>> 8fd518f8eed63b01142d60fb13c52a5366bf5cf0
     
     contador=Number(contador);
     switch(com){
@@ -772,26 +728,21 @@ function calcTicket(){
     }
     console.log(objMenu);
     console.log(sum);
-    objMenu['precio']=sum;
     let eur = "", cent = "";
     let pos = 0
-    if(String(objMenu.precio).indexOf(".")==-1){
-        eur = String(objMenu.precio);
+    if(String(sum).indexOf(".")==-1){
+        eur = String(sum);
         cent = "00";
     }else{
-        pos = Number(String(objMenu.precio).indexOf("."));
+        pos = Number(String(sum).indexOf("."));
         console.log("pos"+pos);
-        eur = String(objMenu.precio).substring(0,pos);
-        cent = String(objMenu.precio).substring(pos+1,pos+2)+"0";
+        eur = String(sum).substring(0,pos);
+        cent = String(sum).substring(pos+1,pos+2)+"0";
     }
-    console.log("Total: "+objMenu.precio+" Euros: "+eur+" Cent: "+cent)
+    console.log("Total: "+sum+" Euros: "+eur+" Cent: "+cent)
     
     let precioHtml = `<p id="preci">${eur}<span>,${cent}€</span></p>`;
-<<<<<<< HEAD
-    document.querySelector("#precio").innerHTML = precioHtml; 
-=======
     precio.innerHTML = precioHtml; 
     objMenu['precio']=sum;
->>>>>>> 8fd518f8eed63b01142d60fb13c52a5366bf5cf0
 
 }
