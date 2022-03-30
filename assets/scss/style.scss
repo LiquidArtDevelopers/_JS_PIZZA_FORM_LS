@@ -277,6 +277,9 @@ header{
     max-width: 1920px;
     width: 100%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     /* ZONA OFERTAS */
     #seccion_ofertas{
         width: 100%;
@@ -285,6 +288,7 @@ header{
         justify-content: center;
         align-items: center;
         background-color: white;
+        padding-top: 2px;
         .oferta_titular{
             width: 100%;
             height: 45vh;
@@ -428,12 +432,14 @@ header{
     }    
     /* ZONA PEDIDO  */
     #seccion_pedido{
-        width: 100%;    
-        max-width: 1920px; 
+        width: 100%;
+        height: 1200px;
+        max-width: 1920px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content:flex-start;
         align-items: center;
+        margin-bottom: 40px;      
         .oferta_titular{
             width: 100%;
             height: 30vh;
@@ -466,10 +472,17 @@ header{
                 }
             }        
         }
-        #pedido{
+        #pedido{            
             width: 100%;
-            height: 1000px;
+            height: 820px;
+            max-width: 1440px;
+            margin-top: 20px;
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            border: 0px solid white; 
+            box-shadow: 2px 2px 15px 0px rgba(0,0,0,.5);
             padding-top: 30px;
+            background-color: rgba(255, 255, 255, 0.267);
             
             display: flex;
             flex-direction: row;
@@ -732,7 +745,7 @@ header{
                     }  
                 }
             }
-        } 
+        }        
     }
     /* ZONA CONCURSO */
     #seccion-concurso{
@@ -742,8 +755,7 @@ header{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 40px;        
-        margin-bottom: 40px;
+        margin-top: 40px;
         .oferta_titular{
             width: 100%;
             max-width: 1920px;           
@@ -798,7 +810,6 @@ header{
             }            
     
         }
-
     }
 }
 /* footer   */
@@ -872,11 +883,3 @@ footer{
         align-items: center;
     }    
 }
-
-
-
-
-
-
-
-
