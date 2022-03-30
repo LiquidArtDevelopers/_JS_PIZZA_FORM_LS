@@ -471,22 +471,6 @@ select:-webkit-autofill:focus {
   font-size: 22px;
 }
 
-.btn-comprar {
-  cursor: pointer;
-  min-width: 20px;
-  text-decoration: none;
-  font-size: 30px;
-  font-style: italic;
-  font-weight: bold;
-  color: white;
-  border-radius: 25px;
-  background-color: #41ce41;
-  padding: 15px;
-  opacity: 0;
-  -webkit-transition: opacity 1s ease-in;
-  transition: opacity 1s ease-in;
-}
-
 .precio {
   margin-right: auto;
   margin-left: auto;
@@ -510,15 +494,7 @@ select:-webkit-autofill:focus {
           flex-direction: column;
 }
 
-.btn-comprar.active {
-  opacity: 1;
-}
-
-.btn-active {
-  background-color: red;
-}
-
-.caja-cuaderno.disable {
+.hidden {
   display: none;
 }
 
