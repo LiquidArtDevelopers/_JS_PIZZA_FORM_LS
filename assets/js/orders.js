@@ -5,7 +5,7 @@
 let contador = 0, existe = 0;
 const $box_comprar=document.querySelector('.comprar');
 
-//Array para el precio donde el precio se suma de entre todos sus valores: masa[0],tipo[1], topping[2] y bebida[3].
+//Array para el precio donde el precio se suma de entre todos sus valores: masa[0],tipo[1], topping[2], bebida[3] y varios[4].
 let ticket = [0,0,0,0,0];
 
 //Creamos el objeto Menú. Habrá varios objetos menú en una misma comanda.
@@ -88,7 +88,8 @@ const addToCart=()=>{
         if(e.target.matches('#addTocart')){
             objComanda.push(objMenu);
             clearobjMenu(objMenu);
-            console.log(objComanda)
+            console.log(objComanda);
+            limpiarLibreta();
         }
     });
 }
@@ -120,6 +121,28 @@ const clearobjMenu=(objMenu)=>{
         }
     })
 }
+
+/* limpiamos la libreta de marcas */
+const limpiarLibreta=()=>{
+    
+    //borramos marcas de libreta 2 y 3
+    for(const seleccionesBoli of document.querySelectorAll(".selectBoli")){
+        console.log(seleccionesBoli);
+        while (seleccionesBoli.firstChild) {
+            seleccionesBoli.removeChild(seleccionesBoli.firstChild);
+        }        
+    }
+    //borramos marcas de libreta 1
+    for(const seleccionesIng of document.querySelectorAll(".nota3Sel")){
+        seleccionesIng.remove()
+    }
+    //ocultamos las marcas alternas
+    document.querySelector(".nota1Sel").style.display="none";
+    document.querySelector(".nota2Sel").style.display="none";
+    ticket = [0,0,0,0,0];
+    document.querySelector("#precio").innerHTML="";
+}
+
 //Precios (esto ya lo traeremos de algún lado donde sea más fácil gestionar)
 var precioPeq = 0, precioMed = 0, precioFam = 0, precioFin = 0, precioGru = 0, precioCqu = 0, precioTpp = 0, precioRef = 0, precioOtr = 0;
 
