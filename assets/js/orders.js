@@ -2,26 +2,7 @@
  * @author MDMGN & LiquidArt
  */
 
-let contador = 0, existe = 0;
-const $box_comprar=document.querySelector('.comprar');
-
-//Array para el precio donde el precio se suma de entre todos sus valores: masa[0],tipo[1], topping[2], bebida[3] y varios[4].
-let ticket = [0,0,0,0,0];
-
-//Creamos el objeto Menú. Habrá varios objetos menú en una misma comanda.
-const objMenu={
-    masa:'',
-    tipo:'',
-    topping:[],
-    bebida:[],
-    otros:[],
-    precio:0,
-}
-//array comanda, que se compondrá de todos los objetos menú que haya.
-const objComanda=[];
-
 export default function pedido(){
-
     //escuchamos si hay click en carrito para mostrar la nota
     document.body.addEventListener("click", function(event){        
         //escuchamos los  botones del carousel de pizzas
@@ -40,11 +21,33 @@ export default function pedido(){
     escribirPedido();
     addToCart();
 }
+
+let contador = 0, existe = 0;
+const $box_comprar=document.querySelector('.comprar');
+const nota1Sel= document.querySelector(".nota1Sel");
+const nota2Sel= document.querySelector(".nota2Sel");
+const precio = document.querySelector("#precio");
+
+//Array para el precio donde el precio se suma de entre todos sus valores: masa[0],tipo[1], topping[2], bebida[3] y varios[4].
+let ticket = [0,0,0,0,0];
+
+//Creamos el objeto Menú. Habrá varios objetos menú en una misma comanda.
+const objMenu={
+    masa:'',
+    tipo:'',
+    topping:[],
+    bebida:[],
+    otros:[],
+    precio:0,
+}
+//array comanda, que se compondrá de todos los objetos menú que haya.
+const objComanda=[];
+
 /**
  * Obtenemos el contenido del texto del elemento.
  * @param {String} type
  */
- const getText=(type)=> document.getElementById(type).textContent;
+const getText=(type)=> document.getElementById(type).textContent;
 /**
  * Insertamos los datos para factura
  * @param {String} ckey
@@ -124,8 +127,7 @@ const clearobjMenu=(objMenu)=>{
 
 /* limpiamos la libreta de marcas */
 const limpiarLibreta=()=>{
-    
-    //borramos marcas de libreta 2 y 3
+        //borramos marcas de libreta 2 y 3
     for(const seleccionesBoli of document.querySelectorAll(".selectBoli")){
         console.log(seleccionesBoli);
         while (seleccionesBoli.firstChild) {
@@ -137,10 +139,10 @@ const limpiarLibreta=()=>{
         seleccionesIng.remove()
     }
     //ocultamos las marcas alternas
-    document.querySelector(".nota1Sel").style.display="none";
-    document.querySelector(".nota2Sel").style.display="none";
+    nota1Sel.style.display="none";
+    nota2Sel.style.display="none";
     ticket = [0,0,0,0,0];
-    document.querySelector("#precio").innerHTML="";
+    precio.innerHTML="";
 }
 
 //Precios (esto ya lo traeremos de algún lado donde sea más fácil gestionar)
@@ -183,8 +185,7 @@ fetch("assets/json/precios.json")
 
 console.log(precioFam)
 
-function comanda(){    
-
+function comanda(){
     
     document.body.addEventListener("click", function(event){
 
@@ -193,7 +194,6 @@ function comanda(){
             console.log("pestaña: "+ event.target.id);
             cambiar_hoja(event.target.id);  
         }
-
         //escuchamos la hoja de pedido de pizza
         //tamaño
         if(event.target.classList.contains("nota1")){        
@@ -224,7 +224,26 @@ function comanda(){
             insertar_comanda3(event.target.id);        
         }
 
-        //si hay click en la marca de ingrediente seleccionado, quitamos html de la marca
+        //si hay click en la marca de tamaño, quitamos html de la marca
+        if(event.target.classList.contains("nota1Sel")){
+            //Quitamos círculo que marca tamaño
+            console.log("Quitamos tamaño: "+ event.target.id);
+            document.querySelector(`#${event.target.id}`).style.display="none";
+            ticket[0]=0;
+            objMenu.masa=''
+            calcTicket();            
+        }
+        //si hay click en la marca de tipo de masa, quitamos html de la marca
+        if(event.target.classList.contains("nota2Sel")){
+            //Quitamos círculo que marca de tipo de masa
+            console.log("Quitamos tipo: "+ event.target.id);
+            document.querySelector(`#${event.target.id}`).style.display="none";
+            ticket[1]=0;
+            objMenu.tipo=''
+            calcTicket();            
+        }
+
+       //si hay click en la marca de ingrediente seleccionado, quitamos html de la marca
         if(event.target.classList.contains("nota3Sel")){
 
             //Quitamos ralla de ingrediente
@@ -250,20 +269,17 @@ function comanda(){
             calcTicket();           
         }
 
-        //si hay click en la marca de bebidas, quitamos html de la marca (pendiente añadir más cantidad)
+        //si hay click en la marca de bebidas, quitamos html de la marca
         if(event.target.classList.contains("nota4Sel")){
-
             //Quitamos ralla de ingrediente
             console.log("Quitamos bebida: "+ event.target.id);
             document.querySelector(`#${event.target.id}`).remove();
-            ticket[3]-=precioRef;          
-            
+            ticket[3]-=precioRef;
             calcTicket();            
         }
 
         //si hay click en la marca de otros, quitamos html de la marca (pendiente añadir más cantidad)
         if(event.target.classList.contains("nota5Sel")){
-
             //Quitamos ralla de ingrediente
             console.log("Quitamos complemento: "+ event.target.id);
             document.querySelector(`#${event.target.id}`).remove();
@@ -298,11 +314,6 @@ function cambiar_hoja(hoja){
 }
 
 function insertar_comanda(com){
-
-    const nota1Sel= document.querySelector(".nota1Sel");
-    const nota2Sel= document.querySelector(".nota2Sel");
-    const selecciones = document.querySelector("#selecciones");
-    const resultado = document.querySelector("#resultado");
     
     contador=Number(contador);
     switch(com){
@@ -315,6 +326,7 @@ function insertar_comanda(com){
             ticket[0]=precioPeq;
             break;
         case "med":
+            nota1Sel.style.display="block";
             nota1Sel.style.top="205px";
             nota1Sel.style.left="160px";
             objMenu['masa']  = com;
@@ -429,7 +441,9 @@ function insertar_comanda(com){
                         objMenu['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;                    
-                }                
+                }
+                const selecciones = document.querySelector("#selecciones");
+                const resultado = document.querySelector("#resultado");      
                 //Insertamos HTML y cambiamos Style de las marcas
                 etiquetas+=`<img id="i${com}" src="assets/img/pizza/select-ing.png" class="nota3Sel${com} nota3Sel" alt="">`            
                 selecciones.insertAdjacentHTML('beforeend',etiquetas);
@@ -706,7 +720,7 @@ function calcTicket(){
     console.log("Total: "+sum+" Euros: "+eur+" Cent: "+cent)
     
     let precioHtml = `<p id="preci">${eur}<span>,${cent}€</span></p>`;
-    document.querySelector("#precio").innerHTML = precioHtml; 
+    precio.innerHTML = precioHtml; 
     objMenu['precio']=sum;
 
 }
