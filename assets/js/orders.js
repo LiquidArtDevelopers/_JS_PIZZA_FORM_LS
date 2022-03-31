@@ -86,18 +86,28 @@ const escribirPedido=()=>{
         }
     })
  }
+ const isObjectEmpty=()=>{
+     let isObjectEmpty=true;
+    Object.entries(objMenu).forEach(([key,value])=>{
+        value ? isObjectEmpty=false : isObjectEmpty=true; 
+    });
+    return isObjectEmpty;
+ }
 const addToCart=()=>{
     document.addEventListener('click',(e)=>{
         if(e.target.matches('#addTocart')){
-            objComanda.push(objMenu);
-            localStorage.setItem('objComanda',JSON.stringify(objComanda));
-            clearobjMenu(objMenu);
-            console.log(objComanda);
-            $notaPizza.textContent='';
-            //limpiar ticket
-            $notaPizza.innerHTML='';
-            updateCantidadCart(objComanda);
-            limpiarLibreta();
+            if(!isObjectEmpty(objMenu)){
+                objComanda.push(objMenu) 
+                localStorage.setItem('objComanda',JSON.stringify(objComanda));
+                clearobjMenu(objMenu);
+                $notaPizza.textContent='';
+                //limpiar ticket
+                $notaPizza.innerHTML='';
+                updateCantidadCart(objComanda);
+                limpiarLibreta();
+            }else{
+                alert('No haz hecho ninguna selección!');
+            }
         }
     });
 }
