@@ -2,8 +2,7 @@
     from {
         opacity: 1;
         top: 0px;
-    }
-      
+    }      
     to {
         opacity: 0;
         top: -5px;
@@ -50,7 +49,7 @@
                 position: absolute;
             }
             .humo{
-                animation-duration: 1.2s;
+                animation-duration: 2s;
                 animation-name: humillo;
                 animation-iteration-count: infinite;
             }
