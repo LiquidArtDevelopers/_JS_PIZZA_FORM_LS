@@ -102,7 +102,6 @@ const escribirPedido=()=>{
             });
         }
     });
-    console.log(count);
     return count;
  }
 const addToCart=()=>{
