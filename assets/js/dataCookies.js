@@ -32,18 +32,21 @@ export default function dataCookies(){
 */
 const llamarVentanaCookies=()=>{
     let contentWindowCookies=`
-        <div class="window">
-            <div id="cookies">
-                <div class='cookies-text'>
-                    <p>Utilizamos cookies propias y de terceros para mejorar nuestros servicios, elaborar información estadística, analizar sus hábitos de navegación e inferir grupos de interés. Esto nos permite personalizar el contenido que ofrecemos y mostrarle publicidad relacionada con sus preferencias. Adicionalmente,compartimos los análisis de navegación y los grupos de interés inferidos con terceros.</p>
-                </div>
-                <div  class='cookies-elements'>
-                <a href="" class="btn"><span>></span>Configuración de las cookies</a>
-                    <a class='btn-cookies'>Aceptar</a>
-                    <span class='close'>X</span>
-                </div>
+    <div class="window">
+    <div id="cookies">
+        <div class='cookies-text'>
+            <p>Utilizamos cookies propias y de terceros para mejorar nuestros servicios, elaborar información estadística, analizar sus hábitos de navegación e inferir grupos de interés. Esto nos permite personalizar el contenido que ofrecemos y mostrarle publicidad relacionada con sus preferencias. Adicionalmente, compartimos los análisis de navegación y los grupos de interés inferidos con terceros.</p>
+        </div>
+        <div  class='cookies-elements'>                
+            <div class='cookies-botones'>                    
+                <a class='btn-cookies cance'>Denegar</a>
+                <a class='btn-cookies acep'>Aceptar</a>
             </div>
-         </div>
+            <a href="">Configuración de las cookies</a>                
+        </div>
+        <span class='close'>X</span>
+    </div>
+ </div>
     `;
     //Pintamos en pantalla la ventana modal de cookies.
     document.body.insertAdjacentHTML('afterbegin',contentWindowCookies);

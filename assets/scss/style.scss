@@ -152,6 +152,13 @@ body{
         justify-content: flex-end;
         .x_cierre{
             position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 1px solid white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             -webkit-transform: translateX(40px);
             transform: translateX(40px);
             font-family:"verdana";
