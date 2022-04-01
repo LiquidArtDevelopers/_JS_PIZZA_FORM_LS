@@ -6,20 +6,11 @@ const cookies={
     aceptCookies:'aceptCookies',
     idioma:'idiomas'
 }
-let aceptCookies=false;
 export default function dataCookies(){
     cookie.setCookieName('aceptCookies');
-    if(cookie.getCookie()=='true') aceptCookies=true;
-    Object.entries(cookies).forEach(([key,nameCookie])=> {
-        cookie.setCookieName(nameCookie);
-        if(!cookie.getCookie()){
-             //Llamar a la ventana de cookies.
-             llamarVentanaCookies();
-            console.log(`Cookie no creada:${nameCookie}`);
-        }
-    });
-    if(aceptCookies){
-        //Cambio de idiomas..
+    if(cookie.getCookie()!=='true'){
+        llamarVentanaCookies()
+    }else{
         idiomas();
     }
 }
@@ -56,11 +47,11 @@ const llamarVentanaCookies=()=>{
     document.addEventListener('click',(e)=>{
         //Objetivos del evento click que coincidan con la clase '.btn'.
         if(e.target.matches('.btn-cookies') || e.target.matches('.close')){
-            if(e.target.id='acept') cookie.setCookie('aceptCookies','true',90);
+            if(e.target.id==='acept') cookie.setCookie('aceptCookies','true',90),idiomas();
         //Eliminamos el elemento div ('.window').
             $window_cookies.remove();
         //Detenemos el evento burbuja.
             e.target.removeEventListener('click',e.preventDefault(),true);
         }
-    });
+    },false);
 }

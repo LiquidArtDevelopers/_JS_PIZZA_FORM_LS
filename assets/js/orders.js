@@ -91,23 +91,24 @@ const escribirPedido=()=>{
         }
     })
  }
- const countObjectComandaSelect=()=>{
+ const countIngredientsComanda=()=>{
      let count=0;
     Object.entries(objMenu).forEach(([key,value])=>{
         if(key==='topping'){
-            objMenu[key].forEach((value)=>{
+            objMenu['topping'].forEach((value)=>{
                 if(value){
                    count++
                 }
             });
         }
     });
+    console.log(count);
     return count;
  }
 const addToCart=()=>{
     document.addEventListener('click',(e)=>{
         if(e.target.matches('#addTocart')){
-            if(countObjectComandaSelect>=3){
+            if(countIngredientsComanda()>=3){
                 setObjComanda();
                 objComanda.push(objMenu);
                 localStorage.setItem('objComanda',JSON.stringify(objComanda));
