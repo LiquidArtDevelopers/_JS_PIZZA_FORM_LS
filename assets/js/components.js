@@ -10,21 +10,21 @@ function scrollFunction() {
         document.getElementById("navegador").style.backgroundColor = "rgba(65, 65, 65, 0.5)";
     }
     
-    if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+    if (document.body.scrollTop > 1400 || document.documentElement.scrollTop > 1400) {
         document.body.classList.add("cambio_fondo")
     } else {
         document.body.classList.remove("cambio_fondo")
     }
 
-    /* if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+    if (document.body.scrollTop > 2000 || document.documentElement.scrollTop > 2000) {
         document.body.classList.add("cambio_fondo2")
     } else {
         document.body.classList.remove("cambio_fondo2")
-    } */
+    }
 
-    /* if (document.body.scrollTop > 1200 || document.documentElement.scrollTop > 1200) {
+    if (document.body.scrollTop > 2700 || document.documentElement.scrollTop > 2700) {
         document.body.classList.add("cambio_fondo3")
     } else {
         document.body.classList.remove("cambio_fondo3")
-    } */
+    }
 }

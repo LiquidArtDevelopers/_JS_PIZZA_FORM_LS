@@ -516,12 +516,37 @@ select:-webkit-autofill:focus {
 
 /* VARIABLES  */
 /* $color_rojo: #A0425B; */
+@-webkit-keyframes cambio_color {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes cambio_color {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-image: url("../img/logos/Entramado_rojo.svg");
+  background-image: url("../img/logos/Entramado_reverso.svg");
+  background-attachment: fixed;
+  background-color: #e84855;
   background-attachment: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -541,30 +566,33 @@ body {
 }
 
 .cambio_fondo {
-  background-color: rgba(255, 255, 255, 0.212);
-  background-image: url("../img/logos/Entramado_verde.svg") !important;
+  background-color: #7bd860;
+  /* background-image: url("../img/logos/Entramado_verde.svg")!important; */
   background-attachment: fixed;
   -webkit-transition: all 700ms;
   transition: all 700ms;
 }
 
 .cambio_fondo2 {
-  background-image: url("../img/logos/Entramado_azul.svg") !important;
+  background-color: #e84855;
+  /*  background-image: url("../img/logos/Entramado_azul.svg")!important; */
   background-attachment: fixed;
   -webkit-transition: all 700ms;
   transition: all 700ms;
 }
 
 .cambio_fondo3 {
-  background-image: url("../img/logos/Entramado_blanco.svg") !important;
-  background-color: black;
+  /* background-image: url("../img/logos/Entramado_blanco.svg")!important; */
+  background-color: #7bd860;
   background-attachment: fixed;
   -webkit-transition: all 700ms;
   transition: all 700ms;
 }
 
 .preload {
-  background-image: url("../img/logos/Entramado_rojo.svg");
+  background-image: url("../img/logos/Entramado_reverso.svg");
+  background-attachment: fixed;
+  background-color: #e84855;
   background-attachment: fixed;
   display: -webkit-box;
   display: -ms-flexbox;

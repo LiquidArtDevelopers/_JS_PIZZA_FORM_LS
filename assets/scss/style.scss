@@ -37,17 +37,34 @@ $color_fundido_verde: linear-gradient( 117deg,  rgba(123,216,96,1) 39.2%, rgba(2
 $color_fundido_rojo: radial-gradient( circle farthest-corner at 10% 20%,  rgba(232,72,85,1) 0%, rgba(232,72,85,1) 90% );
 $color_gris: rgb(65, 65, 65);
 
+@keyframes cambio_color{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+
 //GLOBALES
 html{
     scroll-behavior: smooth;
 }
-@mixin fondo{
-    background-image: url("../img/logos/Entramado_rojo.svg");
+
+@mixin fondo{      
+      
+    background-image: url("../img/logos/Entramado_reverso.svg");
+    background-attachment: fixed;
+    background-color: $color_rojo;
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-start;    
     transition: all 500ms ease-in-out;    
 }
 @mixin boton_anadir{    
@@ -78,23 +95,27 @@ html{
 body{
     @include fondo    
 }
+
 .cambio_fondo{
-    background-color: rgba(255, 255, 255, 0.212);
-    background-image: url("../img/logos/Entramado_verde.svg")!important;
+    background-color: $color_verde;
+    /* background-image: url("../img/logos/Entramado_verde.svg")!important; */
     background-attachment: fixed;
     transition: all 700ms;    
 }
 .cambio_fondo2{
-    background-image: url("../img/logos/Entramado_azul.svg")!important;
+    background-color: $color_rojo;
+   /*  background-image: url("../img/logos/Entramado_azul.svg")!important; */
     background-attachment: fixed;
     transition: all 700ms;
 }
 .cambio_fondo3{
-    background-image: url("../img/logos/Entramado_blanco.svg")!important;
-    background-color: black;
+    /* background-image: url("../img/logos/Entramado_blanco.svg")!important; */
+    background-color: $color_verde;
     background-attachment: fixed;
     transition: all 700ms;
 }
+
+
 .preload{ 
     @include fondo;
     justify-content: center;
@@ -883,3 +904,4 @@ footer{
         align-items: center;
     }    
 }
+
