@@ -56,7 +56,7 @@ const llamarVentanaCookies=()=>{
     document.addEventListener('click',(e)=>{
         //Objetivos del evento click que coincidan con la clase '.btn'.
         if(e.target.matches('.btn-cookies') || e.target.matches('.close')){
-            if(e.target.id='acept') cookie.setCookie('aceptCookies','true',90), window.location='index.html';
+            if(e.target.id='acept') cookie.setCookie('aceptCookies','true',90);
         //Eliminamos el elemento div ('.window').
             $window_cookies.remove();
         //Detenemos el evento burbuja.
