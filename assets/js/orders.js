@@ -42,9 +42,13 @@ const objMenu={
     precio:0,
 }
 //array comanda, que se compondrá de todos los objetos menú que haya.
-let objComanda=[], getObjComanda=JSON.parse(localStorage.getItem('objComanda'));
-if(getObjComanda!==null) objComanda=getObjComanda;
+let objComanda=[];
+const setObjComanda=()=>{
+    let getObjComanda=JSON.parse(localStorage.getItem('objComanda'));
+    if(getObjComanda!==null) objComanda=getObjComanda;
+}
 const updateCantidadCart=(objComanda)=>document.querySelector('.caja-cantidad p').textContent=String(objComanda.length);
+setObjComanda()
 updateCantidadCart(objComanda);
 /**
  * Obtenemos el contenido del texto del elemento.
@@ -83,43 +87,37 @@ const escribirPedido=()=>{
             });
             click ? click=false : click=true;
             click ? $notaPizza.insertAdjacentHTML('afterbegin',template_fact) : $notaPizza.textContent='';
+            template_fact='';
         }
     })
  }
- const isObjectEmpty=()=>{
-     let isObjectEmpty=true;
+ const countObjectComandaSelect=()=>{
+     let countObjectComandaSelect=0, isObjectEmpty=true;
     Object.entries(objMenu).forEach(([key,value])=>{
-        value ? isObjectEmpty=false : isObjectEmpty=true; 
+        if(key==='topping'){
+            value ? isObjectEmpty=false : isObjectEmpty=true;
+            if(!isObjectEmpty) count ++;
+        }
     });
-    return isObjectEmpty;
+    return countObjectComandaSelect;
  }
 const addToCart=()=>{
     document.addEventListener('click',(e)=>{
         if(e.target.matches('#addTocart')){
-            if(!isObjectEmpty(objMenu)){
-                objComanda.push(objMenu) 
+            if(countObjectComandaSelect>=3){
+                setObjComanda();
+                objComanda.push(objMenu);
                 localStorage.setItem('objComanda',JSON.stringify(objComanda));
                 clearobjMenu(objMenu);
                 $notaPizza.textContent='';
-                //limpiar ticket
-                $notaPizza.innerHTML='';
                 updateCantidadCart(objComanda);
                 limpiarLibreta();
+                objComanda=[];
             }else{
-                alert('No haz hecho ninguna selección!');
+                alert('¡Seleccionar como mínimo 3 ingredientes!');
             }
         }
     });
-}
-/**
- * @param {Element} el
- * @param {String} id
- */
-const clearSelectCuaderno=(id)=>{
-    const $selectCuaderno=document.querySelectorAll(`#selecciones${id} img`);
-    $selectCuaderno.forEach((el)=>{
-        el.style.display='none';
-    })
 }
 /**
  * Limpiamos el objeto objMenu
