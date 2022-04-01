@@ -92,14 +92,17 @@ const escribirPedido=()=>{
     })
  }
  const countObjectComandaSelect=()=>{
-     let countObjectComandaSelect=0, isObjectEmpty=true;
+     let count=0;
     Object.entries(objMenu).forEach(([key,value])=>{
         if(key==='topping'){
-            value ? isObjectEmpty=false : isObjectEmpty=true;
-            if(!isObjectEmpty) count ++;
+            objMenu[key].forEach((value)=>{
+                if(value){
+                   count++
+                }
+            });
         }
     });
-    return countObjectComandaSelect;
+    return count;
  }
 const addToCart=()=>{
     document.addEventListener('click',(e)=>{
@@ -114,7 +117,7 @@ const addToCart=()=>{
                 limpiarLibreta();
                 objComanda=[];
             }else{
-                alert('¡Seleccionar como mínimo 3 ingredientes!');
+                alert('¡Seleccionar como mínimo 3 ingredientes para tu pizza!');
             }
         }
     });

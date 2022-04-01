@@ -40,7 +40,7 @@ const llamarVentanaCookies=()=>{
         <div  class='cookies-elements'>                
             <div class='cookies-botones'>                    
                 <a class='btn-cookies cance'>Denegar</a>
-                <a class='btn-cookies acep'>Aceptar</a>
+                <a id='acept' class='btn-cookies acep'>Aceptar</a>
             </div>
             <a href="">Configuración de las cookies</a>                
         </div>
@@ -56,7 +56,7 @@ const llamarVentanaCookies=()=>{
     document.addEventListener('click',(e)=>{
         //Objetivos del evento click que coincidan con la clase '.btn'.
         if(e.target.matches('.btn-cookies') || e.target.matches('.close')){
-            if(e.target.className == 'btn-cookies') cookie.setCookie('aceptCookies','true',90);
+            if(e.target.id='acept') cookie.setCookie('aceptCookies','true',90), window.location='index.html';
         //Eliminamos el elemento div ('.window').
             $window_cookies.remove();
         //Detenemos el evento burbuja.
