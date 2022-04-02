@@ -424,6 +424,108 @@ select:-webkit-autofill:focus {
   display: none;
 }
 
+/* Bars menu */
+.bars__menu {
+  display: none;
+  width: 30px;
+  height: 30px;
+  margin: 15px;
+  z-index: 800;
+}
+.bars__menu:hover {
+  cursor: pointer;
+}
+.bars__menu span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  margin-top: 6px;
+  transform-origin: 0px 100%;
+  transition: all 300ms;
+}
+.bars__menu .activeline1__bars-menu {
+  transform: rotate(45deg) translate(-2px, 1px);
+}
+.bars__menu .activeline2__bars-menu {
+  opacity: 0;
+  margin-left: -30px;
+}
+.bars__menu .activeline3__bars-menu {
+  transform: rotate(-45deg) translate(-4px, 2px);
+}
+
+.li-logo {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  #navegador {
+    width: 100vw !important;
+  }
+  #navegador .nav-idiomas {
+    position: relative;
+    left: -20px !important;
+  }
+  #navegador .nav-carrito {
+    right: -40px !important;
+  }
+  #navegador .bars__menu {
+    display: block;
+    z-index: 705;
+    width: 70px !important;
+  }
+  #navegador .nav-enlaces {
+    width: 100vw !important;
+    height: calc(100% - 100vw);
+    touch-action: none;
+    z-index: 700;
+  }
+  #navegador .nav-enlaces ul {
+    transform: translate(0, -10000px);
+    transition: transform 0.4s ease-in-out;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: inherit;
+    position: fixed !important;
+    background-color: #414141;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding-left: 0px;
+    padding-right: 50px;
+  }
+  #navegador .nav-enlaces ul li {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  #navegador .nav-enlaces ul li a:hover {
+    background-color: #e9183b !important;
+  }
+  #navegador .nav-enlaces ul .li-logo {
+    display: block;
+  }
+  #navegador .nav-enlaces ul .li-logo img {
+    height: 15vh;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .nav-enlaces li {
+    margin: 5px 0 0 0;
+  }
+
+  .nav-enlaces {
+    overflow: scroll;
+    height: calc(100% - 100vw);
+  }
+}
+.nav-enlaces ul.active {
+  transform: translate(0, 0) !important;
+}
+
 /*************************/
 @font-face {
   font-family: "Piazzere";

@@ -1,7 +1,6 @@
 /**
  * @author MDMGN & LiquidArt
  */
-
 export default function pedido(){
     //escuchamos si hay click en carrito para mostrar la nota
     document.body.addEventListener("click", function(event){        
@@ -52,16 +51,26 @@ setObjComanda()
 updateCantidadCart(objComanda);
 /**
  * Obtenemos el contenido del texto del elemento.
- * @param {String} type
+ * @param {String} type Recibimos el key de tipo 'id' en String.
  */
 const getText=(type)=> document.getElementById(type).textContent;
 /**
- * Insertamos los datos para factura
- * @param {String} ckey
+ * Insertamos los datos para imprimirlos en el ticket.
+ * @returns {void}
  */
 const escribirPedido=()=>{
+    /**
+     * @type {Element} Elemento 'p' con la clase precio. 
+     */
     const pr=document.querySelector('.precio');
+    /**
+     * @type {String} Template String para almacenar los datos del pedido en la libreta.
+     */
     let template_fact='';
+    /**
+     * Recogemos los valores elegidos en la libreta y creamos una lista por cada uno.
+     * @param {String} ckey key of objMenu.
+     */
     const createLiText=(ckey)=>{
         objMenu[ckey].forEach((value,index,arr)=>{
             if(arr[index]){
@@ -69,6 +78,9 @@ const escribirPedido=()=>{
             }
         });
     }
+    /**
+     * @type {Boolean} Alamacenamos si se hizo un click para insertarlos en la lista.
+     */
     let click=false;
     document.addEventListener('click',(e)=>{
         if(e.target.matches('.carrito')){
