@@ -33,12 +33,15 @@ const animateBars=()=>{
     const $line1__bars=document.querySelector('.line1__bars-menu');
     const $line2__bars=document.querySelector('.line2__bars-menu');
     const $line3__bars=document.querySelector('.line3__bars-menu');
-    const $bars__menu=document.querySelector('.bars__menu');
-    $bars__menu.addEventListener('click',()=>{
-        $line1__bars.classList.toggle('activeline1__bars-menu');
-        $line2__bars.classList.toggle('activeline2__bars-menu');
-        $line3__bars.classList.toggle('activeline3__bars-menu');
-        const $nav_enlaces=document.querySelector('.nav-enlaces ul');
-        $nav_enlaces.classList.toggle('active');
-    });     
+    const $nav_enlaces=document.querySelector('.nav-enlaces ul');
+    document.addEventListener('click',(e)=>{
+        if(e.target.matches('.nav-enlaces a') || e.target.matches('.bars__menu')){
+            if(e.target.matches('.bars__menu')){
+                $line1__bars.classList.toggle('activeline1__bars-menu');
+                $line2__bars.classList.toggle('activeline2__bars-menu');
+                $line3__bars.classList.toggle('activeline3__bars-menu');
+            }
+            $nav_enlaces.classList.toggle('active');
+        }
+    }); 
 }
