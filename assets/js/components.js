@@ -36,12 +36,10 @@ const animateBars=()=>{
     const $nav_enlaces=document.querySelector('.nav-enlaces ul');
     document.addEventListener('click',(e)=>{
         if(e.target.matches('.nav-enlaces a') || e.target.matches('.bars__menu')){
-            if(e.target.matches('.bars__menu')){
                 $line1__bars.classList.toggle('activeline1__bars-menu');
                 $line2__bars.classList.toggle('activeline2__bars-menu');
                 $line3__bars.classList.toggle('activeline3__bars-menu');
-            }
-            $nav_enlaces.classList.toggle('active');
+                $nav_enlaces.classList.toggle('active');
         }
     }); 
 }
