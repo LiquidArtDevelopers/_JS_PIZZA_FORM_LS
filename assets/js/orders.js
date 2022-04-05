@@ -1,3 +1,5 @@
+import { modalAdvetnciaPedido } from "./modales.js";
+
 /**
  * @author MDMGN & LiquidArt
  */
@@ -129,7 +131,7 @@ const addToCart=()=>{
                 limpiarLibreta();
                 objComanda=[];
             }else{
-                alert('¡Seleccionar como mínimo 3 ingredientes para tu pizza!');
+                modalAdvetnciaPedido();
             }
         }
     });
