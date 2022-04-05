@@ -48,3 +48,24 @@ const modalesOfertas=(srcFoto)=>{
     cabecera.insertAdjacentHTML("afterend",modalOfertaHTML);
     existe = true;
 }
+export const modalAdvetnciaPedido=()=>{
+    let contentModalWindow=`
+    <div class="modalInfoPedido">
+        <div class="modal">
+        <img src="./assets/img/logos/pointer02.png" alt="pizza" class="img_pizza"> 
+            <div class='modal-text'>
+                <p>¡Seleccionar como mínimo 3 ingredientes para tu pizza!</p>
+            </div>
+            <span class='close'>X</span>
+        </div>
+    </div>
+    `;
+    document.body.insertAdjacentHTML('afterbegin',contentModalWindow);
+    let $modal_window=document.querySelector('.modalInfoPedido');
+    document.addEventListener('click',(e)=>{
+        if(e.target.matches('.close')){
+            $modal_window.remove();
+            e.target.removeEventListener('click',e.preventDefault(),true);
+        }
+    });
+}

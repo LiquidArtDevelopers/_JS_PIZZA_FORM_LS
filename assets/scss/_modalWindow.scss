@@ -1,15 +1,6 @@
 /**Ventana modal para cookies**/
 @mixin windowModal{
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, .5);
-    z-index: 999;
-}
-.window{    
-    position: fixed;
     z-index:11000;    
     width: 100%;
     height: 100%;
@@ -23,6 +14,26 @@
     color:#fff;    
     font-family: 'Roboto light';
     transition: all 300ms ease-in-out;
+}
+@mixin close {
+        width: 30px;
+        height: 30px;
+        border: 1px solid white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        font-family:"verdana";
+        font-size: 1.1rem;
+        color: white;
+        cursor: pointer;
+        transition: all 300ms ease-in-out;
+}
+.window{    
+    @include windowModal();
     #cookies{
         position: relative;
         width: 50vw;
@@ -73,21 +84,7 @@
             }
         }
         .close{
-            width: 30px;
-            height: 30px;
-            border: 1px solid white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            font-family:"verdana";
-            font-size: 1.1rem;
-            color: white;
-            cursor: pointer;
-            transition: all 300ms ease-in-out;
+            @include close();
             &:hover{
                 color: rgb(148, 44, 44);
             }
@@ -107,4 +104,31 @@
 
 .window.is-active{
     transform: translate(0,0);
+}
+.modalInfoPedido{
+    @include windowModal();
+    .modal{
+        position: relative;
+        width: 450px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;        
+        row-gap: 20px;
+        padding: 20px;
+        background-color: rgba(0,0,0,0.4);
+        border: 1px solid #fff;
+        .img_pizza{
+            position: absolute;
+            top: -60%;
+        }
+        .modal-text{
+            text-align: justify;
+            font-weight: bold;
+        }
+        .close{
+            @include close();
+        }
+    }
 }

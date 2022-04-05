@@ -360,6 +360,98 @@ select:-webkit-autofill:focus {
 .window.is-active {
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
+<<<<<<< HEAD
+=======
+}
+
+.modalInfoPedido {
+  position: fixed;
+  z-index: 11000;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+  color: #fff;
+  font-family: 'Roboto light';
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.modalInfoPedido .modal {
+  position: relative;
+  width: 450px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  row-gap: 20px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid #fff;
+}
+
+.modalInfoPedido .modal .img_pizza {
+  position: absolute;
+  top: -60%;
+}
+
+.modalInfoPedido .modal .modal-text {
+  text-align: justify;
+  font-weight: bold;
+}
+
+.modalInfoPedido .modal .close {
+  width: 30px;
+  height: 30px;
+  border: 1px solid white;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-family: "verdana";
+  font-size: 1.1rem;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+>>>>>>> 7332d349feec08141e26d7245f88fb2333294563
 }
 
 @-webkit-keyframes humillo {
@@ -1133,6 +1225,7 @@ header h1 {
   background-image: radial-gradient(circle farthest-corner at 10% 20%, #e84855 0%, #e84855 90%);
   -webkit-column-gap: 5vw;
           column-gap: 5vw;
+<<<<<<< HEAD
   overflow: hidden;
   position: relative;
 }
@@ -1145,6 +1238,10 @@ header h1 {
   height: 200%;
 }
 
+=======
+}
+
+>>>>>>> 7332d349feec08141e26d7245f88fb2333294563
 .contenedor_principal #seccion_ofertas .oferta_titular img {
   height: 100%;
   z-index: 100;
@@ -1182,6 +1279,7 @@ header h1 {
   color: white;
 }
 
+<<<<<<< HEAD
 .contenedor_principal #seccion_ofertas .segundo_titular {
   color: #e84855;
   margin: 20px 0px;
@@ -1220,6 +1318,8 @@ header h1 {
   font-family: "idioma";
 }
 
+=======
+>>>>>>> 7332d349feec08141e26d7245f88fb2333294563
 .contenedor_principal #seccion_ofertas #caja_ofertas {
   width: 90%;
   height: 300px;
@@ -1451,6 +1551,7 @@ header h1 {
       -ms-flex-pack: center;
           justify-content: center;
   background-image: radial-gradient(circle farthest-corner at 10% 20%, #e84855 0%, #e84855 90%);
+<<<<<<< HEAD
   overflow: hidden;
 }
 
@@ -1461,6 +1562,10 @@ header h1 {
   height: 50%;
 }
 
+=======
+}
+
+>>>>>>> 7332d349feec08141e26d7245f88fb2333294563
 .contenedor_principal #seccion_pedido .oferta_titular .texto_oferta {
   min-width: 300px;
   width: 60%;
@@ -1997,6 +2102,7 @@ header h1 {
   background-image: radial-gradient(circle farthest-corner at 10% 20%, #e84855 0%, #e84855 90%);
 }
 
+<<<<<<< HEAD
 .contenedor_principal #seccion-concurso .oferta_titular .img_fondo {
   position: absolute;
   z-index: 90;
@@ -2005,6 +2111,8 @@ header h1 {
   height: 150%;
 }
 
+=======
+>>>>>>> 7332d349feec08141e26d7245f88fb2333294563
 .contenedor_principal #seccion-concurso .oferta_titular .oferta_caja_izda {
   width: 40%;
   height: 100%;
