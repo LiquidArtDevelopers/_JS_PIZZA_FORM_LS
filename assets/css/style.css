@@ -360,6 +360,8 @@ select:-webkit-autofill:focus {
 .window.is-active {
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
+<<<<<<< HEAD
+=======
 }
 
 .modalInfoPedido {
@@ -449,6 +451,7 @@ select:-webkit-autofill:focus {
   cursor: pointer;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
+>>>>>>> 7332d349feec08141e26d7245f88fb2333294563
 }
 
 @-webkit-keyframes humillo {
@@ -788,7 +791,6 @@ select:-webkit-autofill:focus {
 }
 
 /* VARIABLES  */
-/* $color_rojo: #A0425B; */
 @-webkit-keyframes cambio_color {
   0% {
     background-position: 0% 50%;
@@ -1183,6 +1185,7 @@ header h1 {
   /* ZONA OFERTAS */
   /* ZONA PEDIDO  */
   /* ZONA CONCURSO */
+  /* ZONA QUIENES SOMOS */
 }
 
 .contenedor_principal #seccion_ofertas {
@@ -1201,7 +1204,6 @@ header h1 {
       -ms-flex-align: center;
           align-items: center;
   background-color: white;
-  padding-top: 2px;
 }
 
 .contenedor_principal #seccion_ofertas .oferta_titular {
@@ -1223,10 +1225,26 @@ header h1 {
   background-image: radial-gradient(circle farthest-corner at 10% 20%, #e84855 0%, #e84855 90%);
   -webkit-column-gap: 5vw;
           column-gap: 5vw;
+<<<<<<< HEAD
+  overflow: hidden;
+  position: relative;
 }
 
+.contenedor_principal #seccion_ofertas .oferta_titular .img_fondo {
+  position: absolute;
+  z-index: 90;
+  opacity: 20%;
+  right: -400px;
+  height: 200%;
+}
+
+=======
+}
+
+>>>>>>> 7332d349feec08141e26d7245f88fb2333294563
 .contenedor_principal #seccion_ofertas .oferta_titular img {
   height: 100%;
+  z-index: 100;
 }
 
 .contenedor_principal #seccion_ofertas .oferta_titular .texto_oferta {
@@ -1261,6 +1279,47 @@ header h1 {
   color: white;
 }
 
+<<<<<<< HEAD
+.contenedor_principal #seccion_ofertas .segundo_titular {
+  color: #e84855;
+  margin: 20px 0px;
+}
+
+.contenedor_principal #seccion_ofertas .segundo_titular .texto_oferta {
+  max-width: 1000px;
+  min-width: 300px;
+  width: 60vw;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 10px;
+}
+
+.contenedor_principal #seccion_ofertas .segundo_titular .texto_oferta h2 {
+  font-size: 9vh;
+  font-family: "idioma";
+}
+
+.contenedor_principal #seccion_ofertas .segundo_titular .texto_oferta .subtitular {
+  border-left: 2px solid #e84855;
+  padding-left: 20px;
+  font-size: 1.8rem;
+  font-family: "idioma";
+}
+
+=======
+>>>>>>> 7332d349feec08141e26d7245f88fb2333294563
 .contenedor_principal #seccion_ofertas #caja_ofertas {
   width: 90%;
   height: 300px;
@@ -1492,11 +1551,24 @@ header h1 {
       -ms-flex-pack: center;
           justify-content: center;
   background-image: radial-gradient(circle farthest-corner at 10% 20%, #e84855 0%, #e84855 90%);
+<<<<<<< HEAD
+  overflow: hidden;
 }
 
+.contenedor_principal #seccion_pedido .oferta_titular .img_fondo {
+  position: absolute;
+  opacity: 20%;
+  right: -100px;
+  height: 50%;
+}
+
+=======
+}
+
+>>>>>>> 7332d349feec08141e26d7245f88fb2333294563
 .contenedor_principal #seccion_pedido .oferta_titular .texto_oferta {
   min-width: 300px;
-  width: 80%;
+  width: 60%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2006,6 +2078,8 @@ header h1 {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 40px;
+  position: relative;
+  overflow: hidden;
 }
 
 .contenedor_principal #seccion-concurso .oferta_titular {
@@ -2028,6 +2102,17 @@ header h1 {
   background-image: radial-gradient(circle farthest-corner at 10% 20%, #e84855 0%, #e84855 90%);
 }
 
+<<<<<<< HEAD
+.contenedor_principal #seccion-concurso .oferta_titular .img_fondo {
+  position: absolute;
+  z-index: 90;
+  opacity: 20%;
+  right: -600px;
+  height: 150%;
+}
+
+=======
+>>>>>>> 7332d349feec08141e26d7245f88fb2333294563
 .contenedor_principal #seccion-concurso .oferta_titular .oferta_caja_izda {
   width: 40%;
   height: 100%;
@@ -2041,6 +2126,7 @@ header h1 {
 
 .contenedor_principal #seccion-concurso .oferta_titular .oferta_caja_izda img {
   width: 100%;
+  z-index: 100;
 }
 
 .contenedor_principal #seccion-concurso .oferta_titular .oferta_caja_dcha {
@@ -2092,10 +2178,87 @@ header h1 {
 
 .contenedor_principal #seccion-concurso .oferta_titular .oferta_caja_dcha .grafico {
   width: 100%;
+  padding-left: 100px;
 }
 
 .contenedor_principal #seccion-concurso .oferta_titular .oferta_caja_dcha .grafico #myChart {
   max-width: 500px;
+}
+
+.contenedor_principal #seccion-cocina {
+  width: 100%;
+  background-color: white;
+  height: 700px;
+  max-width: 1920px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contenedor_principal #seccion-cocina .contenedor_tarjetas {
+  background-color: #A0425B;
+  width: 80%;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta {
+  width: 300px;
+  height: 90%;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .sup {
+  height: 60%;
+  width: 100%;
+  position: relative;
+}
+
+.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .sup img {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  border-radius: 60px 60px 0px 0px;
+}
+
+.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .inf {
+  height: 40%;
+  width: 100%;
+  background-color: azure;
 }
 
 /* footer   */

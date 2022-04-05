@@ -30,7 +30,6 @@
 
 /* VARIABLES  */
 $color_boli:rgb(51, 51, 124);
-/* $color_rojo: #A0425B; */
 $color_rojo: rgba(232,72,85,1);
 $color_verde: rgba(123,216,96,1);
 
@@ -317,7 +316,6 @@ header{
         justify-content: center;
         align-items: center;
         background-color: white;
-        padding-top: 2px;
         .oferta_titular{
             width: 100%;
             height: 45vh;
@@ -328,8 +326,18 @@ header{
             align-items: center;
             background-image: $color_fundido_rojo;
             column-gap: 5vw;
+            overflow: hidden;
+            position: relative;
+            .img_fondo {
+                position: absolute;
+                z-index: 90;
+                opacity: 20%;
+                right: -400px;
+                height: 200%;
+            }
             img{
                 height: 100%;
+                z-index: 100;
             }
             .texto_oferta{
                 max-width: 500px;
@@ -351,6 +359,31 @@ header{
                     font-size: 1.8rem;
                     font-family: "idioma";
                     color: white;
+                }
+            }        
+        }
+        .segundo_titular{
+            color: $color_rojo;
+            margin: 20px 0px;        
+            .texto_oferta{
+                max-width: 1000px;
+                min-width: 300px;
+                width: 60vw;
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                row-gap: 10px; 
+                h2{         
+                    font-size: 9vh;
+                    font-family: "idioma";
+                }
+                .subtitular{
+                    border-left: 2px solid $color_rojo;
+                    padding-left: 20px;            
+                    font-size: 1.8rem;
+                    font-family: "idioma";
                 }
             }        
         }
@@ -478,9 +511,16 @@ header{
             align-items: center;
             justify-content: center;
             background-image: $color_fundido_rojo;
+            overflow: hidden;
+            .img_fondo {
+                position: absolute;
+                opacity: 20%;
+                right: -100px;
+                height: 50%;
+            }
             .texto_oferta{                
                 min-width: 300px;
-                width: 80%;
+                width: 60%;
                 height: 100%;
                 display: flex;
                 flex-direction: column;
@@ -776,6 +816,7 @@ header{
             }
         }        
     }
+
     /* ZONA CONCURSO */
     #seccion-concurso{
         width: 100%;
@@ -785,7 +826,9 @@ header{
         justify-content: center;
         align-items: center;
         margin-top: 40px;
-        .oferta_titular{
+        position: relative;        
+        overflow: hidden;
+        .oferta_titular{            
             width: 100%;
             max-width: 1920px;           
             display: flex;
@@ -793,7 +836,14 @@ header{
             flex-direction: row;
             align-items: center;
             column-gap: 80px;
-            background-image: $color_fundido_rojo;           
+            background-image: $color_fundido_rojo;
+            .img_fondo {
+                position: absolute;
+                z-index: 90;
+                opacity: 20%;
+                right: -600px;
+                height: 150%;
+            }
             .oferta_caja_izda{
                 width: 40%;
                 height: 100%;
@@ -801,6 +851,7 @@ header{
                 align-items: center;    
                 img{
                     width: 100%;
+                    z-index: 100;
                 }
             }
             .oferta_caja_dcha{
@@ -831,6 +882,7 @@ header{
                 }
                 .grafico{
                     width: 100%;
+                    padding-left: 100px;
                     #myChart{
                         max-width: 500px;
                     }
@@ -839,6 +891,53 @@ header{
             }            
     
         }
+    }
+
+    /* ZONA QUIENES SOMOS */
+    #seccion-cocina{
+        width: 100%;
+        background-color: white;
+        height: 700px;
+        max-width: 1920px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .contenedor_tarjetas{
+            background-color: #A0425B;
+            width: 80%;
+            height: 80%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            .tarjeta{
+                width: 300px;
+                height: 90%;
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .sup{
+                    height: 60%;
+                    width: 100%;              
+                    position: relative;
+                    img{
+                        width: 100%;
+                        position: absolute;
+                        bottom: 0px;
+                        border-radius: 60px 60px 0px 0px;
+                    }
+                }
+                .inf{
+                    height: 40%;
+                    width: 100%;
+                    background-color: azure;
+                }
+            }
+        }
+
     }
 }
 /* footer   */
