@@ -1,6 +1,7 @@
 {    
     "t1":"ofertas",
-    "t2":"tu pedido",
+    "t2":"a tu gusto",
+    "t2bis":"challenger",
     "t3":"la cocina",
     "t4":"¡Elige tu pizza favorita!",
     "t5":"tamaño:",
@@ -59,6 +60,10 @@
     "t58":"queso",
     "t59":"macadamia",
     "t60":"Pasión por las pizzas artesanales",
-    "t61":"NUESTRAS OFERTAS",
-    "t62":"Cada semana te proponemos una gran variedad de ofertas en menú.<br>¡Aprovecha los mejores precios!"
+    "t61":"TODO ESTÁ PREPARADO",
+    "t62":"Experimienta el placer de nuestras pizzas a domicilio",
+    "t63":"MENÚS DE OFERTA",
+    "t64":"Aprovéchate de nuestras deliciosas combinaciones semanales al mejor precio",
+    "t65":"LA HACEMOS A TU GUSTO",
+    "t66":"Si lo prefieres, puedes configurar el menú que más te apetezca<br>¡Adelante!"
 }
