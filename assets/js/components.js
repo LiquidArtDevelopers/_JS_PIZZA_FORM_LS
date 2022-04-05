@@ -30,6 +30,15 @@ function scrollFunction() {
     }
 }
 const animateBars=()=>{
+    const nav_enlaces=`
+    <div class="nav-idiomas">
+        <ul>
+            <li><a id="eu" class="idioma" href="index.html#eu">eu</a></li>
+            <li><a id="es"class="idioma" href="index.html#es">es</a></li>
+            <li><a id="en" class="idioma" href="index.html#en">en</a></li>
+        </ul>
+    </div>
+    `;
     const $line1__bars=document.querySelector('.line1__bars-menu');
     const $line2__bars=document.querySelector('.line2__bars-menu');
     const $line3__bars=document.querySelector('.line3__bars-menu');
