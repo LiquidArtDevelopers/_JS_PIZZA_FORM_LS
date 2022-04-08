@@ -54,7 +54,7 @@ const animateBars=()=>{
         }
     }); 
 }
-const activeLink=()=>{
+function activeLink(){
     list.forEach((el)=>el.classList.remove('active'));
-        el.classList.add('active');
+        this.classList.add('active');
 };
