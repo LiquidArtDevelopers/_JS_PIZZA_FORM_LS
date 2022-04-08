@@ -1,6 +1,8 @@
+const list= document.querySelectorAll('.list');
 export default function componentes(){
     window.onscroll = function() {scrollFunction()};
     animateBars();
+    list.forEach((item)=> item.addEventListener('click',activeLink));
 }
 
 //SCRIPT SCROLL NAV-----------------
@@ -52,3 +54,7 @@ const animateBars=()=>{
         }
     }); 
 }
+const activeLink=()=>{
+    list.forEach((el)=>el.classList.remove('active'));
+        el.classList.add('active');
+};
