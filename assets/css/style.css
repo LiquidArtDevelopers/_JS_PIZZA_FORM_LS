@@ -751,9 +751,9 @@ select:-webkit-autofill:focus {
 
 .container-pedido {
   padding: 15px;
-  width: 400px;
+  width: 200px;
   height: 100px;
-  background-color: #222337;
+  background-color: #414141;
   margin: 20px;
 }
 
@@ -777,6 +777,8 @@ select:-webkit-autofill:focus {
   display: -ms-flexbox;
   display: flex;
   width: 350px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .container-pedido .doPedido ul li {
@@ -787,7 +789,7 @@ select:-webkit-autofill:focus {
   z-index: 1;
 }
 
-.container-pedido .doPedido ul li a {
+.container-pedido .doPedido ul li .box {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -807,20 +809,20 @@ select:-webkit-autofill:focus {
   font-weight: 500px;
 }
 
-.container-pedido .doPedido ul li a .icon {
+.container-pedido .doPedido ul li .box .icon {
   position: relative;
   display: block;
   line-height: 75px;
   font-size: 1.5em;
   text-align: center;
-  color: #222337;
+  color: #414141;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
-.container-pedido .doPedido ul li a .text {
+.container-pedido .doPedido ul li .box .text {
   position: absolute;
-  color: #222337;
+  color: #414141;
   font-weight: 400;
   font-size: 0.75em;
   letter-spacing: 0.05em;
@@ -831,12 +833,12 @@ select:-webkit-autofill:focus {
           transform: translateY(20px);
 }
 
-.container-pedido .doPedido ul li.active a .icon {
+.container-pedido .doPedido ul li.active .box .icon {
   -webkit-transform: translateY(-35px);
           transform: translateY(-35px);
 }
 
-.container-pedido .doPedido ul li.active a .text {
+.container-pedido .doPedido ul li.active .box .text {
   opacity: 1;
   -webkit-transform: translateY(10px);
           transform: translateY(10px);
@@ -847,9 +849,9 @@ select:-webkit-autofill:focus {
   top: -50%;
   width: 70px;
   height: 70px;
-  background: #28fc6f;
+  background: #7bd860;
   border-radius: 50%;
-  border: 6px solid #222337;
+  border: 6px solid #414141;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -863,8 +865,8 @@ select:-webkit-autofill:focus {
   height: 20px;
   background: transparent;
   border-top-right-radius: 20px;
-  -webkit-box-shadow: 0px -10px 0 0 #222337;
-          box-shadow: 0px -10px 0 0 #222337;
+  -webkit-box-shadow: 0px -10px 0 0 #414141;
+          box-shadow: 0px -10px 0 0 #414141;
 }
 
 .indicator::after {
@@ -876,8 +878,22 @@ select:-webkit-autofill:focus {
   height: 20px;
   background: transparent;
   border-top-left-radius: 20px;
-  -webkit-box-shadow: -1px -10px 0 0 #222337;
-          box-shadow: -1px -10px 0 0 #222337;
+  -webkit-box-shadow: -1px -10px 0 0 #414141;
+          box-shadow: -1px -10px 0 0 #414141;
+}
+
+.doPedido ul li:nth-child(1).active ~ .indicator {
+  -webkit-transform: translateX(calc(70px*0));
+          transform: translateX(calc(70px*0));
+}
+
+.doPedido ul li:nth-child(2).active ~ .indicator {
+  -webkit-transform: translateX(calc(70px*1));
+          transform: translateX(calc(70px*1));
+}
+
+.doPedido ul li.active .box .icon {
+  color: #fff;
 }
 
 /*************************/
