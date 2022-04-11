@@ -6,14 +6,16 @@ const expresiones = {
     nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
     apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
     correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-    telefono: /^\d{7,9}$/ // 7 a 9 numeros.
+    telefono: /^\d{7,9}$/, // 7 a 9 numeros.
+    direccion: /^[a-zA-ZÀ-ÿ\s]{1,40}$/ // Letras y espacios, pueden llevar acentos.
 }
 
 const campo={
     name:false,
     surname:false,
     email:false,
-    phone:false
+    phone:false,
+    direc:false
 }
 //Función para la llamada en app.js
 
@@ -59,6 +61,9 @@ const validarFormulario=(e)=>{
         break;
         case 'phone':
             validarCampo(expresiones.telefono,'phone',e.target.value);
+        break;
+        case 'direc':
+            validarCampo(expresiones.direccion,'direc',e.target.value);
         break;
     }
 }

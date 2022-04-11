@@ -842,16 +842,42 @@ header{
             }
         }        
     }
-
+    /* ZONA FORMULARIO */
+    #seccion_formulario{
+        width: 100%;
+        max-width: 1920px;
+        margin:  0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        .segundo_titular{
+            @include segundo_titular;
+        }
+        .contenedor_form{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background-color: #A0425B;
+            .izd{
+                width: 40%;
+                img{
+                    width: 100%;
+                }
+            }
+            .der{
+                width: 60%;
+            }
+        }
+    }
     /* ZONA CONCURSO */
-    #seccion-concurso{
+    #seccion_concurso{
         width: 100%;
         max-width: 1920px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 40px;
         position: relative;        
         overflow: hidden;
         .oferta_titular{            
@@ -920,7 +946,7 @@ header{
     }
     
     /* ZONA QUIENES SOMOS */
-    #seccion-cocina{
+    #seccion_cocina{
         width: 100%;
         background-color: white;
         max-width: 1920px;

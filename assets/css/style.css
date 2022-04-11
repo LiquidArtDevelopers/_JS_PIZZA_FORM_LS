@@ -48,6 +48,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   font-weight: bold;
+  font-family: "Idioma";
 }
 
 .form h3 {
@@ -87,7 +88,7 @@
   -webkit-transform: translateY(-150%);
           transform: translateY(-150%);
   font-size: 14px;
-  color: #2ecece;
+  color: #7bd860;
 }
 
 .form .form-group label {
@@ -138,7 +139,6 @@
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
-  font-family: 'Times New Roman';
   font-size: 18px;
   font-weight: bold;
   padding: 6px 12px;
@@ -1350,6 +1350,7 @@ header h1 {
           align-items: center;
   /* ZONA OFERTAS */
   /* ZONA PEDIDO  */
+  /* ZONA FORMULARIO */
   /* ZONA CONCURSO */
   /* ZONA QUIENES SOMOS */
 }
@@ -2214,9 +2215,10 @@ header h1 {
   font-size: 5vw;
 }
 
-.contenedor_principal #seccion-concurso {
+.contenedor_principal #seccion_formulario {
   width: 100%;
   max-width: 1920px;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2224,143 +2226,18 @@ header h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 40px;
-  position: relative;
-  overflow: hidden;
-}
-
-.contenedor_principal #seccion-concurso .oferta_titular {
-  width: 100%;
-  max-width: 1920px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-column-gap: 80px;
-          column-gap: 80px;
-  background-image: radial-gradient(circle farthest-corner at 10% 20%, #e84855 0%, #e84855 90%);
-}
-
-.contenedor_principal #seccion-concurso .oferta_titular .img_fondo {
-  position: absolute;
-  z-index: 90;
-  opacity: 20%;
-  right: -600px;
-  height: 150%;
-}
-
-.contenedor_principal #seccion-concurso .oferta_titular .oferta_caja_izda {
-  width: 40%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.contenedor_principal #seccion-concurso .oferta_titular .oferta_caja_izda img {
-  width: 100%;
-  z-index: 100;
-}
-
-.contenedor_principal #seccion-concurso .oferta_titular .oferta_caja_dcha {
-  width: 40%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  row-gap: 20px;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.contenedor_principal #seccion-concurso .oferta_titular .oferta_caja_dcha .texto_oferta {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  row-gap: 20px;
-  width: 70%;
-}
-
-.contenedor_principal #seccion-concurso .oferta_titular .oferta_caja_dcha .texto_oferta h2 {
-  font-size: 9vh;
-  font-family: "idioma";
-  color: white;
-}
-
-.contenedor_principal #seccion-concurso .oferta_titular .oferta_caja_dcha .texto_oferta .subtitular {
-  border-left: 2px solid white;
-  padding-left: 20px;
-  font-size: 1.8rem;
-  font-family: "idioma";
-  color: white;
-}
-
-.contenedor_principal #seccion-concurso .oferta_titular .oferta_caja_dcha .grafico {
-  width: 100%;
-  padding-left: 100px;
-}
-
-.contenedor_principal #seccion-concurso .oferta_titular .oferta_caja_dcha .grafico #myChart {
-  max-width: 500px;
-}
-
-.contenedor_principal #seccion-cocina {
-  width: 100%;
   background-color: white;
-  max-width: 1920px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  row-gap: 20px;
-  padding-bottom: 40px;
 }
 
-.contenedor_principal #seccion-cocina .segundo_titular {
+.contenedor_principal #seccion_formulario .segundo_titular {
   color: #e84855;
   margin: 20px 0px;
 }
 
-.contenedor_principal #seccion-cocina .segundo_titular .texto_oferta {
+.contenedor_principal #seccion_formulario .segundo_titular .texto_oferta {
   max-width: 1000px;
   min-width: 300px;
   width: 60vw;
@@ -2381,19 +2258,220 @@ header h1 {
   row-gap: 10px;
 }
 
-.contenedor_principal #seccion-cocina .segundo_titular .texto_oferta h2 {
+.contenedor_principal #seccion_formulario .segundo_titular .texto_oferta h2 {
   font-size: 9vh;
   font-family: "idioma";
 }
 
-.contenedor_principal #seccion-cocina .segundo_titular .texto_oferta .subtitular {
+.contenedor_principal #seccion_formulario .segundo_titular .texto_oferta .subtitular {
   border-left: 2px solid #e84855;
   padding-left: 20px;
   font-size: 1.8rem;
   font-family: "idioma";
 }
 
-.contenedor_principal #seccion-cocina .contenedor_tarjetas {
+.contenedor_principal #seccion_formulario .contenedor_form {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #A0425B;
+}
+
+.contenedor_principal #seccion_formulario .contenedor_form .izd img {
+  width: 100%;
+}
+
+.contenedor_principal #seccion_formulario .contenedor_form .der {
+  width: 60%;
+}
+
+.contenedor_principal #seccion_concurso {
+  width: 100%;
+  max-width: 1920px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contenedor_principal #seccion_concurso .oferta_titular {
+  width: 100%;
+  max-width: 1920px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 80px;
+          column-gap: 80px;
+  background-image: radial-gradient(circle farthest-corner at 10% 20%, #e84855 0%, #e84855 90%);
+}
+
+.contenedor_principal #seccion_concurso .oferta_titular .img_fondo {
+  position: absolute;
+  z-index: 90;
+  opacity: 20%;
+  right: -600px;
+  height: 150%;
+}
+
+.contenedor_principal #seccion_concurso .oferta_titular .oferta_caja_izda {
+  width: 40%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contenedor_principal #seccion_concurso .oferta_titular .oferta_caja_izda img {
+  width: 100%;
+  z-index: 100;
+}
+
+.contenedor_principal #seccion_concurso .oferta_titular .oferta_caja_dcha {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 20px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contenedor_principal #seccion_concurso .oferta_titular .oferta_caja_dcha .texto_oferta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  row-gap: 20px;
+  width: 70%;
+}
+
+.contenedor_principal #seccion_concurso .oferta_titular .oferta_caja_dcha .texto_oferta h2 {
+  font-size: 9vh;
+  font-family: "idioma";
+  color: white;
+}
+
+.contenedor_principal #seccion_concurso .oferta_titular .oferta_caja_dcha .texto_oferta .subtitular {
+  border-left: 2px solid white;
+  padding-left: 20px;
+  font-size: 1.8rem;
+  font-family: "idioma";
+  color: white;
+}
+
+.contenedor_principal #seccion_concurso .oferta_titular .oferta_caja_dcha .grafico {
+  width: 100%;
+  padding-left: 100px;
+}
+
+.contenedor_principal #seccion_concurso .oferta_titular .oferta_caja_dcha .grafico #myChart {
+  max-width: 500px;
+}
+
+.contenedor_principal #seccion_cocina {
+  width: 100%;
+  background-color: white;
+  max-width: 1920px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  row-gap: 20px;
+  padding-bottom: 40px;
+}
+
+.contenedor_principal #seccion_cocina .segundo_titular {
+  color: #e84855;
+  margin: 20px 0px;
+}
+
+.contenedor_principal #seccion_cocina .segundo_titular .texto_oferta {
+  max-width: 1000px;
+  min-width: 300px;
+  width: 60vw;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 10px;
+}
+
+.contenedor_principal #seccion_cocina .segundo_titular .texto_oferta h2 {
+  font-size: 9vh;
+  font-family: "idioma";
+}
+
+.contenedor_principal #seccion_cocina .segundo_titular .texto_oferta .subtitular {
+  border-left: 2px solid #e84855;
+  padding-left: 20px;
+  font-size: 1.8rem;
+  font-family: "idioma";
+}
+
+.contenedor_principal #seccion_cocina .contenedor_tarjetas {
   /* background-color: #A0425B; */
   width: 80%;
   display: -webkit-box;
@@ -2412,7 +2490,7 @@ header h1 {
           align-items: center;
 }
 
-.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta {
+.contenedor_principal #seccion_cocina .contenedor_tarjetas .tarjeta {
   width: 280px;
   height: 500px;
   z-index: 2;
@@ -2432,7 +2510,7 @@ header h1 {
   position: relative;
 }
 
-.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .humo {
+.contenedor_principal #seccion_cocina .contenedor_tarjetas .tarjeta .humo {
   position: absolute;
   opacity: 0;
   bottom: 130px;
@@ -2450,49 +2528,49 @@ header h1 {
           transform: scale(1.05);
 }
 
-.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .hm1 {
+.contenedor_principal #seccion_cocina .contenedor_tarjetas .tarjeta .hm1 {
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
 }
 
-.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .hm2 {
+.contenedor_principal #seccion_cocina .contenedor_tarjetas .tarjeta .hm2 {
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
 }
 
-.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .hm3 {
+.contenedor_principal #seccion_cocina .contenedor_tarjetas .tarjeta .hm3 {
   -webkit-animation-delay: 2s;
           animation-delay: 2s;
 }
 
-.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .hm4 {
+.contenedor_principal #seccion_cocina .contenedor_tarjetas .tarjeta .hm4 {
   -webkit-animation-delay: 3s;
           animation-delay: 3s;
 }
 
-.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .sup {
+.contenedor_principal #seccion_cocina .contenedor_tarjetas .tarjeta .sup {
   height: 60%;
   width: 100%;
   position: relative;
 }
 
-.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .sup img {
+.contenedor_principal #seccion_cocina .contenedor_tarjetas .tarjeta .sup img {
   width: 100%;
   position: absolute;
   bottom: 5px;
   border-radius: 60% 40% 60% 40%;
 }
 
-.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .sup .sobre_img {
+.contenedor_principal #seccion_cocina .contenedor_tarjetas .tarjeta .sup .sobre_img {
   /* transition:.5s;*/
 }
 
-.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .sup .sobre_img:hover {
+.contenedor_principal #seccion_cocina .contenedor_tarjetas .tarjeta .sup .sobre_img:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
 
-.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .inf {
+.contenedor_principal #seccion_cocina .contenedor_tarjetas .tarjeta .inf {
   height: 40%;
   width: 100%;
   margin-top: 20px;
@@ -2510,18 +2588,18 @@ header h1 {
   padding: 10px;
 }
 
-.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .inf .nombre {
+.contenedor_principal #seccion_cocina .contenedor_tarjetas .tarjeta .inf .nombre {
   font-size: 1.6rem;
   color: #414141;
 }
 
-.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .inf .cargo {
+.contenedor_principal #seccion_cocina .contenedor_tarjetas .tarjeta .inf .cargo {
   font-family: "Idioma";
   font-size: 1.5rem;
   color: #e84855;
 }
 
-.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .inf .resumen {
+.contenedor_principal #seccion_cocina .contenedor_tarjetas .tarjeta .inf .resumen {
   font-size: 1rem;
   color: #414141;
 }
