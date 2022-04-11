@@ -914,6 +914,10 @@ select:-webkit-autofill:focus {
           transform: translateX(calc(70px*1));
 }
 
+.doPedido ul li.active .box .icon {
+  color: #fff;
+}
+
 /*************************/
 @font-face {
   font-family: "Piazzere";
