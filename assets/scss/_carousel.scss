@@ -1,3 +1,13 @@
+@keyframes humillo {
+    from {
+        opacity: 1;
+        top: 0px;
+    }      
+    to {
+        opacity: 0;
+        top: -5px;
+    }
+}
 .carousel{
     width:100%;
     max-width: 1920px;
@@ -22,21 +32,27 @@
         position: absolute;
         bottom: 65px;
         width:100%;
-        margin:1em 0 0;
+        /* margin:1em 0 0; */
         margin-bottom: 1em;
         display: flex;
         flex-flow: row nowrap;
+        column-gap: 60px;
         justify-content: center;
         align-items: center;
         .punto{
             cursor: pointer;
             width:  1.5em;
             height: 1.5em;
-            color: #fff;
+            /* color: #fff; */
             padding-bottom: 1em;
+            img{
+                position: absolute;
+            }
+            .humo{
+                animation-duration: 2s;
+                animation-name: humillo;
+                animation-iteration-count: infinite;
+            }
         }
     }
-}
-.carousel .punto.activo{
- background-color:rgba(0,0,0,.8);
 }

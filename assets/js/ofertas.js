@@ -4,7 +4,7 @@ export default function ofertas(){
     rellenarOfertas()
 
     document.body.addEventListener("click", function(event){        
-        //escuchamos los botones del carousel de pizzas
+        //escuchamos los  botones del carousel de pizzas
         if(event.target.classList.contains("flecha")){        
             console.log("pestaña: "+ event.target.id);
             switch(event.target.id){
@@ -68,7 +68,7 @@ function rellenarOfertas(){
                     cent = String(precio).substring(pos+1,pos+3);
                 }
                 //desarrollamos el div
-                ofertaHTML = `<div id="of${contador+=1}" class="oferta"><img src="${oOferta.src}" alt=""><p class="oTexto">${oOferta.texto}</p><p class="oEuros">${eur}<span>,${cent}€</span></p></div>`
+                ofertaHTML = `<div id="of${contador+=1}" class="oferta"><img hq="${oOferta.srcHQ}" class="imgOferta" src="${oOferta.src}" alt=""><p class="oTexto">${oOferta.texto}</p><div class="anadir" data-nombre="${oOferta.texto}" data-precio="${oOferta.precio}"><img src="assets/img/varias/carritoADD.svg" alt=""></div><p class="oEuros">${eur}<span>,${cent}€</span></p></div>`
                 //escribimos el html dinámico
                 document.querySelector("#ofertas").insertAdjacentHTML("afterbegin",ofertaHTML);
             }
@@ -79,8 +79,4 @@ function rellenarOfertas(){
         //por si el json da error, le metemos precios
         console.error("ERROR", err.message)        
     });
-
 }
-
-
-

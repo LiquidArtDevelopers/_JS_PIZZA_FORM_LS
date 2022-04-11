@@ -1,6 +1,6 @@
 //SCRIPT EXCLUSIVO PARA IDIOMAS---
 
-import Cookie from "./Cookie.js";
+import Cookie from "./cookie.js";
 
 
 //Instanciamos el objeto Cookie.
@@ -57,7 +57,7 @@ function cambioIdioma(){
     .then(data =>{
         //paseamos el json
         const iJs=JSON.parse(data);
-        //recorremos las claves del json parseado
+        //recorremos las claves del json parseado 
         for (var clave in iJs){
             //si es una clave, nos quedamos con el valor
             if (iJs.hasOwnProperty(clave)) {

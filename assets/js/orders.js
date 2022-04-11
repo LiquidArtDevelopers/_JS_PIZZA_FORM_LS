@@ -1,36 +1,195 @@
+import { modalAdvetnciaPedido } from "./modales.js";
 
-let contador = 0;
-//Array para el precio donde el precio se suma de entre todos sus valores: masa[0],tipo[1], topping[2] y bebida[3].
+/**
+ * @author MDMGN & LiquidArt
+ */
+export default function pedido(){
+    //escuchamos si hay click en carrito para mostrar la nota
+    document.body.addEventListener("click", function(event){        
+        //escuchamos los  botones del carousel de pizzas
+        if(event.target.classList.contains("carrito")){        
+            //cambiamos el estilo y mostramos la nota
+            if (existe == 0){
+                $box_comprar.style.right="10px";
+                existe = 1
+            }else{
+                $box_comprar.style.right="-400px";
+                existe = 0
+            }
+        }        
+    })
+    comanda();
+    escribirPedido();
+    addToCart();
+}
+
+let contador = 0, existe = 0;
+const $box_comprar=document.querySelector('.comprar');
+const $notaPizza=document.querySelector('.list-fact');
+const nota1Sel= document.querySelector(".nota1Sel");
+const nota2Sel= document.querySelector(".nota2Sel");
+const precio = document.querySelector("#precio");
+
+//Array para el precio donde el precio se suma de entre todos sus valores: masa[0],tipo[1], topping[2], bebida[3] y varios[4].
 let ticket = [0,0,0,0,0];
 
-
-//creamos
-//creamos un objeto pedido
-const ordenPedido={
-    masa:"",
-    tipo:"",
+//Creamos el objeto Menú. Habrá varios objetos menú en una misma comanda.
+const objMenu={
+    masa:'',
+    tipo:'',
     topping:[],
     bebida:[],
     otros:[],
     precio:0,
 }
-const pedidos=[];
-
-export default function pedido(){
-    comanda();
-    escribirPedido();
+//array comanda, que se compondrá de todos los objetos menú que haya.
+let objComanda=[];
+const setObjComanda=()=>{
+    let getObjComanda=JSON.parse(localStorage.getItem('objComanda'));
+    if(getObjComanda!==null) objComanda=getObjComanda;
 }
+const updateCantidadCart=(objComanda)=>document.querySelector('.caja-cantidad p').textContent=String(objComanda.length);
+setObjComanda()
+updateCantidadCart(objComanda);
+/**
+ * Obtenemos el contenido del texto del elemento.
+ * @param {String} type Recibimos el key de tipo 'id' en String.
+ */
+const getText=(type)=> document.getElementById(type).textContent;
+/**
+ * Insertamos los datos para imprimirlos en el ticket.
+ * @returns {void}
+ */
 const escribirPedido=()=>{
-    const $notaPizza=document.querySelector('.comprar ul');
-    const $li=document.createElement('li');
-    document.addEventListener('click',(e)=>{
-        if(e.target.matches('#btn-comprar')){
-            Object.entries(ordenPedido).forEach(([key,value])=>{
-                $li.textContent+=`${key,value}`;
+    /**
+     * @type {Element} Elemento 'p' con la clase precio. 
+     */
+    const pr=document.querySelector('.precio');
+    /**
+     * @type {String} Template String para almacenar los datos del pedido en la libreta.
+     */
+    let template_fact='';
+    /**
+     * Recogemos los valores elegidos en la libreta y creamos una lista por cada uno.
+     * @param {String} ckey key of objMenu.
+     */
+    const createLiText=(ckey)=>{
+        objMenu[ckey].forEach((value,index,arr)=>{
+            if(arr[index]){
+               template_fact+=`<li> ${getText(value)}</li>`;
+            }
         });
-        $notaPizza.appendChild($li);
+    }
+    /**
+     * @type {Boolean} Alamacenamos si se hizo un click para insertarlos en la lista.
+     */
+    let click=false;
+    document.addEventListener('click',(e)=>{
+        if(e.target.matches('.carrito')){
+            Object.entries(objMenu).forEach(([key,value])=>{
+                if(value && value!==0){
+                    if(key==='masa'){
+                        template_fact="<h3>PIAZZERE<h3>";
+                        template_fact+= `<li> ${document.querySelector('.txt5').textContent.toUpperCase()} ${getText(objMenu[key])}</li>`;
+                    }
+                    if(key=='tipo') template_fact+=`<li> ${document.querySelector('.txt9').textContent.toUpperCase()}   ${getText(objMenu[key])}</li>`;
+                    if(key==='topping') createLiText(key);
+                    if(key==='bebida') createLiText(key);
+                    if(key==='otros') createLiText(key);
+                    pr.textContent=`Total: ${objMenu['precio']}€`;
+                }
+            });
+            click ? click=false : click=true;
+            click ? $notaPizza.insertAdjacentHTML('afterbegin',template_fact) : $notaPizza.textContent='';
+            template_fact='';
+        }
+    })
+ }
+ const countIngredientsComanda=()=>{
+     let count=0;
+    Object.entries(objMenu).forEach(([key,value])=>{
+        if(key==='topping'){
+            objMenu['topping'].forEach((value)=>{
+                if(value){
+                   count++
+                }
+            });
         }
     });
+    return count;
+ }
+const addToCart=()=>{
+    document.addEventListener('click',(e)=>{
+        if(e.target.matches('#addTocart')){
+            if(countIngredientsComanda()>=3){
+                setObjComanda();
+                objComanda.push(objMenu);
+                localStorage.setItem('objComanda',JSON.stringify(objComanda));
+                clearobjMenu(objMenu);
+                $notaPizza.textContent='';
+                updateCantidadCart(objComanda);
+                limpiarLibreta();
+                objComanda=[];
+            }else{
+                modalAdvetnciaPedido();
+            }
+        }
+    });
+}
+/**
+ * Limpiamos el objeto objMenu
+ * @param {Object} objMenu 
+ */
+const clearobjMenu=(objMenu)=>{
+    Object.entries(objMenu).forEach(([key,value])=>{
+        switch(key){
+            case 'masa':
+                objMenu.masa='';
+                break;
+            case 'tipo':
+                objMenu.tipo='';
+                break;
+            case 'topping':
+                objMenu.topping=[];
+                break;
+            case 'bebida':
+                objMenu.bebida=[];
+                break;
+            case 'otros':
+                objMenu.otros=[];
+                break;
+            case 'precio':
+                objMenu.precio=0;
+            break;
+        }
+       /*  key==='precio' ? objMenu[key]=0 : delete objMenu[key]; */
+    })
+}
+
+/* limpiamos la libreta de marcas */
+const limpiarLibreta=()=>{
+    //borramos marcas de libreta 2 y 3
+    for(const seleccionesBoli of document.querySelectorAll(".selectBoli")){
+        console.log(seleccionesBoli);
+        while (seleccionesBoli.firstChild) {
+            seleccionesBoli.removeChild(seleccionesBoli.firstChild);
+        }        
+    }
+    //borramos marcas de libreta 1
+    for(const seleccionesIng of document.querySelectorAll(".nota3Sel")){
+        seleccionesIng.remove()
+    }
+    //borramos todos los ingredientes de la pizza
+    for(const ingr of document.querySelectorAll(".ingr")){
+        ingr.remove()
+    }
+    //ocultamos las marcas alternas
+    nota1Sel.style.display="none";
+    nota2Sel.style.display="none";
+    ticket = [0,0,0,0,0];
+    precio.innerHTML="";
+
+    
 
 }
 
@@ -74,8 +233,7 @@ fetch("assets/json/precios.json")
 
 console.log(precioFam)
 
-function comanda(){    
-
+function comanda(){
     
     document.body.addEventListener("click", function(event){
 
@@ -84,7 +242,6 @@ function comanda(){
             console.log("pestaña: "+ event.target.id);
             cambiar_hoja(event.target.id);  
         }
-
         //escuchamos la hoja de pedido de pizza
         //tamaño
         if(event.target.classList.contains("nota1")){        
@@ -93,7 +250,7 @@ function comanda(){
         }
 
         //tipo masa
-        if(event.target.classList.contains("nota2")){        
+        if(event.target.classList.contains("nota2")){     
             console.log("tipo: "+ event.target.id);
             insertar_comanda(event.target.id);          
         }
@@ -115,7 +272,26 @@ function comanda(){
             insertar_comanda3(event.target.id);        
         }
 
-        //si hay click en la marca de ingrediente seleccionado, quitamos html de la marca
+        //si hay click en la marca de tamaño, quitamos html de la marca
+        if(event.target.classList.contains("nota1Sel")){
+            //Quitamos círculo que marca tamaño
+            console.log("Quitamos tamaño: "+ event.target.id);
+            document.querySelector(`#${event.target.id}`).style.display="none";
+            ticket[0]=0;
+            objMenu.masa=''
+            calcTicket();            
+        }
+        //si hay click en la marca de tipo de masa, quitamos html de la marca
+        if(event.target.classList.contains("nota2Sel")){
+            //Quitamos círculo que marca de tipo de masa
+            console.log("Quitamos tipo: "+ event.target.id);
+            document.querySelector(`#${event.target.id}`).style.display="none";
+            ticket[1]=0;
+            objMenu.tipo=''
+            calcTicket();            
+        }
+
+       //si hay click en la marca de ingrediente seleccionado, quitamos html de la marca
         if(event.target.classList.contains("nota3Sel")){
 
             //Quitamos ralla de ingrediente
@@ -129,9 +305,9 @@ function comanda(){
             ticket[2]-=precioTpp;
             
             //Quitamos topping del ticket
-            let myIndex = ordenPedido['topping'].indexOf(idt);
+            let myIndex = objMenu['topping'].indexOf(idt);
             if (myIndex !== -1) {
-                ordenPedido['topping'].splice(myIndex, 1);
+                objMenu['topping'].splice(myIndex, 1);
             }   
 
             //si existe topping de queso rallado y el contador es =< que 2, quitamos el queso-rallado
@@ -141,20 +317,17 @@ function comanda(){
             calcTicket();           
         }
 
-        //si hay click en la marca de bebidas, quitamos html de la marca (pendiente añadir más cantidad)
+        //si hay click en la marca de bebidas, quitamos html de la marca
         if(event.target.classList.contains("nota4Sel")){
-
             //Quitamos ralla de ingrediente
             console.log("Quitamos bebida: "+ event.target.id);
             document.querySelector(`#${event.target.id}`).remove();
-            ticket[3]-=precioRef;          
-            
+            ticket[3]-=precioRef;
             calcTicket();            
         }
 
         //si hay click en la marca de otros, quitamos html de la marca (pendiente añadir más cantidad)
         if(event.target.classList.contains("nota5Sel")){
-
             //Quitamos ralla de ingrediente
             console.log("Quitamos complemento: "+ event.target.id);
             document.querySelector(`#${event.target.id}`).remove();
@@ -189,11 +362,6 @@ function cambiar_hoja(hoja){
 }
 
 function insertar_comanda(com){
-
-    const nota1Sel= document.querySelector(".nota1Sel");
-    const nota2Sel= document.querySelector(".nota2Sel");
-    const selecciones = document.querySelector("#selecciones");
-    const resultado = document.querySelector("#resultado");
     
     contador=Number(contador);
     switch(com){
@@ -202,21 +370,21 @@ function insertar_comanda(com){
             nota1Sel.style.display="block";
             nota1Sel.style.top="205px";
             nota1Sel.style.left="19px";
-            ordenPedido['masa']  = com;
-            ticket[0]=precioPeq;   
+            objMenu['masa']  = com;
+            ticket[0]=precioPeq;
             break;
         case "med":
             nota1Sel.style.display="block";
             nota1Sel.style.top="205px";
             nota1Sel.style.left="160px";
-            ordenPedido['masa']  = com;
+            objMenu['masa']  = com;
             ticket[0]=precioMed;
             break;
         case "fam":
             nota1Sel.style.display="block";
             nota1Sel.style.top="202px";
             nota1Sel.style.left="312px";
-            ordenPedido['masa']  = com;
+            objMenu['masa']  = com;
             ticket[0]=precioFam;
             break;
         //marcamos tipo de masa
@@ -224,21 +392,21 @@ function insertar_comanda(com){
             nota2Sel.style.display="block";
             nota2Sel.style.top="340px";
             nota2Sel.style.left="10px";
-            ordenPedido['tipo']  = com;
+            objMenu['tipo']  = com;
             ticket[1]=precioFin;
             break;        
         case "gru":
             nota2Sel.style.display="block";
             nota2Sel.style.top="340px";
             nota2Sel.style.left="125px";
-            ordenPedido['tipo']  = com;
+            objMenu['tipo']  = com;
             ticket[1]=precioGru;
             break;
         case "cqu":
             nota2Sel.style.display="block";
             nota2Sel.style.top="340px";
             nota2Sel.style.left="299px";
-            ordenPedido['tipo']  = com;
+            objMenu['tipo']  = com;
             ticket[1]=precioCqu;
             break;
         //marcamos (o desmarcamos)m ingredientes
@@ -253,75 +421,77 @@ function insertar_comanda(com){
                         topP ="445px";
                         leftP = "45px";                        
                         indexxx=2;
-                        topping+=`<img id="t1" src="assets/img/pizza/extra-queso.png" alt="">`;
-                        ordenPedido['topping'].push(com);
+                        topping+=`<img id="t1" class="ingr" src="assets/img/pizza/extra-queso.png" alt="">`;
+                        objMenu['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
                     case "2":
                         topP ="445px";
                         leftP = "175px";
                         indexxx=3;
-                        topping+=`<img id="t2" src="assets/img/pizza/queso-cabra.png" alt="">`;
-                        ordenPedido['topping'].push(com);
+                        topping+=`<img id="t2" class="ingr" src="assets/img/pizza/queso-cabra.png" alt="">`;
+                        objMenu['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
                     case "3":
                         topP ="435px";
                         leftP = "330px";
                         indexxx=5;
-                        topping+=`<img id="t3" src="assets/img/pizza/aceitunas.png" alt="">`;
-                        ordenPedido['topping'].push(com);
+                        topping+=`<img id="t3" class="ingr" src="assets/img/pizza/aceitunas.png" alt="">`;
+                        objMenu['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
                     case "4":
                         topP ="530px";
                         leftP = "50px";
                         indexxx=8;
-                        topping+=`<img id="t4" src="assets/img/pizza/pimiento-rojo.png" alt="">`;
-                        ordenPedido['topping'].push(com);
+                        topping+=`<img id="t4" class="ingr" src="assets/img/pizza/pimiento-rojo.png" alt="">`;
+                        objMenu['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
                     case "5":
                         topP ="530px";
                         leftP = "190px";
                         indexxx=6;
-                        topping+=`<img id="t5" src="assets/img/pizza/pimiento-verde.png" alt="">`;
-                        ordenPedido['topping'].push(com);
+                        topping+=`<img id="t5" class="ingr" src="assets/img/pizza/pimiento-verde.png" alt="">`;
+                        objMenu['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
                     case "6":
                         topP ="530px";
                         leftP = "345px";
                         indexxx=4;
-                        topping+=`<img id="t6" src="assets/img/pizza/salami.png" alt="">`;
-                        ordenPedido['topping'].push(com);
+                        topping+=`<img id="t6" class="ingr" src="assets/img/pizza/salami.png" alt="">`;
+                        objMenu['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
                     case "7":
                         topP ="605px";
                         leftP = "55px";
                         indexxx=10;
-                        topping+=`<img id="t7" src="assets/img/pizza/champis.png" alt="">`;
-                        ordenPedido['topping'].push(com);
+                        topping+=`<img id="t7" class="ingr" src="assets/img/pizza/champis.png" alt="">`;
+                        objMenu['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
                     case "8":
                         topP ="605px";
                         leftP = "200px";
                         indexxx=7;
-                        topping+=`<img id="t8" src="assets/img/pizza/cebolla.png" alt="">`;
-                        ordenPedido['topping'].push(com);
+                        topping+=`<img id="t8" class="ingr" src="assets/img/pizza/cebolla.png" alt="">`;
+                        objMenu['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
                     case "9":
                         topP ="605px";
                         leftP = "340px";
                         indexxx=9;
-                        topping+=`<img id="t9" src="assets/img/pizza/bacon.png" alt="">`;
-                        ordenPedido['topping'].push(com);
+                        topping+=`<img id="t9" class="ingr" src="assets/img/pizza/bacon.png" alt="">`;
+                        objMenu['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;                    
-                }                
+                }
+                const selecciones = document.querySelector("#selecciones");
+                const resultado = document.querySelector("#resultado");      
                 //Insertamos HTML y cambiamos Style de las marcas
                 etiquetas+=`<img id="i${com}" src="assets/img/pizza/select-ing.png" class="nota3Sel${com} nota3Sel" alt="">`            
                 selecciones.insertAdjacentHTML('beforeend',etiquetas);
@@ -337,7 +507,7 @@ function insertar_comanda(com){
                 contador+=1
                 console.log(contador)
                 if(contador==3){
-                    let topping2=`<img id="t10" src="assets/img/pizza/queso-rallado.png" alt="">`;
+                    let topping2=`<img id="t10" class="ingr" src="assets/img/pizza/queso-rallado.png" alt="">`;
                     indexxx=11;
                     resultado.insertAdjacentHTML('beforeend',topping2);
                     document.querySelector("#t10").style.display="block";
@@ -361,86 +531,86 @@ function insertar_comanda2(com){
         case "agu":
             topP ="190px";
             leftP = "50px";            
-            ordenPedido['bebida'].push(com);
+            objMenu['bebida'].push(com);
             ticket[3]+=precioRef;
             break;
         case "aguG":
             topP ="190px";
             leftP = "240px";
-            ordenPedido['bebida'].push(com);
+            objMenu['bebida'].push(com);
             ticket[3]+=precioRef;
             break;
         //marcamos cervezas        
         case "cKel":
             topP ="315px";
             leftP = "35px";
-            ordenPedido['bebida'].push(com);
+            objMenu['bebida'].push(com);
             ticket[3]+=precioRef;
             break;        
         case "cEga":
             topP ="315px";
             leftP = "150px";
-            ordenPedido['bebida'].push(com);
+            objMenu['bebida'].push(com);
             ticket[3]+=precioRef;
             break;
         case "cSN":
             topP ="315px";
             leftP = "299px";
-            ordenPedido['bebida'].push(com);
+            objMenu['bebida'].push(com);
             ticket[3]+=precioRef;
             break;
         case "b1":
             topP ="445px";
             leftP = "40px";
-            ordenPedido['bebida'].push(com);
+            objMenu['bebida'].push(com);
             ticket[3]+=precioRef;
             break;
         case "b2":
             topP ="445px";
             leftP = "170px";
-            ordenPedido['bebida'].push(com);
+            objMenu['bebida'].push(com);
             ticket[3]+=precioRef;
             break;
         case "b3":
             topP ="445px";
             leftP = "305px";
-            ordenPedido['bebida'].push(com);
+            objMenu['bebida'].push(com);
             ticket[3]+=precioRef;
             break;
         case "b4":
             topP ="525px";
             leftP = "50px";
-            ordenPedido['bebida'].push(com);
+            objMenu['bebida'].push(com);
             ticket[3]+=precioRef;
             break;
         case "b5":
             topP ="525px";
             leftP = "195px";
-            ordenPedido['bebida'].push(com);
+            objMenu['bebida'].push(com);
             ticket[3]+=precioRef;
             break;
         case "b6":
             topP ="525px";
             leftP = "345px";
-            ordenPedido['bebida'].push(com);
+            objMenu['bebida'].push(com);
             ticket[3]+=precioRef;
             break;
         case "b7":
             topP ="605px";
             leftP = "55px";
-            ordenPedido['bebida'].push(com);
+            objMenu['bebida'].push(com);
             ticket[3]+=precioRef;
             break;
         case "b8":
             topP ="605px";
             leftP = "195px";
-            ordenPedido['bebida'].push(com);
+            objMenu['bebida'].push(com);
             ticket[3]+=precioRef;
             break;
         case "b9":
             topP ="605px";
             leftP = "345px";
-            ordenPedido['bebida'].push(com);
+            objMenu['bebida'].push(com);
             ticket[3]+=precioRef;     
             break;     
     }
@@ -470,92 +640,92 @@ function insertar_comanda3(com){
         case "oPfi":
             topP ="180px";
             leftP = "30px";            
-            ordenPedido['otros'].push(com);
+            objMenu['otros'].push(com);
             ticket[4]+=precioOtr;
             break;
         case "oPde":
             topP ="180px";
             leftP = "150px";
-            ordenPedido['otros'].push(com);
+            objMenu['otros'].push(com);
             ticket[4]+=precioOtr;
             break;
         case "oPcq":
             topP ="180px";
             leftP = "312px";
-            ordenPedido['otros'].push(com);
+            objMenu['otros'].push(com);
             ticket[4]+=precioOtr;            
             break;
         //marcamos cervezas        
         case "oPol":
             topP ="315px";
             leftP = "50px";
-            ordenPedido['otros'].push(com);
+            objMenu['otros'].push(com);
             ticket[4]+=precioOtr;
             break;        
         case "oAce":
             topP ="315px";
             leftP = "190px";
-            ordenPedido['otros'].push(com);
+            objMenu['otros'].push(com);
             ticket[4]+=precioOtr;
             break;
         case "oNug":
             topP ="315px";
             leftP = "350px";
-            ordenPedido['otros'].push(com);
+            objMenu['otros'].push(com);
             ticket[4]+=precioOtr;
             break;
         case "oH1":
             topP ="430px";
             leftP = "60px";
-            ordenPedido['otros'].push(com);
+            objMenu['otros'].push(com);
             ticket[4]+=precioOtr;
             break;
         case "oH2":
             topP ="430px";
             leftP = "190px";
-            ordenPedido['otros'].push(com);
+            objMenu['otros'].push(com);
             ticket[4]+=precioOtr;
             break;
         case "oH3":
             topP ="430px";
             leftP = "340px";
-            ordenPedido['otros'].push(com);
+            objMenu['otros'].push(com);
             ticket[4]+=precioOtr;
             break;
         case "oH4":
             topP ="525px";
             leftP = "55px";
-            ordenPedido['otros'].push(com);
+            objMenu['otros'].push(com);
             ticket[4]+=precioOtr;
             break;
         case "oH5":
             topP ="525px";
             leftP = "200px";
-            ordenPedido['otros'].push(com);
+            objMenu['otros'].push(com);
             ticket[4]+=precioOtr;
             break;
         case "oH6":
             topP ="525px";
             leftP = "345px";
-            ordenPedido['otros'].push(com);
+            objMenu['otros'].push(com);
             ticket[4]+=precioOtr;
             break;
         case "oH7":
             topP ="605px";
             leftP = "40px";
-            ordenPedido['otros'].push(com);
+            objMenu['otros'].push(com);
             ticket[4]+=precioOtr;
             break;
         case "oH8":
             topP ="605px";
             leftP = "160px";
-            ordenPedido['otros'].push(com);
+            objMenu['otros'].push(com);
             ticket[4]+=precioOtr;
             break;
         case "oH9":
             topP ="605px";
             leftP = "310px";
-            ordenPedido['otros'].push(com);
+            objMenu['otros'].push(com);
             ticket[4]+=precioOtr;
             break;     
     }
@@ -581,9 +751,8 @@ function calcTicket(){
     for (let i = 0; i < ticket.length; i++) {
         sum += ticket[i];
     }
-    console.log(ordenPedido);
+    console.log(objMenu);
     console.log(sum);
-
     let eur = "", cent = "";
     let pos = 0
     if(String(sum).indexOf(".")==-1){
@@ -595,18 +764,10 @@ function calcTicket(){
         eur = String(sum).substring(0,pos);
         cent = String(sum).substring(pos+1,pos+2)+"0";
     }
-    //Agregar ordenPedido al array pedido.
-    pedidos.push(ordenPedido);
     console.log("Total: "+sum+" Euros: "+eur+" Cent: "+cent)
     
     let precioHtml = `<p id="preci">${eur}<span>,${cent}€</span></p>`;
-    document.querySelector("#precio").innerHTML = precioHtml; 
+    precio.innerHTML = precioHtml; 
+    objMenu['precio']=sum;
 
 }
-
-
-
-
-
-
-
