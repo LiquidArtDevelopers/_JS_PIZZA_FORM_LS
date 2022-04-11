@@ -360,8 +360,6 @@ select:-webkit-autofill:focus {
 .window.is-active {
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
-<<<<<<< HEAD
-=======
 }
 
 .modalInfoPedido {
@@ -451,7 +449,6 @@ select:-webkit-autofill:focus {
   cursor: pointer;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
->>>>>>> 7332d349feec08141e26d7245f88fb2333294563
 }
 
 @-webkit-keyframes humillo {
@@ -774,6 +771,137 @@ select:-webkit-autofill:focus {
           transform: translate(0, 0) !important;
 }
 
+.container-pedido {
+  padding: 15px;
+  width: 400px;
+  height: 100px;
+  background-color: #222337;
+  margin: 20px;
+}
+
+.container-pedido .doPedido {
+  position: relative;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+}
+
+.container-pedido .doPedido ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 350px;
+}
+
+.container-pedido .doPedido ul li {
+  position: relative;
+  list-style-type: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+
+.container-pedido .doPedido ul li a {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  text-align: center;
+  font-weight: 500px;
+}
+
+.container-pedido .doPedido ul li a .icon {
+  position: relative;
+  display: block;
+  line-height: 75px;
+  font-size: 1.5em;
+  text-align: center;
+  color: #222337;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.container-pedido .doPedido ul li a .text {
+  position: absolute;
+  color: #222337;
+  font-weight: 400;
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+}
+
+.container-pedido .doPedido ul li.active a .icon {
+  -webkit-transform: translateY(-35px);
+          transform: translateY(-35px);
+}
+
+.container-pedido .doPedido ul li.active a .text {
+  opacity: 1;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+.indicator {
+  position: absolute;
+  top: -50%;
+  width: 70px;
+  height: 70px;
+  background: #28fc6f;
+  border-radius: 50%;
+  border: 6px solid #222337;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.indicator::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border-top-right-radius: 20px;
+  -webkit-box-shadow: 0px -10px 0 0 #222337;
+          box-shadow: 0px -10px 0 0 #222337;
+}
+
+.indicator::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -22px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border-top-left-radius: 20px;
+  -webkit-box-shadow: -1px -10px 0 0 #222337;
+          box-shadow: -1px -10px 0 0 #222337;
+}
+
 /*************************/
 @font-face {
   font-family: "Piazzere";
@@ -811,6 +939,17 @@ select:-webkit-autofill:focus {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes humillo {
+  from {
+    opacity: 1;
+    bottom: 130px;
+  }
+  to {
+    opacity: 0;
+    bottom: 170px;
   }
 }
 
@@ -1225,7 +1364,6 @@ header h1 {
   background-image: radial-gradient(circle farthest-corner at 10% 20%, #e84855 0%, #e84855 90%);
   -webkit-column-gap: 5vw;
           column-gap: 5vw;
-<<<<<<< HEAD
   overflow: hidden;
   position: relative;
 }
@@ -1238,10 +1376,6 @@ header h1 {
   height: 200%;
 }
 
-=======
-}
-
->>>>>>> 7332d349feec08141e26d7245f88fb2333294563
 .contenedor_principal #seccion_ofertas .oferta_titular img {
   height: 100%;
   z-index: 100;
@@ -1279,7 +1413,6 @@ header h1 {
   color: white;
 }
 
-<<<<<<< HEAD
 .contenedor_principal #seccion_ofertas .segundo_titular {
   color: #e84855;
   margin: 20px 0px;
@@ -1318,8 +1451,6 @@ header h1 {
   font-family: "idioma";
 }
 
-=======
->>>>>>> 7332d349feec08141e26d7245f88fb2333294563
 .contenedor_principal #seccion_ofertas #caja_ofertas {
   width: 90%;
   height: 300px;
@@ -1551,7 +1682,6 @@ header h1 {
       -ms-flex-pack: center;
           justify-content: center;
   background-image: radial-gradient(circle farthest-corner at 10% 20%, #e84855 0%, #e84855 90%);
-<<<<<<< HEAD
   overflow: hidden;
 }
 
@@ -1562,10 +1692,6 @@ header h1 {
   height: 50%;
 }
 
-=======
-}
-
->>>>>>> 7332d349feec08141e26d7245f88fb2333294563
 .contenedor_principal #seccion_pedido .oferta_titular .texto_oferta {
   min-width: 300px;
   width: 60%;
@@ -2102,7 +2228,6 @@ header h1 {
   background-image: radial-gradient(circle farthest-corner at 10% 20%, #e84855 0%, #e84855 90%);
 }
 
-<<<<<<< HEAD
 .contenedor_principal #seccion-concurso .oferta_titular .img_fondo {
   position: absolute;
   z-index: 90;
@@ -2111,8 +2236,6 @@ header h1 {
   height: 150%;
 }
 
-=======
->>>>>>> 7332d349feec08141e26d7245f88fb2333294563
 .contenedor_principal #seccion-concurso .oferta_titular .oferta_caja_izda {
   width: 40%;
   height: 100%;
@@ -2206,7 +2329,7 @@ header h1 {
 }
 
 .contenedor_principal #seccion-cocina .contenedor_tarjetas {
-  background-color: #A0425B;
+  /* background-color: #A0425B; */
   width: 80%;
   height: 80%;
   display: -webkit-box;
@@ -2224,9 +2347,10 @@ header h1 {
 }
 
 .contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta {
-  width: 300px;
+  width: 280px;
   height: 90%;
   background-color: white;
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2240,25 +2364,102 @@ header h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+}
+
+.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .humo {
+  position: absolute;
+  opacity: 0;
+  bottom: 130px;
+  right: -20px;
+  z-index: 100;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-name: humillo;
+          animation-name: humillo;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-filter: invert(45%) sepia(11%) saturate(18%) hue-rotate(27deg) brightness(92%) contrast(96%);
+          filter: invert(45%) sepia(11%) saturate(18%) hue-rotate(27deg) brightness(92%) contrast(96%);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .hm1 {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .hm2 {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .hm3 {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .hm4 {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
 }
 
 .contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .sup {
   height: 60%;
   width: 100%;
   position: relative;
+  background-color: white;
 }
 
 .contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .sup img {
   width: 100%;
   position: absolute;
-  bottom: 0px;
-  border-radius: 60px 60px 0px 0px;
+  bottom: 5px;
+  border-radius: 60% 40% 60% 40%;
+}
+
+.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .sup .sobre_img {
+  /* transition:.5s; */
+}
+
+.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .sup .sobre_img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .inf {
   height: 40%;
   width: 100%;
-  background-color: azure;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 10px;
+  font-family: "Piazzere";
+  text-align: center;
+  border: 2px dashed #414141;
+  padding: 10px;
+}
+
+.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .inf .nombre {
+  font-size: 1.6rem;
+  color: #414141;
+}
+
+.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .inf .cargo {
+  font-family: "Idioma";
+  font-size: 1.5rem;
+  color: #e84855;
+}
+
+.contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .inf .resumen {
+  font-size: 1rem;
+  color: #414141;
 }
 
 /* footer   */
