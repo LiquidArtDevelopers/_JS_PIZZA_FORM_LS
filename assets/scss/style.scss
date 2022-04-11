@@ -76,18 +76,15 @@ $opacidad_humo: 0;
 html{
     scroll-behavior: smooth;
 }
-
-@mixin fondo{      
-      
+@mixin fondo{            
     background-image: url("../img/logos/Entramado_reverso.svg");
     background-attachment: fixed;
     background-color: $color_rojo;
-    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;    
-    transition: all 500ms ease-in-out;    
+    transition: all 500ms ease-in-out;
 }
 @mixin boton_anadir{    
         position: absolute;
@@ -141,28 +138,24 @@ html{
     }
 }
 body{
-    @include fondo    
+    @include fondo;
 }
 
 .cambio_fondo{
     background-color: $color_verde;
-    /* background-image: url("../img/logos/Entramado_verde.svg")!important; */
     background-attachment: fixed;
     transition: all 700ms;    
 }
 .cambio_fondo2{
     background-color: $color_rojo;
-   /*  background-image: url("../img/logos/Entramado_azul.svg")!important; */
     background-attachment: fixed;
     transition: all 700ms;
 }
 .cambio_fondo3{
-    /* background-image: url("../img/logos/Entramado_blanco.svg")!important; */
     background-color: $color_verde;
     background-attachment: fixed;
     transition: all 700ms;
 }
-
 
 .preload{ 
     @include fondo;
@@ -328,7 +321,7 @@ body{
 header{
     max-width: 1920px;
     width: 100%;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -350,9 +343,9 @@ header{
 }
 /* CONTENEDOR PRINCIPAL */
 .contenedor_principal{
+    width: 100%;    
     max-width: 1920px;
-    width: 100%;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -846,25 +839,28 @@ header{
     #seccion_formulario{
         width: 100%;
         max-width: 1920px;
-        margin:  0 auto;
+        /* margin:  0 auto; */
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: center;        
         background-color: white;
         .segundo_titular{
             @include segundo_titular;
         }
         .contenedor_form{
-            width: 100%;
+            width: 80%;
             display: flex;
             flex-direction: row;
             align-items: center;
-            background-color: #494244;
+            background-color: beige;
             .izd{
+                background-color: #A0425B;
                 width: 40%;
-                
+                display: flex;
+                justify-content: end;      
             }
             .der{
+                background-color: aqua;
                 width: 60%;
             }
         }
@@ -947,8 +943,8 @@ header{
     /* ZONA QUIENES SOMOS */
     #seccion_cocina{
         width: 100%;
-        background-color: white;
         max-width: 1920px;
+        background-color: white;
         display: flex;
         flex-direction: column;
         align-items: center;

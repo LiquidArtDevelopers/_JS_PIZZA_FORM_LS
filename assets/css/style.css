@@ -41,7 +41,7 @@
 }
 
 .form {
-  margin: 50px auto;
+  margin: 0px auto;
   width: 40vw;
   min-width: 500px;
   padding: 50px;
@@ -108,7 +108,7 @@
   bottom: -1px;
   width: 100%;
   height: 100%;
-  border-bottom: 3px solid #2ecece;
+  border-bottom: 3px solid #7bd860;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
   -webkit-transition: all 0.3s ease;
@@ -129,11 +129,10 @@
 }
 
 .btn-submit {
-  -webkit-box-shadow: 0px 10px 14px -7px #3e7327;
-          box-shadow: 0px 10px 14px -7px #3e7327;
+  /* box-shadow: 0px 10px 14px -7px #3e7327; */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #77b55a), to(#72b352));
   background: linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
-  background-color: #77b55a;
+  background-color: #7bd860;
   border-radius: 4px;
   border: 1px solid #4b8f29;
   display: inline-block;
@@ -152,7 +151,7 @@
   background-color: #72b352;
 }
 
-.btn-submit::active {
+.btn-submit:active {
   position: relative;
   top: 1px;
 }
@@ -175,7 +174,7 @@
 }
 
 #formulario__mensaje-successful {
-  background-color: rgba(0, 128, 0, 0.5);
+  background-color: #7bd860;
   padding: 15px;
   margin-top: 7px;
   text-align: center;
@@ -544,7 +543,7 @@ select:-webkit-autofill:focus {
   transition: 400ms;
   width: 400px;
   height: 465px;
-  margin: 150px auto 0;
+  /* margin: 150px auto 0; */
   border-radius: 10px;
   background: #FBFBFB;
   -webkit-box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.5);
@@ -988,7 +987,6 @@ body {
   background-image: url("../img/logos/Entramado_reverso.svg");
   background-attachment: fixed;
   background-color: #e84855;
-  background-attachment: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1008,7 +1006,6 @@ body {
 
 .cambio_fondo {
   background-color: #7bd860;
-  /* background-image: url("../img/logos/Entramado_verde.svg")!important; */
   background-attachment: fixed;
   -webkit-transition: all 700ms;
   transition: all 700ms;
@@ -1016,14 +1013,12 @@ body {
 
 .cambio_fondo2 {
   background-color: #e84855;
-  /*  background-image: url("../img/logos/Entramado_azul.svg")!important; */
   background-attachment: fixed;
   -webkit-transition: all 700ms;
   transition: all 700ms;
 }
 
 .cambio_fondo3 {
-  /* background-image: url("../img/logos/Entramado_blanco.svg")!important; */
   background-color: #7bd860;
   background-attachment: fixed;
   -webkit-transition: all 700ms;
@@ -1034,7 +1029,6 @@ body {
   background-image: url("../img/logos/Entramado_reverso.svg");
   background-attachment: fixed;
   background-color: #e84855;
-  background-attachment: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1303,7 +1297,7 @@ body {
 header {
   max-width: 1920px;
   width: 100%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1335,9 +1329,9 @@ header h1 {
 
 /* CONTENEDOR PRINCIPAL */
 .contenedor_principal {
-  max-width: 1920px;
   width: 100%;
-  margin: 0 auto;
+  max-width: 1920px;
+  /* margin: 0 auto; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2218,7 +2212,7 @@ header h1 {
 .contenedor_principal #seccion_formulario {
   width: 100%;
   max-width: 1920px;
-  margin: 0 auto;
+  /* margin:  0 auto; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2282,14 +2276,22 @@ header h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #A0425B;
+  background-color: beige;
 }
 
-.contenedor_principal #seccion_formulario .contenedor_form .izd img {
-  width: 100%;
+.contenedor_principal #seccion_formulario .contenedor_form .izd {
+  background-color: #A0425B;
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
 }
 
 .contenedor_principal #seccion_formulario .contenedor_form .der {
+  background-color: aqua;
   width: 60%;
 }
 
@@ -2415,8 +2417,8 @@ header h1 {
 
 .contenedor_principal #seccion_cocina {
   width: 100%;
-  background-color: white;
   max-width: 1920px;
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
