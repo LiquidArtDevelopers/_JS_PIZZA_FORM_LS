@@ -2420,7 +2420,7 @@ header h1 {
 }
 
 .contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .sup .sobre_img {
-  /* transition:.5s; */
+  /* transition:.5s;  */
 }
 
 .contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .sup .sobre_img:hover {
