@@ -1,13 +1,4 @@
-@keyframes humillo {
-    from {
-        opacity: 1;
-        top: 0px;
-    }      
-    to {
-        opacity: 0;
-        top: -5px;
-    }
-}
+
 .carousel{
     width:100%;
     max-width: 1920px;
@@ -50,7 +41,7 @@
             }
             .humo{
                 animation-duration: 2s;
-                animation-name: humillo;
+                animation-name: humilloCab;
                 animation-iteration-count: infinite;
             }
         }

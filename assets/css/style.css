@@ -451,28 +451,6 @@ select:-webkit-autofill:focus {
   transition: all 300ms ease-in-out;
 }
 
-@-webkit-keyframes humillo {
-  from {
-    opacity: 1;
-    top: 0px;
-  }
-  to {
-    opacity: 0;
-    top: -5px;
-  }
-}
-
-@keyframes humillo {
-  from {
-    opacity: 1;
-    top: 0px;
-  }
-  to {
-    opacity: 0;
-    top: -5px;
-  }
-}
-
 .carousel {
   width: 100%;
   max-width: 1920px;
@@ -546,8 +524,8 @@ select:-webkit-autofill:focus {
 .carousel .puntos .punto .humo {
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
-  -webkit-animation-name: humillo;
-          animation-name: humillo;
+  -webkit-animation-name: humilloCab;
+          animation-name: humilloCab;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
@@ -939,6 +917,39 @@ select:-webkit-autofill:focus {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@-webkit-keyframes humilloCab {
+  from {
+    opacity: 1;
+    bottom: -50px;
+  }
+  to {
+    opacity: 0;
+    bottom: -30px;
+  }
+}
+
+@keyframes humilloCab {
+  from {
+    opacity: 1;
+    bottom: -50px;
+  }
+  to {
+    opacity: 0;
+    bottom: -30px;
+  }
+}
+
+@-webkit-keyframes humillo {
+  from {
+    opacity: 1;
+    bottom: 130px;
+  }
+  to {
+    opacity: 0;
+    bottom: 170px;
   }
 }
 
@@ -2311,8 +2322,33 @@ header h1 {
 .contenedor_principal #seccion-cocina {
   width: 100%;
   background-color: white;
-  height: 700px;
   max-width: 1920px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  row-gap: 20px;
+  padding-bottom: 40px;
+}
+
+.contenedor_principal #seccion-cocina .segundo_titular {
+  color: #e84855;
+  margin: 20px 0px;
+}
+
+.contenedor_principal #seccion-cocina .segundo_titular .texto_oferta {
+  max-width: 1000px;
+  min-width: 300px;
+  width: 60vw;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2326,12 +2362,24 @@ header h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  row-gap: 10px;
+}
+
+.contenedor_principal #seccion-cocina .segundo_titular .texto_oferta h2 {
+  font-size: 9vh;
+  font-family: "idioma";
+}
+
+.contenedor_principal #seccion-cocina .segundo_titular .texto_oferta .subtitular {
+  border-left: 2px solid #e84855;
+  padding-left: 20px;
+  font-size: 1.8rem;
+  font-family: "idioma";
 }
 
 .contenedor_principal #seccion-cocina .contenedor_tarjetas {
   /* background-color: #A0425B; */
   width: 80%;
-  height: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2339,6 +2387,8 @@ header h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
@@ -2348,8 +2398,7 @@ header h1 {
 
 .contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta {
   width: 280px;
-  height: 90%;
-  background-color: white;
+  height: 500px;
   z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2409,7 +2458,6 @@ header h1 {
   height: 60%;
   width: 100%;
   position: relative;
-  background-color: white;
 }
 
 .contenedor_principal #seccion-cocina .contenedor_tarjetas .tarjeta .sup img {
