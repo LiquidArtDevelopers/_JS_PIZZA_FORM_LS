@@ -855,15 +855,14 @@ header{
             @include segundo_titular;
         }
         .contenedor_form{
+            width: 100%;
             display: flex;
             flex-direction: row;
             align-items: center;
-            background-color: #A0425B;
+            background-color: #494244;
             .izd{
                 width: 40%;
-                img{
-                    width: 100%;
-                }
+                
             }
             .der{
                 width: 60%;
