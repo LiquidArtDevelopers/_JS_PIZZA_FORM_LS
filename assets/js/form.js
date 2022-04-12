@@ -1,5 +1,5 @@
 //Variables
-
+'use strict';
 const $formulario = document.querySelector('.form');
 const $inputs = document.querySelectorAll('.form input');
 const expresiones = {
@@ -7,7 +7,7 @@ const expresiones = {
     apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
     correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     telefono: /^\d{7,9}$/, // 7 a 9 numeros.
-    direccion: /^[a-zA-ZÀ-ÿ\s]{1,40}$/ // Letras y espacios, pueden llevar acentos.
+    direccion: /^[a-zA-ZÀ-ÿ0-9\s,.'-]{3,}$/ // Letras y espacios, pueden llevar acentos.
 }
 
 const campo={
@@ -27,7 +27,7 @@ export default function formulario(){
     
     $formulario.addEventListener('submit',(e)=>{
         e.preventDefault();
-        if(campo.name && campo.surname && campo.email && campo.phone){
+        if(campo.name && campo.surname && campo.email && campo.phone && campo.direc){
              $formulario.reset();
              document.getElementById('formulario__mensaje-error').style.display='none';
              document.getElementById('formulario__mensaje-successful').style.display='block';

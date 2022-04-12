@@ -3,6 +3,8 @@ import { modalAdvetnciaPedido } from "./modales.js";
 /**
  * @author MDMGN & LiquidArt
  */
+'use strict'; // Activamos el uso estricto de JS.
+
 export default function pedido(){
     //escuchamos si hay click en carrito para mostrar la nota
     document.body.addEventListener("click", function(event){        
@@ -51,6 +53,7 @@ const setObjComanda=()=>{
 const updateCantidadCart=(objComanda)=>document.querySelector('.caja-cantidad p').textContent=String(objComanda.length);
 setObjComanda()
 updateCantidadCart(objComanda);
+
 /**
  * Obtenemos el contenido del texto del elemento.
  * @param {String} type Recibimos el key de tipo 'id' en String.
