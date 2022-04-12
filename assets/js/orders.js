@@ -136,6 +136,18 @@ const addToCart=()=>{
             }else{
                 modalAdvetnciaPedido();
             }
+        }else if(e.target.matches('.add')){
+            let $parentElement=e.target.parentNode.parentElement;
+            const oferta={
+                id:$parentElement.id,
+                menu:$parentElement.querySelector('.oTexto').textContent,
+                precio:$parentElement.querySelector('[data-precio]').dataset.precio
+            }
+            setObjComanda();
+            objComanda.push(oferta);
+            localStorage.setItem('objComanda',JSON.stringify(objComanda));
+            updateCantidadCart(objComanda);
+            objComanda=[];            
         }
     });
 }
@@ -165,7 +177,6 @@ const clearobjMenu=(objMenu)=>{
                 objMenu.precio=0;
             break;
         }
-       /*  key==='precio' ? objMenu[key]=0 : delete objMenu[key]; */
     })
 }
 
