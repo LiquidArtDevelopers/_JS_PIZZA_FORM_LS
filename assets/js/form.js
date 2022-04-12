@@ -1,5 +1,5 @@
 //Variables
-
+'use strict';
 const $formulario = document.querySelector('.form');
 const $inputs = document.querySelectorAll('.form input');
 const expresiones = {
@@ -27,7 +27,7 @@ export default function formulario(){
     
     $formulario.addEventListener('submit',(e)=>{
         e.preventDefault();
-        if(campo.name && campo.surname && campo.email && campo.phone){
+        if(campo.name && campo.surname && campo.email && campo.phone && campo.direc){
              $formulario.reset();
              document.getElementById('formulario__mensaje-error').style.display='none';
              document.getElementById('formulario__mensaje-successful').style.display='block';
