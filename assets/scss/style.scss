@@ -13,10 +13,27 @@
 @import 'comprar';
 @import 'barsMenu';
 @import 'pedido';
-@import 'flyeToCart';
+@import 'flyeToCart'; 
 
 /*************************/
 
+/* VARIABLES  */
+$color_boli:rgb(51, 51, 124);
+$color_rojo: rgba(232,72,85,1);
+$color_verde: rgba(123,216,96,1);
+$color_fundido_verde: linear-gradient( 117deg,  rgba(123,216,96,1) 39.2%, rgba(255,255,255,1) 156.2% );
+$color_fundido_rojo: radial-gradient( circle farthest-corner at 10% 20%,  rgba(232,72,85,1) 0%, rgba(232,72,85,1) 90% );
+$color_gris: rgb(65, 65, 65);
+$opacidad_humo: 0;
+
+/* VARIABLES RESPONSIVE */
+$tablet: 900px;
+$movil: 500px;
+
+//GLOBALES
+html{
+    scroll-behavior: smooth;
+}
 @font-face {
     font-family: "Piazzere";
     src: url("../font/MeriendaOne-Regular.ttf");
@@ -29,17 +46,6 @@
     font-family: "Libreta";
     src: url("../font/ShortStack-Regular.ttf");
 }
-
-/* VARIABLES  */
-$color_boli:rgb(51, 51, 124);
-$color_rojo: rgba(232,72,85,1);
-$color_verde: rgba(123,216,96,1);
-
-$color_fundido_verde: linear-gradient( 117deg,  rgba(123,216,96,1) 39.2%, rgba(255,255,255,1) 156.2% );
-$color_fundido_rojo: radial-gradient( circle farthest-corner at 10% 20%,  rgba(232,72,85,1) 0%, rgba(232,72,85,1) 90% );
-$color_gris: rgb(65, 65, 65);
-
-$opacidad_humo: 0;
 
 @keyframes cambio_color{
     0%{
@@ -73,10 +79,6 @@ $opacidad_humo: 0;
     }
 }
 
-//GLOBALES
-html{
-    scroll-behavior: smooth;
-}
 @mixin fondo{            
     background-image: url("../img/logos/Entramado_reverso.svg");
     background-attachment: fixed;
@@ -137,6 +139,8 @@ html{
         }
     }
 }
+
+
 body{
     @include fondo;
 }
@@ -227,7 +231,6 @@ body{
         }
     }
 }
-
 /* NAVEGADOR */
 #navegador{
     max-width: 1920px;
@@ -288,7 +291,7 @@ body{
         justify-content:flex-end;    
         color: rgb(255, 255, 255);
         font-family: "Idioma";
-        font-size: 1.6rem;
+        font-size: 2.1vw;
         ul{
             display:flex;
             flex-direction: row;
@@ -301,6 +304,7 @@ body{
         display: flex;
         flex-direction: row;
         align-items: center;
+        margin-right: 50px;
         justify-content: flex-end;
         position: relative;
         cursor: pointer;   
@@ -340,9 +344,29 @@ body{
         }
         .idioma-select{
             color:$color_rojo!important;
+        }        
+    }
+    @media screen and (max-width: $tablet) {
+        .nav-carrito{
+            margin-right: -20px;
+        }
+        .nav-enlaces{
+            font-size: 7vw;
+        }
+        .nav-idiomas{
+            padding-right: 100px;
+        }
+    }
+    @media screen and (max-width: $movil) {
+        .nav-carrito{
+            margin-right: 0px;
+        }
+        .nav-idiomas{    
+            padding-right: 50px;
         }
     }
 }
+
 /* HEADER */
 header{
     max-width: 1920px;
@@ -570,8 +594,8 @@ header{
     /* ZONA PEDIDO  */
     #seccion_pedido{
         width: 100%;
-        height: 1200px;
         max-width: 1920px;
+        margin-bottom: 20px;
         display: flex;
         flex-direction: column;
         justify-content:flex-start;
@@ -1197,3 +1221,6 @@ footer{
     }    
 }
 
+@media(max-width: 600px){
+
+}
