@@ -1,12 +1,15 @@
-$bgc: #414141;
+$bgc: rgb(65, 65, 65);
 $btn-bgc:#7bd860;
 
 .container-pedido{
+    margin-top: 45px;
     padding: 15px;
     width: 200px;
     height: 100px;
     background-color: $bgc;
-    margin: 20px;
+    font-family: "Idioma";
+    font-size: 20px;
+    border-radius: 0px 20px;
     .doPedido{
         position: relative;
         background-color:#fff;
@@ -33,12 +36,10 @@ $btn-bgc:#7bd860;
                     align-items: center;
                     width: 100%;
                     text-align: center;
-                    font-weight: 500px;
                     .icon{
                         position: relative;
                         display: block;
                         line-height: 75px;
-                        font-size: 1.5em;
                         text-align: center;
                         color: $bgc;
                         transition: 0.5s;
@@ -47,7 +48,6 @@ $btn-bgc:#7bd860;
                         position: absolute;
                         color: $bgc;
                         font-weight: 400;
-                        font-size: 0.75em;
                         letter-spacing: 0.05em;
                         transition:  0.5s;
                         opacity: 0;

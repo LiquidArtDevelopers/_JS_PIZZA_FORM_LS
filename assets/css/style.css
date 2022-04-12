@@ -41,22 +41,18 @@
 }
 
 .form {
-  margin: 0px auto;
-  width: 40vw;
+  width: 100%;
   min-width: 500px;
-  padding: 50px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  font-weight: bold;
+  color: #414141;
   font-family: "Idioma";
 }
 
-.form h3 {
-  font-size: 26px;
+.form a {
+  color: #414141;
 }
 
 .form .form-group {
-  margin-top: 25px;
+  margin-top: 15px;
   width: 100%;
   height: 50px;
   max-width: 400px;
@@ -70,14 +66,16 @@
   left: 0;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  font-size: 18px;
+  font-size: 1.6em;
 }
 
 .form .form-group input {
   width: 100%;
   height: 100%;
   background: none;
-  color: #fff;
+  font-size: 1.6rem;
+  background-color: #ffffff;
+  color: #414141;
   padding-top: 20px;
   border: none;
   outline: 0px;
@@ -87,8 +85,8 @@
 .form .form-group input:valid + .lb .text-name {
   -webkit-transform: translateY(-150%);
           transform: translateY(-150%);
-  font-size: 14px;
-  color: #7bd860;
+  font-size: 1.8em;
+  color: #e84855;
 }
 
 .form .form-group label {
@@ -98,7 +96,7 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
-  border-bottom: 1px solid #c7c7c7;
+  border-bottom: 1px solid #414141;
 }
 
 .form .form-group label::after {
@@ -122,27 +120,25 @@
 }
 
 .form-group-acept {
-  margin: 15px;
-  margin-left: 0px;
+  margin-top: 30px;
+  font-size: 1.5rem;
   position: relative;
   display: block;
 }
 
 .btn-submit {
   /* box-shadow: 0px 10px 14px -7px #3e7327; */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #77b55a), to(#72b352));
-  background: linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
   background-color: #7bd860;
   border-radius: 4px;
-  border: 1px solid #4b8f29;
+  border: 1px solid #7bd860;
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 6px 12px;
+  font-size: 1.6rem;
+  font-family: "Idioma";
+  padding: 6px 45px;
   text-decoration: none;
-  text-shadow: 0px 1px 0px #5b8a3c;
+  margin-top: 30px;
 }
 
 .btn-submit:hover {
@@ -157,7 +153,7 @@
 }
 
 .formulario__input-error {
-  font-size: 12px;
+  font-size: 16px;
   margin-bottom: 0;
   display: none;
 }
@@ -191,9 +187,9 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   border: none;
-  caret-color: #fff;
-  -webkit-text-fill-color: #fff;
-  -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0) inset;
+  caret-color: #470707;
+  -webkit-text-fill-color: #414141;
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
 }
@@ -749,11 +745,14 @@ select:-webkit-autofill:focus {
 }
 
 .container-pedido {
+  margin-top: 45px;
   padding: 15px;
   width: 200px;
   height: 100px;
   background-color: #414141;
-  margin: 20px;
+  font-family: "Idioma";
+  font-size: 20px;
+  border-radius: 0px 20px;
 }
 
 .container-pedido .doPedido {
@@ -805,14 +804,12 @@ select:-webkit-autofill:focus {
           align-items: center;
   width: 100%;
   text-align: center;
-  font-weight: 500px;
 }
 
 .container-pedido .doPedido ul li .box .icon {
   position: relative;
   display: block;
   line-height: 75px;
-  font-size: 1.5em;
   text-align: center;
   color: #414141;
   -webkit-transition: 0.5s;
@@ -823,7 +820,6 @@ select:-webkit-autofill:focus {
   position: absolute;
   color: #414141;
   font-weight: 400;
-  font-size: 0.75em;
   letter-spacing: 0.05em;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -1331,7 +1327,6 @@ header h1 {
 .contenedor_principal {
   width: 100%;
   max-width: 1920px;
-  /* margin: 0 auto; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1682,7 +1677,6 @@ header h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 40px;
 }
 
 .contenedor_principal #seccion_pedido .oferta_titular {
@@ -1705,13 +1699,15 @@ header h1 {
           justify-content: center;
   background-image: radial-gradient(circle farthest-corner at 10% 20%, #e84855 0%, #e84855 90%);
   overflow: hidden;
+  position: relative;
 }
 
 .contenedor_principal #seccion_pedido .oferta_titular .img_fondo {
   position: absolute;
-  opacity: 20%;
+  opacity: 10%;
   right: -100px;
-  height: 50%;
+  height: 200%;
+  z-index: 90;
 }
 
 .contenedor_principal #seccion_pedido .oferta_titular .texto_oferta {
@@ -2212,7 +2208,7 @@ header h1 {
 .contenedor_principal #seccion_formulario {
   width: 100%;
   max-width: 1920px;
-  /* margin:  0 auto; */
+  padding-bottom: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2223,6 +2219,9 @@ header h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   background-color: white;
 }
 
@@ -2266,6 +2265,7 @@ header h1 {
 
 .contenedor_principal #seccion_formulario .contenedor_form {
   width: 80%;
+  max-width: 1440px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2273,26 +2273,45 @@ header h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: beige;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: white;
 }
 
 .contenedor_principal #seccion_formulario .contenedor_form .izd {
-  background-color: #A0425B;
-  width: 40%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.contenedor_principal #seccion_formulario .contenedor_form .izd img {
+  width: 100%;
 }
 
 .contenedor_principal #seccion_formulario .contenedor_form .der {
-  background-color: aqua;
-  width: 60%;
+  width: 45%;
+  margin-left: 25PX;
+  padding-left: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  border-left: 2px solid #414141;
+}
+
+.contenedor_principal #seccion_formulario .contenedor_form .der .titulo_form {
+  font-family: "Idioma";
+  font-size: 2vw;
+  color: #414141;
 }
 
 .contenedor_principal #seccion_concurso {
