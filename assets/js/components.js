@@ -3,6 +3,7 @@ export default function componentes(){
     window.onscroll = function() {scrollFunction()};
     animateBars();
     list.forEach((item)=> item.addEventListener('click',circleListSelection));
+    flyeToCart();
 }
 
 //SCRIPT SCROLL NAV-----------------
@@ -58,3 +59,9 @@ function circleListSelection(){
     list.forEach((el)=>el.classList.remove('active'));
         this.classList.add('active');
 };
+
+function flyeToCart(){
+        item.querySelector(".add").addEventListener("click", function() {
+            document.body.appendChild(item.querySelector(".imgOferta").cloneNode()).classList.add("floating");
+        });
+}
