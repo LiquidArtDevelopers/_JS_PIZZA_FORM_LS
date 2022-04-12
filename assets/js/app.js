@@ -14,8 +14,6 @@ d.addEventListener('DOMContentLoaded',()=>{
     //loadAnimation();
     //Script que gestiona las cookies.
     dataCookies();
-    //Llamar a componentes.
-    componentes();
     //carrousel
     carousel();
     //Validación de formulario.
@@ -28,4 +26,6 @@ d.addEventListener('DOMContentLoaded',()=>{
     grafica();
     //ventanas modales
     modales();
+    //Llamar a componentes.
+    componentes();
 });
