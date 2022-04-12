@@ -33,7 +33,7 @@ function scrollFunction() {
     }
 }
 const animateBars=()=>{
-    const nav_enlaces=`
+    const template_nav_enlaces=`
     <div class="nav-idiomas">
         <ul>
             <li><a id="eu" class="idioma" href="index.html#eu">eu</a></li>

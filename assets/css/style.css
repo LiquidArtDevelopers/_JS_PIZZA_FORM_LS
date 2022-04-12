@@ -34,7 +34,6 @@
   z-index: 100000;
 }
 
-/* #a79157 */
 .preload-hidden {
   -webkit-clip-path: circle(0% at 100% 100%);
           clip-path: circle(0% at 100% 100%);

@@ -50,6 +50,8 @@ function rellenarOfertas(){
     .then(data =>{
         //paseamos el json
         const ofertaJs=JSON.parse(data);
+        let $template=document.getElementById('template-ofertas').content;
+        let $fragment=document.createDocumentFragment();
         //recorremos las claves del json parseado
         for (var clave in ofertaJs){
             //si es una clave, nos quedamos con el valor
@@ -71,6 +73,8 @@ function rellenarOfertas(){
                 ofertaHTML = `<div id="of${contador+=1}" class="oferta"><img hq="${oOferta.srcHQ}" class="imgOferta" src="${oOferta.src}" alt=""><p class="oTexto">${oOferta.texto}</p><div class="anadir" data-nombre="${oOferta.texto}" data-precio="${oOferta.precio}"><img src="assets/img/varias/carritoADD.svg" class="add" alt=""></div><p class="oEuros">${eur}<span>,${cent}€</span></p></div>`
                 //escribimos el html dinámico
                 document.querySelector("#ofertas").insertAdjacentHTML("afterbegin",ofertaHTML);
+
+                /* $template. */
             }
           }
         console.log();

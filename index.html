@@ -84,7 +84,16 @@
         </section>
 
         <section id="seccion_ofertas">            
-            
+            <template id="template-ofertas">
+                <div  class="oferta">
+                    <img  class="imgOferta" src="${oOferta.src}" alt="">
+                    <p class="oTexto"></p>
+                    <div class="anadir" data-nombre data-precio>
+                        <img src="assets/img/varias/carritoADD.svg" class="add" alt="">
+                    </div>
+                    <p class="oEuros"><span></span></p>
+                </div>
+            </template>
             <div class="segundo_titular">
                 <div class="texto_oferta">
                     <h2 class="txt63">OFERTAS DE LA SEMANA</h2>
