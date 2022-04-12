@@ -664,7 +664,7 @@ select:-webkit-autofill:focus {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   #navegador {
     width: 100vw !important;
   }
@@ -940,6 +940,12 @@ select:-webkit-autofill:focus {
 }
 
 /*************************/
+/* VARIABLES  */
+/* VARIABLES RESPONSIVE */
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: "Piazzere";
   src: url("../font/MeriendaOne-Regular.ttf");
@@ -955,7 +961,6 @@ select:-webkit-autofill:focus {
   src: url("../font/ShortStack-Regular.ttf");
 }
 
-/* VARIABLES  */
 @-webkit-keyframes cambio_color {
   0% {
     background-position: 0% 50%;
@@ -967,6 +972,7 @@ select:-webkit-autofill:focus {
     background-position: 0% 50%;
   }
 }
+
 @keyframes cambio_color {
   0% {
     background-position: 0% 50%;
@@ -1021,10 +1027,6 @@ select:-webkit-autofill:focus {
     opacity: 0;
     bottom: 170px;
   }
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {
@@ -1269,7 +1271,7 @@ body {
           justify-content: flex-end;
   color: white;
   font-family: "Idioma";
-  font-size: 1.6rem;
+  font-size: 2.1vw;
 }
 
 #navegador .nav-enlaces ul {
@@ -1297,6 +1299,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-right: 50px;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -1356,6 +1359,27 @@ body {
 
 #navegador .nav-idiomas .idioma-select {
   color: #e84855 !important;
+}
+
+@media screen and (max-width: 900px) {
+  #navegador .nav-carrito {
+    margin-right: -20px;
+  }
+  #navegador .nav-enlaces {
+    font-size: 7vw;
+  }
+  #navegador .nav-idiomas {
+    padding-right: 100px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #navegador .nav-carrito {
+    margin-right: 0px;
+  }
+  #navegador .nav-idiomas {
+    padding-right: 50px;
+  }
 }
 
 /* HEADER */
@@ -1762,8 +1786,8 @@ header {
 
 .contenedor_principal #seccion_pedido {
   width: 100%;
-  height: 1200px;
   max-width: 1920px;
+  margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
