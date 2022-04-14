@@ -1,4 +1,4 @@
-.imgOferta.floating {
+/* .imgOferta.floating {
     animation: fade-out-in-right 2s linear 0s 1 normal forwards;
     position: absolute;
     right: 150px;
@@ -6,9 +6,9 @@
     width: 40px;
     height: 40px;
     background-color: black;
-  }
+  } */
   
-  @keyframes fade-out-in-right {
+  /* @keyframes fade-out-in-right {
     0% {
       transform: translateY(800px);
       opacity: 0;
@@ -21,4 +21,79 @@
       transform: translateX(0px);
       opacity: 0;
     }
+  } */
+  /*JS file css*/
+.image-carior{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: inherit;
+  width: 100%;
+  height: 300px;
+  border-radius: inherit;
+  display: none;
+}
+.image-carior.active{
+  display: block;
+  z-index:100;
+}
+.oferta:nth-child(1) .image-carior.active{
+  animation: first 0.5s ease-in;
+}
+.oferta:nth-child(2) .image-carior.active{
+  animation: second 0.5s ease-in;
+}
+.oferta:nth-child(3) .image-carior.active{
+  animation: third 0.5s ease-in;
+}
+@keyframes first{
+  to{
+      transform: scale(0.08);
+      top: -405px;
+      left: 925px;
   }
+}
+@keyframes second{
+  to{
+      transform: scale(0.08);
+      top: -305px;
+      left: 305px;
+  }
+}
+@keyframes third{
+  to{
+      transform: scale(0.08);
+      top: -305px;
+      left: 400px;
+  }
+}
+@keyframes four{
+  to{
+      transform: scale(0.08);
+      top: -305px;
+      left: -45px;
+  }
+}
+.carrito.animated{
+  animation: temblor 0.5s;
+ }
+ @keyframes temblor{
+     0%{
+         transform: translate(20px,0px);
+     }
+     20%{
+         transform: translate(0px,0px);
+     }
+     40%{
+         transform: translate(20px,0px);
+     }
+     60%{
+         transform: translate(0px,0px);
+     }
+     80%{
+         transform: translate(20px,0px);
+     }
+     100%{
+         transform: translate(0px,0px);
+     }
+ }

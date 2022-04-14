@@ -61,14 +61,37 @@ function circleListSelection(){
 };
 
 function flyeToCart(){
-        document.addEventListener("click", (e)=>{
+        /* document.addEventListener("click", (e)=>{
             if(e.target.matches('.add')){
-                document.body.appendChild(document.querySelector(".imgOferta").cloneNode()).classList.add("floating");
+                document.body.appendChild(document.querySelector(".imgOferta").cloneNode(false)).classList.add("floating");
             }
-        });
+        }); */
         /* document.querySelectorAll(".oferta").forEach(function(item) {
             item.querySelector(".add").addEventListener("click", function() {
               document.body.appendChild(item.querySelector(".imgOferta").cloneNode()).classList.add("floating");
             });
           }); */
+    let $cart= document.querySelector('.carrito');
+    let $add= document.getElementsByClassName('add');
+    console.log($add)
+    document.addEventListener('click',(e)=>{
+        if(e.target.matches('.add')){
+            // image animated to cart
+            let $parent= e.target.parentNode.parentNode;
+            let $image= $parent.querySelector('img');
+            let $span= document.createElement('span');
+            $span.className='image-carior';
+            $parent.insertBefore($span, $parent.lastElementChild);
+            let $s_image= $image.cloneNode(false);
+            $span.appendChild($s_image);
+            $span.classList.add('active');
+            $cart.classList.add('animated');
+            setTimeout(()=>{
+                $span.classList.remove('active');
+                $cart.classList.remove('animated');
+                $span.removeChild($s_image);
+                $span.remove();
+            }, 500);
+        }
+    });
 }
