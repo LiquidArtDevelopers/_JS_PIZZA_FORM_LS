@@ -62,8 +62,6 @@ function circleListSelection(){
 
 const flyeToCart=()=>{
     let $cart= document.querySelector('.carrito');
-    let $add= document.getElementsByClassName('add');
-    console.log($add)
     document.addEventListener('click',(e)=>{
         if(e.target.matches('.add')){
             // image animated to cart
