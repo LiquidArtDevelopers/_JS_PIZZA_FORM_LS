@@ -48,7 +48,7 @@ function rellenarOfertas(){
             throw new Error(response.status);
     })
     .then(data =>{
-        //paseamos el json
+        //parseamos el json
         const ofertaJs=JSON.parse(data);
         let $template=document.getElementById('template-ofertas').content;
         let $fragment=document.createDocumentFragment();
@@ -56,7 +56,6 @@ function rellenarOfertas(){
         for (var clave in ofertaJs){
             //si es una clave, nos quedamos con el valor
             if (ofertaJs.hasOwnProperty(clave)) {
-
                 //desglosamos el precio en euros y céntimos
                 const oOferta = new Object(ofertaJs[clave])
                 let precio = oOferta.precio;
@@ -77,8 +76,8 @@ function rellenarOfertas(){
                 $template.querySelector('.imgOferta').setAttribute('hq',`${oOferta.srcHQ}`);
                 $template.querySelector('.imgOferta').setAttribute('src',`${oOferta.src}`);
                 $template.querySelector('.oTexto').textContent=`${oOferta.texto}`;
-                $template.querySelector('.anadir').setAttribute('data-nombre',`${oOferta.texto}`);
-                $template.querySelector('.anadir').setAttribute('data-precio',`${oOferta.precio}`);
+                $template.querySelector('.anadir').dataset.nombre=`${oOferta.texto}`;
+                $template.querySelector('.anadir').dataset.precio=`${oOferta.precio}`;
                 $template.querySelector('.oEuros').textContent=`${eur}`;
                 const $span=document.createElement('span');
                 $span.textContent=`,${cent}€`;

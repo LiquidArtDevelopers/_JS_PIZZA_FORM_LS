@@ -92,7 +92,7 @@ const escribirPedido=()=>{
             Object.entries(objMenu).forEach(([key,value])=>{
                 if(value && value!==0){
                     if(key==='masa'){
-                        template_fact="<h3>PIAZZERE<h3>";
+                        template_fact="<h3>Pizza personalizable<h3>";
                         template_fact+= `<li> ${document.querySelector('.txt5').textContent.toUpperCase()} ${getText(objMenu[key])}</li>`;
                     }
                     if(key=='tipo') template_fact+=`<li> ${document.querySelector('.txt9').textContent.toUpperCase()}   ${getText(objMenu[key])}</li>`;
