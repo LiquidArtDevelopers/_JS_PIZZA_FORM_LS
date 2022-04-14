@@ -667,29 +667,6 @@ select:-webkit-autofill:focus {
   color: #fff;
 }
 
-/* .imgOferta.floating {
-    animation: fade-out-in-right 2s linear 0s 1 normal forwards;
-    position: absolute;
-    right: 150px;
-    top: 20px;
-    width: 40px;
-    height: 40px;
-    background-color: black;
-  } */
-/* @keyframes fade-out-in-right {
-  0% {
-    transform: translateY(800px);
-    opacity: 0;
-  }
-  80% {
-    transform: translateX(-20px);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(0px);
-    opacity: 0;
-  }
-} */
 /*JS file css*/
 .image-carior {
   position: absolute;
@@ -765,20 +742,6 @@ select:-webkit-autofill:focus {
     left: 400px;
   }
 }
-@-webkit-keyframes four {
-  to {
-    transform: scale(0.08);
-    top: -305px;
-    left: -45px;
-  }
-}
-@keyframes four {
-  to {
-    transform: scale(0.08);
-    top: -305px;
-    left: -45px;
-  }
-}
 .carrito.animated {
   -webkit-animation: temblor 0.5s;
           animation: temblor 0.5s;
@@ -789,7 +752,7 @@ select:-webkit-autofill:focus {
     transform: translate(20px, 0px);
   }
   20% {
-    transform: translate(0px, 0px);
+    ransform: translate(0px, 0px);
   }
   40% {
     transform: translate(20px, 0px);
@@ -810,7 +773,7 @@ select:-webkit-autofill:focus {
     transform: translate(20px, 0px);
   }
   20% {
-    transform: translate(0px, 0px);
+    ransform: translate(0px, 0px);
   }
   40% {
     transform: translate(20px, 0px);

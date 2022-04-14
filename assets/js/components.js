@@ -61,16 +61,6 @@ function circleListSelection(){
 };
 
 function flyeToCart(){
-        /* document.addEventListener("click", (e)=>{
-            if(e.target.matches('.add')){
-                document.body.appendChild(document.querySelector(".imgOferta").cloneNode(false)).classList.add("floating");
-            }
-        }); */
-        /* document.querySelectorAll(".oferta").forEach(function(item) {
-            item.querySelector(".add").addEventListener("click", function() {
-              document.body.appendChild(item.querySelector(".imgOferta").cloneNode()).classList.add("floating");
-            });
-          }); */
     let $cart= document.querySelector('.carrito');
     let $add= document.getElementsByClassName('add');
     console.log($add)
