@@ -60,7 +60,7 @@ function circleListSelection(){
         this.classList.add('active');
 };
 
-function flyeToCart(){
+const flyeToCart=()=>{
     let $cart= document.querySelector('.carrito');
     let $add= document.getElementsByClassName('add');
     console.log($add)
