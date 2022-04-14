@@ -25,7 +25,7 @@ export default function pedido(){
     addToCart();
 }
 
-let contador = 0, existe = 0;
+let contador = 0, existe = 0, idMenu=0;
 const $box_comprar=document.querySelector('.comprar');
 const $notaPizza=document.querySelector('.list-fact');
 const nota1Sel= document.querySelector(".nota1Sel");
@@ -37,12 +37,13 @@ let ticket = [0,0,0,0,0];
 
 //Creamos el objeto Menú. Habrá varios objetos menú en una misma comanda.
 const objMenu={
+    id_menu:'0',
     masa:'',
     tipo:'',
     topping:[],
     bebida:[],
     otros:[],
-    precio:0,
+    precio:0
 }
 //array comanda, que se compondrá de todos los objetos menú que haya.
 let objComanda=[];
@@ -51,14 +52,22 @@ const setObjComanda=()=>{
     if(getObjComanda!==null) objComanda=getObjComanda;
 }
 const updateCantidadCart=(objComanda)=>document.querySelector('.caja-cantidad p').textContent=String(objComanda.length);
-setObjComanda()
+setObjComanda();
 updateCantidadCart(objComanda);
-
+const setIdMenu=(id)=>{
+    objComanda.forEach((obj)=>{
+        Object.entries(obj).forEach(([key,value]) => {
+            if(key=='id' && Number(value)) idMenu=Number(value);
+        });
+    });
+    idMenu+=1;
+}
 /**
  * Obtenemos el contenido del texto del elemento.
- * @param {String} type Recibimos el key de tipo 'id' en String.
+ * @param {String} id Recibimos 'id' en String.
  */
-const getText=(type)=> document.getElementById(type).textContent;
+const getTextContentById=(id)=> document.getElementById(id).textContent;
+const getTextContent=(type)=> document.querySelector(type).textContent; 
 /**
  * Insertamos los datos para imprimirlos en el ticket.
  * @returns {void}
@@ -74,12 +83,12 @@ const escribirPedido=()=>{
     let template_fact='';
     /**
      * Recogemos los valores elegidos en la libreta y creamos una lista por cada uno.
-     * @param {String} ckey key of objMenu.
+     * @param {Array<String>} arr Array de un objeto.
      */
-    const createLiText=(ckey)=>{
-        objMenu[ckey].forEach((value,index,arr)=>{
+    const createLiTextContent=(arr)=>{
+        arr.forEach((value,index,arr)=>{
             if(arr[index]){
-               template_fact+=`<li> ${getText(value)}</li>`;
+               template_fact+=`<li> ${getTextContentById(value)}</li>`;
             }
         });
     }
@@ -89,16 +98,32 @@ const escribirPedido=()=>{
     let click=false;
     document.addEventListener('click',(e)=>{
         if(e.target.matches('.carrito')){
+            setObjComanda();
+            if(objComanda){
+                for(const comanda of objComanda){
+                    Object.entries(comanda).forEach(([key,value])=>{
+                        if(comanda.id_menu){
+                            if(key=='id_menu') template_fact+=`<h3>Menú Perzonalizado <span>€${comanda.precio}</span></h3>`;
+                            if(key==='masa') template_fact+= `<li>${getTextContent('.txt5')} ${getTextContentById(value)}</li>`;
+                            if(key=='tipo') template_fact+=`<li> ${getTextContent('.txt9')} ${getTextContentById(value)}</li>`;
+                            if(key==='topping') createLiTextContent(comanda[key]);
+                            if(key==='bebida') createLiTextContent(comanda[key]);
+                            if(key==='otros') createLiTextContent(comanda[key]);
+                        }
+                        if(comanda.id_oferta){
+                            if(key=='id_oferta') template_fact+=`<li class='pOferta'><h3>${comanda.menu} <span>€${comanda.precio}</span><h3></li>`;
+                        }
+                    });
+                }
+            }
             Object.entries(objMenu).forEach(([key,value])=>{
                 if(value && value!==0){
-                    if(key==='masa'){
-                        template_fact="<h3>Pizza personalizable<h3>";
-                        template_fact+= `<li> ${document.querySelector('.txt5').textContent.toUpperCase()} ${getText(objMenu[key])}</li>`;
-                    }
-                    if(key=='tipo') template_fact+=`<li> ${document.querySelector('.txt9').textContent.toUpperCase()}   ${getText(objMenu[key])}</li>`;
-                    if(key==='topping') createLiText(key);
-                    if(key==='bebida') createLiText(key);
-                    if(key==='otros') createLiText(key);
+                    if(key=='id_menu') template_fact+=`<h3>PIAZZERE <span>€${objMenu.precio}</span></h3>`;
+                    if(key==='masa') template_fact+= `<li class='custom'> ${getTextContent('.txt5')} ${getTextContentById(objMenu[key])}</li>`;
+                    if(key==='tipo') template_fact+=`<li> ${getTextContent('.txt9')}   ${getTextContentById(objMenu[key])}</li>`;
+                    if(key==='topping') createLiTextContent(objMenu[key]);
+                    if(key==='bebida') createLiTextContent(objMenu[key]);
+                    if(key==='otros') createLiTextContent(objMenu[key]);
                     pr.textContent=`Total: ${objMenu['precio']}€`;
                 }
             });
@@ -126,6 +151,8 @@ const addToCart=()=>{
         if(e.target.matches('#addTocart')){
             if(countIngredientsComanda()>=3){
                 setObjComanda();
+                setIdMenu(idMenu);
+                objMenu['id_menu']=String(idMenu);
                 objComanda.push(objMenu);
                 localStorage.setItem('objComanda',JSON.stringify(objComanda));
                 clearobjMenu(objMenu);
@@ -139,7 +166,7 @@ const addToCart=()=>{
         }else if(e.target.matches('.add')){
             let $parentElement=e.target.parentNode.parentElement;
             const oferta={
-                id:$parentElement.id,
+                id_oferta:$parentElement.id,
                 menu:$parentElement.querySelector('.oTexto').textContent,
                 precio:$parentElement.querySelector('[data-precio]').dataset.precio
             }
