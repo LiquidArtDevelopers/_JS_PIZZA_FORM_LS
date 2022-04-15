@@ -1,4 +1,4 @@
-import { modalAdvetnciaPedido } from "./modales.js";
+import { modalAlertPedido } from "./modales.js";
 
 /**
  * @author MDMGN & LiquidArt
@@ -51,6 +51,13 @@ const setObjComanda=()=>{
     let getObjComanda=JSON.parse(localStorage.getItem('objComanda'));
     if(getObjComanda!==null) objComanda=getObjComanda;
 }
+const cartAnimated=()=>{
+    const $cart=document.querySelector('.carrito');
+    $cart.classList.add('animated');
+    setTimeout(()=>{
+        $cart.classList.remove('animated');
+    },500);
+}
 const updateCantidadCart=(objComanda)=>document.querySelector('.caja-cantidad p').textContent=String(objComanda.length);
 setObjComanda();
 updateCantidadCart(objComanda);
@@ -95,38 +102,42 @@ const escribirPedido=()=>{
     /**
      * @type {Boolean} Alamacenamos si se hizo un click para insertarlos en la lista.
      */
-    let click=false;
+    let click=false, totalPrice=0;
     document.addEventListener('click',(e)=>{
         if(e.target.matches('.carrito')){
             setObjComanda();
             if(objComanda){
                 for(const comanda of objComanda){
                     Object.entries(comanda).forEach(([key,value])=>{
-                        if(comanda.id_menu){
-                            if(key=='id_menu') template_fact+=`<h3>Menú Perzonalizado <span>€${comanda.precio}</span></h3>`;
+                        if(comanda.id_menu && value){
+                            if(key==='id_menu')template_fact+=`<h3>Menú Perzonalizado <span>${comanda.precio}€</span></h3>`,totalPrice+=Number(comanda.precio);
                             if(key==='masa') template_fact+= `<li>${getTextContent('.txt5')} ${getTextContentById(value)}</li>`;
-                            if(key=='tipo') template_fact+=`<li> ${getTextContent('.txt9')} ${getTextContentById(value)}</li>`;
+                            if(key==='tipo') template_fact+=`<li> ${getTextContent('.txt9')} ${getTextContentById(value)}</li>`;
                             if(key==='topping') createLiTextContent(comanda[key]);
                             if(key==='bebida') createLiTextContent(comanda[key]);
                             if(key==='otros') createLiTextContent(comanda[key]);
                         }
-                        if(comanda.id_oferta){
-                            if(key=='id_oferta') template_fact+=`<li class='pOferta'><h3>${comanda.menu} <span>€${comanda.precio}</span><h3></li>`;
+                        if(comanda.id_oferta && value){
+                            if(key==='id_oferta') template_fact+=`<li class='pOferta'>${comanda.menu} <span>${comanda.precio}€</span></li>`,totalPrice+=Number(comanda.precio.replace(',','.'));
                         }
                     });
                 }
             }
             Object.entries(objMenu).forEach(([key,value])=>{
                 if(value && value!==0){
-                    if(key=='id_menu') template_fact+=`<h3>PIAZZERE <span>€${objMenu.precio}</span></h3>`;
+                    if(key==='id_menu'){
+                        (objMenu.precio==0) ? template_fact+='<h3>¡Perzonaliza una pizza!</h3>'
+                        : template_fact+=`<h3>PIAZZERE <span>${objMenu.precio}€</span></h3>`;
+                        totalPrice+=Number(objMenu.precio);
+                    }
                     if(key==='masa') template_fact+= `<li class='custom'> ${getTextContent('.txt5')} ${getTextContentById(objMenu[key])}</li>`;
                     if(key==='tipo') template_fact+=`<li> ${getTextContent('.txt9')}   ${getTextContentById(objMenu[key])}</li>`;
                     if(key==='topping') createLiTextContent(objMenu[key]);
                     if(key==='bebida') createLiTextContent(objMenu[key]);
                     if(key==='otros') createLiTextContent(objMenu[key]);
-                    pr.textContent=`Total: ${objMenu['precio']}€`;
                 }
             });
+            pr.textContent=`Total: ${totalPrice.toFixed(2)}€`,totalPrice=0;
             click ? click=false : click=true;
             click ? $notaPizza.insertAdjacentHTML('afterbegin',template_fact) : $notaPizza.textContent='';
             template_fact='';
@@ -147,9 +158,20 @@ const escribirPedido=()=>{
     return count;
  }
 const addToCart=()=>{
+    let msgAlert='',isAlert=false;
     document.addEventListener('click',(e)=>{
         if(e.target.matches('#addTocart')){
-            if(countIngredientsComanda()>=3){
+            if(countIngredientsComanda()<3){
+                msgAlert='¡Seleccionar como mínimo 3 ingredientes para tu pizza!';
+                isAlert=true;
+            }else if(!objMenu.masa){
+                msgAlert='¡Selecciona el tamaño!';
+                isAlert=true;
+            }else if(!objMenu.tipo){
+                msgAlert='¡Selecciona la masa!';
+                isAlert=true;
+            }else{
+                isAlert=false;
                 setObjComanda();
                 setIdMenu(idMenu);
                 objMenu['id_menu']=String(idMenu);
@@ -160,9 +182,9 @@ const addToCart=()=>{
                 updateCantidadCart(objComanda);
                 limpiarLibreta();
                 objComanda=[];
-            }else{
-                modalAdvetnciaPedido();
+                cartAnimated();
             }
+            if(isAlert) modalAlertPedido(msgAlert);
         }else if(e.target.matches('.add')){
             let $parentElement=e.target.parentNode.parentElement;
             const oferta={

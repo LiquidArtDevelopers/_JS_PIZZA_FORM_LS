@@ -386,6 +386,9 @@ select:-webkit-autofill:focus {
   src: url("../font/ShortStack-Regular.ttf");
 }
 .comprar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   position: fixed;
   z-index: 8000;
   bottom: 20px;
@@ -436,10 +439,8 @@ select:-webkit-autofill:focus {
 }
 
 .precio {
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  position: absolute;
+  margin-bottom: 10px;
   font-weight: bold;
   border-bottom: 3px solid #000;
   font-size: 25px;
