@@ -1,7 +1,5 @@
 let existe = false;
-
 export default function modales(){
-
     document.body.addEventListener("click", function(event){        
         //escuchamos los  botones del carousel de pizzas
         if(event.target.classList.contains("imgOferta")){        
@@ -52,6 +50,7 @@ export const modalAlertPedido=(msg)=>{
     let contentModalWindow=`
     <div class="modalInfoPedido">
         <div class="modal">
+        <img class="humo" src="assets/img/logos/pointer03.png" alt="">
         <img src="./assets/img/logos/pointer02.png" alt="pizza" class="img_pizza"> 
             <div class='modal-text'>
                 <p>${msg}</p>
@@ -63,7 +62,7 @@ export const modalAlertPedido=(msg)=>{
     document.body.insertAdjacentHTML('afterbegin',contentModalWindow);
     let $modal_window=document.querySelector('.modalInfoPedido');
     document.addEventListener('click',(e)=>{
-        if(e.target.matches('.close') || e.keyCode==27){
+        if(e.target.matches('.close')){
             $modal_window.remove();
             e.target.removeEventListener('click',e.preventDefault(),true);
         }

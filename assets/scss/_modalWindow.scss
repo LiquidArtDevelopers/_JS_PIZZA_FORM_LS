@@ -132,3 +132,12 @@
         }
     }
 }
+.modalInfoPedido .modal .humo{
+    position: absolute;
+    top:-80px;
+    opacity: 0;
+    z-index: 100;
+    filter: invert(45%) sepia(11%) saturate(18%) hue-rotate(27deg) brightness(92%) contrast(96%);
+    transform: scale(1.05);
+    animation: humillo 4s infinite;
+}

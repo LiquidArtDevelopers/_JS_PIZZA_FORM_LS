@@ -328,6 +328,17 @@ select:-webkit-autofill:focus {
   transition: all 300ms ease-in-out;
 }
 
+.modalInfoPedido .modal .humo {
+  position: absolute;
+  top: -80px;
+  opacity: 0;
+  z-index: 100;
+  filter: invert(45%) sepia(11%) saturate(18%) hue-rotate(27deg) brightness(92%) contrast(96%);
+  transform: scale(1.05);
+  -webkit-animation: humillo 4s infinite;
+          animation: humillo 4s infinite;
+}
+
 .carousel {
   width: 100%;
   max-width: 1920px;
@@ -456,6 +467,10 @@ select:-webkit-autofill:focus {
   display: none;
 }
 
+.space {
+  padding: 25px;
+}
+
 /* Bars menu */
 .bars__menu {
   display: none;
@@ -495,10 +510,6 @@ select:-webkit-autofill:focus {
   #navegador {
     width: 100vw !important;
   }
-  #navegador .nav-idiomas {
-    position: relative;
-    left: -20px !important;
-  }
   #navegador .nav-carrito {
     right: -40px !important;
   }
@@ -506,6 +517,9 @@ select:-webkit-autofill:focus {
     display: block;
     z-index: 705;
     width: 70px !important;
+  }
+  #navegador .nav-idiomas {
+    visibility: hidden;
   }
   #navegador .nav-enlaces {
     width: 100vw !important;
@@ -526,6 +540,7 @@ select:-webkit-autofill:focus {
     right: 0;
     left: 0;
     bottom: 0;
+    padding-top: 70px;
     padding-left: 0px;
     padding-right: 50px;
   }
@@ -556,6 +571,12 @@ select:-webkit-autofill:focus {
 }
 .nav-enlaces ul.active {
   transform: translate(0, 0) !important;
+}
+
+.nav-idiomas.active {
+  visibility: visible !important;
+  padding-right: 0px !important;
+  z-index: 700;
 }
 
 .container-pedido {

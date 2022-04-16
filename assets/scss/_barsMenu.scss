@@ -34,10 +34,7 @@
 @media screen and (max-width: 900px) {
     #navegador{
         width: 100vw !important;
-        .nav-idiomas{
-            position:relative;
-            left:-20px !important;
-        }
+        
         .nav-carrito{
             right:-40px !important;
         }
@@ -45,6 +42,9 @@
             display: block;
             z-index: 705;
             width:70px !important; 
+        }
+        .nav-idiomas{
+            visibility: hidden;
         }
         .nav-enlaces{
             width: 100vw !important;
@@ -64,6 +64,7 @@
                 right:0;
                 left: 0;
                 bottom: 0;
+                padding-top: 70px;
                 padding-left: 0px;
                 padding-right: 50px;
                 li{
@@ -95,4 +96,9 @@
 }
 .nav-enlaces ul.active{
     transform: translate(0, 0) !important;
+}
+.nav-idiomas.active{
+    visibility: visible !important;
+    padding-right: 0px !important;
+    z-index: 700;
 }

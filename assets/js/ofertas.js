@@ -1,5 +1,3 @@
-let conta
-
 export default function ofertas(){    
     rellenarOfertas()
 

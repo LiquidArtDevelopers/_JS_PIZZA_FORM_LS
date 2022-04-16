@@ -126,7 +126,7 @@ const escribirPedido=()=>{
             Object.entries(objMenu).forEach(([key,value])=>{
                 if(value && value!==0){
                     if(key==='id_menu'){
-                        (objMenu.precio==0) ? template_fact+='<h3>¡Perzonaliza una pizza!</h3>'
+                        (objMenu.precio==0) ? template_fact+='<h3>¡Perzonaliza una pizza!</h3><div class="space"><div/>'
                         : template_fact+=`<h3>PIAZZERE <span>${objMenu.precio}€</span></h3>`;
                         totalPrice+=Number(objMenu.precio);
                     }
