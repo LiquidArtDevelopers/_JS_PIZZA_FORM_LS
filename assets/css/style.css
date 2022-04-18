@@ -721,6 +721,11 @@ select:-webkit-autofill:focus {
           animation: third 0.5s ease-in;
 }
 
+.oferta:nth-child(4) .image-carior.active {
+  -webkit-animation: four 0.5s ease-in;
+          animation: four 0.5s ease-in;
+}
+
 @-webkit-keyframes first {
   to {
     transform: scale(0.08);
@@ -762,6 +767,20 @@ select:-webkit-autofill:focus {
     transform: scale(0.08);
     top: -305px;
     left: 400px;
+  }
+}
+@-webkit-keyframes four {
+  to {
+    transform: scale(0.08);
+    top: -305px;
+    left: -10px;
+  }
+}
+@keyframes four {
+  to {
+    transform: scale(0.08);
+    top: -305px;
+    left: -10px;
   }
 }
 .carrito.animated {

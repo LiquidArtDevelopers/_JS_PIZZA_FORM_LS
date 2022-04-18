@@ -22,6 +22,9 @@
 .oferta:nth-child(3) .image-carior.active{
   animation: third 0.5s ease-in;
 }
+.oferta:nth-child(4) .image-carior.active{
+  animation: four 0.5s ease-in;
+}
 @keyframes first{
   to{
       transform: scale(0.08);
@@ -41,6 +44,13 @@
       transform: scale(0.08);
       top: -305px;
       left: 400px;
+  }
+}
+@keyframes four{
+  to{
+      transform: scale(0.08);
+      top: -305px;
+      left: -10px;
   }
 }
 .carrito.animated{
