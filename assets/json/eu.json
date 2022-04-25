@@ -1,6 +1,7 @@
 {    
     "t1":"eskaintza",
     "t2":"zure eskaera",
+    "t2bis":"sariketa",
     "t3":"sukaldea",
     "t4":"Aukeratu zure pizza!",
     "t5":"Tamaina:",
@@ -18,9 +19,9 @@
     "t17":"Pip. Gorriak",
     "t18":"Pip. Berdeak",
     "t19":"Salami",
-    "t20":"Txanpiak",
-    "t21":"Tipula",
-    "t22":"Bacon",
+    "t20":"txanpiak",
+    "t21":"tipula",
+    "t22":"bacon",
     "t23":"Edateko zerbait?",
     "t24":"Urak:",
     "t25":"Ura",
@@ -59,6 +60,5 @@
     "t58":"Gazta",
     "t59":"Macadamia",
     "t60":"Pizza tradizionalekiko pasioa",
-    "t61": "GURE ESKAINTZAK",
-    "t62": "Astero eskaintza ugari proposatzen dizkizugu menuan.<br>Aprobetxatu preziorik onenak!"
+
 }
