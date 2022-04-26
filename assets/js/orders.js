@@ -110,7 +110,7 @@ const escribirPedido=()=>{
                 for(const comanda of objComanda){
                     Object.entries(comanda).forEach(([key,value])=>{
                         if(comanda.id_menu && value){
-                            if(key==='id_menu')template_fact+=`<h3>Menú Perzonalizado <span>${comanda.precio}€</span></h3>`,totalPrice+=Number(comanda.precio);
+                            if(key==='id_menu')template_fact+=`<h3 class="titular">menú Perzonalizado: <span>${comanda.precio}€</span></h3>`,totalPrice+=Number(comanda.precio);
                             if(key==='masa') template_fact+= `<li>${getTextContent('.txt5')} ${getTextContentById(value)}</li>`;
                             if(key==='tipo') template_fact+=`<li> ${getTextContent('.txt9')} ${getTextContentById(value)}</li>`;
                             if(key==='topping') createLiTextContent(comanda[key]);
@@ -118,7 +118,7 @@ const escribirPedido=()=>{
                             if(key==='otros') createLiTextContent(comanda[key]);
                         }
                         if(comanda.id_oferta && value){
-                            if(key==='id_oferta') template_fact+=`<li class='pOferta'>${comanda.menu} <span>${comanda.precio}€</span></li>`,totalPrice+=Number(comanda.precio.replace(',','.'));
+                            if(key==='id_oferta') template_fact+=`<h3 class='pOferta'>${comanda.menu}: <span> ${comanda.precio}€</span></h3>`,totalPrice+=Number(comanda.precio.replace(',','.'));
                         }
                     });
                 }
@@ -126,7 +126,7 @@ const escribirPedido=()=>{
             Object.entries(objMenu).forEach(([key,value])=>{
                 if(value && value!==0){
                     if(key==='id_menu'){
-                        (objMenu.precio==0) ? template_fact+='<h3>¡Perzonaliza una pizza!</h3><div class="space"><div/>'
+                        (objMenu.precio==0) ? template_fact+='<h3>-----</h3><div class="space"><div/>'
                         : template_fact+=`<h3>PIAZZERE <span>${objMenu.precio}€</span></h3>`;
                         totalPrice+=Number(objMenu.precio);
                     }
@@ -139,7 +139,7 @@ const escribirPedido=()=>{
             });
             pr.textContent=`Total: ${totalPrice.toFixed(2)}€`,totalPrice=0;
             click ? click=false : click=true;
-            click ? $notaPizza.insertAdjacentHTML('afterbegin',template_fact) : $notaPizza.textContent='';
+            click ? $notaPizza.insertAdjacentHTML('beforeend',template_fact) : $notaPizza.textContent='';
             template_fact='';
         }
     })

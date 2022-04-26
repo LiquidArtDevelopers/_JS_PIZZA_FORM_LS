@@ -46,7 +46,7 @@ function cambioIdioma(){
     jsonIdioma = `assets/json/${idioma}.json`;
     document.querySelector(`#${idioma}`).classList.add("idioma-select");
     
-    //recorremos todos los elementos del json y buscamos una id con su misma clave
+    //recorremos todos los elementos del json y buscamos una clase con su misma clave
     fetch(jsonIdioma)
     .then(response =>{
         if(response.ok)

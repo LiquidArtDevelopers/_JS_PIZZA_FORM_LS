@@ -2,6 +2,14 @@
     font-family: "Libreta";
     src: url("../font/ShortStack-Regular.ttf");
 }
+@font-face {
+  font-family: "Idioma";
+  src: url("../font/UnicaOne-Regular.ttf");
+}
+$color_boli:rgb(51, 51, 124);
+$color_rojo: rgba(232,72,85,1);
+$color_verde: rgba(123,216,96,1);
+
 .comprar {
   display: flex;
   align-items: flex-end;
@@ -17,13 +25,10 @@
   border-radius: 10px;
   background: #FBFBFB;
   box-shadow: 2px 2px 15px 0px rgba(0,0,0,.5);
-  h3{
-    font-size: 25px;
-  }
+  font-family: 'Idioma';
   .comprar-text{
     display: flex;
-    justify-content: center;
-    font-family: 'Libreta';
+    justify-content: center;    
     padding: 20px;
     width: 100%;
     height: 100%;;
@@ -31,7 +36,26 @@
     &::-webkit-scrollbar {
       display: none;
     }
-  }    
+    .list-fact{  
+      li{
+          font-weight: bold;
+          margin: 5px;
+          font-size: 16px;
+      }
+      h3{
+        font-size: 25px;
+      }
+      .titular{
+        color:$color_rojo;
+      }
+      .pOferta{
+        color: $color_verde;
+      }
+      .space{
+        padding: 25px;
+      }      
+    }
+  }
   &:before,
   &:after {
     content: '';
@@ -48,21 +72,15 @@
     bottom: -5px;
     background: radial-gradient(circle, transparent, transparent 50%, #FBFBFB 50%, #FBFBFB 100% ) -7px -2px / 16px 16px repeat-x,
   }
+  .precio{
+    position: absolute;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border-bottom: 3px solid #000;
+    font-size: 25px;
+  }
 }
-.comprar-text ul{
-    li{
-        font-weight: bold;
-        margin: 5px;
-        font-size: 22px;
-    }
-}
-.precio{
-  position: absolute;
-  margin-bottom: 10px;
-  font-weight: bold;
-  border-bottom: 3px solid #000;
-  font-size: 25px;
-}
+
 .comprar.active{
     display: flex;
     align-items: flex-start;
@@ -70,7 +88,4 @@
 }
 .hidden{
   display: none;
-}
-.space{
-  padding: 25px;
 }
