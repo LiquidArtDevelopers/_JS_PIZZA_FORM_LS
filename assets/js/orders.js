@@ -69,6 +69,21 @@ const setIdMenu=(id)=>{
     });
     idMenu+=1;
 }
+const nMenus=()=>{
+    let nOfertas=[];
+    objComanda.forEach((comanda)=>{
+        if(comanda['id_oferta'])  nOfertas.push(comanda.id_oferta);
+    });
+    return nOfertas.reduce((a,b)=> (a[b] ? a[b]+=1 : a[b]=1,a),{});
+}
+const deleteElObjComanda=()=>{
+    document.addEventListener('click',(e)=>{
+        if(e.target.matches('.cancel')){
+            
+        }
+    })
+}
+
 /**
  * Obtenemos el contenido del texto del elemento.
  * @param {String} id Recibimos 'id' en String.
@@ -118,7 +133,9 @@ const escribirPedido=()=>{
                             if(key==='otros') createLiTextContent(comanda[key]);
                         }
                         if(comanda.id_oferta && value){
-                            if(key==='id_oferta') template_fact+=`<h3 class='pOferta'>${comanda.menu}: <span> ${comanda.precio}€</span></h3>`,totalPrice+=Number(comanda.precio.replace(',','.'));
+                            if(key==='id_oferta'){
+                                template_fact+=`<h3 class='pOferta'>${comanda.menu}: <span> ${comanda.precio}€</span><span class="cancel" id=´${comanda.id}´ title="Eliminar">X</span></h3>`,totalPrice+=Number(comanda.precio.replace(',','.'));
+                            }
                         }
                     });
                 }

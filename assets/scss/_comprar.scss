@@ -37,6 +37,7 @@ $color_verde: rgba(123,216,96,1);
       display: none;
     }
     .list-fact{  
+      width: 100%;
       li{
           font-weight: bold;
           margin: 5px;
@@ -44,6 +45,14 @@ $color_verde: rgba(123,216,96,1);
       }
       h3{
         font-size: 25px;
+        .cancel {
+          padding: 15px;
+          color: rgba(0,0,0,.3);
+          cursor: pointer;
+          &:hover{
+            color: #ff0000;
+          }
+        }
       }
       .titular{
         color:$color_rojo;
