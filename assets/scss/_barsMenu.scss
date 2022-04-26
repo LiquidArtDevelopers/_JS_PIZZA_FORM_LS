@@ -1,4 +1,9 @@
 /* Bars menu */
+
+/* VARIABLES RESPONSIVE */
+$tablet: 900px;
+$movil: 500px;
+
 .bars__menu{
     display:none;
     width: 30px;
@@ -31,17 +36,14 @@
 .li-logo{
     display:none;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: $tablet) {
     #navegador{
-        width: 100vw !important;
-        
-        .nav-carrito{
-            right:-40px !important;
-        }
+        width: 100vw !important;        
         .bars__menu{
             display: block;
             z-index: 705;
-            width:70px !important; 
+            width:230px !important;
+            padding-right: 20px;
         }
         .nav-idiomas{
             visibility: hidden;
@@ -85,7 +87,7 @@
         }
     }
 }
-@media screen and (max-width: 768px) and (orientation: landscape){
+@media screen and (max-width: $movil) and (orientation: landscape){
     .nav-enlaces li{
         margin:5px 0 0 0;
     }
