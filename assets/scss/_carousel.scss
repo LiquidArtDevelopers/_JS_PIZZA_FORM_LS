@@ -1,4 +1,8 @@
 
+/* VARIABLES RESPONSIVE */
+$tablet: 900px;
+$movil: 500px;
+
 .carousel{
     width:100%;
     max-width: 1920px;
@@ -45,5 +49,13 @@
                 animation-iteration-count: infinite;
             }
         }
+    }
+    @media screen and (max-width: $tablet) {
+        .puntos{            
+            display:none;            
+        }
+    }
+    @media screen and (max-width: $movil) {
+        
     }
 }

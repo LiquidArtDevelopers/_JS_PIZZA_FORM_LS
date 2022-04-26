@@ -1,4 +1,10 @@
 /**Ventana modal para cookies**/
+
+/* VARIABLES RESPONSIVE */
+$tablet: 900px;
+$movil: 500px;
+
+
 @mixin windowModal{
     position: fixed;
     z-index:11000;    
@@ -90,17 +96,37 @@
             }
         }
     }
-}
-
-/**Media Screen - Responsive**/
-@media screen and(max-width:380px) {
-    #cookies{
-        width: 300px;
-        height: 400px;
-        overflow:scroll;
-        overflow-x: hidden;
+    /**Media Screen - Responsive**/
+    @media screen and (max-width: $tablet) {
+        #cookies{
+            width: 600px;
+            height: 500px;
+            .cookies-elements{                
+                row-gap: 20px;
+                .cookies-botones{
+                    flex-direction: column;                    
+                    row-gap: 20px;
+                    .btn-cookies{          
+                        border-radius: 5px;                    
+                        font-size: 20px;
+                        padding:10px 100px;                   
+                    }
+                }
+                a{
+                    font-size:17px;
+                }
+            }
+        }     
+    }
+    @media screen and (max-width: $movil) {
+        #cookies{
+            width: 400px;
+            height: 500px;            
+        }
     }
 }
+
+
 
 .window.is-active{
     transform: translate(0,0);
