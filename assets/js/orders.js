@@ -37,6 +37,7 @@ let ticket = [0,0,0,0,0];
 
 //Creamos el objeto Menú. Habrá varios objetos menú en una misma comanda.
 const objMenu={
+    id:'0',
     id_menu:'0',
     masa:'',
     tipo:'',
@@ -69,20 +70,24 @@ const setIdMenu=(id)=>{
     });
     idMenu+=1;
 }
-/* const nMenus=()=>{
+const nMenus=()=>{
     let nOfertas=[];
     objComanda.forEach((comanda)=>{
         if(comanda['id_oferta'])  nOfertas.push(comanda.id_oferta);
     });
     return nOfertas.reduce((a,b)=> (a[b] ? a[b]+=1 : a[b]=1,a),{});
 }
-const deleteElObjComanda=()=>{
+const borrarObjetodeObjComanda=()=>{
     document.addEventListener('click',(e)=>{
+        const id_pedido=String(e.target.parentNode.id).split('_')[1];
         if(e.target.matches('.cancel')){
-
+            objComanda= objComanda.filter((comanda)=> comanda.id!==id_pedido);
+            localStorage.setItem('objComanda',JSON.stringify(objComanda));
+            updateCantidadCart(objComanda);
+            setObjComanda();
         }
     })
-} */
+}
 
 /**
  * Obtenemos el contenido del texto del elemento.
@@ -134,7 +139,7 @@ const escribirPedido=()=>{
                         }
                         if(comanda.id_oferta && value){
                             if(key==='id_oferta'){
-                                template_fact+=`<h3 class='pOferta'>${comanda.menu}: <span> ${comanda.precio}€</span><span class="cancel" id=´${comanda.id}´ title="Eliminar">X</span></h3>`,totalPrice+=Number(comanda.precio.replace(',','.'));
+                                template_fact+=`<h3 class='pOferta' id="orden_${comanda.id}"><span class="cancel" title="Eliminar">X</span>${comanda.menu}: <span> ${comanda.precio}€</span></h3>`,totalPrice+=Number(comanda.precio.replace(',','.'));
                             }
                         }
                     });
@@ -158,6 +163,7 @@ const escribirPedido=()=>{
             click ? click=false : click=true;
             click ? $notaPizza.insertAdjacentHTML('beforeend',template_fact) : $notaPizza.textContent='';
             template_fact='';
+            borrarObjetodeObjComanda();
         }
     })
  }
@@ -176,6 +182,7 @@ const escribirPedido=()=>{
  }
 const addToCart=()=>{
     let msgAlert='',isAlert=false;
+    setIdMenu(idMenu);
     document.addEventListener('click',(e)=>{
         if(e.target.matches('#addTocart')){
             if(countIngredientsComanda()<3){
@@ -190,8 +197,8 @@ const addToCart=()=>{
             }else{
                 isAlert=false;
                 setObjComanda();
-                setIdMenu(idMenu);
-                objMenu['id_menu']=String(idMenu);
+                objMenu['id']=String(idMenu);
+                objMenu['id_menu']=`mn${idMenu}`;
                 objComanda.push(objMenu);
                 localStorage.setItem('objComanda',JSON.stringify(objComanda));
                 clearobjMenu(objMenu);
@@ -205,6 +212,7 @@ const addToCart=()=>{
         }else if(e.target.matches('.add')){
             let $parentElement=e.target.parentNode.parentElement;
             const oferta={
+                id: `${idMenu}`,
                 id_oferta:$parentElement.id,
                 menu:$parentElement.querySelector('.oTexto').textContent,
                 precio:$parentElement.querySelector('[data-precio]').dataset.precio
