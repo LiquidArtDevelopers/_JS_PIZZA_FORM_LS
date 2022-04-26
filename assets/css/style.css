@@ -1432,7 +1432,7 @@ body {
           justify-content: flex-end;
   color: white;
   font-family: "Idioma";
-  font-size: 2.1vw;
+  font-size: 2vw;
 }
 
 #navegador .nav-enlaces ul {
@@ -1587,7 +1587,7 @@ header {
 .contenedor_principal #seccion_titular {
   width: 100%;
   max-width: 1920px;
-  height: 350px;
+  height: 20hw;
   background-color: #414141;
   padding-bottom: 40px;
   position: relative;
@@ -1620,10 +1620,10 @@ header {
 
 .contenedor_principal #seccion_titular .titulo h1 {
   position: absolute;
-  top: 190px;
+  top: 75%;
   text-align: center;
   font-family: "Piazzere";
-  font-size: 3vw;
+  font-size: 2.3vw;
   color: white;
   text-shadow: #7bd860 0px 0px 20px;
 }
