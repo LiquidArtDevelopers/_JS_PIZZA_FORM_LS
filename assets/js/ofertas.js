@@ -70,6 +70,7 @@ function rellenarOfertas(){
                 /* ofertaHTML = `<div id="of${contador+=1}" class="oferta"><img hq="${oOferta.srcHQ}" class="imgOferta" src="${oOferta.src}" alt=""><p class="oTexto">${oOferta.texto}</p><div class="anadir" data-nombre="${oOferta.texto}" data-precio="${oOferta.precio}"><img src="assets/img/varias/carritoADD.svg" class="add" alt=""></div><p class="oEuros">${eur}<span>,${cent}€</span></p></div>`
                 //escribimos el html dinámico
                 document.querySelector("#ofertas").insertAdjacentHTML("afterbegin",ofertaHTML); */
+                
                 $template.querySelector('.oferta').id=`of${contador+=1}`;
                 $template.querySelector('.imgOferta').setAttribute('hq',`${oOferta.srcHQ}`);
                 $template.querySelector('.imgOferta').setAttribute('src',`${oOferta.src}`);
