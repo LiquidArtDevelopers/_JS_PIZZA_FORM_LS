@@ -60,6 +60,7 @@ function circleListSelection(){
 
 const flyeToCart=()=>{
     const $cart= document.querySelector('.carrito');
+    const $ofertas=document.querySelector('#ofertas').children;
     document.addEventListener('click',(e)=>{
         if(e.target.matches('.add')){
             // image animated to cart
@@ -69,15 +70,23 @@ const flyeToCart=()=>{
             $span.className='image-carior';
             $parent.insertBefore($span, $parent.lastElementChild);
             let $s_image= $image.cloneNode(false);
-            $span.appendChild($s_image);
+            $span.appendChild($s_image);    
             $span.classList.add('active');
             $cart.classList.add('animated');
+            $parent.classList.add('active');
+            for(const $oferta of $ofertas){
+                if(!$oferta.classList.contains('active')) $oferta.classList.add('hidden');
+            }
             setTimeout(()=>{
                 $span.classList.remove('active');
                 $cart.classList.remove('animated');
                 $span.removeChild($s_image);
                 $span.remove();
-            }, 500);
+                $parent.classList.remove('active');
+                for(const $oferta of $ofertas){
+                    $oferta.classList.remove('hidden');
+                } 
+            },500);
         }
     });
 }
