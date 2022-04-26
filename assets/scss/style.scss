@@ -720,7 +720,7 @@ header{
                 align-items: center;
             }
             @media screen and (max-width: $movil) {
-                
+                height: 100%;
             }
 
             .caja-cuaderno{
@@ -1012,7 +1012,10 @@ header{
                             height: 80px;
                             transition: 2s;
                         }
-                    }   
+                    }
+                    #precio{
+                        transform: translateX(0px) translateY(50px) scale(3);                        
+                    } 
                 }
             }
         }        
@@ -1036,7 +1039,7 @@ header{
             @include segundo_titular;
         }
         .contenedor_form{
-            width: 80%;
+            width: 100%;
             max-width: 1440px;
             display: flex;
             flex-direction: row;
@@ -1054,13 +1057,13 @@ header{
             }
             .der{
                 width: 45%;
-                margin-left: 25PX;
+                margin-left: 25px;
                 padding-left: 50px;
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
                 border-left: 2px solid $color_gris;
-            }
+            }            
         }
         .contenedor_mapa{
             width: 80%;
@@ -1071,6 +1074,119 @@ header{
                 border: none;
                 border-radius:20px;
             }            
+        }
+        @media screen and (max-width: $tablet) {
+            /* width: 100%;
+            max-width: 1920px;
+            padding-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: white; */
+            .subtitulos{
+                /* font-family: "Idioma"; */
+                font-size: 3.2vw;
+                /* color: $color_gris; */
+            }
+            /* .segundo_titular{
+                @include segundo_titular;
+            } */
+            .contenedor_form{
+                width: 90%;
+                /* max-width: 1440px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items:flex-start;
+                background-color: white; */
+                .izd{
+                    width: 30%;
+                    transform: 2s;
+                    /* height: 100%;
+                    overflow: hidden; */                    
+                    /* img{
+                        width: 100%;
+                        border-radius: 0px 25%;
+                    } */
+                }
+                /* .der{
+                    width: 45%;
+                    margin-left: 25px;
+                    padding-left: 50px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    border-left: 2px solid $color_gris;
+                }       */      
+            }
+            .contenedor_mapa{
+                width: 90%;
+                margin-top: 30px;
+                /* .mapa{
+                    width: 100%;
+                    height: 300px;
+                    border: none;
+                    border-radius:20px;
+                }             */
+            }        
+        }
+        @media screen and (max-width: $movil) {
+            /* width: 100%;
+            max-width: 1920px;
+            padding-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: white; */
+            .subtitulos{
+                /* font-family: "Idioma"; */
+                font-size: 5.2vw;
+                /* color: $color_gris; */
+            }
+            /* .segundo_titular{
+                @include segundo_titular;
+            } */
+            .contenedor_form{
+                /* width: 90%;
+                max-width: 1440px;
+                display: flex; */
+                flex-direction: column;
+                /* flex-wrap: wrap; */
+                /* align-items:flex-start;
+                background-color: white; */
+                .izd{
+                    width: 90%;
+                    transform: 2s;
+                    /* height: 100%;
+                    overflow: hidden; */                    
+                    /* img{
+                        width: 100%;
+                        border-radius: 0px 25%;
+                    } */
+                }
+                .der{
+                    width: 90%;
+                    margin-left: 0px;
+                    padding-left: 25px;
+                    /* display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    border-left: 2px solid $color_gris; */
+                    transform: scale(.8);
+                }            
+            }
+            .contenedor_mapa{
+                width: 90%;
+                margin-top: 30px;
+                /* .mapa{
+                    width: 100%;
+                    height: 300px;
+                    border: none;
+                    border-radius:20px;
+                }             */
+            }    
         }
     }
     /* ZONA CONCURSO */
