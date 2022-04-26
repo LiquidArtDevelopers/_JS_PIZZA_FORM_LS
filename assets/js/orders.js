@@ -69,7 +69,7 @@ const setIdMenu=(id)=>{
     });
     idMenu+=1;
 }
-const nMenus=()=>{
+/* const nMenus=()=>{
     let nOfertas=[];
     objComanda.forEach((comanda)=>{
         if(comanda['id_oferta'])  nOfertas.push(comanda.id_oferta);
@@ -79,10 +79,10 @@ const nMenus=()=>{
 const deleteElObjComanda=()=>{
     document.addEventListener('click',(e)=>{
         if(e.target.matches('.cancel')){
-            
+
         }
     })
-}
+} */
 
 /**
  * Obtenemos el contenido del texto del elemento.
