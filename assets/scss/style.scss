@@ -31,10 +31,8 @@ $tablet: 900px;
 $movil: 500px;
 /* COPIA */
 @media screen and (max-width: $tablet) {
-                    
 }
 @media screen and (max-width: $movil) {
-    
 }
 
 //GLOBALES
@@ -441,7 +439,6 @@ header{
             align-items: center;
             .logo-principal{
                 top: 10vh;
-                width: 30%;
             }
             h1{
                 position: absolute;
@@ -456,6 +453,10 @@ header{
         @media screen and (max-width: $tablet) {
             height: 22vh;
             .titulo{
+                .logo-principal{
+                    top: 0vh;
+                    width: 300px;
+                }
                 h1{
                     top: 70%;
                     font-size: 3vw;
@@ -651,7 +652,7 @@ header{
                 row-gap: 10px;
                 text-align: center;
                 h2{         
-                    font-size: 10vh;
+                    font-size: 7vh;
                     font-family: "idioma";
                     color: white;
                 }
@@ -1032,7 +1033,7 @@ header{
         background-color: white;
         .subtitulos{
             font-family: "Idioma";
-            font-size: 2.2vw;
+            font-size: 1.9rem;
             color: $color_gris;
         }
         .segundo_titular{
@@ -1063,6 +1064,7 @@ header{
                 flex-direction: column;
                 justify-content: flex-start;
                 border-left: 2px solid $color_gris;
+                background-color: aqua;
             }            
         }
         .contenedor_mapa{
@@ -1075,117 +1077,38 @@ header{
                 border-radius:20px;
             }            
         }
-        @media screen and (max-width: $tablet) {
-            /* width: 100%;
-            max-width: 1920px;
-            padding-bottom: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            background-color: white; */
-            .subtitulos{
-                /* font-family: "Idioma"; */
-                font-size: 3.2vw;
-                /* color: $color_gris; */
-            }
-            /* .segundo_titular{
-                @include segundo_titular;
-            } */
+        @media screen and (max-width: $tablet) {            
             .contenedor_form{
                 width: 90%;
-                /* max-width: 1440px;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                align-items:flex-start;
-                background-color: white; */
                 .izd{
                     width: 30%;
                     transform: 2s;
-                    /* height: 100%;
-                    overflow: hidden; */                    
-                    /* img{
-                        width: 100%;
-                        border-radius: 0px 25%;
-                    } */
-                }
-                /* .der{
-                    width: 45%;
-                    margin-left: 25px;
-                    padding-left: 50px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: flex-start;
-                    border-left: 2px solid $color_gris;
-                }       */      
+                }   
             }
             .contenedor_mapa{
                 width: 90%;
                 margin-top: 30px;
-                /* .mapa{
-                    width: 100%;
-                    height: 300px;
-                    border: none;
-                    border-radius:20px;
-                }             */
             }        
         }
         @media screen and (max-width: $movil) {
-            /* width: 100%;
-            max-width: 1920px;
-            padding-bottom: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            background-color: white; */
             .subtitulos{
-                /* font-family: "Idioma"; */
-                font-size: 5.2vw;
-                /* color: $color_gris; */
+                font-size: 1.7rem;
             }
-            /* .segundo_titular{
-                @include segundo_titular;
-            } */
             .contenedor_form{
-                /* width: 90%;
-                max-width: 1440px;
-                display: flex; */
                 flex-direction: column;
-                /* flex-wrap: wrap; */
-                /* align-items:flex-start;
-                background-color: white; */
                 .izd{
                     width: 90%;
-                    transform: 2s;
-                    /* height: 100%;
-                    overflow: hidden; */                    
-                    /* img{
-                        width: 100%;
-                        border-radius: 0px 25%;
-                    } */
                 }
                 .der{
                     width: 90%;
                     margin-left: 0px;
                     padding-left: 25px;
-                    /* display: flex;
-                    flex-direction: column;
-                    justify-content: flex-start;
-                    border-left: 2px solid $color_gris; */
                     transform: scale(.8);
                 }            
             }
             .contenedor_mapa{
                 width: 90%;
                 margin-top: 30px;
-                /* .mapa{
-                    width: 100%;
-                    height: 300px;
-                    border: none;
-                    border-radius:20px;
-                }             */
             }    
         }
     }
@@ -1239,14 +1162,14 @@ header{
                     row-gap: 20px;
                     width: 70%;
                     h2{         
-                        font-size: 9vh;
+                        font-size: 7vh;
                         font-family: "idioma";
                         color: white;
                     }
                     .subtitular{
                         border-left: 2px solid white;
                         padding-left: 20px;            
-                        font-size: 1.8rem;
+                        font-size: 1.6rem;
                         font-family: "idioma";
                         color: white;
                     }
@@ -1259,9 +1182,48 @@ header{
                     }
                 }
             }
+            @media screen and (max-width: $tablet) {                
+                column-gap: 30px;
+                .oferta_caja_dcha{
+                    width: 55%;
+                    .texto_oferta{
+                        width: 90%;
+                        h2{         
+                            font-size: 6vh;
+                        }
+                        .subtitular{
+                            font-size: 1.6rem;
+                        }
+                    }
+                    .grafico{
+                        width: 90%;
+                        padding-left: 0px;
+                    }
+                }
+            }
+            @media screen and (max-width: $movil) {
+                .oferta_caja_izda{
+                    display:none;
+                }
+                .oferta_caja_dcha{
+                    width: 90%;
+                    .texto_oferta{
+                        width: 90%;
+                        h2{         
+                            font-size: 5vh;
+                        }
+                        .subtitular{
+                            font-size: 1.6rem;
+                        }
+                    }
+                    .grafico{
+                        width: 90%;
+                        padding-left: 0px;
+                    }
+                }
+            }   
         }
-    }
-    
+    }    
     /* ZONA QUIENES SOMOS */
     #seccion_cocina{
         width: 100%;
@@ -1374,6 +1336,9 @@ footer{
     margin-top: -4px;
     width: 100%;
     max-width: 1920px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     &:before {
         background:
           linear-gradient(
@@ -1428,12 +1393,32 @@ footer{
                     padding-bottom: 20px;
                 }
             }
-        }        
+        }             
     }
     .copyrights{
         height: 100px;
         display: flex;
         justify-content: center;
         align-items: center;
-    }    
+    }
+    @media screen and (max-width: $tablet) {
+        .columnas{
+            flex-wrap: wrap;
+            .columna{
+                width: 50%; 
+                min-width: 200px;
+                row-gap: 10px;
+                .logo-peq{
+                    font-size: 1.9rem;
+                }
+                h2{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+        .copyrights{
+            flex-wrap: wrap;
+            width: 90%;            
+        }
+    } 
 }
