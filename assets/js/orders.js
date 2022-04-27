@@ -85,6 +85,7 @@ const borrarObjetodeObjComanda=()=>{
             localStorage.setItem('objComanda',JSON.stringify(objComanda));
             updateCantidadCart(objComanda);
             setObjComanda();
+            e.target.parentNode.textContent='';
         }
     })
 }
@@ -130,7 +131,7 @@ const escribirPedido=()=>{
                 for(const comanda of objComanda){
                     Object.entries(comanda).forEach(([key,value])=>{
                         if(comanda.id_menu && value){
-                            if(key==='id_menu')template_fact+=`<h3 class="titular">menú Perzonalizado: <span>${comanda.precio}€</span></h3>`,totalPrice+=Number(comanda.precio);
+                            if(key==='id_menu')template_fact+=`<h3 class="titular" id="orden_${comanda.id}"><span class="cancel" title="Eliminar">X</span>menú Perzonalizado: <span>${comanda.precio}€</span></h3>`,totalPrice+=Number(comanda.precio);
                             if(key==='masa') template_fact+= `<li>${getTextContent('.txt5')} ${getTextContentById(value)}</li>`;
                             if(key==='tipo') template_fact+=`<li> ${getTextContent('.txt9')} ${getTextContentById(value)}</li>`;
                             if(key==='topping') createLiTextContent(comanda[key]);
