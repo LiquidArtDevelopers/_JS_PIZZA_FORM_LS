@@ -85,6 +85,7 @@ const borrarObjetodeObjComanda=()=>{
             localStorage.setItem('objComanda',JSON.stringify(objComanda));
             updateCantidadCart(objComanda);
             setObjComanda();
+            e.target.parentNode.textContent='';
         }
     })
 }
