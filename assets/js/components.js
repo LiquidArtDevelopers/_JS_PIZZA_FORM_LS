@@ -6,14 +6,44 @@ export default function componentes(){
     flyeToCart();
 }
 
+
+//FUNCIÓN PARA SABER EN QUÉ MOMENTO NOS ENCONTRAMOS CON CIERTOS ELEMENTOS DEL HTML EN PANTALLA
+var elem = document.getElementById('seccion_ofertas');
+
+function isInViewport(elem) {
+    var distance = elem.getBoundingClientRect();
+    return (
+        distance.top < (window.innerHeight || document.documentElement.clientHeight) && distance.bottom > 0
+    );
+}
+
+
+
 //SCRIPT SCROLL NAV-----------------
 function scrollFunction() {
-    /* if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+
+    /* console.log(document.documentElement.scrollTop) */
+    if (isInViewport(elem)) {
+        console.log("!!");
+    }
+
+
+
+
+
+    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
         document.getElementById("navegador").style.backgroundColor = "rgb(65, 65, 65)";
     } else {
         document.getElementById("navegador").style.backgroundColor = "rgba(65, 65, 65, 1)";
-    } */
+    }
     
+    switch(document.documentElement.scrollTop){
+        case 695:
+            console.log(document.getElementsByClassName('txt1'));
+            
+        break;
+    }
+
     if (document.body.scrollTop > 1400 || document.documentElement.scrollTop > 1400) {
         document.body.classList.add("cambio_fondo")
     } else {
