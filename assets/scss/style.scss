@@ -439,6 +439,7 @@ header{
             align-items: center;
             .logo-principal{
                 top: 10vh;
+                width: 400px;
             }
             h1{
                 position: absolute;
@@ -454,8 +455,7 @@ header{
             height: 22vh;
             .titulo{
                 .logo-principal{
-                    top: 0vh;
-                    width: 300px;
+                    width: 200px;
                 }
                 h1{
                     top: 70%;
@@ -467,11 +467,11 @@ header{
             height: 20vh;
             .titulo{
                 .logo-principal{
-                    top: 10vh;
-                    width: 55%;
+                    position: absolute;
+                    top: 0px;
+                    width: 250px;
                 }
                 h1{
-                    top: 70%;
                     font-size: 5vw;
                 }
             }    
@@ -1040,7 +1040,7 @@ header{
             @include segundo_titular;
         }
         .contenedor_form{
-            width: 100%;
+            width: 90%;
             max-width: 1440px;
             display: flex;
             flex-direction: row;
@@ -1048,7 +1048,7 @@ header{
             align-items:flex-start;
             background-color: white;
             .izd{
-                width: 50%;
+                width: 30%;
                 height: 100%;
                 overflow: hidden;
                 img{
@@ -1064,7 +1064,6 @@ header{
                 flex-direction: column;
                 justify-content: flex-start;
                 border-left: 2px solid $color_gris;
-                background-color: aqua;
             }            
         }
         .contenedor_mapa{
@@ -1079,11 +1078,16 @@ header{
         }
         @media screen and (max-width: $tablet) {            
             .contenedor_form{
-                width: 90%;
+                flex-direction: column;
+                align-items: center;
                 .izd{
-                    width: 30%;
-                    transform: 2s;
-                }   
+                    width: 90%;
+                }
+                .der{
+                    width: 90%;
+                    margin-left: 0px;
+                    padding-left: 25px;
+                }            
             }
             .contenedor_mapa{
                 width: 90%;
@@ -1094,22 +1098,12 @@ header{
             .subtitulos{
                 font-size: 1.7rem;
             }
-            .contenedor_form{
-                flex-direction: column;
-                .izd{
-                    width: 90%;
-                }
+            .contenedor_form{              
                 .der{
-                    width: 90%;
-                    margin-left: 0px;
-                    padding-left: 25px;
+                    margin-left: -100px;
                     transform: scale(.8);
                 }            
             }
-            .contenedor_mapa{
-                width: 90%;
-                margin-top: 30px;
-            }    
         }
     }
     /* ZONA CONCURSO */
