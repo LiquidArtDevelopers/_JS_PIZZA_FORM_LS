@@ -826,7 +826,7 @@ select:-webkit-autofill:focus {
 
 .nav-idiomas.active {
   visibility: visible !important;
-  padding-right: 0px !important;
+  padding-right: 20px !important;
   z-index: 700;
 }
 
@@ -1808,12 +1808,12 @@ header {
   font-family: "idioma";
 }
 
-.contenedor_principal #seccion_ofertas .segundo_titular .active {
+.contenedor_principal #seccion_ofertas .segundo_titular .active2 {
   opacity: 1;
   -webkit-transform: translateX(0px);
           transform: translateX(0px);
-  -webkit-transition: 3s;
-  transition: 3s;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
 }
 
 @media screen and (max-width: 900px) {
@@ -2134,12 +2134,12 @@ header {
   color: white;
 }
 
-.contenedor_principal #seccion_pedido .oferta_titular .active {
+.contenedor_principal #seccion_pedido .oferta_titular .active2 {
   opacity: 1;
   -webkit-transform: translateX(0px);
           transform: translateX(0px);
-  -webkit-transition: 2s;
-  transition: 2s;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
 }
 
 @media screen and (max-width: 900px) {
@@ -2810,26 +2810,6 @@ header {
   background-color: white;
 }
 
-.contenedor_principal #seccion_formulario .img_fondo {
-  position: absolute;
-  opacity: 0%;
-  -webkit-transform: translateY(200px);
-          transform: translateY(200px);
-  right: -100px;
-  height: 80%;
-  z-index: 1;
-  -webkit-filter: invert(46%) sepia(57%) saturate(3796%) hue-rotate(327deg) brightness(92%) contrast(97%);
-          filter: invert(46%) sepia(57%) saturate(3796%) hue-rotate(327deg) brightness(92%) contrast(97%);
-}
-
-.contenedor_principal #seccion_formulario .active {
-  opacity: 20%;
-  -webkit-transform: translateY(50px);
-          transform: translateY(50px);
-  -webkit-transition: 4s;
-  transition: 4s;
-}
-
 .contenedor_principal #seccion_formulario .subtitulos {
   font-family: "Idioma";
   font-size: 1.9rem;
@@ -2877,12 +2857,12 @@ header {
   font-family: "idioma";
 }
 
-.contenedor_principal #seccion_formulario .segundo_titular .active {
+.contenedor_principal #seccion_formulario .segundo_titular .active2 {
   opacity: 1;
   -webkit-transform: translateX(0px);
           transform: translateX(0px);
-  -webkit-transition: 3s;
-  transition: 3s;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
 }
 
 @media screen and (max-width: 900px) {
@@ -3221,12 +3201,12 @@ header {
   font-family: "idioma";
 }
 
-.contenedor_principal #seccion_cocina .segundo_titular .active {
+.contenedor_principal #seccion_cocina .segundo_titular .active2 {
   opacity: 1;
   -webkit-transform: translateX(0px);
           transform: translateX(0px);
-  -webkit-transition: 3s;
-  transition: 3s;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
 }
 
 @media screen and (max-width: 900px) {

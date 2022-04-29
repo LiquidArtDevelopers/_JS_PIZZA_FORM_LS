@@ -157,10 +157,10 @@ html{
         }
     }
     //clase activa para la animación
-    .active{
+    .active2{
         opacity: 1;
         transform: translateX(0px);
-        transition: 3s;
+        transition: 1.5s;
     }
     @media screen and (max-width: $tablet) {
         .texto_oferta{
@@ -685,10 +685,10 @@ header{
                     color: white;
                 }
             }
-            .active{
+            .active2{
                 opacity: 1;
                 transform: translateX(0px);
-                transition: 2s;
+                transition: 1.5s;
             }
             @media screen and (max-width: $tablet) {
                 height: 25vh;
@@ -1058,20 +1058,6 @@ header{
         align-items: center;
         justify-content: flex-start;
         background-color: white;
-        .img_fondo {
-            position: absolute;
-            opacity: 0%;
-            transform: translateY(200px);
-            right: -100px;
-            height: 80%;
-            z-index: 1;
-            filter: invert(46%) sepia(57%) saturate(3796%) hue-rotate(327deg) brightness(92%) contrast(97%);               
-        }
-        .active{
-            opacity: 20%;
-            transform: translateY(50px);
-            transition: 4s;
-        }
         .subtitulos{
             font-family: "Idioma";
             font-size: 1.9rem;

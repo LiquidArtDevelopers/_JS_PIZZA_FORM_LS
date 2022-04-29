@@ -117,8 +117,8 @@ const flyeToCart=()=>{
     });
 }
 
-//EFECTOS DE APARICIÓN
-//------------------------
+
+//EFECTOS VARIOS DE APARICIÓN-------------
 
 //función en la que seleccionamos todos los elementos que tengan esa clase enviada
 function scrollTrigger(selector, options = {}){
@@ -134,23 +134,21 @@ function scrollTrigger(selector, options = {}){
 
 function addObserver(el, options){
 
-    
     if(!('IntersectionObserver' in window)){
         if(options.cb){
             options.cb(el)
         }else{
-            entry.target.classList.add('active')
+            entry.target.classList.add('active2')
         }
         return
-    }
-    
+    }    
     let observer = new IntersectionObserver((entries, observer) => {       
         entries.forEach(entry => {
             if(entry.isIntersecting){
                 if(options.cb){
                     options.cb(el)
                 }else{
-                    entry.target.classList.add('active')
+                    entry.target.classList.add('active2')
                 }
                 observer.unobserve(entry.target)
             }
@@ -160,6 +158,4 @@ function addObserver(el, options){
 }
 //textos de oferta y titulares de sección
 scrollTrigger('.texto_oferta')
-scrollTrigger('.img_fondo'),{
-    rootMargin: '-200px'
-}
+scrollTrigger('.img_fondo')
