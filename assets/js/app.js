@@ -11,7 +11,7 @@ import modales from "./modales.js";
 const d=document;
 d.addEventListener('DOMContentLoaded',()=>{
     //Llamar a la animación de carga  .
-    //loadAnimation();
+    loadAnimation();
     //Script que gestiona las cookies.
     dataCookies();
     //carrousel
