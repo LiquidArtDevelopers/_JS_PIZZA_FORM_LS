@@ -27,10 +27,6 @@ function scrollFunction() {
         console.log("!!");
     }
 
-
-
-
-
     if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
         document.getElementById("navegador").style.backgroundColor = "rgb(65, 65, 65)";
     } else {
@@ -119,4 +115,51 @@ const flyeToCart=()=>{
             },500);
         }
     });
+}
+
+//EFECTOS DE APARICIÓN
+//------------------------
+
+//función en la que seleccionamos todos los elementos que tengan esa clase enviada
+function scrollTrigger(selector, options = {}){
+    let els = document.querySelectorAll(selector)
+    //creamos el array de todos los elementos que existan con esa clase
+    els = Array.from(els)
+    //recorremos el array
+    els.forEach(el => {
+        //enviamos un elemento del array (y sus opciones) a la función asíncrona
+        addObserver(el, options)
+    })
+}
+
+function addObserver(el, options){
+
+    
+    if(!('IntersectionObserver' in window)){
+        if(options.cb){
+            options.cb(el)
+        }else{
+            entry.target.classList.add('active')
+        }
+        return
+    }
+    
+    let observer = new IntersectionObserver((entries, observer) => {       
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                if(options.cb){
+                    options.cb(el)
+                }else{
+                    entry.target.classList.add('active')
+                }
+                observer.unobserve(entry.target)
+            }
+        })
+    }, options)
+    observer.observe(el)
+}
+//textos de oferta y titulares de sección
+scrollTrigger('.texto_oferta')
+scrollTrigger('.img_fondo'),{
+    rootMargin: '-200px'
 }

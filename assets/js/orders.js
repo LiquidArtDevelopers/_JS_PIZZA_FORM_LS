@@ -510,7 +510,7 @@ function insertar_comanda(com){
                         topP ="445px";
                         leftP = "45px";                        
                         indexxx=2;
-                        topping+=`<img id="t1" class="ingr" src="assets/img/pizza/extra-queso.png" alt="">`;
+                        topping+=`<img id="t1" class="ingr pizza" src="assets/img/pizza/extra-queso.png" alt="">`;
                         objMenu['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
@@ -518,7 +518,7 @@ function insertar_comanda(com){
                         topP ="445px";
                         leftP = "175px";
                         indexxx=3;
-                        topping+=`<img id="t2" class="ingr" src="assets/img/pizza/queso-cabra.png" alt="">`;
+                        topping+=`<img id="t2" class="ingr pizza" src="assets/img/pizza/queso-cabra.png" alt="">`;
                         objMenu['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
@@ -526,7 +526,7 @@ function insertar_comanda(com){
                         topP ="435px";
                         leftP = "330px";
                         indexxx=5;
-                        topping+=`<img id="t3" class="ingr" src="assets/img/pizza/aceitunas.png" alt="">`;
+                        topping+=`<img id="t3" class="ingr pizza" src="assets/img/pizza/aceitunas.png" alt="">`;
                         objMenu['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
@@ -534,7 +534,7 @@ function insertar_comanda(com){
                         topP ="530px";
                         leftP = "50px";
                         indexxx=8;
-                        topping+=`<img id="t4" class="ingr" src="assets/img/pizza/pimiento-rojo.png" alt="">`;
+                        topping+=`<img id="t4" class="ingr pizza" src="assets/img/pizza/pimiento-rojo.png" alt="">`;
                         objMenu['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
@@ -542,7 +542,7 @@ function insertar_comanda(com){
                         topP ="530px";
                         leftP = "190px";
                         indexxx=6;
-                        topping+=`<img id="t5" class="ingr" src="assets/img/pizza/pimiento-verde.png" alt="">`;
+                        topping+=`<img id="t5" class="ingr pizza" src="assets/img/pizza/pimiento-verde.png" alt="">`;
                         objMenu['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
@@ -550,7 +550,7 @@ function insertar_comanda(com){
                         topP ="530px";
                         leftP = "345px";
                         indexxx=4;
-                        topping+=`<img id="t6" class="ingr" src="assets/img/pizza/salami.png" alt="">`;
+                        topping+=`<img id="t6" class="ingr pizza" src="assets/img/pizza/salami.png" alt="">`;
                         objMenu['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
@@ -558,7 +558,7 @@ function insertar_comanda(com){
                         topP ="605px";
                         leftP = "55px";
                         indexxx=10;
-                        topping+=`<img id="t7" class="ingr" src="assets/img/pizza/champis.png" alt="">`;
+                        topping+=`<img id="t7" class="ingr pizza" src="assets/img/pizza/champis.png" alt="">`;
                         objMenu['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
@@ -566,7 +566,7 @@ function insertar_comanda(com){
                         topP ="605px";
                         leftP = "200px";
                         indexxx=7;
-                        topping+=`<img id="t8" class="ingr" src="assets/img/pizza/cebolla.png" alt="">`;
+                        topping+=`<img id="t8" class="ingr pizza" src="assets/img/pizza/cebolla.png" alt="">`;
                         objMenu['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;
@@ -574,7 +574,7 @@ function insertar_comanda(com){
                         topP ="605px";
                         leftP = "340px";
                         indexxx=9;
-                        topping+=`<img id="t9" class="ingr" src="assets/img/pizza/bacon.png" alt="">`;
+                        topping+=`<img id="t9" class="ingr pizza" src="assets/img/pizza/bacon.png" alt="">`;
                         objMenu['topping'].push(com);
                         ticket[2]+=precioTpp;
                         break;                    
@@ -596,7 +596,7 @@ function insertar_comanda(com){
                 contador+=1
                 console.log(contador)
                 if(contador==3){
-                    let topping2=`<img id="t10" class="ingr" src="assets/img/pizza/queso-rallado.png" alt="">`;
+                    let topping2=`<img id="t10" class="ingr pizza" src="assets/img/pizza/queso-rallado.png" alt="">`;
                     indexxx=11;
                     resultado.insertAdjacentHTML('beforeend',topping2);
                     document.querySelector("#t10").style.display="block";

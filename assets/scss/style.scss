@@ -83,6 +83,16 @@ html{
         bottom: 170px;
     }
 }
+@keyframes rotacion {
+    from {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);    
+    }  
+    to {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);  
+    }
+  }
 
 @mixin fondo{            
     background-image: url("../img/logos/Entramado_reverso.svg");
@@ -131,7 +141,10 @@ html{
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        row-gap: 10px; 
+        row-gap: 10px;
+        //stylos de la animación
+        opacity: 1;
+        transform: translateX(100px);
         h2{         
             font-size: 9vh;
             font-family: "idioma";
@@ -142,6 +155,12 @@ html{
             font-size: 1.8rem;
             font-family: "idioma";
         }
+    }
+    //clase activa para la animación
+    .active{
+        opacity: 1;
+        transform: translateX(0px);
+        transition: 3s;
     }
     @media screen and (max-width: $tablet) {
         .texto_oferta{
@@ -651,6 +670,8 @@ header{
                 justify-content: center;
                 row-gap: 10px;
                 text-align: center;
+                opacity: 0;
+                transform: translateX(-100px);
                 h2{         
                     font-size: 7vh;
                     font-family: "idioma";
@@ -663,6 +684,11 @@ header{
                     font-family: "idioma";
                     color: white;
                 }
+            }
+            .active{
+                opacity: 1;
+                transform: translateX(0px);
+                transition: 2s;
             }
             @media screen and (max-width: $tablet) {
                 height: 25vh;
@@ -702,8 +728,7 @@ header{
             border: 0px solid white; 
             box-shadow: 2px 2px 15px 0px rgba(0,0,0,.5);
             padding-top: 30px;
-            background-color: rgba(255, 255, 255, 0.267);
-            
+            background-color: rgba(255, 255, 255, 0.267);            
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -712,7 +737,6 @@ header{
             align-items: flex-start;
             padding-left: 20px;
             position: relative;
-
             @media screen and (max-width: $tablet) {
                 width: 95%;
                 height: 1600px;
@@ -969,6 +993,9 @@ header{
                     img{
                         position: absolute;
                     }
+                    .pizza{
+                        animation: rotacion 90s linear infinite;
+                    }
                     .anadir{
                         @include boton_anadir();
                         left: 10px;
@@ -1031,6 +1058,20 @@ header{
         align-items: center;
         justify-content: flex-start;
         background-color: white;
+        .img_fondo {
+            position: absolute;
+            opacity: 0%;
+            transform: translateY(200px);
+            right: -100px;
+            height: 120%;
+            z-index: 1;
+            filter: invert(46%) sepia(57%) saturate(3796%) hue-rotate(327deg) brightness(92%) contrast(97%);               
+        }
+        .active{
+            opacity: 20%;
+            transform: translateY(50px);
+            transition: 4s;
+        }
         .subtitulos{
             font-family: "Idioma";
             font-size: 1.9rem;

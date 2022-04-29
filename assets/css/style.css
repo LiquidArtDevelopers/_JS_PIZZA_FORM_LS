@@ -1259,6 +1259,28 @@ html {
   }
 }
 
+@-webkit-keyframes rotacion {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotacion {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
 body {
   background-image: url("../img/logos/Entramado_reverso.svg");
   background-attachment: fixed;
@@ -1769,6 +1791,9 @@ header {
       -ms-flex-align: center;
           align-items: center;
   row-gap: 10px;
+  opacity: 1;
+  -webkit-transform: translateX(100px);
+          transform: translateX(100px);
 }
 
 .contenedor_principal #seccion_ofertas .segundo_titular .texto_oferta h2 {
@@ -1781,6 +1806,14 @@ header {
   padding-left: 20px;
   font-size: 1.8rem;
   font-family: "idioma";
+}
+
+.contenedor_principal #seccion_ofertas .segundo_titular .active {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  -webkit-transition: 3s;
+  transition: 3s;
 }
 
 @media screen and (max-width: 900px) {
@@ -2082,6 +2115,9 @@ header {
           justify-content: center;
   row-gap: 10px;
   text-align: center;
+  opacity: 0;
+  -webkit-transform: translateX(-100px);
+          transform: translateX(-100px);
 }
 
 .contenedor_principal #seccion_pedido .oferta_titular .texto_oferta h2 {
@@ -2096,6 +2132,14 @@ header {
   font-size: 1.8rem;
   font-family: "idioma";
   color: white;
+}
+
+.contenedor_principal #seccion_pedido .oferta_titular .active {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 @media screen and (max-width: 900px) {
@@ -2581,6 +2625,11 @@ header {
   position: absolute;
 }
 
+.contenedor_principal #seccion_pedido #pedido .caja-resultado #resultado .pizza {
+  -webkit-animation: rotacion 90s linear infinite;
+          animation: rotacion 90s linear infinite;
+}
+
 .contenedor_principal #seccion_pedido #pedido .caja-resultado #resultado .anadir {
   position: absolute;
   display: -webkit-box;
@@ -2761,6 +2810,26 @@ header {
   background-color: white;
 }
 
+.contenedor_principal #seccion_formulario .img_fondo {
+  position: absolute;
+  opacity: 0%;
+  -webkit-transform: translateY(200px);
+          transform: translateY(200px);
+  right: -100px;
+  height: 120%;
+  z-index: 1;
+  -webkit-filter: invert(46%) sepia(57%) saturate(3796%) hue-rotate(327deg) brightness(92%) contrast(97%);
+          filter: invert(46%) sepia(57%) saturate(3796%) hue-rotate(327deg) brightness(92%) contrast(97%);
+}
+
+.contenedor_principal #seccion_formulario .active {
+  opacity: 20%;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  -webkit-transition: 4s;
+  transition: 4s;
+}
+
 .contenedor_principal #seccion_formulario .subtitulos {
   font-family: "Idioma";
   font-size: 1.9rem;
@@ -2791,6 +2860,9 @@ header {
       -ms-flex-align: center;
           align-items: center;
   row-gap: 10px;
+  opacity: 1;
+  -webkit-transform: translateX(100px);
+          transform: translateX(100px);
 }
 
 .contenedor_principal #seccion_formulario .segundo_titular .texto_oferta h2 {
@@ -2803,6 +2875,14 @@ header {
   padding-left: 20px;
   font-size: 1.8rem;
   font-family: "idioma";
+}
+
+.contenedor_principal #seccion_formulario .segundo_titular .active {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  -webkit-transition: 3s;
+  transition: 3s;
 }
 
 @media screen and (max-width: 900px) {
@@ -3124,6 +3204,9 @@ header {
       -ms-flex-align: center;
           align-items: center;
   row-gap: 10px;
+  opacity: 1;
+  -webkit-transform: translateX(100px);
+          transform: translateX(100px);
 }
 
 .contenedor_principal #seccion_cocina .segundo_titular .texto_oferta h2 {
@@ -3136,6 +3219,14 @@ header {
   padding-left: 20px;
   font-size: 1.8rem;
   font-family: "idioma";
+}
+
+.contenedor_principal #seccion_cocina .segundo_titular .active {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  -webkit-transition: 3s;
+  transition: 3s;
 }
 
 @media screen and (max-width: 900px) {
