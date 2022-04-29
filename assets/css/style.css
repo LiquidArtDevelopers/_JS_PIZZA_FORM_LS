@@ -2091,7 +2091,7 @@ header {
   position: relative;
 }
 
-.contenedor_principal #seccion_pedido .oferta_titular .img_fondo {
+.contenedor_principal #seccion_pedido .oferta_titular .img_fondo_bis {
   position: absolute;
   opacity: 10%;
   right: -100px;
@@ -2816,7 +2816,7 @@ header {
   -webkit-transform: translateY(200px);
           transform: translateY(200px);
   right: -100px;
-  height: 120%;
+  height: 80%;
   z-index: 1;
   -webkit-filter: invert(46%) sepia(57%) saturate(3796%) hue-rotate(327deg) brightness(92%) contrast(97%);
           filter: invert(46%) sepia(57%) saturate(3796%) hue-rotate(327deg) brightness(92%) contrast(97%);
