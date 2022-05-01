@@ -79,15 +79,24 @@ const nMenus=()=>{
 }
 const borrarObjetodeObjComanda=()=>{
     document.addEventListener('click',(e)=>{
-        const id_pedido=String(e.target.parentNode.id).split('_')[1];
         if(e.target.matches('.cancel')){
+            const id_pedido=String(e.target.parentNode.id).split('_')[1];
             objComanda= objComanda.filter((comanda)=> comanda.id!==id_pedido);
             localStorage.setItem('objComanda',JSON.stringify(objComanda));
             updateCantidadCart(objComanda);
+            precioTotal();
             setObjComanda();
             e.target.parentNode.textContent='';
         }
     })
+}
+const precioTotal=()=>{
+    let precioTotal=0;
+    objComanda.forEach(comanda=>{
+        precioTotal+=comanda.precio;
+    });
+    precioTotal+=Number(objMenu.precio);
+    return precioTotal.toFixed(2);
 }
 
 /**
@@ -120,18 +129,13 @@ const escribirPedido=()=>{
             }
         });
     }
-    /**
-     * @type {Boolean} Alamacenamos si se hizo un click para insertarlos en la lista.
-     */
-    let click=false, totalPrice=0;
-    document.addEventListener('click',(e)=>{
-        if(e.target.matches('.carrito')){
+  let totalPrice=0;
             setObjComanda();
             if(objComanda){
                 for(const comanda of objComanda){
                     Object.entries(comanda).forEach(([key,value])=>{
                         if(comanda.id_menu && value){
-                            if(key==='id_menu')template_fact+=`<h3 class="titular" id="orden_${comanda.id}"><span class="cancel" title="Eliminar">X</span>menú Perzonalizado: <span>${comanda.precio}€</span></h3>`,totalPrice+=Number(comanda.precio);
+                            if(key==='id_menu')template_fact+=`<h3 class="titular" id="orden_${comanda.id}"><span class="cancel" title="Eliminar">X</span>menú Perzonalizado: <span>${comanda.precio}€</span></h3>`;
                             if(key==='masa') template_fact+= `<li>${getTextContent('.txt5')} ${getTextContentById(value)}</li>`;
                             if(key==='tipo') template_fact+=`<li> ${getTextContent('.txt9')} ${getTextContentById(value)}</li>`;
                             if(key==='topping') createLiTextContent(comanda[key]);
@@ -140,7 +144,7 @@ const escribirPedido=()=>{
                         }
                         if(comanda.id_oferta && value){
                             if(key==='id_oferta'){
-                                template_fact+=`<h3 class='pOferta' id="orden_${comanda.id}"><span class="cancel" title="Eliminar">X</span>${comanda.menu}: <span> ${comanda.precio}€</span></h3>`,totalPrice+=Number(comanda.precio.replace(',','.'));
+                                template_fact+=`<h3 class='pOferta' id="orden_${comanda.id}"><span class="cancel" title="Eliminar">X</span>${comanda.menu}: <span> ${comanda.precio}€</span></h3>`;
                             }
                         }
                     });
@@ -151,7 +155,6 @@ const escribirPedido=()=>{
                     if(key==='id_menu'){
                         (objMenu.precio==0) ? template_fact+='<h3>-----</h3><div class="space"><div/>'
                         : template_fact+=`<h3>PIAZZERE <span>${objMenu.precio}€</span></h3>`;
-                        totalPrice+=Number(objMenu.precio);
                     }
                     if(key==='masa') template_fact+= `<li class='custom'> ${getTextContent('.txt5')} ${getTextContentById(objMenu[key])}</li>`;
                     if(key==='tipo') template_fact+=`<li> ${getTextContent('.txt9')}   ${getTextContentById(objMenu[key])}</li>`;
@@ -160,13 +163,10 @@ const escribirPedido=()=>{
                     if(key==='otros') createLiTextContent(objMenu[key]);
                 }
             });
-            pr.textContent=`Total: ${totalPrice.toFixed(2)}€`,totalPrice=0;
-            click ? click=false : click=true;
-            click ? $notaPizza.insertAdjacentHTML('beforeend',template_fact) : $notaPizza.textContent='';
-            template_fact='';
+            pr.textContent=`Total: ${precioTotal()}€`;
+            $notaPizza.innerHTML=template_fact;
+            template_fact;
             borrarObjetodeObjComanda();
-        }
-    })
  }
  const countIngredientsComanda=()=>{
      let count=0;
@@ -183,9 +183,9 @@ const escribirPedido=()=>{
  }
 const addToCart=()=>{
     let msgAlert='',isAlert=false;
-    setIdMenu(idMenu);
     document.addEventListener('click',(e)=>{
         if(e.target.matches('#addTocart')){
+            setIdMenu(idMenu);
             if(countIngredientsComanda()<3){
                 msgAlert='¡Seleccionar como mínimo 3 ingredientes para tu pizza!';
                 isAlert=true;
@@ -208,20 +208,23 @@ const addToCart=()=>{
                 limpiarLibreta();
                 objComanda=[];
                 cartAnimated();
+                escribirPedido();
             }
             if(isAlert) modalAlertPedido(msgAlert);
         }else if(e.target.matches('.add')){
+            setIdMenu(idMenu);
             let $parentElement=e.target.parentNode.parentElement;
             const oferta={
                 id: `${idMenu}`,
                 id_oferta:$parentElement.id,
                 menu:$parentElement.querySelector('.oTexto').textContent,
-                precio:$parentElement.querySelector('[data-precio]').dataset.precio
+                precio:Number($parentElement.querySelector('[data-precio]').dataset.precio.replace(',','.'))
             }
             setObjComanda();
             objComanda.push(oferta);
             localStorage.setItem('objComanda',JSON.stringify(objComanda));
             updateCantidadCart(objComanda);
+            escribirPedido();
             objComanda=[];            
         }
     });
@@ -608,6 +611,7 @@ function insertar_comanda(com){
     //llamamos a la función ticket para los cálculos
     /* document.querySelector("#preci").remove() */
     calcTicket()
+    escribirPedido();
 }
 
 function insertar_comanda2(com){
@@ -716,7 +720,8 @@ function insertar_comanda2(com){
     }
     //llamamos a la función ticket para los cálculos
     /* document.querySelector("#preci").remove() */
-    calcTicket()
+    calcTicket();
+    escribirPedido();
 }
 
 function insertar_comanda3(com){
@@ -832,6 +837,7 @@ function insertar_comanda3(com){
     //llamamos a la función ticket para los cálculos
     /* document.querySelector("#preci").remove() */
     calcTicket()
+    escribirPedido();
 }
 
 function calcTicket(){

@@ -7,6 +7,7 @@ import carousel from "./carousel.js";
 import ofertas from "./ofertas.js";
 import grafica from "./grafica.js";
 import modales from "./modales.js";
+import createList from "./createList.js";
 
 const d=document;
 d.addEventListener('DOMContentLoaded',()=>{
@@ -14,6 +15,8 @@ d.addEventListener('DOMContentLoaded',()=>{
     loadAnimation();
     //Script que gestiona las cookies.
     dataCookies();
+    /* //Actualizar Tickect
+    createList(); */
     //carrousel
     carousel();
     //Validación de formulario.
