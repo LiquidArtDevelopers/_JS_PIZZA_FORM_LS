@@ -54,6 +54,11 @@ $color_verde: rgba(123,216,96,1);
           }
         }
       }
+      .custom-list{
+        border: 1px dashed green;
+        padding: 20px;
+        margin-bottom: 7px;
+      }
       .titular{
         color:$color_rojo;
       }

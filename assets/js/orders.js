@@ -25,7 +25,7 @@ export default function pedido(){
     addToCart();
 }
 
-let contador = 0, existe = 0, idMenu=0;
+let contador = 0, existe = 0, idMenu=0, precioTotal=0;
 const $box_comprar=document.querySelector('.comprar');
 const $notaPizza=document.querySelector('.list-fact');
 const nota1Sel= document.querySelector(".nota1Sel");
@@ -84,19 +84,22 @@ const borrarObjetodeObjComanda=()=>{
             objComanda= objComanda.filter((comanda)=> comanda.id!==id_pedido);
             localStorage.setItem('objComanda',JSON.stringify(objComanda));
             updateCantidadCart(objComanda);
-            precioTotal();
             setObjComanda();
-            e.target.parentNode.textContent='';
+            (e.target.parentNode.parentNode.classList.contains('custom-list')) ? e.target.parentNode.parentNode.remove()
+            : e.target.parentNode.remove();
+            setTotalPrice();
+            escribirPedido();
         }
     })
 }
-const precioTotal=()=>{
-    let precioTotal=0;
+const setTotalPrice=()=>{
+    precioTotal=0;
     objComanda.forEach(comanda=>{
         precioTotal+=comanda.precio;
+        console.log(comanda.precio)
     });
     precioTotal+=Number(objMenu.precio);
-    return precioTotal.toFixed(2);
+    return precioTotal;
 }
 
 /**
@@ -129,18 +132,18 @@ const escribirPedido=()=>{
             }
         });
     }
-  let totalPrice=0;
             setObjComanda();
             if(objComanda){
                 for(const comanda of objComanda){
                     Object.entries(comanda).forEach(([key,value])=>{
                         if(comanda.id_menu && value){
-                            if(key==='id_menu')template_fact+=`<h3 class="titular" id="orden_${comanda.id}"><span class="cancel" title="Eliminar">X</span>menú Perzonalizado: <span>${comanda.precio}€</span></h3>`;
+                            if(key==='id_menu')template_fact+=`<ul class="custom-list"><h3 class="titular" id="orden_${comanda.id}"><span class="cancel" title="Eliminar">X</span>menú Perzonalizado: <span>${comanda.precio}€</span></h3>`;
                             if(key==='masa') template_fact+= `<li>${getTextContent('.txt5')} ${getTextContentById(value)}</li>`;
                             if(key==='tipo') template_fact+=`<li> ${getTextContent('.txt9')} ${getTextContentById(value)}</li>`;
                             if(key==='topping') createLiTextContent(comanda[key]);
                             if(key==='bebida') createLiTextContent(comanda[key]);
                             if(key==='otros') createLiTextContent(comanda[key]);
+                             if(key==='precio') template_fact+="</ul>";
                         }
                         if(comanda.id_oferta && value){
                             if(key==='id_oferta'){
@@ -163,7 +166,8 @@ const escribirPedido=()=>{
                     if(key==='otros') createLiTextContent(objMenu[key]);
                 }
             });
-            pr.textContent=`Total: ${precioTotal()}€`;
+            setTotalPrice();
+            pr.textContent=`Total: ${precioTotal.toFixed(2)}€`;
             $notaPizza.innerHTML=template_fact;
             template_fact;
             borrarObjetodeObjComanda();
