@@ -137,7 +137,7 @@ const escribirPedido=()=>{
                 for(const comanda of objComanda){
                     Object.entries(comanda).forEach(([key,value])=>{
                         if(comanda.id_menu && value){
-                            if(key==='id_menu')template_fact+=`<ul class="custom-list"><h3 class="titular" id="orden_${comanda.id}"><span class="cancel" title="Eliminar">X</span>menú Perzonalizado: <span>${comanda.precio}€</span></h3>`;
+                            if(key==='id_menu')template_fact+=`<ul class="custom-list"><h3 class="titular txt111" id="orden_${comanda.id}"><span class="cancel" title="Eliminar">X</span>menú Personalizado: <span>${comanda.precio}€</span></h3>`;
                             if(key==='masa') template_fact+= `<li>${getTextContent('.txt5')} ${getTextContentById(value)}</li>`;
                             if(key==='tipo') template_fact+=`<li> ${getTextContent('.txt9')} ${getTextContentById(value)}</li>`;
                             if(key==='topping') createLiTextContent(comanda[key]);
