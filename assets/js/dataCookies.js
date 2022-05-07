@@ -1,4 +1,4 @@
-import Cookie from "./Cookie.js";
+import Cookie from "./cookie.js";
 import idiomas from "./idiomas.js";
 
 const cookie= Cookie.getInstance();
